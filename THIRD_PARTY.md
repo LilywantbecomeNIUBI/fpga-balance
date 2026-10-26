@@ -10,5 +10,6 @@
 - 开源调研材料仅保留研究说明，原研究目录及第三方开源RTL没有并入本仓库生产FOC实现。
 - `tests/models/foc_contract_model.sv` 是本项目TEST ONLY接口模型，不能用于综合，也不是官方核替代品。
 - `balance/vendor/imu/` 复制本团队 `fpga-sensor/imu_1khz/src` 已验证的 ICM-42688-P 核，文件 SHA256 与来源记在 `PROVENANCE.json`；未加入外部平衡算法源码。平衡 PD 与姿态 RTL 由本项目实现，未复制 ESP32/STM32 示例的硬件接口、增益或源码。
+- `balance/tests/models/icm42688_model.sv` 和 `tb_imu_reader.sv` 来自同团队 `fpga-sensor/imu_1khz/sim`，用于真实开漏总线事务及故障注入仿真；仅测试使用，不进入综合。
 
 这里没有为第三方资料或厂商IP授予新许可；本次上传也未另外设定项目源码的开源许可证。

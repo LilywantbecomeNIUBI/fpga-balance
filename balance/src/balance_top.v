@@ -78,12 +78,20 @@ module balance_top #(parameter ALLOW_DRIVE=0)(
         .current_calibrated(current_cal),.current_calibrating(current_busy),.commissioned(comm_done),.commissioning(comm_busy),
         .motor_faults(faults),.active(active),.armed(armed),.clear_fault(clear_fault),.calibrate(calibrate),.zero_start(zero_start),
         .commission_start(commission_start),.estop(estop),.can_configure(can_configure),.stop_reason(stop_reason),.gates(gates),.rejected_command(rejected));
+    // Start serial peripherals only after the IMU has left soft reset and
+    // completed interface configuration. Latch this once: a later IMU fault
+    // must stop through the supervisor, never silently reset motor faults.
+    reg peripherals_started;
+    always @(posedge clk50m or negedge rst_n)
+        if(!rst_n) peripherals_started<=0;
+        else if(imu_ready) peripherals_started<=1;
+    wire peripheral_rst_n=rst_n && peripherals_started;
     motor_safe_drive #(.CONFIG_CONFIRMED(1),.MOTOR_MASK(3),.CURRENT_CB_MASK(3),.CURRENT_REVERSE(7),
         .ALLOW_CURRENT_TUNING(1),.DUAL_IQ_CONTROL(1),.TUNING_KP_MAX(16384),.TUNING_KI_MAX(256),
         .GAIN_CH1_Q16(217082),.GAIN_CH2_Q16(220767),.GAIN_CH3_Q16(217082),.GAIN_CH4_Q16(220767),
         .CURRENT_LAG(1000),.ENCODER_LAG(250),.MAX_WINDOW_TICKS(32),.COMMAND_SLEW(64),
         .COMM_SETTLE(20000),.COMM_PREALIGN(6000),.MAX_RUN_CYCLES(250000000)) drive(
-        .clk(clk50m),.rst_n(rst_n),.request_arm(ALLOW_DRIVE && active),.clear_fault(clear_fault),
+        .clk(clk50m),.rst_n(peripheral_rst_n),.request_arm(ALLOW_DRIVE && active),.clear_fault(clear_fault),
         .calibrate(calibrate),.estop(estop),.command_valid(cv || pd_valid_pipe[7]),.commission_start(ALLOW_DRIVE && commission_start),
         .iq_request_1(iq1),.iq_request_2(iq2),.tuning_kp(cfg[111:96]),.tuning_ki(cfg[127:112]),
         .drv_fault_n({m2_fault_n,m1_fault_n}),.adc_busy(adc_busy),.adc_dout_a(adc_dout_a),.adc_dout_b(adc_dout_b),

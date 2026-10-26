@@ -37,8 +37,10 @@ def main():
     for tb in sorted((BASE/'tests').glob('tb_*.sv'))+[generated]:
         sources=sorted((BASE/'src').glob('*.v'))
         if tb.stem=='tb_telemetry':sources+=[ROOT/'motor_control/src/motor_console.v']
-        if tb.stem in ('tb_dual_iq','tb_top_shadow'):
+        if tb.stem in ('tb_dual_iq','tb_top_shadow','tb_imu_startup'):
             sources+=sorted((ROOT/'motor_control/src').glob('*.v'))+sorted((ROOT/'motor_control/tests/models').glob('*.sv'))
+        if tb.stem=='tb_imu_reader':sources+=sorted((BASE/'vendor/imu').glob('*.v'))+sorted((BASE/'tests/models').glob('*.sv'))
+        if tb.stem=='tb_imu_startup':sources+=sorted((BASE/'vendor/imu').glob('*.v'))+sorted((BASE/'tests/models').glob('*.sv'))
         if tb.stem=='tb_top_shadow':sources+=sorted((BASE/'vendor/imu').glob('*.v'))
         build=subprocess.run(['iverilog','-g2012','-s',tb.stem,'-o',str(out/(tb.stem+'.out')),*map(str,sources),str(tb)],capture_output=True,text=True,timeout=60)
         code=build.returncode;text=build.stdout+build.stderr

@@ -12,7 +12,7 @@ module tb_top_shadow;
  initial begin
  repeat(4)@(negedge clk);rst=1;repeat(4)@(negedge clk);
  cfg[221:220]=3;cfg[63:32]=1677722;cfg[159:144]=100;
- force dut.cfg=cfg;force dut.pitch=0;force dut.rate=0;force dut.av=0;force dut.cv=0;
+ force dut.imu_ready=1;force dut.cfg=cfg;force dut.pitch=0;force dut.rate=0;force dut.av=0;force dut.cv=0;
  // Even a forced active control signal cannot bypass observation pin grounding.
  force dut.active=1;repeat(10)@(negedge clk);
  force dut.pitch=65536;force dut.av=1;@(negedge clk);force dut.av=0;

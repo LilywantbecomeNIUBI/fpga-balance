@@ -1,0 +1,10 @@
+{
+  "timestamp": "2026-10-26T16:36:48.253085+08:00",
+  "profile": "observe",
+  "bitstream_sha256": "d11c8de24fa92626c71b7262f2db34e4b7207e979832ec1feaff89e053da68a6",
+  "programmed": true,
+  "flash_written": false,
+  "motor_outputs_grounded": true,
+  "serial_tx_bytes": 0,
+  "physical_balance_tested": false
+}
