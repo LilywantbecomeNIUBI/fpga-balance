@@ -1,0 +1,18 @@
+test_config_exact_ack (test_host.LinkTests.test_config_exact_ack) ... ok
+test_demo_never_controls (test_host.LinkTests.test_demo_never_controls) ... ok
+test_http_origin_and_demo_gate (test_host.LinkTests.test_http_origin_and_demo_gate) ... ok
+test_identification_starts_with_stop (test_host.LinkTests.test_identification_starts_with_stop) ... ok
+test_missing_m2_stops_start (test_host.LinkTests.test_missing_m2_stops_start) ... ok
+test_passive_unknown_firmware (test_host.LinkTests.test_passive_unknown_firmware) ... ok
+test_timeout_stops_without_auto_clear (test_host.LinkTests.test_timeout_stops_without_auto_clear) ... ok
+test_config_layout_bounds (test_host.ProtocolTests.test_config_layout_bounds) ... ok
+test_crc_vector (test_host.ProtocolTests.test_crc_vector) ... ok
+test_fragment_crc_resync (test_host.ProtocolTests.test_fragment_crc_resync) ... ok
+test_v2_modes_and_legacy_rejection (test_host.ProtocolTests.test_v2_modes_and_legacy_rejection) ... ok
+test_bias_peak_motion_and_stale (test_preflight.StaticTests.test_bias_peak_motion_and_stale) ... ok
+test_pass (test_preflight.StaticTests.test_pass) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 1.123s
+
+OK

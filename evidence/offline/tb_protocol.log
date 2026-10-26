@@ -1,0 +1,2 @@
+PASS atomic CRC config, busy reject, corrupted frame reject, commands, priority stop
+E:\Gowin_project\fpga_project\team_repos\fpga-balance\balance\results\tests\tb_protocol.sv:300: $finish called at 11561000 (1ps)

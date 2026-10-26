@@ -1,0 +1,2 @@
+PASS independent dual Iq, zero runtime Id, exclusive commissioning
+E:\Gowin_project\fpga_project\team_repos\fpga-balance\balance\tests\tb_dual_iq.sv:17: $finish called at 63000 (1ps)

@@ -1,0 +1,6 @@
+# Hash manifests describe exact bytes; preserve them on Windows/Linux clones.
+* -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+*.png binary
+*.whl binary
+# Original signed timing reports contain tool-generated trailing spaces.
+evidence/builds/*.tr -diff -whitespace

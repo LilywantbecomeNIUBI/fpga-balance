@@ -1,0 +1,2 @@
+PASS sequential signed division: truncation, extremes, bounded latency, one-cycle valid
+E:\Gowin_project\fpga_project\team_repos\fpga-balance\balance\tests\tb_sdiv.sv:17: $finish called at 144960000 (1ps)

@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+*.pyc
+balance/build/
+balance/results/
+motor_control/build/
+motor_control/ip/
+*.out
+*.vcd
+*.fs
+*.bin
+dist/
+*.zip
+.env

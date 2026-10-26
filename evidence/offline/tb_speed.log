@@ -1,0 +1,2 @@
+PASS speed50Hz wrap, units, encoder signs, P, trim clamp, antiwindup and disable reset
+E:\Gowin_project\fpga_project\team_repos\fpga-balance\balance\tests\tb_speed.sv:16: $finish called at 58100000 (1ps)

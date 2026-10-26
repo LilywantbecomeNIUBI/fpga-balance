@@ -1,0 +1,2 @@
+PASS supervisor M2 gate, observe inhibit, tilt, IMU, driver fault, heartbeat, bounded run, manual recovery
+E:\Gowin_project\fpga_project\team_repos\fpga-balance\balance\tests\tb_supervisor.sv:35: $finish called at 41680000 (1ps)

@@ -1,0 +1,41 @@
+{
+  "profile": "carrier_revb_4015_12v_success_20261025",
+  "protocol_version": 2,
+  "clock_hz": 50000000,
+  "pwm_hz": 20000,
+  "current_reverse_mask": 7,
+  "current_cb_mask": 3,
+  "current_swap_mask": 0,
+  "gain_q16": [
+    217082,
+    220767,
+    217082,
+    220767
+  ],
+  "pole_pairs": [
+    11,
+    11
+  ],
+  "phase_trip_a_nominal": 0.5,
+  "runtime_iq_limit_a_nominal": 0.25,
+  "commission_id_a_nominal": 0.25,
+  "commission_voltage_limit": 0.125,
+  "current_lag_clocks": 1000,
+  "encoder_lag_clocks": 250,
+  "command_slew": 64,
+  "speed_guard_ticks": 32,
+  "m1": {
+    "pwm_port": 1,
+    "encoder_port": 1,
+    "c_channel": 1,
+    "b_channel": 2
+  },
+  "m2": {
+    "pwm_port": 2,
+    "encoder_port": 2,
+    "c_channel": 3,
+    "b_channel": 4
+  },
+  "replacement_hall_gain_independently_calibrated": false,
+  "integrated_hardware_tested": false
+}

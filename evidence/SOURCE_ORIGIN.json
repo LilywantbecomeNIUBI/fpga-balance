@@ -1,0 +1,26 @@
+{
+  "origin_repository": "fpga-FOC",
+  "exported_date": "2026-10-26",
+  "core_modules": [
+    "motor_ad7606",
+    "motor_adapter_core",
+    "motor_angle",
+    "motor_command_guard",
+    "motor_commission",
+    "motor_console",
+    "motor_current_average",
+    "motor_current",
+    "motor_drv_guard",
+    "motor_foc_bridge",
+    "motor_foc_trace",
+    "motor_host_estop",
+    "motor_measurement_angle",
+    "motor_mt6701",
+    "motor_pwm_permutation",
+    "motor_safe_drive",
+    "motor_serial_rx",
+    "motor_tuning_vector"
+  ],
+  "historical_experiments_excluded": true,
+  "physical_balance_tested": false
+}

@@ -1,0 +1,2 @@
+PASS integrated PD publication timing and physical observe pin inhibit
+E:\Gowin_project\fpga_project\team_repos\fpga-balance\balance\tests\tb_top_shadow.sv:31: $finish called at 1961000 (1ps)

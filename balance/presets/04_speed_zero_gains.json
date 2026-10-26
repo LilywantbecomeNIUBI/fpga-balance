@@ -1,0 +1,31 @@
+{
+  "schema": "balance-v2",
+  "config": {
+    "axis_y": true,
+    "pitch_reverse": false,
+    "upright_z_positive": false,
+    "m1_reverse": false,
+    "m2_reverse": true,
+    "axis_confirmed": false,
+    "m1_accepted": false,
+    "m2_accepted": false,
+    "kp": 0.0,
+    "kd": 0.0,
+    "foc_kp": 16384,
+    "foc_ki": 256,
+    "trim_deg": 0.0,
+    "current_ma": 100,
+    "cutoff_deg": 15.0,
+    "start_deg": 3.0,
+    "duration_ms": 1000,
+    "filter_shift": 8,
+    "mode": 2,
+    "test_axis": 1,
+    "current_target_ma": 0,
+    "speed_target_rpm": 0.0,
+    "speed_kp": 0.0,
+    "speed_ki": 0.0,
+    "encoder1_reverse": false,
+    "encoder2_reverse": false
+  }
+}

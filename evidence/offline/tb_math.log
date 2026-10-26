@@ -1,0 +1,2 @@
+PASS CORDIC quadrants, bias, dt, motion rejection, PD signs and limits
+E:\Gowin_project\fpga_project\team_repos\fpga-balance\balance\tests\tb_math.sv:36: $finish called at 34560000 (1ps)

@@ -1,0 +1,2640 @@
+{
+  "selected_motor": 2,
+  "paired_test": false,
+  "bitstream_sha256": "27b59f2c2b0586965dfac8b288bca3cfcaef3aa126a3243fa1bfaf8b10a8bd7d",
+  "reference_profile": "board_4015_12v_current_tuning_speedkp32_kimax256_kpmax16384_imax450_prealign300_speedraw_drop2560_rise2560_speed1ms_span2_speedi4_slew64_brake100",
+  "error": null,
+  "zero_success": true,
+  "static_phase_current_a": [
+    {
+      "mean": 0.006238017,
+      "max_abs": 0.17798
+    },
+    {
+      "mean": -0.000761869,
+      "max_abs": 0.12183
+    },
+    {
+      "mean": -0.005476521,
+      "max_abs": 0.12769
+    }
+  ],
+  "static_peak_limit_a": 0.2,
+  "commission_success": true,
+  "speed_started": true,
+  "speed_metrics": {
+    "outcome": "10\u79d2\u5b8c\u6210",
+    "ended": true,
+    "seconds": 9.998,
+    "steady_after_s": 3,
+    "target_rpm": 30.029296875,
+    "gaps": 0,
+    "raw_phase_peak_a": 0.30225,
+    "windows": {
+      "2ms": {
+        "samples": 6999,
+        "mean_rpm": 31.348210877223533,
+        "std_rpm": 9.842289352980538,
+        "min_rpm": 1.8310546875,
+        "max_rpm": 60.4248046875
+      },
+      "10ms": {
+        "samples": 6999,
+        "mean_rpm": 31.34318783821796,
+        "std_rpm": 4.751977606226075,
+        "min_rpm": 12.8173828125,
+        "max_rpm": 47.2412109375
+      }
+    },
+    "method": "FPGA\u65f6\u949f\u4e0e\u539f\u59cb\u7f16\u7801\u5668\u5dee\u5206\uff1b\u4e0d\u53d7\u66f2\u7ebf\u5e73\u6ed1\u5f71\u54cd\uff1b\u6cbf\u672c\u6b21\u6b63\u8f6c\u65b9\u5411\u8ba1\u6b63"
+  },
+  "packets": 23186,
+  "faults": [
+    0,
+    1
+  ],
+  "last": {
+    "state": 6,
+    "commission_state": 6,
+    "flags": 194,
+    "faults": 1,
+    "sequence": 1408359,
+    "mechanical": [
+      0,
+      14835
+    ],
+    "phase_current_a": [
+      0.0,
+      0.0,
+      0.0,
+      0.1626,
+      -0.05347,
+      -0.10913
+    ],
+    "running": false,
+    "calibrated": true,
+    "commissioning": false,
+    "commissioned": true,
+    "diagnostic": {
+      "sequence": 1404391,
+      "sample_time_clocks": 3510976256,
+      "mechanical": 14962,
+      "theta_u16": 27940,
+      "theta_degrees": 153.47900390625,
+      "phase_current_a": [
+        0.024658203125,
+        -0.032958984375,
+        0.00830078125
+      ],
+      "id_ref_a": 0.0,
+      "iq_ref_a": 0.0,
+      "id_computed_a": -0.03270027980121203,
+      "iq_computed_a": 0.010304114166334158,
+      "sample_running": false,
+      "alignment": false,
+      "id_ip_a": -0.032958984375,
+      "iq_ip_a": 0.01025390625,
+      "ud_ip_normalized": 0.0164794921875,
+      "uq_ip_normalized": -0.005126953125,
+      "ip_sample_valid": true,
+      "active_trace_overrun": false,
+      "speed_rpm": 0.0,
+      "speed_target_rpm": 0.0,
+      "speed_mode": false,
+      "speed_valid": false,
+      "speed_stalled": false
+    },
+    "tuning": {
+      "version": 2,
+      "sequence": 237,
+      "kp": 16384,
+      "ki": 256,
+      "ki_max_q12": 256,
+      "duration_ms": 100,
+      "error": 0,
+      "configured": true,
+      "observe_capable": true,
+      "kp_max_q12": 16384,
+      "speed_capable": true,
+      "commission_fixed_gains": true,
+      "runtime_uq_limit": 0.75,
+      "ud_limit": 0.125,
+      "commission_voltage_limit": 0.125,
+      "id_a": 0.0,
+      "iq_a": 0.25,
+      "current_limit_a": 0.45,
+      "current_limit_q15": 1843
+    },
+    "stage": "stop",
+    "host_monotonic": 119439.3679001
+  },
+  "uart_writes": [
+    {
+      "monotonic": 119416.6813824,
+      "stage": "configure",
+      "hex": "3a3032454430303430303030313030303030303034363430302a333230300a"
+    },
+    {
+      "monotonic": 119416.6833845,
+      "stage": "zero",
+      "hex": "43"
+    },
+    {
+      "monotonic": 119426.7580531,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119426.7582032,
+      "stage": "commission",
+      "hex": "41"
+    },
+    {
+      "monotonic": 119426.7584171,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119426.7600777,
+      "stage": "commission",
+      "hex": "53"
+    },
+    {
+      "monotonic": 119426.7839216,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119426.8090202,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119426.834166,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119426.8593608,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119426.8847531,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119426.9102336,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119426.9353633,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119426.9605908,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119426.9860996,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119427.0112045,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119427.0362823,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119427.0617082,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119427.0867912,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119427.1123605,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119427.1377133,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119427.1631225,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119427.188313,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119427.2137441,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119427.2391775,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119427.2643151,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119427.2897327,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119427.3149589,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119427.3400426,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119427.3652707,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119427.3906915,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119427.4162042,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119427.4413714,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119427.4666652,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119427.4920034,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119427.5171134,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119427.5422297,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119427.5674381,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119427.5926994,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119427.6180111,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119427.6430964,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119427.6682193,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119427.6932972,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119427.7187167,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119427.7438,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119427.7690073,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119427.7940858,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119427.8192283,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119427.844336,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119427.8694344,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119427.8945859,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119427.9197486,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119427.9452178,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119427.9703821,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119427.9958511,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119428.0209882,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119428.0460698,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119428.0712462,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119428.096747,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119428.122233,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119428.1477424,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119428.173254,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119428.1987157,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119428.2238196,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119428.249036,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119428.274168,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119428.2992819,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119428.324744,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119428.3502631,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119428.375342,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119428.4009248,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119428.4260584,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119428.4515985,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119428.4766924,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119428.5022043,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119428.5274039,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119428.5527295,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119428.577963,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119428.6030705,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119428.6282302,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119428.6533382,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119428.6787154,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119428.7043624,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119428.7297546,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119428.7549765,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119428.7800876,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119428.8051931,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119428.8303026,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119428.855719,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119428.8808144,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119428.906013,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119428.931092,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119428.9562828,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119428.9817558,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119429.0072814,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119429.0323766,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119429.0575996,
+      "stage": "commission",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119429.0832108,
+      "stage": "handoff",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119429.1085881,
+      "stage": "handoff",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119429.1337233,
+      "stage": "handoff",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119429.1591672,
+      "stage": "handoff",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119429.1641225,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119429.1641853,
+      "stage": "speed",
+      "hex": "41"
+    },
+    {
+      "monotonic": 119429.1661047,
+      "stage": "speed",
+      "hex": "56"
+    },
+    {
+      "monotonic": 119429.1844733,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119429.2097127,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119429.2349338,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119429.2600583,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119429.2853407,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119429.3107135,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119429.3361368,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119429.3612983,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119429.3863904,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119429.4115957,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119429.4370272,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119429.4621371,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119429.4872465,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119429.5123383,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119429.5379683,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119429.5630651,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119429.5882197,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119429.6133355,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119429.6386953,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119429.664271,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119429.6893435,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119429.7145989,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119429.7400372,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119429.7652161,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119429.7903269,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119429.8156954,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119429.840773,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119429.8660367,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119429.8912366,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119429.9163415,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119429.9417222,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119429.967278,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119429.9927419,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119430.0179403,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119430.0430451,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119430.0681988,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119430.0932776,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119430.1187092,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119430.1438167,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119430.1691342,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119430.1944378,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119430.2195848,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119430.2447165,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119430.2701033,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119430.2953814,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119430.3205982,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119430.346,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119430.3711459,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119430.3965952,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119430.4217463,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119430.4472935,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119430.4727354,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119430.4980284,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119430.5231436,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119430.5483401,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119430.5735804,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119430.5987609,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119430.6242697,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119430.6493747,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119430.6750291,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119430.7003578,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119430.7255879,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119430.750709,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119430.7761606,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119430.8013156,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119430.8267274,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119430.8519384,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119430.8772019,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119430.9022939,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119430.9276953,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119430.9531502,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119430.9782675,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119431.0033355,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119431.0284295,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119431.0535902,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119431.0787515,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119431.1042929,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119431.129396,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119431.1545851,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119431.1799939,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119431.2050786,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119431.2302753,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119431.2557387,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119431.281425,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119431.3067451,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119431.3321347,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119431.3574115,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119431.3825887,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119431.4077087,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119431.4331673,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119431.4582645,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119431.483354,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119431.5085956,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119431.5337485,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119431.5591229,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119431.5842237,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119431.6093121,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119431.6343916,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119431.6595872,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119431.6847187,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119431.7104434,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119431.7357602,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119431.7612112,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119431.7863543,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119431.8116358,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119431.836787,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119431.8621416,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119431.8872773,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119431.9127257,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119431.9378914,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119431.9629704,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119431.9883019,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119432.0135768,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119432.0387301,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119432.064303,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119432.089795,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119432.1150279,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119432.1403251,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119432.165441,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119432.1905919,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119432.2157053,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119432.2412236,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119432.2663271,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119432.291414,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119432.3165795,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119432.3417706,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119432.3673102,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119432.392696,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119432.4180245,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119432.4433433,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119432.4684391,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119432.4936524,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119432.5191858,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119432.5442551,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119432.569841,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119432.5949176,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119432.6200086,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119432.6451047,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119432.6702135,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119432.6953322,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119432.7207657,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119432.745983,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119432.7710803,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119432.796258,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119432.8214054,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119432.8466851,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119432.8720144,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119432.8975189,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119432.9230249,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119432.9481248,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119432.9735743,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119432.9987046,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119433.0243776,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119433.0496807,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119433.0749372,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119433.1000566,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119433.125158,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119433.1502654,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119433.1757106,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119433.2007849,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119433.2259396,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119433.2510905,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119433.2762298,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119433.3016927,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119433.3273374,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119433.3526857,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119433.3778459,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119433.4030243,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119433.4281021,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119433.4532337,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119433.4786832,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119433.5042688,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119433.5297087,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119433.5550231,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119433.5803455,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119433.6054453,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119433.630692,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119433.6557849,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119433.6812304,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119433.706407,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119433.7319472,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119433.7570416,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119433.7821852,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119433.8072642,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119433.8323688,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119433.8578981,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119433.8830325,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119433.9081407,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119433.9332359,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119433.9587421,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119433.9842909,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119434.0098279,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119434.0350108,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119434.0601886,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119434.0854479,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119434.1105837,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119434.1357296,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119434.1608789,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119434.1859943,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119434.2111211,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119434.2362037,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119434.2612848,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119434.2867058,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119434.3119659,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119434.3370674,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119434.3622601,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119434.3877567,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119434.4131892,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119434.4386806,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119434.4638601,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119434.4890106,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119434.5140946,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119434.5392087,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119434.5648244,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119434.5901802,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119434.6157012,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119434.6412184,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119434.6662891,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119434.6913906,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119434.7165828,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119434.7417033,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119434.766917,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119434.7920163,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119434.8171211,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119434.842732,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119434.8680609,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119434.8932012,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119434.9187251,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119434.9442107,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119434.9692842,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119434.9943898,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119435.0195876,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119435.0447587,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119435.0705852,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119435.0957189,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119435.1214717,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119435.1467324,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119435.1718929,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119435.1970212,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119435.2221396,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119435.2472491,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119435.272791,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119435.2978925,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119435.3229857,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119435.3480805,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119435.3731705,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119435.3982652,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119435.4233364,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119435.4484285,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119435.4736314,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119435.4987347,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119435.5239076,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119435.5490575,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119435.574163,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119435.5995871,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119435.6246865,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119435.6499029,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119435.6750116,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119435.7001601,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119435.7255886,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119435.7506898,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119435.7762077,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119435.8013676,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119435.8264359,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119435.8520127,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119435.8770888,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119435.9022394,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119435.9277054,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119435.9532032,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119435.9783035,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119436.0034362,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119436.0290038,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119436.054149,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119436.0792742,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119436.1047317,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119436.1298933,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119436.1549652,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119436.1801401,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119436.2052395,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119436.2306908,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119436.2562626,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119436.2817247,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119436.3068819,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119436.331976,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119436.3570881,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119436.3821755,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119436.4072572,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119436.4323395,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119436.4576086,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119436.4830618,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119436.5081844,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119436.5337798,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119436.5591786,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119436.5843518,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119436.6098614,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119436.6349476,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119436.6600537,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119436.6851633,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119436.7102655,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119436.7353726,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119436.7605921,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119436.7859923,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119436.8111238,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119436.8362101,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119436.8613079,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119436.8863838,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119436.9116115,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119436.9367314,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119436.961876,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119436.9870667,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119437.012201,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119437.037598,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119437.0627221,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119437.0882502,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119437.1137235,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119437.1388771,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119437.1639593,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119437.1890589,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119437.2141665,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119437.2392521,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119437.264325,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119437.2894297,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119437.3145773,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119437.339799,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119437.3649371,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119437.3901485,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119437.4153891,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119437.4405739,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119437.4657416,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119437.490884,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119437.5159929,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119437.5410924,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119437.5662105,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119437.5913088,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119437.6167179,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119437.6419685,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119437.6670901,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119437.6921905,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119437.7177366,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119437.7432071,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119437.7687129,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119437.7938682,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119437.8189975,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119437.8441296,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119437.8692598,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119437.8947367,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119437.9202526,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119437.9457218,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119437.9709412,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119437.9963367,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119438.0219563,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119438.0470432,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119438.0724216,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119438.0975894,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119438.1229196,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119438.1483492,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119438.1737046,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119438.1989503,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119438.2240331,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119438.2494164,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119438.2745837,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119438.2997121,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119438.3249431,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119438.3501513,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119438.3754369,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119438.4006059,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119438.4257525,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119438.4508684,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119438.4760505,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119438.5011722,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119438.5265907,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119438.5516925,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119438.5771823,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119438.6022682,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119438.6273714,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119438.652505,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119438.6777563,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119438.7031469,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119438.7283157,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119438.7538004,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119438.7790423,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119438.8043926,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119438.8295783,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119438.8547319,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119438.8802191,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119438.9053176,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119438.9308551,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119438.9559961,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119438.9810823,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119439.0062447,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119439.0317017,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119439.0571706,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119439.0822542,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119439.1073585,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119439.1326428,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119439.1580204,
+      "stage": "speed",
+      "hex": "48"
+    },
+    {
+      "monotonic": 119439.168267,
+      "stage": "stop",
+      "hex": "58"
+    }
+  ],
+  "protection_fault_clears": 0,
+  "retries": 0
+}

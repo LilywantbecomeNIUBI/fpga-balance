@@ -1,0 +1,14 @@
+{
+  "historical_original_drive_setup_violations": 580,
+  "first_pipeline_attempt_setup_violations": 39,
+  "hold_violations": 0,
+  "remaining_paths": [
+    "current mA conversion division",
+    "disarmed calibration request to current arithmetic"
+  ],
+  "repair": [
+    "32-cycle signed divider, no relaxed timing",
+    "registered accepted zero-calibration request only; kill guards unchanged"
+  ],
+  "failed_images_programmed": false
+}
