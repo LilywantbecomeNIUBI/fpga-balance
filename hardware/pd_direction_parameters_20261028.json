@@ -1,0 +1,114 @@
+{
+  "date": "2026-10-28",
+  "raw_current_direction": {
+    "M1_positive": "forward",
+    "M2_positive": "backward"
+  },
+  "current_mode_forward_flags": {
+    "m1_reverse": false,
+    "m2_reverse": true
+  },
+  "pd_existing_equation": "Kp*(target-pitch)-Kd*rate",
+  "pd_verified_flags": {
+    "m1_reverse": true,
+    "m2_reverse": false
+  },
+  "front_user_observation": "both wheels forward",
+  "rear_retry_user_observation": "both wheels backward",
+  "direction_accepted": true,
+  "neutral_upright_test_config": {
+    "m1_reverse": true,
+    "m2_reverse": false,
+    "axis_confirmed": true,
+    "m1_accepted": true,
+    "m2_accepted": true,
+    "kp": 0.05,
+    "kd": 0,
+    "foc_kp": 16384,
+    "foc_ki": 256,
+    "trim_deg": 0,
+    "current_ma": 150,
+    "cutoff_deg": 15.0,
+    "start_deg": 3.0,
+    "duration_ms": 2000,
+    "filter_shift": 8,
+    "mode": 0,
+    "test_axis": 3,
+    "current_target_ma": 0,
+    "speed_target_rpm": 0.0,
+    "speed_kp": 0.0,
+    "speed_ki": 0.0
+  },
+  "require_actual_upright_attitude_zero_before_use": true,
+  "pd_gains_tuned": false,
+  "full_balance_accepted": false,
+  "M2_current_tracking_stability_accepted": false,
+  "rear_initial_actual_iq_a": 0.0043798828125,
+  "rear_retry_actual_iq_a": 0.15157958984375,
+  "rear_retry_actual_id_a": -0.059482421875,
+  "rear_retry_Ud": 0.125,
+  "rear_retry_Uq": 0.7215524291992188,
+  "current_session_target_compensation_deg": 0,
+  "no_new_fpga_download_or_electrical_recommissioning": true,
+  "upright_reference_restored": true,
+  "upright_restoration_evidence": "evidence/engineering/pd_upright_restored_20261028.json",
+  "latest_m2_current_pair": {
+    "evidence": "evidence/engineering/m2_current_pair_20261028_010012.json",
+    "shared_current_zero": true,
+    "summary": [
+      {
+        "target_ma": 150,
+        "active_samples": 400,
+        "valid_dq_samples": 400,
+        "trace_unique_sequences": 400,
+        "overrun_samples": 0,
+        "active_span_ms": 1995.0,
+        "encoder_net_deg": [
+          0.0,
+          -4804.51904296875
+        ],
+        "tail_samples": 100,
+        "tail_mean": {
+          "id_ref_a": 0.0,
+          "iq_ref_a": 0.14990234375,
+          "id_a": -0.073798828125,
+          "iq_a": 0.1509912109375,
+          "ud": 0.125,
+          "uq": 0.723817138671875
+        },
+        "tail_uq_saturated_fraction": 0.59,
+        "tail_ud_saturated_fraction": 1,
+        "park_recomputed_max_error_a": 0.0006678161734027244,
+        "sampled_phase_abs_peak_a": 0.878662109375,
+        "sampled_id_abs_peak_a": 0.902587890625
+      },
+      {
+        "target_ma": -150,
+        "active_samples": 400,
+        "valid_dq_samples": 399,
+        "trace_unique_sequences": 399,
+        "overrun_samples": 0,
+        "active_span_ms": 1995.0,
+        "encoder_net_deg": [
+          0.0,
+          1.0986328125
+        ],
+        "tail_samples": 100,
+        "tail_mean": {
+          "id_ref_a": 0.0,
+          "iq_ref_a": -0.14990234375,
+          "id_a": 0.2924462890625,
+          "iq_a": -0.15113037109375,
+          "ud": -0.125,
+          "uq": -0.5083358764648438
+        },
+        "tail_uq_saturated_fraction": 0,
+        "tail_ud_saturated_fraction": 1,
+        "park_recomputed_max_error_a": 0.0004986249330763692,
+        "sampled_phase_abs_peak_a": 0.436279296875,
+        "sampled_id_abs_peak_a": 0.443603515625
+      }
+    ],
+    "conclusion": "Both directions cannot be accepted. Positive rotated, negative stalled despite mean Iq near target. D-axis saturation in both; substantial undesired Id, phase-current excursions. Same current-zero retained; learned parameters unchanged. No root cause yet isolated. Normal duration termination followed by explicit host Stop (fault/stop 1 expected)."
+  }
+}

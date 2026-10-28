@@ -4,3 +4,10 @@
 *.whl binary
 # Original signed timing reports contain tool-generated trailing spaces.
 evidence/builds/*.tr -diff -whitespace
+
+# FPGA bitstreams are release binaries, not reviewable text.
+*.fs binary
+*.jpg binary
+
+# Preserve original programmer progress output verbatim.
+evidence/engineering/*programmer*.log -whitespace

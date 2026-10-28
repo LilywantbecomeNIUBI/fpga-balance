@@ -7,32 +7,29 @@
 <main><aside>
 <section class="card"><h2>连接与记录</h2><div class="row"><select id="ports" aria-label="串口" style="flex:1;width:auto"></select><button id="refresh">刷新</button></div><div class="actions"><button id="connect" class="primary">连接串口</button><button id="disconnect">断开</button><a href="/export.csv" download="balance.csv">导出 CSV</a></div><p class="hint">921600 baud · 先被动识别固件。旧 IMU / 电机固件不会收到控制命令。</p><div id="error" role="alert"></div></section>
 <section class="card"><h2>姿态与车轮方向</h2>
-<div class="row"><label for="axis_y">俯仰旋转轴</label><select id="axis_y"><option value="true">Y 轴（待确认）</option><option value="false">X 轴</option></select></div>
-<label class="check"><input id="pitch_reverse" type="checkbox">反转俯仰正方向</label>
-<label class="check"><input id="upright_z_positive" type="checkbox">直立时 Z 朝上（+1 g）</label>
-<label class="check"><input id="m1_reverse" type="checkbox">反转 M1 转矩方向</label>
-<label class="check"><input id="m2_reverse" type="checkbox" checked>反转 M2 转矩方向</label>
-<p class="hint">方向是待验证的初值。姿态校零时机身必须保持在目标直立位置；每次应用参数后重新校零。</p>
-<label class="check"><input id="axis_confirmed" type="checkbox">已检查俯仰轴与两轮纠偏方向</label>
+<p class="hint">IMU 安装方向已固定：Y 轴俯仰、前倾为正、直立 Z 约 −1 g。</p>
+<label class="check"><input id="m1_reverse" type="checkbox">反转右轮 M1 转矩方向</label>
+<label class="check"><input id="m2_reverse" type="checkbox" checked>反转左轮 M2 转矩方向</label>
+<p class="hint">两轮转矩方向仍待短测确认。姿态校零时机身保持直立；每次应用参数后重新校零。</p>
+<label class="check"><input id="axis_confirmed" type="checkbox">已确认姿态与车轮前进轴向</label>
 <label class="check"><input id="m1_accepted" type="checkbox">M1 已完成独立电机验收</label>
 <label class="check"><input id="m2_accepted" type="checkbox">M2 已排障并完成独立电机验收</label>
 </section>
 <section class="card"><h2>调试模式与速度外环</h2>
 <div class="row"><label>模式</label><select id="mode_select"><option value="0">直立 PD</option><option value="1">电流短测</option><option value="2">直立 + 速度 PI</option></select></div>
-<div class="row"><label>电流测试轴</label><select id="test_axis"><option value="1">M1</option><option value="2">M2</option><option value="3">双路</option></select></div>
-<div class="row"><label>短测 Iq · mA</label><input id="current_target_ma" type="number" value="0" min="-250" max="250" step="1"></div>
+<div class="row"><label>电流测试轴</label><select id="test_axis"><option value="1">右轮 M1</option><option value="2">左轮 M2</option><option value="3">双路</option></select></div>
+<div class="row"><label>短测 Iq · mA</label><input id="current_target_ma" type="number" value="0" min="-1000" max="1000" step="1"></div>
 <div class="row"><label>速度目标 · rpm</label><input id="speed_target_rpm" type="number" value="0" min="-60" max="60" step="0.1"></div>
 <div class="row"><label>速度 Kp · °/rpm</label><input id="speed_kp" type="number" value="0" min="0" max="0.255" step="0.001"></div>
 <div class="row"><label>速度 Ki · °/(rpm·s)</label><input id="speed_ki" type="number" value="0" min="0" max="0.255" step="0.001"></div>
-<label class="check"><input id="encoder1_reverse" type="checkbox">反转 M1 前进轮速</label>
-<label class="check"><input id="encoder2_reverse" type="checkbox">反转 M2 前进轮速</label>
+<p class="hint">前进轮速方向已固定：右轮 M1 原始角度取反，左轮 M2 保持原符号；两轮向前均为正。</p>
 <p class="hint">电流短测仍要求完成全部校零和标定门禁；限时结束，无自动重复。速度 PI 为 50 Hz，输出俯仰修正限 ±3°，不是直接给 Iq。先验证前进轮速符号与倾角修正方向，增益从零开始。</p>
 <div class="actions"><button id="save_config">导出参数 JSON</button><label>导入参数<input type="file" id="load_config" accept=".json" style="width:160px"></label></div>
 </section><section class="card"><h2>平衡参数</h2>
 <div class="row"><label for="kp">Kp · A/°</label><input id="kp" type="number" value="0" min="0" max="0.5" step="0.001"></div>
 <div class="row"><label for="kd">Kd · A/(°/s)</label><input id="kd" type="number" value="0" min="0" max="0.1" step="0.0001"></div>
 <div class="row"><label for="trim_deg">直立微调 · °</label><input id="trim_deg" type="number" value="0" min="-5" max="5" step="0.1"></div>
-<div class="row"><label for="current_ma">转矩电流上限 · mA</label><input id="current_ma" type="number" value="100" min="1" max="250" step="1"></div>
+<div class="row"><label for="current_ma">转矩电流上限 · mA</label><input id="current_ma" type="number" value="100" min="1" max="1000" step="1"></div>
 <div class="row"><label for="duration_ms">单次时长 · ms</label><input id="duration_ms" type="number" value="1000" min="100" max="5000" step="100"></div>
 <div class="row"><label for="start_deg">允许启动角 · °</label><input id="start_deg" type="number" value="3" min="0.01" max="5" step="0.1"></div>
 <div class="row"><label for="cutoff_deg">倾倒停机角 · °</label><input id="cutoff_deg" type="number" value="15" min="5" max="15" step="0.5"></div>
@@ -43,17 +40,17 @@
 <div id="notice" role="status">M1/M2已完成独立短测；集成 V2 尚待上板和整车验收。先使用观察版确认姿态与方向。</div>
 <div class="metrics"><div class="metric"><span>俯仰角</span><strong id="pitch">—</strong><small>° · 相对校零姿态</small></div><div class="metric"><span>俯仰角速度</span><strong id="rate">—</strong><small>°/s</small></div><div class="metric"><span>影子转矩电流</span><strong id="shadow">—</strong><small>A · 未启动时仅计算</small></div><div class="metric"><span>IMU 数据年龄</span><strong id="age">—</strong><small>μs · 超过 3000 停机</small></div></div>
 <section class="card"><h2>启动条件</h2><div id="gates" class="gates"></div><div class="statusline"><span id="faults">等待遥测</span><span id="state">DISCONNECTED</span></div></section>
-<section class="card"><h2>调试步骤</h2><div class="actions"><button data-action="clear">人工清故障</button><button data-action="attitude_zero">姿态 / 陀螺仪校零</button><button data-action="current_zero">电流校零</button><button data-action="commission" class="power">标定下一路电角</button></div><p class="hint">电机验收后：断电下载驱动版 → 使能关闭下通 12V → 电流校零 → 逐路电角标定。标定按钮会使单路电机运动，须现场监督；失败后人工处理故障。</p><div class="actions"><button data-action="arm" class="power">解锁一次（1 秒有效）</button><button data-action="start" class="primary power">开始单次试运行</button></div><p class="hint">电流模式直接给限时 Iq；直立模式 PD 给 Iq；速度模式 PI 给俯仰修正，再经 PD 给 Iq。倾角越界、IMU 失效、心跳超时和驱动故障均停机；到时退出，重新点击才能运行。</p></section>
+<section class="card"><h2>调试步骤</h2><div class="actions"><button data-action="clear">人工清故障</button><button data-action="attitude_zero">姿态 / 陀螺仪校零</button><button data-action="current_zero">电流校零</button><button data-action="commission_m1" class="power">标定右轮 M1</button><button data-action="commission_m2" class="power">标定左轮 M2</button></div><p class="hint">电机验收后：断电下载驱动版 → 使能关闭下通 12V → 电流校零 → 明确选择右轮 M1 或左轮 M2，可先标任一路。按钮仅启动指定电机；新版普通清故障保留成功的电角标定；点击已完成的一路会重新标定该路。复位/下载后仍需标定，失败不自动重试。</p><div class="actions"><button data-action="arm" class="power">解锁一次（1 秒有效）</button><button data-action="start" class="primary power">开始单次试运行</button></div><p class="hint">电流模式直接给限时 Iq；直立模式 PD 给 Iq；速度模式 PI 给俯仰修正，再经 PD 给 Iq。倾角越界、IMU 失效、心跳超时和驱动故障均停机；到时退出，重新点击才能运行。</p></section>
 <section class="card"><h2>姿态响应</h2><div class="legend">蓝：俯仰角 °　橙：角速度 °/s（各曲线共用数值刻度）</div><canvas id="attitude" aria-label="姿态曲线"></canvas></section>
 <div class="split"><section class="card"><h2>影子输出与轮速</h2><div class="legend">上图：影子 Iq · A　下图：M1 / M2 · rpm</div><canvas id="torque" aria-label="影子输出曲线" style="height:110px"></canvas><canvas id="speed" aria-label="双轮速度曲线" style="height:110px"></canvas></section><section class="card"><h2>六相电流</h2><div class="legend">M1 A/B/C · 蓝/青/紫　M2 A/B/C · 橙/红/灰（A）</div><canvas id="current" aria-label="相电流曲线" style="height:240px"></canvas></section></div>
 <section class="card"><details><summary>通信与原始诊断</summary><pre id="debug">等待数据</pre></details><p class="hint">曲线约 200 Hz；FPGA 姿态与 PD 按 IMU 实际提交间隔更新，FOC 为 20 kHz。CSV 是遥测抽样，原始串口和完整事件记录自动保存。</p><div id="log" class="hint"></div></section>
 </article></main>
 <script>
 const token='__TOKEN__',$=id=>document.getElementById(id);
-const boolKeys=['pitch_reverse','upright_z_positive','m1_reverse','m2_reverse','axis_confirmed','m1_accepted','m2_accepted','encoder1_reverse','encoder2_reverse'];
+const boolKeys=['m1_reverse','m2_reverse','axis_confirmed','m1_accepted','m2_accepted'];
 const numKeys=['kp','kd','trim_deg','current_ma','duration_ms','start_deg','cutoff_deg','filter_shift','foc_kp','foc_ki','test_axis','current_target_ma','speed_target_rpm','speed_kp','speed_ki'];
 let dirty=true,lastState=null,noticeError=false;
-function config(){const c={axis_y:$('axis_y').value==='true',mode:Number($('mode_select').value)};boolKeys.forEach(k=>c[k]=$(k).checked);numKeys.forEach(k=>c[k]=Number($(k).value));return c;}
+function config(){const c={mode:Number($('mode_select').value)};boolKeys.forEach(k=>c[k]=$(k).checked);numKeys.forEach(k=>c[k]=Number($(k).value));return c;}
 document.querySelectorAll('input,select').forEach(e=>e.addEventListener('input',()=>{dirty=true;$('ack').textContent='参数已修改，尚未应用';updateButtons();}));
 async function post(path,body){try{const r=await fetch(path,{method:'POST',headers:{'Content-Type':'application/json','X-Balance-Token':token},body:JSON.stringify(body)});const j=await r.json();if(!r.ok)throw Error(j.error);$('error').textContent='';return true;}catch(e){$('error').textContent=e.message;return false;}}
 async function action(name){await post('/api/action',{name});await poll();}
@@ -66,11 +63,12 @@ document.querySelectorAll('[data-action]').forEach(b=>b.onclick=()=>action(b.dat
 function updateButtons(){const s=lastState,r=s?.record,live=s&&!s.demo&&s.connected&&s.fresh;
  $('connect').disabled=!!s?.demo;$('apply').disabled=!live||r?.active||r?.armed||r?.commissioning||r?.current_calibrating||r?.attitude_calibrating;
  document.querySelectorAll('[data-action]').forEach(b=>{const n=b.dataset.action;let ok=live;
- if(n!=='clear')ok=ok&&s.config_ack&&!dirty&&!r?.estop&&!r?.motor_faults;
- if(['commission','arm','start'].includes(n))ok=ok&&r.drive&&((parseInt(r.config_hex.slice(6,8),16)&224)===224);
+ if(n!=='clear')ok=ok&&s.config_ack&&!dirty&&!r?.estop&&(!r?.motor_faults||(n==='attitude_zero'&&!r?.drive));
+ if(['commission_m1','commission_m2','arm','start'].includes(n))ok=ok&&r.drive&&((parseInt(r.config_hex.slice(6,8),16)&224)===224);
+ if(n==='commission_m1'||n==='commission_m2')ok=ok&&r.independent_commission&&(r.preserve_commission_on_clear||!(r.commissioned_mask&(n==='commission_m1'?1:2)));
  if(n==='arm'||n==='start')ok=ok&&((r.gates&4095)===4095);
  if(n==='start')ok=ok&&r.armed;
- if(['current_zero','attitude_zero','commission'].includes(n))ok=ok&&!r?.active&&!r?.armed&&!r?.commissioning&&!r?.current_calibrating&&!r?.attitude_calibrating;
+ if(['current_zero','attitude_zero','commission_m1','commission_m2'].includes(n))ok=ok&&!r?.active&&!r?.armed&&!r?.commissioning&&!r?.current_calibrating&&!r?.attitude_calibrating;
  b.disabled=!ok;});}
 function plot(id,rows,columns,colors,minRange){const el=$(id),dpr=window.devicePixelRatio||1,w=el.clientWidth,h=el.clientHeight;el.width=w*dpr;el.height=h*dpr;const c=el.getContext('2d');c.scale(dpr,dpr);c.clearRect(0,0,w,h);let bound=minRange;
  rows.forEach(r=>columns.forEach(i=>{if(Number.isFinite(r[i]))bound=Math.max(bound,Math.abs(r[i]));}));bound*=1.15;
@@ -84,12 +82,12 @@ async function poll(){try{const resp=await fetch('/api/state');if(!resp.ok)throw
  const fixed=(v,d=2)=>Number.isFinite(v)?v.toFixed(d):'—';$('pitch').textContent=fixed(r?.pitch);$('rate').textContent=fixed(r?.rate);$('shadow').textContent=fixed(r?.shadow_a,3);$('age').textContent=r?.age_us??'—';
  $('gates').replaceChildren(...s.gates.map((g,i)=>{const d=document.createElement('div');const ok=!!(r&&(r.gates&(1<<i)));d.className='gate'+(ok?' ok':'');d.textContent=(ok?'✓ ':'○ ')+g;return d;}));
  $('state').textContent=!r?'DISCONNECTED':!s.fresh?'STALE':r.active?'平衡试运行':r.commissioning?'电角标定中':r.armed?'已解锁 · 请立即开始':r.attitude_calibrating?'姿态校零 '+r.zero_progress+'/1024':'停止';
- $('faults').textContent=r?'停机原因 0x'+r.stop_reason.toString(16)+' / 电机故障 0x'+r.motor_faults.toString(16)+' / 电角完成 '+r.commissioned_mask.toString(2).padStart(2,'0'):'等待遥测';
+ $('faults').textContent=r?'停机原因 0x'+r.stop_reason.toString(16)+' / 电机故障 0x'+r.motor_faults.toString(16)+' / 已标定：右轮 '+((r.commissioned_mask&1)?'是':'否')+'、左轮 '+((r.commissioned_mask&2)?'是':'否')+' / 本次标定 M'+r.commission_axis:'等待遥测';
  if(!dirty)$('ack').textContent=s.config_ack?'✓ FPGA 完整参数回显已确认':'参数未确认 / 已失效';
  $('log').textContent='静止预检：'+s.stationary_preflight+' · 自动记录：'+s.log_dir;$('debug').textContent=JSON.stringify({stats:s.stats,...r},null,2);
  const rows=s.history;plot('attitude',rows,[1,2],['#1966d2','#db861e'],2);plot('torque',rows,[3],['#1966d2'],.01);plot('speed',rows,[4,5],['#1966d2','#db861e'],5);plot('current',rows,[6,7,8,9,10,11],['#1966d2','#149ea5','#945fd4','#db861e','#d34048','#788394'],.01);updateButtons();
  }catch(e){$('notice').textContent='上位机连接中断；FPGA 心跳超时将停止驱动。请检查本地服务。';$('notice').className='error';lastState=null;updateButtons();}}
 $('save_config').onclick=()=>{const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify({schema:'balance-v2',config:config()},null,2)],{type:'application/json'}));a.download='balance-v2-parameters.json';a.click();URL.revokeObjectURL(a.href);};
-$('load_config').onchange=async e=>{try{const j=JSON.parse(await e.target.files[0].text());if(j.schema!=='balance-v2')throw Error('仅接受 balance-v2 参数');const c=j.config;boolKeys.forEach(k=>{if(typeof c[k]!=='boolean')throw Error(k);});numKeys.forEach(k=>{if(!Number.isFinite(c[k]))throw Error(k);});boolKeys.forEach(k=>$(k).checked=c[k]);numKeys.forEach(k=>$(k).value=c[k]);['axis_confirmed','m1_accepted','m2_accepted'].forEach(k=>$(k).checked=false);$('axis_y').value=String(c.axis_y);$('mode_select').value=c.mode;dirty=true;updateButtons();$('ack').textContent='已导入到表单，尚未发送；请检查确认位和方向';}catch(x){$('error').textContent=x.message;}};
+$('load_config').onchange=async e=>{try{const j=JSON.parse(await e.target.files[0].text());if(j.schema!=='balance-v2')throw Error('仅接受 balance-v2 参数');const c=j.config;if(['axis_y','pitch_reverse','upright_z_positive','encoder1_reverse','encoder2_reverse'].some(k=>k in c))throw Error('旧参数含可选方向；请使用本车固定方向的新参数');boolKeys.forEach(k=>{if(typeof c[k]!=='boolean')throw Error(k);});numKeys.forEach(k=>{if(!Number.isFinite(c[k]))throw Error(k);});boolKeys.forEach(k=>$(k).checked=c[k]);numKeys.forEach(k=>$(k).value=c[k]);['axis_confirmed','m1_accepted','m2_accepted'].forEach(k=>$(k).checked=false);$('mode_select').value=c.mode;dirty=true;updateButtons();$('ack').textContent='已导入到表单，尚未发送；请检查车轮方向确认位';}catch(x){$('error').textContent=x.message;}};
 $('refresh').click();poll();setInterval(poll,200);
 </script></html>

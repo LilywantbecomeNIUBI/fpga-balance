@@ -12,3 +12,13 @@ motor_control/ip/
 dist/
 *.zip
 .env
+
+# Publish the current manual release; keep local historical releases/logs.
+/releases/*
+!/releases/MOTOR_MANUAL_20261028_R4/
+/releases/**/results/
+/releases/**/build/
+/releases/**/motor_control/ip/
+!/releases/MOTOR_MANUAL_20261028_R4/firmware/*.fs
+/docs/debug.log
+/evidence/engineering/pd_observation_poll.stop

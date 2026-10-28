@@ -5,9 +5,10 @@ module tb_supervisor;
  reg [7:0] cmd=0,flags=8'he0;reg signed [31:0] pitch=0;
  reg [15:0] duration=1000;reg current=1,cbusy=0,commissioned=1,commissioning=0;reg [11:0] faults=0;
  wire active,armed,clear,cal,zero,comm,estop,can;wire [15:0] reason,gates;wire [7:0] rejected;
+ wire [1:0] commission_select;
  balance_supervisor #(.ALLOW_DRIVE(1),.CLK_HZ(10000)) dut(clk,rst,cv,configured,changed,cmd,flags,
  imu,att,attbusy,attbad,pitch,16'd1500,16'd300,duration,current,cbusy,commissioned,commissioning,faults,
- active,armed,clear,cal,zero,comm,estop,can,reason,gates,rejected);
+ active,armed,clear,cal,zero,comm,estop,can,reason,gates,rejected,commission_select);
  wire obsactive,obsarmed,obscomm;
  balance_supervisor #(.ALLOW_DRIVE(0),.CLK_HZ(10000)) observe(.clk(clk),.rst_n(rst),.command_valid(cv),
  .configured(configured),.config_changed(changed),.command(cmd),.flags(flags),.imu_ok(imu),
@@ -21,7 +22,12 @@ module tb_supervisor;
  initial begin
  repeat(3)@(negedge clk);rst=1;send(0);
  flags=8'h60;send(6);send(7);if(active || armed)$fatal(1,"unaccepted M2 admitted");
- send(5);if(comm)$fatal(1,"unaccepted commissioning admitted");flags=8'he0;
+ send(9);if(comm)$fatal(1,"unaccepted commissioning admitted");flags=8'he0;
+ send(5);if(comm || rejected!=5)$fatal(1,"legacy automatic commissioning admitted");
+ send(10);if(!comm || commission_select!=2 || obscomm)$fatal(1,"explicit M2 selection");
+ send(9);if(!comm || commission_select!=1 || obscomm)$fatal(1,"explicit M1 selection");
+ commissioning=1;send(10);if(comm)$fatal(1,"busy commissioning admitted");commissioning=0;
+ commissioned=0;send(6);if(armed)$fatal(1,"uncommissioned runtime admitted");commissioned=1;
  pitch=4*65536;send(6);if(armed)$fatal(1,"start tilt gate");pitch=0;
  run_start;pitch=16*65536;repeat(3)@(negedge clk);
  if(active || !estop || reason!=16'h10)$fatal(1,"tilt protection");

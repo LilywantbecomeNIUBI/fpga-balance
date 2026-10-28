@@ -1,0 +1,13 @@
+{
+  "release": "MOTOR_MANUAL_20261027_R2",
+  "duration_ms": 2000,
+  "iq_ma": 400,
+  "limit_ma": 500,
+  "motor_axis": 2,
+  "host_tests_passed": 20,
+  "node_flow_tests_passed": true,
+  "firmware_changed": false,
+  "hardware_trial_performed": false,
+  "screenshot": "evidence/engineering/m2_one_click_R2_20261027.jpg",
+  "physical_rotation_does_not_prove_full_commutation_acceptance": true
+}

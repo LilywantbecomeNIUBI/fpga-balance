@@ -1,9 +1,6 @@
 {
   "schema": "balance-v2",
   "config": {
-    "axis_y": true,
-    "pitch_reverse": false,
-    "upright_z_positive": false,
     "m1_reverse": false,
     "m2_reverse": true,
     "axis_confirmed": false,
@@ -24,8 +21,6 @@
     "current_target_ma": 0,
     "speed_target_rpm": 0.0,
     "speed_kp": 0.0,
-    "speed_ki": 0.0,
-    "encoder1_reverse": false,
-    "encoder2_reverse": false
+    "speed_ki": 0.0
   }
 }

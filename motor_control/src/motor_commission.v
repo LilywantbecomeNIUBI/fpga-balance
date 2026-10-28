@@ -2,11 +2,14 @@
 // Exactly one motor per commissioning build. Direction is inferred from a full
 // slow electrical revolution, then travel must agree with the configured poles.
 // Zero is captured at stationary electrical angle zero, with PWM DISARMED before
-// runtime calibration constants change. Reset/clear invalidates the result.
+// runtime calibration constants change. Reset always invalidates the result.
+// Optional integrated lifecycle preserves completed constants on fault clear.
+// An explicit new start invalidates only this axis before recalibration.
 module motor_commission #(
     parameter POLE_PAIRS=11, SETTLE_FRAMES=10000, PREALIGN_FRAMES=0, SWEEP_FRAMES=20000,
               END_FRAMES=6000, QUIET_FRAMES=2000,HANDOFF_CYCLES=50000,
-              MAX_RUN_CYCLES=120000000,PULSE_ONLY=0,PROBE_SWITCH_CYCLES=0
+              MAX_RUN_CYCLES=120000000,PULSE_ONLY=0,PROBE_SWITCH_CYCLES=0,
+              PRESERVE_CAL_ON_CLEAR=0,RELAXED_ACCEPTANCE=0
 )(
     input wire clk,rst_n,start,clear_fault,calibrated,feedback_valid,running,
     input wire [13:0] mechanical,
@@ -35,7 +38,12 @@ module motor_commission #(
             state<=IDLE;arm<=0;done<=0;failed<=0;reverse<=0;zero<=0;theta<=0;
             frames<=0;cycles<=0;first_angle<=0;quiet_angle<=0;direction_candidate<=0;start_pending<=0;phase_remainder<=0;
         end else if(clear_fault && !arm) begin
-            state<=IDLE;done<=0;failed<=0;theta<=0;frames<=0;cycles<=0;reverse<=0;zero<=0;start_pending<=0;
+            state<=PRESERVE_CAL_ON_CLEAR && done ? COMPLETE : IDLE;
+            done<=PRESERVE_CAL_ON_CLEAR && done;failed<=0;theta<=0;frames<=0;cycles<=0;start_pending<=0;
+            if(!PRESERVE_CAL_ON_CLEAR || !done) begin reverse<=0;zero<=0;end
+        end else if(PRESERVE_CAL_ON_CLEAR && start && state==COMPLETE && !arm && !(|faults)) begin
+            // The selected completed axis may be explicitly recalibrated.
+            state<=IDLE;done<=0;failed<=0;start_pending<=1;frames<=0;cycles<=0;theta<=0;
         end else if(busy && (|faults)) begin
             state<=FAIL;arm<=0;failed<=1;
         end else if(busy && cycles>=MAX_RUN_CYCLES) begin
@@ -65,7 +73,7 @@ module motor_commission #(
                     if(frames==SETTLE_FRAMES-1) begin
                         // With theta=0, D-current should give Ia>0, Ib<0.
                         // Broad commissioning check; not a measured PI-bandwidth test.
-                        if(quiet>16 || quiet< -16 || ia<128 || ia>1536 || ib>=0 || ib< -1024) begin
+                        if(!RELAXED_ACCEPTANCE && (quiet>16 || quiet< -16 || ia<128 || ia>1536 || ib>=0 || ib< -1024)) begin
                             state<=FAIL;arm<=0;failed<=1;
                         end else begin state<=SWEEP;frames<=0;first_angle<=mechanical;phase_remainder<=0;end
                     end
@@ -84,9 +92,11 @@ module motor_commission #(
                     frames<=frames+1;
                     if(frames==END_FRAMES-QUIET_FRAMES) quiet_angle<=mechanical;
                     if(frames==END_FRAMES-1) begin
-                        if(distance<EXPECTED*85/100 || distance>EXPECTED*115/100 ||
-                           quiet>16 || quiet< -16 || travel[13]!=direction_candidate ||
-                           ia<128 || ia>1536 || ib>=0 || ib< -1024) begin
+                        // Travel error widened 5x (15% -> 75%); current/quiet no longer reject.
+                        if(distance<EXPECTED*(RELAXED_ACCEPTANCE ? 25 : 85)/100 ||
+                           distance>EXPECTED*(RELAXED_ACCEPTANCE ? 175 : 115)/100 ||
+                           travel[13]!=direction_candidate || (!RELAXED_ACCEPTANCE &&
+                           (quiet>16 || quiet< -16 || ia<128 || ia>1536 || ib>=0 || ib< -1024))) begin
                             state<=FAIL;arm<=0;failed<=1;
                         end else begin arm<=0;cycles<=0;state<=OFF;end
                     end

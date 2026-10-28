@@ -20,19 +20,16 @@ ROOT = HERE.parent
 from protocol import Config, Parser, command, frame, demo_packet, GATES
 
 def stationary_check(rows):
-    """Host preflight only; never replaces FPGA protection."""
+    """Advisory only; current zero is still required by the FPGA."""
     tail=list(rows)[-500:]
-    if len(tail)<500:return False,'等待至少500包静止数据（约2.5秒）'
-    if ((tail[-1]['time_us']-tail[0]['time_us'])&0xffffffff)>4000000:return False,'静止记录不连续'
-    if any(r['running'] or r['commissioning'] or not r['current_calibrated'] or r['motor_faults'] for r in tail):return False,'等待电流校零完成且两路停止'
-    for axis in (0,1):
-        base=tail[0]['angles'][axis]
-        movement=[((r['angles'][axis]-base+8192)&16383)-8192 for r in tail]
-        if max(movement)-min(movement)>2:return False,'轮子尚未停稳'
+    if not tail:return True,'Warning: 尚无静止抽样数据'
+    warnings=[]
     for i in range(6):
         values=[r['currents_a'][i] for r in tail]
-        if abs(statistics.mean(values))>=.025 or max(abs(v) for v in values)>=.225:return False,f'相电流{i+1}静止偏置/峰值超限'
-    return True,'静止预检通过（串口抽样）'
+        if abs(statistics.mean(values))>=.025 or max(abs(v) for v in values)>=.225:
+            warnings.append(f'相电流{i+1}静止偏置/峰值超限')
+    return True,('Warning: '+'; '.join(warnings)) if warnings else '静止电流抽样正常'
+
 
 
 class LocalServer(ThreadingHTTPServer):
@@ -114,7 +111,7 @@ class Link:
             if name == 'stop':
                 self.config_ack = False; self.pending_config = None; self.queue.clear()
                 if self.serial and self.record is not None: self.serial.write(b'X')
-                self.message = '已请求停止；清故障后须重新应用参数、校零与标定'
+                self.message = '已请求停止；清故障后须重新应用参数与校零；电角标定是否保留以固件回报为准'
                 self.event('stop', sent=bool(self.serial and self.record is not None)); return
             if self.demo: raise ValueError('模拟模式仅显示曲线，控制按钮不向硬件发送命令')
             if not self.serial or not self.fresh(): raise ValueError('未收到新鲜的 Balance V2 数据，命令已拦截')
@@ -122,25 +119,31 @@ class Link:
             if name == 'config':
                 if r['active'] or r['armed'] or r['commissioning'] or r['current_calibrating'] or r['attitude_calibrating']:
                     raise ValueError('请先停止，等待校准结束后修改参数')
-                if r['stop_reason'] or r['motor_faults']: raise ValueError('先人工清故障，再应用参数')
+                if r['stop_reason'] or (r['drive'] and r['motor_faults']): raise ValueError('先人工清故障，再应用参数')
                 cfg = Config(**(values or {})); body = cfg.body(self.next_seq())
                 self.pending_config = body.hex(); self.config_deadline = time.monotonic()+1
                 self.config_ack = False; self.queue.append(frame(body))
                 self.event('config_requested', config=asdict(cfg), body=body.hex())
                 self.message = '参数已发送，等待 FPGA 完整回显确认'
                 return
-            if name not in ('clear', 'current_zero', 'attitude_zero', 'commission', 'arm', 'start'):
+            commissioning_action = name in ('commission_m1', 'commission_m2')
+            if name not in ('clear', 'current_zero', 'attitude_zero', 'commission_m1', 'commission_m2', 'arm', 'start'):
                 raise ValueError('未知操作')
             if name != 'clear' and not self.config_ack:
                 raise ValueError('参数尚未获得 FPGA 确认')
-            if name in ('commission', 'arm', 'start'):
+            if commissioning_action:
+                if not r.get('independent_commission'): raise ValueError('当前固件不支持指定电机标定；请先断12V下载新版')
+                selected = 1 if name == 'commission_m1' else 2
+                if r['commissioned_mask'] & selected and not r.get('preserve_commission_on_clear'): raise ValueError('该电机本次已标定；重新标定须人工清故障并重新校零')
+            if commissioning_action or name in ('arm', 'start'):
                 if not r['drive']: raise ValueError('观察版物理禁止驱动，请在电机验收后使用驱动版')
                 flags = bytes.fromhex(r['config_hex'])[3]
-                if flags & 0xe0 != 0xe0: raise ValueError('必须确认轴向与M1/M2两路电机验收')
+                if flags & 0xe0 != 0xe0: raise ValueError('必须确认姿态与前进轴向及M1/M2两路电机验收')
                 if r['stop_reason'] or r['motor_faults']: raise ValueError('故障锁存中')
                 if r['commission_failed']: raise ValueError('电角标定失败；检查硬件后人工清故障，不能直接重试')
                 ok,reason=stationary_check(self.history)
-                if not ok:raise ValueError(reason)
+                if reason.startswith('Warning:'):
+                    print(reason,flush=True);self.event('warning',message=reason)
             if name in ('arm', 'start') and r['gates'] & 0xfff != 0xfff:
                 raise ValueError('启动条件未全部满足')
             if name == 'start' and not r['armed']: raise ValueError('请先解锁，并在 1 秒内开始单次试运行')
@@ -164,7 +167,7 @@ class Link:
             if self.pending_config and r['configured'] and r['config_hex'] == self.pending_config:
                 self.config_ack = True; self.pending_config = None; self.message = 'FPGA 参数回显一致；每次调参后需重新姿态校零'
                 self.event('config_ack', body=r['config_hex'])
-            if not r['configured'] or r['stop_reason'] or r['motor_faults']: self.config_ack = False
+            if not r['configured'] or r['stop_reason'] or (r['drive'] and r['motor_faults']): self.config_ack = False
             if r['commission_failed']:
                 self.message='电角标定失败；驱动已退出。检查硬件后人工清故障，再重新校零与标定'
             elif r['rejected']:

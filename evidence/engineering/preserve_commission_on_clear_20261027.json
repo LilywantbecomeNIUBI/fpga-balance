@@ -1,0 +1,122 @@
+{
+  "change": "Preserve completed electrical calibration on manual clear in integrated balance only",
+  "scope": {
+    "legacy_standalone_default_unchanged": true,
+    "reset_or_reprogram_invalidates": true,
+    "explicit_selected_recommission_invalidates_selected_only": true,
+    "failed_recommission_cannot_reuse_old_done": true,
+    "fault_clear_never_arms_or_starts": true,
+    "current_and_attitude_zero_still_required": true,
+    "protections_unchanged": true
+  },
+  "validation": {
+    "rtl_tests": 11,
+    "host_tests": 16,
+    "all_passed": true,
+    "hardware_downloaded": true,
+    "hardware_accepted": true,
+    "additional_legacy_compatibility_test": "passed real FSM default-vs-preserve clear and reset",
+    "rtl_checks_total_including_compatibility": 12,
+    "hardware_acceptance_scope": "Both commissioning completion bits remained set after explicit manual clear; drive stayed disabled, current zero invalidated as designed",
+    "hardware_evidence": "balance/results/20261027_175443_e5626d/both_commission_clear_verify_20261027_175809.json"
+  },
+  "firmware_capability": "telemetry byte17 bit7",
+  "build": {
+    "success": true,
+    "sources_unchanged": true,
+    "setup_violations": 0,
+    "hold_violations": 0,
+    "bitstream_sha256": "0e85a01a8a591a0ad4f1b0751b0d3e698411fb37a104b5c1e27ef6f836a1e615",
+    "download_allowed": true
+  },
+  "deployment": {
+    "motor12v": "user confirmed OFF",
+    "download": "SRAM only, programmer finished",
+    "new_firmware_identity_verified": true,
+    "host_restarted": true,
+    "motion_commands_sent": 0,
+    "log_dir": "E:\\Gowin_project\\fpga_project\\team_repos\\fpga-balance\\balance\\results\\20261027_175443_e5626d",
+    "record": {
+      "time_us": 43830020,
+      "imu_seq": 43836,
+      "motor_seq": 874516,
+      "drive": true,
+      "attitude_calibrated": false,
+      "attitude_calibrating": false,
+      "current_calibrated": false,
+      "current_calibrating": false,
+      "running": false,
+      "commissioning": false,
+      "commission_failed": false,
+      "active": false,
+      "armed": false,
+      "estop": true,
+      "attitude_bad": false,
+      "independent_commission": true,
+      "preserve_commission_on_clear": true,
+      "commission_axis": 0,
+      "imu_ok": true,
+      "configured": false,
+      "gates": 515,
+      "stop_reason": 1,
+      "motor_faults": 1,
+      "pitch": 0.0,
+      "rate": 0.0,
+      "shadow_a": 0.0,
+      "iq1_a": 0.0,
+      "iq2_a": 0.0,
+      "interval_us": 1087,
+      "age_us": 146,
+      "accel": [
+        -0.001953125,
+        -0.0245361328125,
+        -1.000244140625
+      ],
+      "gyro": [
+        0.152587890625,
+        -0.42724609375,
+        -0.091552734375
+      ],
+      "temp_c": 21.9957729468599,
+      "currents_a": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "angles": [
+        12069,
+        9605
+      ],
+      "zero_progress": 0,
+      "imu_errors": 0,
+      "imu_invalid": 0,
+      "rx_errors": 0,
+      "ack_seq": 3,
+      "result": 0,
+      "rejected": 0,
+      "commissioned_mask": 0,
+      "commission_state": 0,
+      "who_am_i": 71,
+      "imu_last_error": 0,
+      "config_hex": "0000000000000000000000000000000000000000000000000000000000000000",
+      "wheel_rpm": [
+        0.0,
+        0.0
+      ],
+      "speed_trim_deg": 0.0,
+      "host_time": 1793094909.1320636,
+      "demo": false,
+      "rpm": [
+        0.0,
+        0.0
+      ],
+      "rpm_raw": [
+        0.0,
+        0.0
+      ]
+    }
+  }
+}

@@ -3,7 +3,7 @@
 // CURRENT_LAG includes analog group delay only; conversion/SSI readout is NOT
 // subtracted twice. Its effect is already represented by the sample timestamp.
 module motor_measurement_angle #(
-    parameter CURRENT_LAG=0,ENCODER_LAG=0,FRAME_CYCLES=2500,
+    parameter CHECKS_ENABLED=1, CURRENT_LAG=0,ENCODER_LAG=0,FRAME_CYCLES=2500,
               MAX_STEP=64,MAX_EPOCH_DELTA=6250,WINDOW_LOG2=4,MAX_WINDOW_TICKS=32
 )(
     input wire clk,rst_n,valid,
@@ -42,7 +42,7 @@ module motor_measurement_angle #(
             captured<=0;negative<=0;dividend<=0;quotient<=0;remainder<=0;bits_left<=0;
         end else begin
           aligned_valid<=0;
-          if(valid && state!=0) timing_fault<=1;
+          if(CHECKS_ENABLED && valid && state!=0) timing_fault<=1;
           case(state)
           0: if(valid) begin
             previous<=mechanical;previous_time<=encoder_time;aligned<=mechanical;
@@ -51,11 +51,11 @@ module motor_measurement_angle #(
             initialized<=1;
             if(initialized) begin
                 step<=delta;
-                if(interval!=FRAME_CYCLES || epoch_delta>MAX_EPOCH_DELTA ||
-                   epoch_delta< -MAX_EPOCH_DELTA) timing_fault<=1;
-                if(delta>MAX_STEP || delta< -MAX_STEP) speed_fault<=1;
+                if(CHECKS_ENABLED && (interval!=FRAME_CYCLES || epoch_delta>MAX_EPOCH_DELTA ||
+                   epoch_delta< -MAX_EPOCH_DELTA)) timing_fault<=1;
+                if(CHECKS_ENABLED && (delta>MAX_STEP || delta< -MAX_STEP)) speed_fault<=1;
                 if(&window_count) begin
-                    if(total>MAX_WINDOW_TICKS || total< -MAX_WINDOW_TICKS) speed_fault<=1;
+                    if(CHECKS_ENABLED && (total>MAX_WINDOW_TICKS || total< -MAX_WINDOW_TICKS)) speed_fault<=1;
                     window_count<=0;window_sum<=0;
                 end else begin window_count<=window_count+1'b1;window_sum<=total[19:0];end
             end

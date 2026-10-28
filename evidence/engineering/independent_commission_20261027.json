@@ -1,0 +1,98 @@
+{
+  "change": "Independent explicitly selected electrical commissioning in integrated firmware",
+  "commands": {
+    "right_M1": 9,
+    "left_M2": 10,
+    "legacy_next_axis": 5
+  },
+  "legacy_next_axis_rejected": true,
+  "any_order": true,
+  "pending_first_feedback_reserves_axis": true,
+  "never_queues_other_axis": true,
+  "unselected_outputs_masked": true,
+  "single_axis_done_blocks_dual_runtime": true,
+  "global_reset_or_fault_clear_invalidates_both": true,
+  "current_target_unchanged_a": {
+    "Id": 0.25,
+    "Iq": 0
+  },
+  "phase_trip_unchanged_a_nominal": 0.5,
+  "rtl_tests": [
+    {
+      "test": "tb_dual_iq",
+      "passed": true
+    },
+    {
+      "test": "tb_imu_reader",
+      "passed": true
+    },
+    {
+      "test": "tb_imu_startup",
+      "passed": true
+    },
+    {
+      "test": "tb_independent_commission",
+      "passed": true
+    },
+    {
+      "test": "tb_math",
+      "passed": true
+    },
+    {
+      "test": "tb_sdiv",
+      "passed": true
+    },
+    {
+      "test": "tb_speed",
+      "passed": true
+    },
+    {
+      "test": "tb_supervisor",
+      "passed": true
+    },
+    {
+      "test": "tb_telemetry",
+      "passed": true
+    },
+    {
+      "test": "tb_top_shadow",
+      "passed": true
+    },
+    {
+      "test": "tb_protocol",
+      "passed": true
+    }
+  ],
+  "host_test_count": 16,
+  "host_exit": 0,
+  "hardware_independent_selection_tested": false,
+  "user_confirmed_12v_off": true,
+  "deployed_identity": {
+    "bitstream_sha256": "84a6f0b9a21ebc56fa15e6272efe5f3d6fef71a2a05cb8a6b53cc4e86d4a8b6c",
+    "programmed_sram": true,
+    "12v": "user explicitly confirmed OFF; logic ON",
+    "independent_commission_all": true,
+    "drive": true,
+    "active": false,
+    "armed": false,
+    "running": false,
+    "commissioning": false,
+    "commissioned_mask": 0,
+    "commission_axis": 0,
+    "imu_ok_all": true,
+    "imu_errors": 0,
+    "stop_reason": 1,
+    "motor_faults": 1,
+    "stats": {
+      "packets": 389,
+      "crc_errors": 0,
+      "discarded": 0,
+      "gaps": 0
+    },
+    "log_dir": "E:\\Gowin_project\\fpga_project\\team_repos\\fpga-balance\\balance\\results\\20261027_172003_26d69e",
+    "motion_commands_sent": 0
+  },
+  "setup_violations": 0,
+  "hold_violations": 0,
+  "arm_path_simplification": "Removed redundant state-decode mux; FSM registered commission arm OR interlocked runtime arm. No added delay to physical fault/estop kill"
+}

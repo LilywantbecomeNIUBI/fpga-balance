@@ -1,7 +1,6 @@
 // 1 kHz estimator; actual commit intervals, no host timing in the loop.
 module balance_attitude #(parameter ZERO_LOG2=10)(
     input wire clk,rst_n,sample_valid,zero_start,invalidate,
-    input wire [2:0] orientation, // axis Y, invert pitch, upright Z positive
     input wire [3:0] filter_shift,
     input wire signed [15:0] ax,ay,az,gx,gy,gz,
     input wire [31:0] commit_us,
@@ -9,12 +8,11 @@ module balance_attitude #(parameter ZERO_LOG2=10)(
     output reg signed [31:0] pitch,rate,
     output reg [15:0] interval_us,
     output reg [15:0] zero_progress);
-    wire signed [16:0] sx={ax[15],ax},sy={ay[15],ay},sz={az[15],az};
-    wire signed [16:0] x=orientation[2] ? sz : -sz;
-    wire signed [16:0] base_y=orientation[0] ? (orientation[2] ? -sx : sx) : (orientation[2] ? sy : -sy);
-    wire signed [16:0] y=orientation[1] ? -base_y : base_y;
-    wire signed [15:0] gyro_axis=orientation[0] ? gy : gx;
-    wire signed [31:0] gyro_signed=orientation[1] ? -$signed(gyro_axis) : $signed(gyro_axis);
+    // Fixed vehicle installation: Y pitch axis, front positive, upright -Z.
+    // Extend before negation to handle the signed16 minimum without overflow.
+    wire signed [16:0] x=-$signed({az[15],az});
+    wire signed [16:0] y=-$signed({ax[15],ax});
+    wire signed [31:0] gyro_signed=-$signed({{16{gy[15]}},gy});
     wire [33:0] norm2=$signed(ax)*$signed(ax)+$signed(ay)*$signed(ay)+$signed(az)*$signed(az);
     wire stationary=norm2>34'd48486154 && norm2<34'd88751472 &&
         gx>-100 && gx<100 && gy>-100 && gy<100 && gz>-100 && gz<100;

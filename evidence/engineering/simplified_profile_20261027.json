@@ -1,0 +1,129 @@
+{
+  "change": "Simplified integrated runtime protection",
+  "user_current_limit_a": 1.0,
+  "speed_parameters_ticks": 512,
+  "speed_timing_checks_enabled": false,
+  "software_overcurrent_stop": false,
+  "retained_stop_sources": [
+    "manual Stop",
+    "host heartbeat loss",
+    "M1/M2 hardware nFAULT",
+    "tilt"
+  ],
+  "clear_requires": [
+    "config acknowledgment",
+    "current zero",
+    "attitude zero"
+  ],
+  "clear_preserves_completed_electrical_calibration": true,
+  "commission_travel_range_percent": [
+    25,
+    175
+  ],
+  "commission_current_quiet_rejection": false,
+  "pd_changed": false,
+  "tests": {
+    "rtl": 13,
+    "host": 16,
+    "passed": true,
+    "simplified_supervisor_test": "tilt and heartbeat remain; IMU runtime faults removed"
+  },
+  "deployment": {
+    "motor_12v": "user confirmed OFF; logic ON",
+    "downloaded": true,
+    "motion_commands_sent": 0,
+    "method": "SRAM Program, programmer Finished; Flash untouched",
+    "host_restarted": true,
+    "log_dir": "E:\\Gowin_project\\fpga_project\\team_repos\\fpga-balance\\balance\\results\\20261027_215227_3f0bdf",
+    "stopped_state": {
+      "time_us": 47340020,
+      "imu_seq": 47354,
+      "motor_seq": 944716,
+      "drive": true,
+      "attitude_calibrated": false,
+      "attitude_calibrating": false,
+      "current_calibrated": false,
+      "current_calibrating": false,
+      "running": false,
+      "commissioning": false,
+      "commission_failed": false,
+      "active": false,
+      "armed": false,
+      "estop": true,
+      "attitude_bad": false,
+      "independent_commission": true,
+      "preserve_commission_on_clear": true,
+      "commission_axis": 0,
+      "imu_ok": true,
+      "configured": false,
+      "gates": 515,
+      "stop_reason": 1,
+      "motor_faults": 1,
+      "pitch": 0.0,
+      "rate": 0.0,
+      "shadow_a": 0.0,
+      "iq1_a": 0.0,
+      "iq2_a": 0.0,
+      "interval_us": 937,
+      "age_us": 1035,
+      "accel": [
+        -0.0264892578125,
+        -0.021240234375,
+        -0.9998779296875
+      ],
+      "gyro": [
+        0.18310546875,
+        -0.396728515625,
+        -0.1220703125
+      ],
+      "temp_c": 22.07125603864734,
+      "currents_a": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "angles": [
+        15843,
+        12518
+      ],
+      "zero_progress": 0,
+      "imu_errors": 0,
+      "imu_invalid": 0,
+      "rx_errors": 0,
+      "ack_seq": 4,
+      "result": 0,
+      "rejected": 0,
+      "commissioned_mask": 0,
+      "commission_state": 0,
+      "who_am_i": 71,
+      "imu_last_error": 0,
+      "config_hex": "0000000000000000000000000000000000000000000000000000000000000000",
+      "wheel_rpm": [
+        0.0,
+        0.0
+      ],
+      "speed_trim_deg": 0.0,
+      "host_time": 1793109174.3610442,
+      "demo": false,
+      "rpm": [
+        0.0,
+        0.0
+      ],
+      "rpm_raw": [
+        0.0,
+        0.0
+      ]
+    }
+  },
+  "next_test_preset": "balance/presets/05_M2_positive_direction_200mA_200ms.json",
+  "build": {
+    "success": true,
+    "sources_unchanged": true,
+    "setup_violations": 0,
+    "hold_violations": 0,
+    "bitstream_sha256": "805489cebf2f61b942ba3a02e1bb392cf83f4e3254a8f8226337cbec02e96a0c"
+  }
+}

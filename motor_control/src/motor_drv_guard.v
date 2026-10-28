@@ -1,7 +1,7 @@
 // One dual-motor interlock: a fault on either motor shuts down both.
 // Inputs are synchronous EXCEPT physical fault_n and estop. Those also mask
 // pins combinationally, so a between-clock fault cannot emit a full PWM pulse.
-module motor_drv_guard #(parameter WAKE_CYCLES=50000, MOTOR_MASK=2'b11)(
+module motor_drv_guard #(parameter SIMPLE_PROTECTION=0, WAKE_CYCLES=50000, MOTOR_MASK=2'b11)(
     input wire clk, rst_n, arm, clear_fault, ready, estop,
     input wire [1:0] fault_n,
     input wire sensor_fault, overcurrent, sync_fault,
@@ -30,8 +30,9 @@ module motor_drv_guard #(parameter WAKE_CYCLES=50000, MOTOR_MASK=2'b11)(
     wire overlap=(pwm_in[0]&&pwm_in[1]) || (pwm_in[2]&&pwm_in[3]) ||
                  (pwm_in[4]&&pwm_in[5]) || (pwm_in[6]&&pwm_in[7]) ||
                  (pwm_in[8]&&pwm_in[9]) || (pwm_in[10]&&pwm_in[11]);
-    wire live_kill=estop || kill_latched || sensor_fault || overcurrent ||
-                   sync_fault || (state==RUN && (!ready || !(&selected_fault_n) || overlap));
+    wire live_kill=estop || kill_latched || (state==RUN && !(&selected_fault_n)) ||
+        (!SIMPLE_PROTECTION && (sensor_fault || overcurrent || sync_fault ||
+                              (state==RUN && (!ready || overlap))));
     assign running=rst_n && state==RUN && arm && ready && faults==0 && !live_kill;
     assign pwm_out=running ? pwm_in & {{6{MOTOR_MASK[1]}},{6{MOTOR_MASK[0]}}} : 12'b0;
     assign drv_en=(rst_n && (state==WAKING || state==RUN) && arm && faults==0 && !live_kill) ? MOTOR_MASK : 2'b00;
@@ -48,14 +49,14 @@ module motor_drv_guard #(parameter WAKE_CYCLES=50000, MOTOR_MASK=2'b11)(
                 faults<=0; state<=OFF; arm_pending<=0;
             end else if(live_kill) begin
                 state<=OFF; arm_pending<=0;
-                if(estop || kill_latched) faults[0]<=1;
+                if(estop || (!SIMPLE_PROTECTION && kill_latched)) faults[0]<=1;
                 if(watch_driver && !selected_fault_n[0]) faults[1]<=1;
                 if(watch_driver && !selected_fault_n[1]) faults[2]<=1;
-                if(sensor_fault) faults[3]<=1;
-                if(overcurrent) faults[4]<=1;
-                if(watch_driver && overlap) faults[5]<=1;
-                if(sync_fault) faults[6]<=1;
-                if(watch_driver && !ready) faults[7]<=1;
+                if(!SIMPLE_PROTECTION && (sensor_fault)) faults[3]<=1;
+                if(!SIMPLE_PROTECTION && (overcurrent)) faults[4]<=1;
+                if(!SIMPLE_PROTECTION && (watch_driver && overlap)) faults[5]<=1;
+                if(!SIMPLE_PROTECTION && (sync_fault)) faults[6]<=1;
+                if(!SIMPLE_PROTECTION && (watch_driver && !ready)) faults[7]<=1;
             end else if(!arm || faults!=0) begin state<=OFF; wait_count<=0; end
             else case(state)
                 OFF: if(arm_pending && ready) begin state<=WAKING; wait_count<=0; end

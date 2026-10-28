@@ -5,9 +5,13 @@ import struct
 from dataclasses import dataclass, asdict
 
 COMMANDS = {'heartbeat': 0, 'stop': 1, 'clear': 2, 'current_zero': 3,
-            'attitude_zero': 4, 'commission': 5, 'arm': 6, 'start': 7, 'config': 8}
+            'attitude_zero': 4, 'arm': 6, 'start': 7, 'config': 8,
+            'commission_m1': 9, 'commission_m2': 10}
 GATES = ['驱动版固件', 'IMU新鲜有效', '姿态已校零', '电流已校零', '双电机电角已标定',
-         '轴向已确认', 'M1已验收', 'M2已验收', '处于启动角内', '主机心跳', '电机无故障', '停止锁存已解除']
+         '姿态与前进轴向已确认', 'M1已验收', 'M2已验收', '处于启动角内', '主机心跳', '电机无故障', '停止锁存已解除']
+
+# Vehicle installation confirmed 2026-10-27; not a runtime preference.
+IMU_ORIENTATION_FLAGS = 0b011  # Y axis, reversed pitch (front positive), upright -Z.
 
 
 def crc(data):
@@ -26,9 +30,6 @@ def command(name, seq):
 
 @dataclass
 class Config:
-    axis_y: bool = True
-    pitch_reverse: bool = False
-    upright_z_positive: bool = False
     m1_reverse: bool = False
     m2_reverse: bool = True
     axis_confirmed: bool = False
@@ -51,12 +52,10 @@ class Config:
     speed_target_rpm: float = 0.0
     speed_kp: float = 0.0
     speed_ki: float = 0.0
-    encoder1_reverse: bool = False
-    encoder2_reverse: bool = False
 
     def body(self, seq):
         bounds = [('kp', 0, .5), ('kd', 0, .1), ('foc_kp', 0, 16384), ('foc_ki', 0, 256),
-                  ('trim_deg', -5, 5), ('current_ma', 1, 250), ('cutoff_deg', 5, 15),
+                  ('trim_deg', -5, 5), ('current_ma', 1, 1000), ('cutoff_deg', 5, 15),
                   ('start_deg', .01, 5), ('duration_ms', 100, 5000), ('filter_shift', 4, 10)]
         for name, lo, hi in bounds:
             v = getattr(self, name)
@@ -65,21 +64,22 @@ class Config:
         for name in ('foc_kp', 'foc_ki', 'current_ma', 'duration_ms', 'filter_shift'):
             if int(getattr(self, name)) != getattr(self, name):
                 raise ValueError(f'{name} must be integer')
-        keys = ['axis_y', 'pitch_reverse', 'upright_z_positive', 'm1_reverse', 'm2_reverse',
-                'axis_confirmed', 'm1_accepted', 'm2_accepted']
+        # Wire bit5 acknowledges measured IMU and wheel-forward axes. Torque
+        # correction signs are separate m1_reverse/m2_reverse settings to test.
+        keys = ['m1_reverse', 'm2_reverse', 'axis_confirmed', 'm1_accepted', 'm2_accepted']
         if any(type(getattr(self, k)) is not bool for k in keys):
             raise ValueError('confirmation and direction fields must be boolean')
         if round(self.start_deg * 100) >= round(self.cutoff_deg * 100):
             raise ValueError('start angle must be below cutoff')
-        flags = sum(int(getattr(self, k)) << i for i, k in enumerate(keys))
+        flags = IMU_ORIENTATION_FLAGS | sum(int(getattr(self, k)) << (i+3) for i, k in enumerate(keys))
         if self.mode not in (0,1,2) or type(self.mode) is not int: raise ValueError('mode: 0/1/2')
         if self.test_axis not in (1,2,3) or type(self.test_axis) is not int: raise ValueError('test_axis: 1/2/3')
-        if type(self.encoder1_reverse) is not bool or type(self.encoder2_reverse) is not bool: raise ValueError('encoder direction must be boolean')
         if type(self.current_target_ma) is not int or abs(self.current_target_ma)>self.current_ma: raise ValueError('current target exceeds current limit')
         for k,hi in [('speed_target_rpm',60),('speed_kp',.255),('speed_ki',.255)]:
             v=getattr(self,k)
             if isinstance(v,bool) or not isinstance(v,(float,int)) or not math.isfinite(v) or (abs(v)>hi if k=='speed_target_rpm' else not 0<=v<=hi):raise ValueError(k)
-        packed_mode=self.mode | (int(self.encoder1_reverse)<<2) | (int(self.encoder2_reverse)<<3) | (self.test_axis<<4)
+        # Vehicle forward speed: right M1 inverted, left M2 normal (fixed bits01).
+        packed_mode=self.mode | 4 | (self.test_axis<<4)
         target=self.current_target_ma if self.mode==1 else round(self.speed_target_rpm*10) if self.mode==2 else 0
         return struct.pack('<BBBBIIHHhHHHHBBhBB', 2, seq & 255, 8, flags,
                            round(self.kp * 2**24), round(self.kd * 2**24), self.foc_kp, self.foc_ki,
@@ -96,14 +96,16 @@ class Parser:
     def feed(self, data):
         self.buffer.extend(data)
         records = []
-        magic = b'\xa5\xb6\x02\x80'
-        while len(self.buffer) >= 129:
-            if self.buffer[:4] != magic:
+        while len(self.buffer) >= 4:
+            payload = self.buffer[3]
+            if self.buffer[:3] != b'\xa5\xb6\x02' or payload not in (128,168):
                 self.buffer.pop(0); self.discarded += 1; continue
-            p = bytes(self.buffer[:129])
-            if crc(p[:126]) != int.from_bytes(p[126:128], 'little') or self._xor(p[:128]) != p[128]:
+            size = payload+1
+            if len(self.buffer)<size:break
+            p = bytes(self.buffer[:size])
+            if crc(p[:payload-2]) != int.from_bytes(p[payload-2:payload], 'little') or self._xor(p[:payload]) != p[payload]:
                 self.crc_errors += 1; self.buffer.pop(0); continue
-            del self.buffer[:129]
+            del self.buffer[:size]
             r = decode(p)
             if self.last_imu_seq is not None:
                 delta = (r['imu_seq'] - self.last_imu_seq) & 0xffffffff
@@ -126,11 +128,12 @@ def decode(p):
     u32 = lambda o: struct.unpack_from('<I', p, o)[0]
     i32 = lambda o: struct.unpack_from('<i', p, o)[0]
     a, b = p[16:18]
-    return dict(time_us=u32(4), imu_seq=u32(8), motor_seq=u32(12), drive=bool(a & 1),
+    record = dict(time_us=u32(4), imu_seq=u32(8), motor_seq=u32(12), drive=bool(a & 1),
                 attitude_calibrated=bool(a & 2), attitude_calibrating=bool(a & 4),
                 current_calibrated=bool(a & 8), current_calibrating=bool(a & 16),
                 running=bool(a & 32), commissioning=bool(a & 64), commission_failed=bool(a & 128),
                 active=bool(b & 1), armed=bool(b & 2), estop=bool(b & 4), attitude_bad=bool(b & 8),
+                independent_commission=bool(b & 64), preserve_commission_on_clear=bool(b & 128), commission_axis=(p[85]>>2)&3,
                 imu_ok=bool(b & 16), configured=bool(b & 32), gates=u16(18), stop_reason=u16(20),
                 motor_faults=u16(22), pitch=i32(24)/65536, rate=i32(28)/65536,
                 shadow_a=i16(32)/4096, iq1_a=i16(34)/4096, iq2_a=i16(36)/4096,
@@ -140,6 +143,16 @@ def decode(p):
                 zero_progress=u16(74), imu_errors=u16(76), imu_invalid=u16(78), rx_errors=u16(80),
                 ack_seq=p[82], result=p[83], rejected=p[84], commissioned_mask=p[85]&3,
                 commission_state=p[85]>>4, who_am_i=p[86], imu_last_error=p[87], config_hex=p[88:120].hex(), wheel_rpm=[i16(120)/10,i16(122)/10], speed_trim_deg=i16(124)/100)
+    record['m2_diagnostic']=None
+    if len(p)==169 and p[165]==0xd2:
+        t=126
+        record['m2_diagnostic']=dict(sequence=u32(t),sample_time=u32(t+4),mechanical=u16(t+8),theta=u16(t+10),
+            currents_a=[i16(t+k)/4096 for k in (12,14,16)],id_ref_a=i16(t+18)/4096,iq_ref_a=i16(t+20)/4096,
+            running=bool(p[t+22]&1),alignment=bool(p[t+22]&2),id_a=i16(t+23)/4096,iq_a=i16(t+25)/4096,
+            ud=i16(t+27)/32768,uq=i16(t+29)/32768,park_valid=bool(p[t+31]&1),overrun=bool(p[t+31]&2),
+            learned_zero=[u16(158),u16(160)],learned_reverse=p[162]&3,selected_motor=p[163],simple_protection=bool(p[164]&1))
+    return record
+
 
 
 def demo_packet(t=0.0):
@@ -147,7 +160,7 @@ def demo_packet(t=0.0):
     p = bytearray(128)
     p[:4] = b'\xa5\xb6\x02\x80'
     struct.pack_into('<III', p, 4, int(t*1e6)&0xffffffff, int(t*1000)&0xffffffff, int(t*20000)&0xffffffff)
-    p[16], p[17], p[86] = 2, 16, 0x47
+    p[16], p[17], p[86] = 2, 80, 0x47
     struct.pack_into('<ii', p, 24, int(math.sin(t)*4*65536), int(math.cos(t)*4*65536))
     struct.pack_into('<HI', p, 38, 1000, 200)
     struct.pack_into('<hhh', p, 44, 0, 0, -8192)

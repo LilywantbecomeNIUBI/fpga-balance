@@ -2,7 +2,7 @@
 // Plant calibration, PI, hard phase trip and modulation ceiling are build-time
 // constants; they are deliberately absent from the teammate's command bus.
 module motor_safe_drive #(
-    parameter CONFIG_CONFIRMED=0, MOTOR_MASK=2'b01, ALLOW_CURRENT_TUNING=0,DUAL_IQ_CONTROL=0,TUNING_KI_MAX=16,TUNING_KP_MAX=8192,
+    parameter TRACE_MOTOR2=0,SIMPLE_PROTECTION=0, CONFIG_CONFIRMED=0, MOTOR_MASK=2'b01, ALLOW_CURRENT_TUNING=0,DUAL_IQ_CONTROL=0,SELECTABLE_COMMISSION=0,PRESERVE_CAL_ON_CLEAR=0,TUNING_KI_MAX=16,TUNING_KP_MAX=8192,
               POLE_PAIRS_1=11,POLE_PAIRS_2=11,
               CURRENT_REVERSE=0,CURRENT_CB_MASK=2'b00,CURRENT_SWAP_MASK=2'b00,
               GAIN_Q16=221405, PHASE_TRIP=2048, IQ_LIMIT=1024,
@@ -17,6 +17,7 @@ module motor_safe_drive #(
               CMD_TIMEOUT=5000000,MAX_RUN_CYCLES=250000000
 )(
     input wire clk,rst_n,request_arm,clear_fault,calibrate,estop,command_valid,commission_start,
+    input wire [1:0] commission_select,
     input wire signed [15:0] iq_request_1,iq_request_2,
     input wire [1:0] drv_fault_n,
     input wire adc_busy,adc_dout_a,adc_dout_b,enc1_do,enc2_do,
@@ -49,15 +50,37 @@ module motor_safe_drive #(
     wire [13:0] comm_zero1,comm_zero2;
     wire [15:0] comm_theta1,comm_theta2;
     wire [3:0] comm_state1,comm_state2;
+    reg commission_request_pending;
     assign learned_reverse=comm_reverse;
     assign learned_zero={comm_zero2,comm_zero1};
     // Unselected commissioning FSMs must not enter the active drive cone.
     // This also removes the absent M2 state-to-EN path in M1-only builds.
-    assign commissioning=|(comm_busy & MOTOR_MASK);
+    assign commissioning=|(comm_busy & MOTOR_MASK) || (SELECTABLE_COMMISSION && commission_request_pending);
     assign commissioned=&(comm_done | ~MOTOR_MASK);
     assign commissioned_mask=comm_done & MOTOR_MASK;
     assign commission_failed=|(comm_failed & MOTOR_MASK);
-    assign commission_state=(MOTOR_MASK==2'b10 || (comm_busy[1] && MOTOR_MASK[1])) ? comm_state2 : comm_state1;
+    // Explicit selection never starts the other axis as a prerequisite.
+    // Legacy standalone instantiations retain sequential commissioning.
+    wire selected_m1=commission_select==2'b01 && MOTOR_MASK[0] && (PRESERVE_CAL_ON_CLEAR || !comm_done[0]);
+    wire selected_m2=commission_select==2'b10 && MOTOR_MASK[1] && (PRESERVE_CAL_ON_CLEAR || !comm_done[1]);
+    wire explicit_start=commission_start && !commissioning && !request_arm && !running &&
+                        !commission_failed && (selected_m1 || selected_m2);
+    wire start_m1=SELECTABLE_COMMISSION ? explicit_start && selected_m1 : commission_start && (PRESERVE_CAL_ON_CLEAR || !comm_done[0]);
+    wire start_m2=SELECTABLE_COMMISSION ? explicit_start && selected_m2 : commission_start && (comm_done[0] || !MOTOR_MASK[0]);
+    // Reserve the chosen axis until its first feedback frame arrives. A second
+    // request in that gap must never queue the other commissioning FSM.
+    always @(posedge clk or negedge rst_n)
+        if(!rst_n)commission_request_pending<=0;
+        else if(clear_fault || estop || (|faults))commission_request_pending<=0;
+        else if(SELECTABLE_COMMISSION && explicit_start)commission_request_pending<=1;
+        else if(|comm_busy)commission_request_pending<=0;
+    reg last_commission_m2;
+    always @(posedge clk or negedge rst_n)
+        if(!rst_n)last_commission_m2<=0;
+        else if(clear_fault && !lifecycle_arm)last_commission_m2<=0;
+        else if(explicit_start)last_commission_m2<=selected_m2;
+    assign commission_state=(SELECTABLE_COMMISSION ? last_commission_m2 :
+                            (MOTOR_MASK==2'b10 || (comm_busy[1] && MOTOR_MASK[1]))) ? comm_state2 : comm_state1;
     wire commission_arm=|(comm_arm & MOTOR_MASK);
     wire [15:0] commission_theta=comm_busy[1] && MOTOR_MASK[1] ? comm_theta2 : comm_theta1;
     wire [1:0] active_mask=commissioning ? comm_busy & MOTOR_MASK : MOTOR_MASK;
@@ -65,7 +88,10 @@ module motor_safe_drive #(
     wire [1:0] core_en;
     assign pwm=core_pwm & {{6{active_mask[1]}},{6{active_mask[0]}}};
     assign drv_en=core_en & active_mask;
-    wire lifecycle_arm=commissioning ? commission_arm : request_arm && commissioned;
+    // Each FSM lowers its arm before leaving busy. Feed that registered arm
+    // directly; only the separate runtime branch needs the busy interlock.
+    // This removes a redundant state-decode mux from the fast output path.
+    wire lifecycle_arm=commission_arm || (request_arm && commissioned && !commissioning);
     // Select fixed commissioning gains before any commission arm edge. Keep
     // them selected while motor_commission waits for its first feedback frame.
     // Restore runtime gains during the disarmed OFF/HANDOFF window, before
@@ -104,9 +130,9 @@ module motor_safe_drive #(
     // Clear the command fault first, then keep core clear asserted for another
     // cycle so its asynchronous kill latch can release after estop deasserts.
     wire core_clear=(clear_fault && !lifecycle_arm) || clear_pending;
-    assign faults={measurement_faults,command_faults,core_faults};
+    assign faults=SIMPLE_PROTECTION ? {4'd0,core_faults} : {measurement_faults,command_faults,core_faults};
     motor_command_guard #(.IQ_LIMIT(IQ_LIMIT),.CMD_TIMEOUT(CMD_TIMEOUT),.SLEW_PER_FRAME(COMMAND_SLEW),
-        .MAX_RUN_CYCLES(MAX_RUN_CYCLES)) commands(
+        .MAX_RUN_CYCLES(SIMPLE_PROTECTION ? 0 : MAX_RUN_CYCLES)) commands(
         .clk(clk),.rst_n(rst_n),.request_arm(lifecycle_arm),.clear_fault(clear_fault),
         .command_valid(command_valid || commission_start),.frame_valid(feedback_valid),
         .iq_request_1(commissioning || commission_start ? 16'sd1024 : iq_request_1),
@@ -114,21 +140,23 @@ module motor_safe_drive #(
         .arm(limited_arm),.iq_1(iq1),.iq_2(iq2),.faults(command_faults));
     motor_commission #(.POLE_PAIRS(POLE_PAIRS_1),.SETTLE_FRAMES(COMM_SETTLE),.PREALIGN_FRAMES(COMM_PREALIGN),.SWEEP_FRAMES(COMM_SWEEP),
         .END_FRAMES(COMM_END),.QUIET_FRAMES(COMM_QUIET),.HANDOFF_CYCLES(COMM_HANDOFF),
-        .PULSE_ONLY(COMM_PULSE_ONLY),.PROBE_SWITCH_CYCLES(COMM_PROBE_SWITCH_CYCLES),.MAX_RUN_CYCLES(COMM_MAX_RUN_CYCLES)) commission1(
-        .clk(clk),.rst_n(rst_n),.start(commission_start && CONFIG_CONFIRMED && MOTOR_MASK[0] && !comm_done[0]),
+        .PULSE_ONLY(COMM_PULSE_ONLY),.PROBE_SWITCH_CYCLES(COMM_PROBE_SWITCH_CYCLES),.MAX_RUN_CYCLES(COMM_MAX_RUN_CYCLES),
+        .PRESERVE_CAL_ON_CLEAR(PRESERVE_CAL_ON_CLEAR),.RELAXED_ACCEPTANCE(SIMPLE_PROTECTION)) commission1(
+        .clk(clk),.rst_n(rst_n),.start(start_m1 && CONFIG_CONFIRMED && MOTOR_MASK[0] && (PRESERVE_CAL_ON_CLEAR || !comm_done[0])),
         .clear_fault(core_clear),.calibrated(calibrated),.feedback_valid(feedback_valid),.running(running),
         .mechanical(mechanical_angles[13:0]),.ia(phase_currents[15:0]),.ib(phase_currents[31:16]),.faults(faults),
         .busy(comm_busy[0]),.arm(comm_arm[0]),.done(comm_done[0]),.failed(comm_failed[0]),
         .reverse(comm_reverse[0]),.zero(comm_zero1),.theta(comm_theta1),.state(comm_state1));
     motor_commission #(.POLE_PAIRS(POLE_PAIRS_2),.SETTLE_FRAMES(COMM_SETTLE),.PREALIGN_FRAMES(COMM_PREALIGN),.SWEEP_FRAMES(COMM_SWEEP),
         .END_FRAMES(COMM_END),.QUIET_FRAMES(COMM_QUIET),.HANDOFF_CYCLES(COMM_HANDOFF),
-        .PULSE_ONLY(COMM_PULSE_ONLY),.PROBE_SWITCH_CYCLES(COMM_PROBE_SWITCH_CYCLES),.MAX_RUN_CYCLES(COMM_MAX_RUN_CYCLES)) commission2(
-        .clk(clk),.rst_n(rst_n),.start(commission_start && CONFIG_CONFIRMED && MOTOR_MASK[1] && (comm_done[0] || !MOTOR_MASK[0])),
+        .PULSE_ONLY(COMM_PULSE_ONLY),.PROBE_SWITCH_CYCLES(COMM_PROBE_SWITCH_CYCLES),.MAX_RUN_CYCLES(COMM_MAX_RUN_CYCLES),
+        .PRESERVE_CAL_ON_CLEAR(PRESERVE_CAL_ON_CLEAR),.RELAXED_ACCEPTANCE(SIMPLE_PROTECTION)) commission2(
+        .clk(clk),.rst_n(rst_n),.start(start_m2 && CONFIG_CONFIRMED && MOTOR_MASK[1] && (PRESERVE_CAL_ON_CLEAR || !comm_done[1])),
         .clear_fault(core_clear),.calibrated(calibrated),.feedback_valid(feedback_valid),.running(running),
         .mechanical(mechanical_angles[27:14]),.ia(phase_currents[63:48]),.ib(phase_currents[79:64]),.faults(faults),
         .busy(comm_busy[1]),.arm(comm_arm[1]),.done(comm_done[1]),.failed(comm_failed[1]),
         .reverse(comm_reverse[1]),.zero(comm_zero2),.theta(comm_theta2),.state(comm_state2));
-    motor_adapter_core #(.MOTOR_MASK(MOTOR_MASK),.M2_PWM_ORDER(M2_PWM_ORDER),.DYNAMIC_M2_PWM(DYNAMIC_M2_PWM),.DYNAMIC_M2_CURRENT(DYNAMIC_M2_CURRENT),.SEPARATE_Q_LIMIT(ALLOW_CURRENT_TUNING),.CURRENT_CB_MASK(CURRENT_CB_MASK),.CURRENT_SWAP_MASK(CURRENT_SWAP_MASK),.MEASUREMENT_COMP(1),.ALLOW_ALIGNMENT(1),
+    motor_adapter_core #(.TRACE_MOTOR2(TRACE_MOTOR2),.SIMPLE_PROTECTION(SIMPLE_PROTECTION),.MOTOR_MASK(MOTOR_MASK),.M2_PWM_ORDER(M2_PWM_ORDER),.DYNAMIC_M2_PWM(DYNAMIC_M2_PWM),.DYNAMIC_M2_CURRENT(DYNAMIC_M2_CURRENT),.SEPARATE_Q_LIMIT(ALLOW_CURRENT_TUNING),.CURRENT_CB_MASK(CURRENT_CB_MASK),.CURRENT_SWAP_MASK(CURRENT_SWAP_MASK),.MEASUREMENT_COMP(1),.ALLOW_ALIGNMENT(1),
         .SPEED_GUARD(1),.CURRENT_LAG(CURRENT_LAG),.ENCODER_LAG(ENCODER_LAG),
         .MAX_WINDOW_TICKS(MAX_WINDOW_TICKS),.CAL_LOG2(CAL_LOG2),.WAKE_CYCLES(WAKE_CYCLES),.CURRENT_AVERAGE(CURRENT_AVERAGE)) core(
         .clk(clk),.rst_n(rst_n),.arm(limited_arm),.clear_fault(core_clear),.m2_pwm_order(m2_pwm_order),.m2_current_swap(m2_current_swap),

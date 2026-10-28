@@ -1,0 +1,148 @@
+{
+  "standalone_success_bitstream": "27b59f2c2b0586965dfac8b288bca3cfcaef3aa126a3243fa1bfaf8b10a8bd7d",
+  "integrated_bitstream": "e2d525f534c03ae67a1257d9c3786cee2d3bb2e133a6269e0bc3a68878f704a1",
+  "module_hash_comparison": [
+    {
+      "file": "motor_commission.v",
+      "standalone_success_sha256": "7c72adca2580ae8be9aff036a471b01a550580e594f3751840c3654acaadf466",
+      "standalone_source_still_matches_build": true,
+      "integrated_source_matches_success": true
+    },
+    {
+      "file": "motor_current.v",
+      "standalone_success_sha256": "2b07e6605f351370deb9d572b9b475f055d936cd665ae71ac5b5aa8741c3acfb",
+      "standalone_source_still_matches_build": true,
+      "integrated_source_matches_success": true
+    },
+    {
+      "file": "motor_angle.v",
+      "standalone_success_sha256": "c731e57be73dec1e03c3f3ac613828f7202d8057dafa54b92eb96d4a6f2ec8ed",
+      "standalone_source_still_matches_build": true,
+      "integrated_source_matches_success": true
+    },
+    {
+      "file": "motor_ad7606.v",
+      "standalone_success_sha256": "75b0963bd684e01d35560eed97587f4876c56d30e2794937082e50acef2ac353",
+      "standalone_source_still_matches_build": true,
+      "integrated_source_matches_success": true
+    },
+    {
+      "file": "motor_mt6701.v",
+      "standalone_success_sha256": "6d73d0fdb727c95a82762326961ffc736e98ae2d65939c98d4078c226a13b3ff",
+      "standalone_source_still_matches_build": true,
+      "integrated_source_matches_success": true
+    },
+    {
+      "file": "motor_measurement_angle.v",
+      "standalone_success_sha256": "865b4c1de7c2e3a8ea24934d2d57747ed19a490da80bd4223f3fa55c5aedfe12",
+      "standalone_source_still_matches_build": true,
+      "integrated_source_matches_success": true
+    },
+    {
+      "file": "motor_foc_bridge.v",
+      "standalone_success_sha256": "03a6fd68d84cb55cd5dff399b3c7b3bc3f5a21b03d1ef6e095d210063043a393",
+      "standalone_source_still_matches_build": true,
+      "integrated_source_matches_success": true
+    },
+    {
+      "file": "motor_command_guard.v",
+      "standalone_success_sha256": "5db739552efdcd7f6b99634cea4fa443db76bacf641f7daf48ea357b761b7488",
+      "standalone_source_still_matches_build": true,
+      "integrated_source_matches_success": true
+    },
+    {
+      "file": "motor_drv_guard.v",
+      "standalone_success_sha256": "776f9b100dd648f8d45e5278d61c5744bc03332dbdf8b51692bbb51a37f0d36d",
+      "standalone_source_still_matches_build": true,
+      "integrated_source_matches_success": true
+    },
+    {
+      "file": "motor_adapter_core.v",
+      "standalone_success_sha256": "82cd25b9334c75974f3038cccfd98255bcec16a931ef5fce1c5f2ba9f311093a",
+      "standalone_source_still_matches_build": true,
+      "integrated_source_matches_success": false
+    },
+    {
+      "file": "motor_safe_drive.v",
+      "standalone_success_sha256": "d7603f5e2a47fec10dae2d2e7547383dfd1d2f34781fdc02e889db2d5bea5c33",
+      "standalone_source_still_matches_build": true,
+      "integrated_source_matches_success": true
+    }
+  ],
+  "standalone_top_parameters": {
+    "CONFIG_CONFIRMED": "1",
+    "MOTOR_MASK": "2'b10",
+    "POLE_PAIRS_1": "11",
+    "POLE_PAIRS_2": "11",
+    "CURRENT_REVERSE": "4",
+    "CURRENT_CB_MASK": "2'b11",
+    "CURRENT_SWAP_MASK": "2'b00",
+    "GAIN_CH1_Q16": "217082",
+    "GAIN_CH2_Q16": "220767",
+    "GAIN_CH3_Q16": "217082",
+    "GAIN_CH4_Q16": "220767",
+    "CURRENT_LAG": "1000",
+    "ENCODER_LAG": "250",
+    "CURRENT_AVERAGE": "1",
+    "COMMAND_SLEW": "64",
+    "BENCH_SPEED_SLIDING": "1",
+    "BENCH_BRAKE_LIMIT": "410",
+    "BENCH_SPEED_SPAN_MS": "2",
+    "BENCH_SPEED_I_GAIN": "4",
+    "SPEED_GUARD_TICKS": "32",
+    "COMM_SETTLE": "20000",
+    "COMM_PREALIGN": "6000",
+    "TEST_SPEED_GAIN": "128",
+    "ALLOW_CONTINUOUS": "0",
+    "MIN_WINDOW_TICKS": "256",
+    "DIAGNOSTICS": "0",
+    "CURRENT_KI": "1",
+    "CURRENT_TUNING": "1",
+    "PHASE_ISOLATION": "0",
+    "PWM_ENUMERATION": "0",
+    "CURRENT_ENUMERATION": "0",
+    "M2_PWM_ORDER": "0",
+    "BENCH_SPEED_KP": "32",
+    "BENCH_SPEED_TARGET": "82",
+    "BENCH_SPEED_FILTER_SHIFT": "0",
+    "BENCH_SPEED_DROP_STEP": "2560",
+    "BENCH_SPEED_RISE_STEP": "2560",
+    "TUNING_KI_MAX": "256",
+    "TUNING_CURRENT_MAX": "1843",
+    "TUNING_KP_MAX": "16384"
+  },
+  "same_effective_commissioning_parameters": {
+    "id_target_a": 0.25,
+    "iq_target_a": 0,
+    "pi_kp_q12": 300,
+    "pi_ki_q12": 16,
+    "prealign_90_ms": 300,
+    "alignment_total_ms": 1000,
+    "sweep_ms": 1000,
+    "final_settle_ms": 300,
+    "quiet_ms": 100,
+    "phase_trip_a_nominal": 0.5,
+    "voltage_limit_q15": 4096,
+    "command_slew_per_feedback": 64,
+    "average_taps": 1,
+    "current_lag_clocks": 1000,
+    "encoder_lag_clocks": 250,
+    "m2_c_b_gain_q16": [
+      217082,
+      220767
+    ]
+  },
+  "verified_differences": [
+    "Integrated motor_adapter_core registers current-zero cal_start by one50MHz cycle; successful standalone version used a combinational wire",
+    "M2-only standalone uses MOTOR_MASK=2; integrated uses MOTOR_MASK=3 so both sensor chains and protection contribute",
+    "Standalone M2 CURRENT_REVERSE=4 vs integrated7: physical CH3/4 polarity same; extra CH1/2 inversions apply to M1 only",
+    "Standalone configurable current hard clamp1843 (~0.45A) vs integrated1024(0.25A); commission requested reference1024 in both so nominal target unchanged",
+    "Integrated dual-Iq mode and supervisor/IMU/telemetry/startup sequencing replace standalone host/speed control; core commissioning FSM and terminal single-frame checks are byte-identical"
+  ],
+  "limits": [
+    "Matching source and nominal constants do not prove equivalent board-level signal integrity or identical pipeline timing around the core",
+    "Current-zero registration difference is not established as the failure cause",
+    "200Hz telemetry cannot identify the source phase or terminal predicate of20kHz faults; need latched diagnostic snapshot"
+  ],
+  "hardware_actions": "none; no fault clear, download or motor movement during comparison"
+}

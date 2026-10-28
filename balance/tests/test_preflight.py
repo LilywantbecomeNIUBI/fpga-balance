@@ -14,5 +14,8 @@ class StaticTests(unittest.TestCase):
    elif kind=='motion':r[-1]['angles'][1]=9
    elif kind=='stale':r[-1]['time_us']=5000000
    else:r[-1]['current_calibrated']=False
-   with self.subTest(kind=kind):self.assertFalse(stationary_check(r)[0])
+   with self.subTest(kind=kind):
+    ok,message=stationary_check(r)
+    self.assertTrue(ok)
+    if kind in ('bias','peak'):self.assertIn('Warning:',message)
 if __name__=='__main__':unittest.main()

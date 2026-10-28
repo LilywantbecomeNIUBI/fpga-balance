@@ -1,0 +1,26 @@
+{
+  "schema": "balance-v2",
+  "config": {
+    "m1_reverse": false,
+    "m2_reverse": true,
+    "axis_confirmed": true,
+    "m1_accepted": true,
+    "m2_accepted": true,
+    "kp": 0.0,
+    "kd": 0.0,
+    "foc_kp": 16384,
+    "foc_ki": 256,
+    "trim_deg": 0.0,
+    "current_ma": 500,
+    "cutoff_deg": 15.0,
+    "start_deg": 3.0,
+    "duration_ms": 2000,
+    "filter_shift": 8,
+    "mode": 1,
+    "test_axis": 2,
+    "current_target_ma": 400,
+    "speed_target_rpm": 0.0,
+    "speed_kp": 0.0,
+    "speed_ki": 0.0
+  }
+}

@@ -1,9 +1,9 @@
 // Snapshot 126 bytes, append CRC16 LE; motor_console adds legacy XOR byte.
 // CRC is sequential, keeping long checksum logic out of the 50 MHz timing cone.
-module balance_telemetry #(parameter PERIOD=250000)(input wire clk,rst_n,
-    input wire [1007:0] data,output reg [1023:0] packet);
+module balance_telemetry #(parameter PERIOD=250000,DATA_BYTES=126)(input wire clk,rst_n,
+    input wire [DATA_BYTES*8-1:0] data,output reg [(DATA_BYTES+2)*8-1:0] packet);
     reg [31:0] timer;
-    reg [1007:0] snapshot;
+    reg [DATA_BYTES*8-1:0] snapshot;
     reg [7:0] index;
     reg [15:0] crc;
     reg busy;
@@ -18,7 +18,7 @@ module balance_telemetry #(parameter PERIOD=250000)(input wire clk,rst_n,
         if(timer==1000) begin snapshot<=data;index<=0;crc<=16'hffff;busy<=1;end
         else if(busy) begin
             crc<=updated;
-            if(index==125) begin packet<={updated,snapshot};busy<=0;end
+            if(index==DATA_BYTES-1) begin packet<={updated,snapshot};busy<=0;end
             else index<=index+1'b1;
         end
     end

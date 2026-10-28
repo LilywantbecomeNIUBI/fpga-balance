@@ -51,6 +51,7 @@ def main():
     content=(target/'build.log').read_text(encoding='utf-8',errors='replace')
     report=dict(success=False,profile=a.profile,gowin_exit=done.returncode,programmed=False,physical_balance_tested=False,
                 motor_outputs_permanently_disabled=a.profile=='observe',m2_individual_bench_accepted=True,current_reverse_mask=7,protocol_version=2,
+                imu_orientation_bits=3,front_pitch_positive=True,independent_commission=True,preserve_commission_on_clear=True,simple_protection=True,runtime_iq_limit_a=1.0,
                 errors=re.findall(r'^ERROR.*',content,re.M),source_sha256=hashes,
                 sources_unchanged=all(hashlib.sha256((ROOT/f).read_bytes()).hexdigest()==h for f,h in hashes.items()))
     try: report.update(read_timing_reports(target/'impl/pnr'))

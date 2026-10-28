@@ -1,0 +1,35 @@
+{
+  "date": "2026-10-28",
+  "user_observation": "M2 is unloaded; with drive stopped, manually turning M2 feels significantly stiffer than M1",
+  "verified_host_state": {
+    "fresh": true,
+    "active": false,
+    "armed": false,
+    "running": false,
+    "commissioning": false,
+    "wheel_rpm": [
+      0,
+      0
+    ],
+    "commissioned_mask": 3,
+    "motor_faults": 1,
+    "stop_reason": 1
+  },
+  "source_findings": {
+    "shared_current_pi": true,
+    "kp": 16384,
+    "ki": 256,
+    "stop_masks_pwm_and_disables_drv_en": true,
+    "current_cb_mask": 3,
+    "current_reverse_mask": 7,
+    "m2_pwm_order": 0
+  },
+  "changes_applied": false,
+  "additional_motion_commanded": false,
+  "next_required_observation": "User requested manual parameter test UI instead of further motor operation. M2 UVW remains disconnected and 12V OFF until user reconnects while unpowered.",
+  "root_cause_confirmed": false,
+  "motor_12v_disconnected_user_confirmed": true,
+  "unpowered_manual_resistance": "User confirms M2 remains significantly stiffer than M1 after motor 12V disconnected",
+  "motor_phase_disconnected_resistance": "User reports M2 remains similarly stiff with all three phases disconnected",
+  "user_suspects_manufacturing_issue": true
+}

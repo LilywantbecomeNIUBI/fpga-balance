@@ -1,0 +1,122 @@
+{
+  "date": "2026-10-28",
+  "rtl_tests": [
+    {
+      "test": "tb_clear_compat",
+      "passed": true,
+      "build_exit": 0,
+      "exit": 0,
+      "output": "PASS legacy clear invalidates, integrated clear preserves learned result without arm, reset invalidates both\nE:\\Gowin_project\\fpga_project\\team_repos\\fpga-balance\\balance\\tests\\tb_clear_compat.sv:22: $finish called at 922000 (1ps)\n"
+    },
+    {
+      "test": "tb_dual_iq",
+      "passed": true,
+      "build_exit": 0,
+      "exit": 0,
+      "output": "PASS independent dual Iq, zero runtime Id, exclusive commissioning\nE:\\Gowin_project\\fpga_project\\team_repos\\fpga-balance\\balance\\tests\\tb_dual_iq.sv:17: $finish called at 63000 (1ps)\n"
+    },
+    {
+      "test": "tb_imu_reader",
+      "passed": true,
+      "build_exit": 0,
+      "exit": 0,
+      "output": "PASS fast reader: 1kHz profile, 12-byte atomic axes, slow temp, metadata, 3ms stale, faults/recovery\nE:\\Gowin_project\\fpga_project\\team_repos\\fpga-balance\\balance\\tests\\tb_imu_reader.sv:64: $finish called at 64290290000 (1ps)\n"
+    },
+    {
+      "test": "tb_imu_startup",
+      "passed": true,
+      "build_exit": 0,
+      "exit": 0,
+      "output": "PASS IMU first startup, concurrent encoder activity, observe grounding, no runtime fault auto-reset\nE:\\Gowin_project\\fpga_project\\team_repos\\fpga-balance\\balance\\tests\\tb_imu_startup.sv:39: $finish called at 16175740000 (1ps)\n"
+    },
+    {
+      "test": "tb_independent_commission",
+      "passed": true,
+      "build_exit": 0,
+      "exit": 0,
+      "output": "PASS explicit M2 first, independent M1, exclusive EN/PWM, invalid/busy requests, selected state, dual runtime gate\nE:\\Gowin_project\\fpga_project\\team_repos\\fpga-balance\\balance\\tests\\tb_independent_commission.sv:67: $finish called at 2511000 (1ps)\n"
+    },
+    {
+      "test": "tb_m2_trace",
+      "passed": true,
+      "build_exit": 0,
+      "exit": 0,
+      "output": "PASS dual-motor diagnostic selects coherent M2 angle, currents, refs and real-IP Park/PI ports\nE:\\Gowin_project\\fpga_project\\team_repos\\fpga-balance\\balance\\tests\\tb_m2_trace.sv:24: $finish called at 121000 (1ps)\n"
+    },
+    {
+      "test": "tb_math",
+      "passed": true,
+      "build_exit": 0,
+      "exit": 0,
+      "output": "PASS CORDIC quadrants, bias, dt, motion rejection, PD signs and limits\nE:\\Gowin_project\\fpga_project\\team_repos\\fpga-balance\\balance\\tests\\tb_math.sv:43: $finish called at 2661141000 (1ps)\n"
+    },
+    {
+      "test": "tb_sdiv",
+      "passed": true,
+      "build_exit": 0,
+      "exit": 0,
+      "output": "PASS sequential signed division: truncation, extremes, bounded latency, one-cycle valid\nE:\\Gowin_project\\fpga_project\\team_repos\\fpga-balance\\balance\\tests\\tb_sdiv.sv:17: $finish called at 144960000 (1ps)\n"
+    },
+    {
+      "test": "tb_simplified",
+      "passed": true,
+      "build_exit": 0,
+      "exit": 0,
+      "output": "PASS simplified supervisor tilt/heartbeat, faults, hardware M1/M2, Stop, disabled speed/timing, 1A clamp, relaxed commissioning and clear preservation\nE:\\Gowin_project\\fpga_project\\team_repos\\fpga-balance\\balance\\tests\\tb_simplified.sv:56: $finish called at 20881000 (1ps)\n"
+    },
+    {
+      "test": "tb_speed",
+      "passed": true,
+      "build_exit": 0,
+      "exit": 0,
+      "output": "PASS speed50Hz wrap, units, encoder signs, P, trim clamp, antiwindup and disable reset\nE:\\Gowin_project\\fpga_project\\team_repos\\fpga-balance\\balance\\tests\\tb_speed.sv:16: $finish called at 58100000 (1ps)\n"
+    },
+    {
+      "test": "tb_supervisor",
+      "passed": true,
+      "build_exit": 0,
+      "exit": 0,
+      "output": "PASS supervisor M2 gate, observe inhibit, tilt, IMU, driver fault, heartbeat, bounded run, manual recovery\nE:\\Gowin_project\\fpga_project\\team_repos\\fpga-balance\\balance\\tests\\tb_supervisor.sv:41: $finish called at 41880000 (1ps)\n"
+    },
+    {
+      "test": "tb_telemetry",
+      "passed": true,
+      "build_exit": 0,
+      "exit": 0,
+      "output": "PASS 129-byte real UART frame, sequential CRC16, XOR, signed fields, atomic snapshot\nE:\\Gowin_project\\fpga_project\\team_repos\\fpga-balance\\balance\\tests\\tb_telemetry.sv:23: $finish called at 609051000 (1ps)\n"
+    },
+    {
+      "test": "tb_telemetry_m2",
+      "passed": true,
+      "build_exit": 0,
+      "exit": 0,
+      "output": "PASS 169-byte M2 diagnostic real UART frame, sequential CRC16, XOR, signed fields, atomic snapshot\nE:\\Gowin_project\\fpga_project\\team_repos\\fpga-balance\\balance\\tests\\tb_telemetry_m2.sv:24: $finish called at 673851000 (1ps)\n"
+    },
+    {
+      "test": "tb_top_shadow",
+      "passed": true,
+      "build_exit": 0,
+      "exit": 0,
+      "output": "PASS integrated PD publication timing and physical observe pin inhibit\nE:\\Gowin_project\\fpga_project\\team_repos\\fpga-balance\\balance\\tests\\tb_top_shadow.sv:31: $finish called at 1961000 (1ps)\n"
+    },
+    {
+      "test": "tb_protocol",
+      "passed": true,
+      "build_exit": 0,
+      "exit": 0,
+      "output": "PASS atomic CRC config, busy reject, corrupted frame reject, commands, priority stop\nE:\\Gowin_project\\fpga_project\\team_repos\\fpga-balance\\balance\\results\\tests\\tb_protocol.sv:660: $finish called at 25761000 (1ps)\n"
+    }
+  ],
+  "root_host_exit": 0,
+  "root_host_tests_passed": 18,
+  "r4_host_tests_passed": 24,
+  "r4_js_flow": "passed",
+  "source_selfcheck": "passed",
+  "manual_bootstrap_check": "passed",
+  "hardware_programmed": false,
+  "motor_started": false,
+  "bitstreams": {
+    "01_simple.fs": "41f4a6aca4e5af24bc53577402e2a61a342bb8c884f43eb756a47aef531e5c07",
+    "02_M2_diagnostic.fs": "6c71a09d55e70f278801772dec404123363f170aed88194bd1e8faeffb6bdba6"
+  }
+}

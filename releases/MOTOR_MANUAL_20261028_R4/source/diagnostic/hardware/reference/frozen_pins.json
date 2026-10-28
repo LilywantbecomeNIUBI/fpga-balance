@@ -1,0 +1,9 @@
+{
+  "date": "2026-10-18",
+  "scope": "Previously checked current Carrier_Hall_RevB schematic and PCB; no new schematic audit on frozen-pin builds",
+  "constraints_sha256": {
+    "motor_selftest.cst": "3ded2c781112aa3ab2680e568c030c7e02692bd85a280d0a5fa8392b0dc3294f",
+    "motor_selftest.sdc": "71544066fcfafda9c52c2a971c2c1040ddaac70d3974c3586af18f933a173962"
+  },
+  "audit": "../../evidence/baseline-20261018/results/pin_audit.json"
+}

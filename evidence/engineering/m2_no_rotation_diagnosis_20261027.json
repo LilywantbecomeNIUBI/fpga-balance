@@ -1,0 +1,410 @@
+{
+  "source_log": "E:\\Gowin_project\\fpga_project\\team_repos\\fpga-balance\\balance\\results\\20261027_215227_3f0bdf\\events.jsonl",
+  "user_observation": "audible motor sound, wheel stationary, twitch only at final moment",
+  "firmware_on_board": "805489cebf2f61b942ba3a02e1bb392cf83f4e3254a8f8226337cbec02e96a0c",
+  "commission": {
+    "prealign_90_tail": {
+      "samples": 20,
+      "time_us": [
+        261050020,
+        261145020
+      ],
+      "encoder2": [
+        12514,
+        12515
+      ],
+      "phase_mean_a": [
+        -0.01876220703125,
+        0.01446533203125,
+        0.004296875
+      ],
+      "phase_std_a": [
+        0.053154425325646716,
+        0.03094725589866401,
+        0.040407995034378585
+      ]
+    },
+    "align_0_tail": {
+      "samples": 20,
+      "time_us": [
+        261775020,
+        261870020
+      ],
+      "encoder2": [
+        12542,
+        12542
+      ],
+      "phase_mean_a": [
+        0.061279296875,
+        -0.072119140625,
+        0.01083984375
+      ],
+      "phase_std_a": [
+        0.04661334442822334,
+        0.031949828334579995,
+        0.03038784926420514
+      ]
+    },
+    "sweep": {
+      "samples": 200,
+      "time_us": [
+        261875020,
+        262870020
+      ],
+      "encoder2": [
+        12542,
+        11147
+      ],
+      "phase_mean_a": [
+        -0.06244384765625,
+        -0.0005517578125,
+        0.06299560546875
+      ],
+      "phase_std_a": [
+        0.1741393720325901,
+        0.19070803794173982,
+        0.08548206647524972
+      ]
+    },
+    "settle_0_tail": {
+      "samples": 20,
+      "time_us": [
+        263075020,
+        263170020
+      ],
+      "encoder2": [
+        11147,
+        11147
+      ],
+      "phase_mean_a": [
+        0.05465087890625,
+        -0.0721435546875,
+        0.01749267578125
+      ],
+      "phase_std_a": [
+        0.054830107717465625,
+        0.030750720767746254,
+        0.03172055497694796
+      ]
+    },
+    "sweep_fundamental_amplitude_a": [
+      0.2084875870303766,
+      0.23676157223164726,
+      0.09550234691260814
+    ],
+    "expected_mechanical_ticks": 1489.4545454545455,
+    "observed_sweep_ticks": 1395
+  },
+  "runtime_5s": {
+    "all": {
+      "samples": 1000,
+      "time_us": [
+        492220020,
+        497215020
+      ],
+      "encoder2": [
+        11143,
+        11200
+      ],
+      "phase_mean_a": [
+        -0.22260693359375,
+        0.22616455078125,
+        -0.0035576171875
+      ],
+      "phase_std_a": [
+        0.048727969299920966,
+        0.03700661584305737,
+        0.03143021007978605
+      ]
+    },
+    "last_100_samples": {
+      "samples": 100,
+      "time_us": [
+        496720020,
+        497215020
+      ],
+      "encoder2": [
+        11200,
+        11200
+      ],
+      "phase_mean_a": [
+        -0.22742919921875,
+        0.22787109375,
+        -0.00044189453125
+      ],
+      "phase_std_a": [
+        0.04568659002386758,
+        0.033753013476305924,
+        0.02879285883102996
+      ]
+    },
+    "command_iq2_a": 0.2998046875,
+    "hardware_faults_seen": [
+      0
+    ]
+  },
+  "source_audit": {
+    "M2_encoder": 2,
+    "M2_pwm_order": "ABC (0)",
+    "M2_current_C": "CH3 inverted",
+    "M2_current_B": "CH4 normal",
+    "M2_gain_q16": [
+      217082,
+      220767
+    ],
+    "pole_pairs": 11,
+    "matches_previous_successful_M2_mapping": true,
+    "actual_M2_dq_telemetry_available_in_current_bitstream": false
+  },
+  "conclusions": [
+    "No continuous encoder rotation during 5 second active period; current commands are positive and M1 command zero.",
+    "Sweep travel met relaxed completion, but current vector tracking did not match prior good theta0 alignment.",
+    "Near-zero C interpreted from CH3 is a diagnostic lead, not proof of a defective Hall sensor or an open physical phase.",
+    "No software phase-order/channel/sign mismatch found relative to the documented passing M2 baseline.",
+    "Actual learned zero/reverse and real IP Park/PI signals were absent from old telemetry; new diagnostic candidate exposes them without changing controls."
+  ],
+  "diagnostic_candidate": {
+    "success": true,
+    "sources_unchanged": true,
+    "setup_violations": 0,
+    "hold_violations": 0,
+    "bitstream_sha256": "6c71a09d55e70f278801772dec404123363f170aed88194bd1e8faeffb6bdba6",
+    "downloaded": true,
+    "rtl_tests": 15,
+    "host_tests": 18,
+    "all_tests_passed": true,
+    "control_parameters_changed": false
+  },
+  "deployment": {
+    "method": "SRAM only; programmer Finished",
+    "motor12v": "user confirmed OFF, logic retained",
+    "host_session": 92624,
+    "log_dir": "E:\\Gowin_project\\fpga_project\\team_repos\\fpga-balance\\balance\\results\\20261027_221113_a7a582",
+    "new_extended_frames_verified": true,
+    "motion_commands_sent": 0,
+    "last_record": {
+      "time_us": 40785020,
+      "imu_seq": 40783,
+      "motor_seq": 813616,
+      "drive": true,
+      "attitude_calibrated": false,
+      "attitude_calibrating": false,
+      "current_calibrated": false,
+      "current_calibrating": false,
+      "running": false,
+      "commissioning": false,
+      "commission_failed": false,
+      "active": false,
+      "armed": false,
+      "estop": true,
+      "attitude_bad": false,
+      "independent_commission": true,
+      "preserve_commission_on_clear": true,
+      "commission_axis": 0,
+      "imu_ok": true,
+      "configured": false,
+      "gates": 515,
+      "stop_reason": 1,
+      "motor_faults": 1,
+      "pitch": 0.0,
+      "rate": 0.0,
+      "shadow_a": 0.0,
+      "iq1_a": 0.0,
+      "iq2_a": 0.0,
+      "interval_us": 937,
+      "age_us": 21,
+      "accel": [
+        -0.0247802734375,
+        -0.021728515625,
+        -0.9986572265625
+      ],
+      "gyro": [
+        0.335693359375,
+        -0.48828125,
+        -0.213623046875
+      ],
+      "temp_c": 22.52415458937198,
+      "currents_a": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "angles": [
+        15856,
+        8534
+      ],
+      "zero_progress": 0,
+      "imu_errors": 0,
+      "imu_invalid": 0,
+      "rx_errors": 0,
+      "ack_seq": 12,
+      "result": 0,
+      "rejected": 0,
+      "commissioned_mask": 0,
+      "commission_state": 0,
+      "who_am_i": 71,
+      "imu_last_error": 0,
+      "config_hex": "0000000000000000000000000000000000000000000000000000000000000000",
+      "wheel_rpm": [
+        0.0,
+        0.0
+      ],
+      "speed_trim_deg": 0.0,
+      "m2_diagnostic": {
+        "sequence": 0,
+        "sample_time": 0,
+        "mechanical": 0,
+        "theta": 0,
+        "currents_a": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "id_ref_a": 0.0,
+        "iq_ref_a": 0.0,
+        "running": false,
+        "alignment": false,
+        "id_a": 0.0,
+        "iq_a": 0.0,
+        "ud": 0.0,
+        "uq": 0.0,
+        "park_valid": false,
+        "overrun": false,
+        "learned_zero": [
+          0,
+          0
+        ],
+        "learned_reverse": 0,
+        "selected_motor": 2,
+        "simple_protection": true
+      },
+      "host_time": 1793110300.0099247,
+      "demo": false,
+      "rpm": [
+        0.0,
+        0.0
+      ],
+      "rpm_raw": [
+        0.0,
+        0.0
+      ]
+    },
+    "diagnostic_sequences": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "powered_diagnostic_result": {
+    "capture": "balance/results/20261027_221113_a7a582/m2_commission_real_dq_20261027_221322.json",
+    "commands": [
+      "clear",
+      "config",
+      "current_zero",
+      "commission_m2"
+    ],
+    "analysis": {
+      "align90": {
+        "id_ref_a": 0.25,
+        "iq_ref_a": 0.0,
+        "id_a": -0.01405029296875,
+        "iq_a": 0.00543212890625,
+        "ud": 0.125,
+        "uq": -0.075341796875,
+        "n": 60,
+        "tail_n": 20,
+        "abc": [
+          -0.00537109375,
+          -0.0092529296875,
+          0.0146240234375
+        ],
+        "mech_start": 8534,
+        "mech_end": 8556,
+        "park_valid_all": true,
+        "overrun_any": false,
+        "Ud_at_limit_fraction": 1.0,
+        "Uq_at_limit_fraction": 0.0
+      },
+      "align0": {
+        "id_ref_a": 0.25,
+        "iq_ref_a": 0.0,
+        "id_a": 0.04652099609375,
+        "iq_a": -0.037353515625,
+        "ud": 0.125,
+        "uq": 0.125,
+        "n": 140,
+        "tail_n": 20,
+        "abc": [
+          0.0467041015625,
+          -0.05576171875,
+          0.0090576171875
+        ],
+        "mech_start": 8539,
+        "mech_end": 8211,
+        "park_valid_all": true,
+        "overrun_any": false,
+        "Ud_at_limit_fraction": 1.0,
+        "Uq_at_limit_fraction": 1.0
+      },
+      "sweep": {
+        "id_ref_a": 0.25,
+        "iq_ref_a": 0.0,
+        "id_a": 0.2591552734375,
+        "iq_a": -0.059765625,
+        "ud": 0.11684722900390625,
+        "uq": -0.00152740478515625,
+        "n": 200,
+        "tail_n": 20,
+        "abc": [
+          0.22906494140625,
+          -0.23785400390625,
+          0.0087890625
+        ],
+        "mech_start": 8211,
+        "mech_end": 6755,
+        "park_valid_all": true,
+        "overrun_any": false,
+        "Ud_at_limit_fraction": 0.2,
+        "Uq_at_limit_fraction": 0.0
+      },
+      "settle0": {
+        "id_ref_a": 0.25,
+        "iq_ref_a": 0.0,
+        "id_a": 0.10455322265625,
+        "iq_a": -0.0327880859375,
+        "ud": 0.125,
+        "uq": 0.125,
+        "n": 60,
+        "tail_n": 20,
+        "abc": [
+          0.104833984375,
+          -0.0808837890625,
+          -0.0239501953125
+        ],
+        "mech_start": 6753,
+        "mech_end": 6731,
+        "park_valid_all": true,
+        "overrun_any": false,
+        "Ud_at_limit_fraction": 1.0,
+        "Uq_at_limit_fraction": 1.0
+      }
+    },
+    "park_recalculation_error_rms_a": [
+      0.00028246660917180994,
+      0.00014580666750987857
+    ],
+    "electrical_calibration_accepted": false,
+    "current_tracking_accepted": false,
+    "runtime_started": false
+  }
+}

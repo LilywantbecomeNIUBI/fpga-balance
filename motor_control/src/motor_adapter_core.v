@@ -2,7 +2,7 @@
 // This is NOT a board top: host controls must never be auto-assigned to pins.
 // IP configuration and this module assume a 50 MHz system clock, 20 kHz PWM.
 module motor_adapter_core #(
-    parameter CAL_LOG2=10, ADC_HALF_CYCLES=5, ENC_HALF_CYCLES=25,
+    parameter TRACE_MOTOR2=0,SIMPLE_PROTECTION=0, CAL_LOG2=10, ADC_HALF_CYCLES=5, ENC_HALF_CYCLES=25,
               WAKE_CYCLES=50000, FRAME_TIMEOUT=2200, STALE_CYCLES=5000,
               MOTOR_MASK=2'b11, CURRENT_CB_MASK=2'b00, MEASUREMENT_COMP=0, CURRENT_LAG=0, ENCODER_LAG=0,
               SPEED_GUARD=0, MAX_WINDOW_TICKS=32, ALLOW_ALIGNMENT=0,SEPARATE_Q_LIMIT=0,
@@ -113,7 +113,7 @@ module motor_adapter_core #(
                 if(enc2_valid && MOTOR_MASK[1]) begin captured_angle2<=angle2; received[2]<=1; end
                 if(&received) begin
                     transaction<=0;
-                    if(!sensor_fault && !adc_fault && !selected_encoder_fault) begin
+                    if(SIMPLE_PROTECTION || (!sensor_fault && !adc_fault && !selected_encoder_fault)) begin
                         join_valid<=1; frame_sequence<=frame_sequence+1;
                         stale_age<=0; fresh<=1;
                     end
@@ -142,7 +142,7 @@ module motor_adapter_core #(
     // The selector is frozen while armed just like the physical PWM route.
     assign phase_currents=(DYNAMIC_M2_CURRENT && disarmed_config[246]) ?
         {physical_phase_currents[79:64],physical_phase_currents[95:80],physical_phase_currents[63:0]} : physical_phase_currents;
-    // Raw currents and raw overcurrent remain public/protective. Only the FOC
+    // Raw currents remain public. SIMPLE_PROTECTION bypasses software overcurrent stop. Only the FOC
     // feedback and its atomic trace use the optional inter-frame average.
     localparam AVERAGE_DELAY=(CURRENT_AVERAGE-1)*2500/2;
     wire [31:0] feedback_time=frame_time-AVERAGE_DELAY;
@@ -160,12 +160,12 @@ module motor_adapter_core #(
         else if(join_valid) frame_current_ready<=0;
         else if(averaged_valid) frame_current_ready<=1;
     motor_measurement_angle #(.CURRENT_LAG(CURRENT_LAG),.ENCODER_LAG(ENCODER_LAG),
-        .MAX_WINDOW_TICKS(MAX_WINDOW_TICKS)) align1(
+        .CHECKS_ENABLED(!SIMPLE_PROTECTION),.MAX_STEP(SIMPLE_PROTECTION ? 512 : 64),.MAX_WINDOW_TICKS(MAX_WINDOW_TICKS)) align1(
         .clk(clk),.rst_n(data_rst_n),.valid(join_valid),.mechanical(captured_angle1),
         .current_time(feedback_time),.encoder_time(encoder_time1),.aligned(aligned1),
         .step(),.speed_fault(speed_fault1),.timing_fault(timing_fault1),.initialized(),.aligned_valid(aligned_valid1));
     motor_measurement_angle #(.CURRENT_LAG(CURRENT_LAG),.ENCODER_LAG(ENCODER_LAG),
-        .MAX_WINDOW_TICKS(MAX_WINDOW_TICKS)) align2(
+        .CHECKS_ENABLED(!SIMPLE_PROTECTION),.MAX_STEP(SIMPLE_PROTECTION ? 512 : 64),.MAX_WINDOW_TICKS(MAX_WINDOW_TICKS)) align2(
         .clk(clk),.rst_n(data_rst_n),.valid(join_valid),.mechanical(captured_angle2),
         .current_time(feedback_time),.encoder_time(encoder_time2),.aligned(aligned2),
         .step(),.speed_fault(speed_fault2),.timing_fault(timing_fault2),.initialized(),.aligned_valid(aligned_valid2));
@@ -193,14 +193,14 @@ module motor_adapter_core #(
         if(!data_rst_n) disarmed_config<=0;
         else if(!arm) disarmed_config<=config_bus;
     wire config_changed=arm && config_bus!=disarmed_config;
-    wire ready=calibrated && !calibrating && fresh && config_ok && !config_changed && !sensor_fault && !sync_fault && !(|measurement_faults);
+    wire ready=calibrated && !calibrating && config_ok && (SIMPLE_PROTECTION || (fresh && !config_changed && !sensor_fault && !sync_fault && !(|measurement_faults)));
     assign feedback_valid=(MEASUREMENT_COMP ? (!MOTOR_MASK[0] || aligned_valid1) && (!MOTOR_MASK[1] || aligned_valid2) && frame_current_ready : averaged_valid)
-        && !overcurrent && ready && faults==0;
+        && (SIMPLE_PROTECTION || !overcurrent) && ready && faults==0;
     // CAL belongs to the unused low-side CSA. Hall zeroing must NOT toggle it.
     assign drv_cal=2'b00;
     wire [15:0] foc_theta_1=ALLOW_ALIGNMENT && alignment_mode ? alignment_theta : theta_1;
     wire [15:0] foc_theta_2=ALLOW_ALIGNMENT && alignment_mode ? alignment_theta : theta_2;
-    wire trace_m2=MOTOR_MASK==2'b10;
+    wire trace_m2=TRACE_MOTOR2 || MOTOR_MASK==2'b10;
     wire park_valid_1,pi_valid_1;
     wire park_valid_2,pi_valid_2;
     wire signed [15:0] park_id_1,park_iq_1,pi_ud_1,pi_uq_1;
@@ -223,7 +223,7 @@ module motor_adapter_core #(
         .q_voltage_limit(effective_q_limit),.id_ref(id_ref_2),.iq_ref(iq_ref_2),.kp(kp),.ki(ki),.kaw(kaw),.voltage_limit(voltage_limit),.current_limit(current_trip_q15),
         .head_sync(head2),.peak_sync(peak2),.pwm(m2_ip_pwm),
         .park_valid(park_valid_2),.pi_valid(pi_valid_2),.park_id(park_id_2),.park_iq(park_iq_2),.pi_ud(pi_ud_2),.pi_uq(pi_uq_2));
-    motor_drv_guard #(.WAKE_CYCLES(WAKE_CYCLES),.MOTOR_MASK(MOTOR_MASK)) guard(
+    motor_drv_guard #(.SIMPLE_PROTECTION(SIMPLE_PROTECTION),.WAKE_CYCLES(WAKE_CYCLES),.MOTOR_MASK(MOTOR_MASK)) guard(
         .clk(clk),.rst_n(rst_n),.arm(arm),.clear_fault(clear_fault),.ready(ready),
         .estop(estop),.fault_n(drv_fault_n),.sensor_fault(sensor_fault || (|measurement_faults)),
         .overcurrent(overcurrent),.sync_fault(sync_fault),.pwm_in(raw_pwm),

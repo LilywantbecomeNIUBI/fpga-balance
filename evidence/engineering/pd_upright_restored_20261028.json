@@ -1,0 +1,137 @@
+{
+  "config": {
+    "m1_reverse": true,
+    "m2_reverse": false,
+    "axis_confirmed": true,
+    "m1_accepted": true,
+    "m2_accepted": true,
+    "kp": 0.05,
+    "kd": 0,
+    "foc_kp": 16384,
+    "foc_ki": 256,
+    "trim_deg": 0,
+    "current_ma": 150,
+    "cutoff_deg": 15.0,
+    "start_deg": 3.0,
+    "duration_ms": 2000,
+    "filter_shift": 8,
+    "mode": 0,
+    "test_axis": 3,
+    "current_target_ma": 0,
+    "speed_target_rpm": 0.0,
+    "speed_kp": 0.0,
+    "speed_ki": 0.0
+  },
+  "record": {
+    "time_us": 2422442724,
+    "imu_seq": 6734221,
+    "motor_seq": 26935,
+    "drive": true,
+    "attitude_calibrated": true,
+    "attitude_calibrating": false,
+    "current_calibrated": true,
+    "current_calibrating": false,
+    "running": false,
+    "commissioning": false,
+    "commission_failed": false,
+    "active": false,
+    "armed": false,
+    "estop": false,
+    "attitude_bad": false,
+    "independent_commission": true,
+    "preserve_commission_on_clear": true,
+    "commission_axis": 0,
+    "imu_ok": true,
+    "configured": true,
+    "gates": 4095,
+    "stop_reason": 0,
+    "motor_faults": 0,
+    "pitch": -0.007659912109375,
+    "rate": 0.18310546875,
+    "shadow_a": 0.000244140625,
+    "iq1_a": 0.0,
+    "iq2_a": 0.0,
+    "interval_us": 937,
+    "age_us": 287,
+    "accel": [
+      -0.018310546875,
+      -0.0162353515625,
+      -0.9971923828125
+    ],
+    "gyro": [
+      0.1220703125,
+      -0.54931640625,
+      0.06103515625
+    ],
+    "temp_c": 22.07125603864734,
+    "currents_a": [
+      0.07470703125,
+      -0.03271484375,
+      -0.0419921875,
+      -0.03271484375,
+      0.016357421875,
+      0.016357421875
+    ],
+    "angles": [
+      1643,
+      1430
+    ],
+    "zero_progress": 1024,
+    "imu_errors": 0,
+    "imu_invalid": 0,
+    "rx_errors": 0,
+    "ack_seq": 236,
+    "result": 0,
+    "rejected": 0,
+    "commissioned_mask": 3,
+    "commission_state": 6,
+    "who_am_i": 71,
+    "imu_last_error": 0,
+    "config_hex": "02bb08ebcdcc0c00000000000040000100009600dc052c01d007083400000000",
+    "wheel_rpm": [
+      0.0,
+      0.0
+    ],
+    "speed_trim_deg": 0.0,
+    "m2_diagnostic": {
+      "sequence": 26935,
+      "sample_time": 67336256,
+      "mechanical": 1430,
+      "theta": 33904,
+      "currents_a": [
+        -0.03271484375,
+        0.016357421875,
+        0.016357421875
+      ],
+      "id_ref_a": 0.0,
+      "iq_ref_a": 0.0,
+      "running": false,
+      "alignment": false,
+      "id_a": 0.032470703125,
+      "iq_a": -0.00341796875,
+      "ud": -0.0162353515625,
+      "uq": 0.001708984375,
+      "park_valid": true,
+      "overrun": false,
+      "learned_zero": [
+        6908,
+        3690
+      ],
+      "learned_reverse": 3,
+      "selected_motor": 2,
+      "simple_protection": true
+    },
+    "host_time": 1793120133.7362037,
+    "demo": false,
+    "rpm": [
+      0.0,
+      0.0
+    ],
+    "rpm_raw": [
+      0.0,
+      0.0
+    ]
+  },
+  "log_dir": "E:\\Gowin_project\\fpga_project\\team_repos\\fpga-balance\\releases\\MOTOR_MANUAL_20261028_R3\\app\\results\\20261028_002521_c5e241",
+  "motion_started": false
+}

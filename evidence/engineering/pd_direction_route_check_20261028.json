@@ -1,0 +1,52 @@
+{
+  "firmware_change": false,
+  "equation": "Kp*(target-pitch)-Kd*rate",
+  "pd_torque_flags": {
+    "m1_reverse": true,
+    "m2_reverse": false
+  },
+  "current_forward_flags": {
+    "m1_reverse": false,
+    "m2_reverse": true
+  },
+  "checks": [
+    "front tilt -> both forward",
+    "rear tilt -> both backward",
+    "front angular rate -> both forward",
+    "rear angular rate -> both backward"
+  ],
+  "offline_sign_checks_passed": true,
+  "physical_pd_direction_accepted": true,
+  "config": {
+    "m1_reverse": true,
+    "m2_reverse": false,
+    "axis_confirmed": true,
+    "m1_accepted": true,
+    "m2_accepted": true,
+    "kp": 0.05,
+    "kd": 0,
+    "foc_kp": 16384,
+    "foc_ki": 256,
+    "trim_deg": 0.0,
+    "current_ma": 150,
+    "cutoff_deg": 15.0,
+    "start_deg": 3.0,
+    "duration_ms": 500,
+    "filter_shift": 8,
+    "mode": 0,
+    "test_axis": 3,
+    "current_target_ma": 0,
+    "speed_target_rpm": 0.0,
+    "speed_kp": 0.0,
+    "speed_ki": 0.0
+  },
+  "preparation": "config and zeros completed once; first direction pulse was not started because host page timeout invalidated config",
+  "observation_polling": "bounded read-only state polling added during user posture changes",
+  "front_visual_passed": true,
+  "front_capture": "releases/MOTOR_MANUAL_20261028_R3/app/results/20261028_002521_c5e241/pd_front_referenced_2s_20261028_004521.json",
+  "rear_visual_passed": true,
+  "temporary_reference_note": "Cleared after user confirmed actual upright: trim0, attitude and current zero redone; no motor run.",
+  "rear_pass_capture": "releases\\MOTOR_MANUAL_20261028_R3\\app\\results\\20261028_002521_c5e241\\pd_rear_referenced_2s_20261028_005000.json",
+  "M2_current_tracking_stability_accepted": false,
+  "open_issue": "First rear trial M2 Iq reference +0.1499A but actual +0.00438A/Uq+.75/no clear wheel motion; retry actual +0.15158A and user saw backward motion. Cause unresolved; do not erase failed trial."
+}
