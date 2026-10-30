@@ -1,0 +1,122 @@
+{
+  "profile": "carrier_revb_4015_12v_success_20261025",
+  "protocol_version": 2,
+  "clock_hz": 50000000,
+  "pwm_hz": 20000,
+  "current_reverse_mask": 7,
+  "current_cb_mask": 3,
+  "current_swap_mask": 0,
+  "gain_q16": [
+    217082,
+    220767,
+    217082,
+    220767
+  ],
+  "pole_pairs": [
+    11,
+    11
+  ],
+  "phase_trip_a_nominal": 1.0,
+  "runtime_iq_limit_a_nominal": 1.2,
+  "commission_id_a_nominal": 0.35,
+  "commission_voltage_limit": 0.25,
+  "current_lag_clocks": 1000,
+  "encoder_lag_clocks": 250,
+  "command_slew": 64,
+  "speed_guard_ticks": 512,
+  "m1": {
+    "pwm_port": 1,
+    "encoder_port": 1,
+    "c_channel": 1,
+    "b_channel": 2,
+    "vehicle_side": "right",
+    "encoder_forward_reverse": true,
+    "encoder_forward_confirmed": true,
+    "encoder_forward_evidence": "balance/results/20261027_163444_b51735/right_wheel_forward_summary.json",
+    "integrated_electrical_commissioning_passed": true,
+    "integrated_electrical_commissioning_evidence": "balance/results/20261027_164722_19786a/m1_retry_165801.json",
+    "integrated_commission_firmware_sha256": "e2d525f534c03ae67a1257d9c3786cee2d3bb2e133a6269e0bc3a68878f704a1",
+    "integrated_latest_commissioning_passed": false,
+    "integrated_latest_commissioning_evidence": "balance/results/20261027_164722_19786a/paired_commission_170700.json"
+  },
+  "m2": {
+    "pwm_port": 2,
+    "encoder_port": 2,
+    "c_channel": 3,
+    "b_channel": 4,
+    "vehicle_side": "left",
+    "encoder_forward_reverse": false,
+    "encoder_forward_confirmed": true,
+    "encoder_forward_evidence": "balance/results/20261027_163444_b51735/left_wheel_forward_summary.json",
+    "integrated_electrical_commissioning_passed": false,
+    "integrated_electrical_commissioning_evidence": "balance/results/20261027_164722_19786a/m2_commission_170044.json"
+  },
+  "replacement_hall_gain_independently_calibrated": false,
+  "integrated_hardware_tested": false,
+  "imu_installation": {
+    "confirmed_date": "2026-10-27",
+    "pitch_axis": "Y",
+    "pitch_reverse": true,
+    "upright_z_positive": false,
+    "orientation_bits": 3,
+    "front_pitch_positive": true,
+    "static_pose_confirmed": true,
+    "dynamic_gyro_sign_verified": true,
+    "evidence": [
+      "balance/results/front_tilt_20261027_161930/summary.json",
+      "balance/results/upright_20261027_162031/summary.json",
+      "balance/results/back_tilt_20261027_162112/summary.json",
+      "balance/results/20261027_163444_b51735/dynamic_direction_summary.json"
+    ]
+  },
+  "wheel_side_reference": "Viewed from rear toward vehicle front; user explicitly confirmed M1 is right on 2026-10-27; M2 left follows two-wheel mapping",
+  "independent_commissioning": {
+    "commands": {
+      "M1_right": 9,
+      "M2_left": 10
+    },
+    "legacy_next_axis_command_rejected": 5,
+    "firmware_capability_flag": "telemetry byte17 bit6",
+    "any_axis_first": true,
+    "global_clear_still_invalidates_both": true,
+    "hardware_accepted": false
+  },
+  "commission_fault_clear_policy": {
+    "preserve_successful_electrical_calibration": true,
+    "explicit_selected_recommission": true,
+    "fpga_reset_invalidates": true,
+    "current_zero_still_required": true,
+    "hardware_accepted": false
+  },
+  "simple_protection": true,
+  "software_overcurrent_stop": false,
+  "encoder_speed_timing_stop": false,
+  "commission_id_q15": 1434,
+  "continuous_run_duration_ms": 0,
+  "parameter_apply_preserves_calibration": true,
+  "manual_pd_limits": {
+    "kp_max": 1.0,
+    "kd_max": 0.2,
+    "current_ma_max": 1200,
+    "ui_initial_current_ma": 300,
+    "runtime_iq_limit_q12": 4915,
+    "runtime_iq_limit_a": 1.199951171875,
+    "physically_validated": false
+  },
+  "manual_speed_limits": {
+    "kp_max": 0.51,
+    "ki_max": 0.51,
+    "target_rpm_max": 120,
+    "trim_limit_deg": 6,
+    "extended_gain_step": 0.002,
+    "physically_validated": false
+  },
+  "manual_acceptance_gates_removed": true,
+  "runtime_d_voltage_limit": 0.125,
+  "runtime_q_voltage_limit": 0.75,
+  "commission_voltage_hardware_validated": false,
+  "normal_tuning_continuous_only": true,
+  "finite_deadline_scope": "dedicated current tests only",
+  "angle_start_gate_removed": true,
+  "angle_stop_protection_removed": true
+}

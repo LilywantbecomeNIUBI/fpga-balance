@@ -120,16 +120,19 @@ class Link:
                 if r['active'] or r['armed'] or r['commissioning'] or r['current_calibrating'] or r['attitude_calibrating']:
                     raise ValueError('请先停止，等待校准结束后修改参数')
                 if r['stop_reason'] or (r['drive'] and r['motor_faults']): raise ValueError('先人工清故障，再应用参数')
-                cfg = Config(**(values or {})); body = cfg.body(self.next_seq())
+                if not r.get('dual_current_tuning'): raise ValueError('双轮独立电流环需要下载新版 FPGA 固件')
+                cfg = Config(**(values or {}))
+                if cfg.mode==1 and not (r.get('current_speed_limit_supported') and r.get('current_continuous_supported')): raise ValueError('持续电流及可调限速需要下载新版FPGA固件')
+                body = cfg.body(self.next_seq())
                 self.pending_config = body.hex(); self.config_deadline = time.monotonic()+1
                 self.config_ack = False; self.queue.append(frame(body))
                 self.event('config_requested', config=asdict(cfg), body=body.hex())
                 self.message = '参数已发送，等待 FPGA 完整回显确认'
                 return
             commissioning_action = name in ('commission_m1', 'commission_m2')
-            if name not in ('clear', 'current_zero', 'attitude_zero', 'commission_m1', 'commission_m2', 'arm', 'start'):
+            if name not in ('clear', 'pause', 'current_zero', 'attitude_zero', 'commission_m1', 'commission_m2', 'arm', 'start'):
                 raise ValueError('未知操作')
-            if name != 'clear' and not self.config_ack:
+            if name not in ('clear','pause') and not self.config_ack:
                 raise ValueError('参数尚未获得 FPGA 确认')
             if commissioning_action:
                 if not r.get('independent_commission'): raise ValueError('当前固件不支持指定电机标定；请先断12V下载新版')
@@ -137,14 +140,12 @@ class Link:
                 if r['commissioned_mask'] & selected and not r.get('preserve_commission_on_clear'): raise ValueError('该电机本次已标定；重新标定须人工清故障并重新校零')
             if commissioning_action or name in ('arm', 'start'):
                 if not r['drive']: raise ValueError('观察版物理禁止驱动，请在电机验收后使用驱动版')
-                flags = bytes.fromhex(r['config_hex'])[3]
-                if flags & 0xe0 != 0xe0: raise ValueError('必须确认姿态与前进轴向及M1/M2两路电机验收')
                 if r['stop_reason'] or r['motor_faults']: raise ValueError('故障锁存中')
                 if r['commission_failed']: raise ValueError('电角标定失败；检查硬件后人工清故障，不能直接重试')
                 ok,reason=stationary_check(self.history)
                 if reason.startswith('Warning:'):
                     print(reason,flush=True);self.event('warning',message=reason)
-            if name in ('arm', 'start') and r['gates'] & 0xfff != 0xfff:
+            if name in ('arm', 'start') and r['gates'] & 0xe1f != 0xe1f:
                 raise ValueError('启动条件未全部满足')
             if name == 'start' and not r['armed']: raise ValueError('请先解锁，并在 1 秒内开始单次试运行')
             if name == 'clear': self.config_ack = False; self.pending_config = None
@@ -165,7 +166,7 @@ class Link:
             self.history.append(r)
             self.log.write(json.dumps(dict(event='sample', **r), ensure_ascii=False)+'\n')
             if self.pending_config and r['configured'] and r['config_hex'] == self.pending_config:
-                self.config_ack = True; self.pending_config = None; self.message = 'FPGA 参数回显一致；每次调参后需重新姿态校零'
+                self.config_ack = True; self.pending_config = None; self.message = 'FPGA 参数回显一致；已有姿态、电流和电角标定保留；需要时手动重新校零'
                 self.event('config_ack', body=r['config_hex'])
             if not r['configured'] or r['stop_reason'] or (r['drive'] and r['motor_faults']): self.config_ack = False
             if r['commission_failed']:
@@ -218,6 +219,7 @@ class Link:
             if ping: self.browser_seen = time.monotonic()
             return dict(demo=self.demo, connected=self.serial is not None, port=self.port,
                         fresh=self.fresh(), config_ack=self.config_ack, message=self.message,
+                        dq_history=[[r['time_us']/1e6,*[(r.get(axis+'_diagnostic') or {}).get(k) for axis in ('m1','m2') for k in ('iq_ref_a','iq_a','id_ref_a','id_a')],*[(r.get(axis+'_diagnostic') or {}).get('uq') for axis in ('m1','m2')],*[(sign*(.25 if (r.get(axis+'_diagnostic') or {}).get('alignment') else .75)) for axis in ('m1','m2') for sign in (1,-1)]] for r in list(self.history)[-600:]],
                         record=self.record, stats=dict(packets=self.parser.packets, crc_errors=self.parser.crc_errors,
                         discarded=self.parser.discarded, gaps=self.parser.gaps), gates=GATES,
                         stationary_preflight=stationary_check(self.history)[1], log_dir=str(self.folder), history=[[r['time_us']/1e6,r['pitch'],r['rate'],r['shadow_a'],

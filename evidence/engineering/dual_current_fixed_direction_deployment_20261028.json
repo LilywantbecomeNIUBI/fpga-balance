@@ -1,0 +1,141 @@
+{
+  "bitstream_sha256": "1047403fa92b1e427068a533c9663435a40ef67b519d6663a550fb80ea285712",
+  "sram_programmed": true,
+  "flash_programmed": false,
+  "user_confirmed_motor_12v_off": true,
+  "host_restarted": true,
+  "port": "COM20",
+  "calibration_arm_start_sent": false,
+  "after": {
+    "time_us": 51455020,
+    "imu_seq": 51480,
+    "motor_seq": 1027016,
+    "drive": true,
+    "attitude_calibrated": false,
+    "attitude_calibrating": false,
+    "current_calibrated": false,
+    "current_calibrating": false,
+    "running": false,
+    "commissioning": false,
+    "commission_failed": false,
+    "active": false,
+    "armed": false,
+    "estop": true,
+    "attitude_bad": false,
+    "independent_commission": true,
+    "preserve_commission_on_clear": true,
+    "commission_axis": 0,
+    "imu_ok": true,
+    "configured": false,
+    "gates": 515,
+    "stop_reason": 1,
+    "motor_faults": 1,
+    "pitch": 0.0,
+    "rate": 0.0,
+    "shadow_a": 0.0,
+    "iq1_a": 0.0,
+    "iq2_a": 0.0,
+    "interval_us": 1087,
+    "age_us": 323,
+    "accel": [
+      -0.0048828125,
+      -0.034423828125,
+      -0.9959716796875
+    ],
+    "gyro": [
+      0.335693359375,
+      -0.335693359375,
+      -0.213623046875
+    ],
+    "temp_c": 21.81461352657005,
+    "currents_a": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "angles": [
+      11092,
+      11805
+    ],
+    "zero_progress": 0,
+    "imu_errors": 0,
+    "imu_invalid": 0,
+    "rx_errors": 0,
+    "ack_seq": 3,
+    "result": 0,
+    "rejected": 0,
+    "commissioned_mask": 0,
+    "commission_state": 0,
+    "who_am_i": 71,
+    "imu_last_error": 0,
+    "config_hex": "0000000000000000000000000000000000000000000000000000000000000000",
+    "wheel_rpm": [
+      0.0,
+      0.0
+    ],
+    "speed_trim_deg": 0.0,
+    "dual_current_tuning": true,
+    "m1_diagnostic": {
+      "sequence": 0,
+      "sample_time": 0,
+      "mechanical": 0,
+      "theta": 0,
+      "currents_a": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "id_ref_a": 0.0,
+      "iq_ref_a": 0.0,
+      "running": false,
+      "alignment": false,
+      "id_a": 0.0,
+      "iq_a": 0.0,
+      "ud": 0.0,
+      "uq": 0.0,
+      "park_valid": false,
+      "overrun": false
+    },
+    "m2_diagnostic": {
+      "sequence": 0,
+      "sample_time": 0,
+      "mechanical": 0,
+      "theta": 0,
+      "currents_a": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "id_ref_a": 0.0,
+      "iq_ref_a": 0.0,
+      "running": false,
+      "alignment": false,
+      "id_a": 0.0,
+      "iq_a": 0.0,
+      "ud": 0.0,
+      "uq": 0.0,
+      "park_valid": false,
+      "overrun": false,
+      "learned_zero": [
+        0,
+        0
+      ],
+      "learned_reverse": 0,
+      "selected_motor": 2,
+      "simple_protection": true
+    },
+    "host_time": 1793197632.1660109,
+    "demo": false,
+    "rpm": [
+      0.0,
+      0.0
+    ],
+    "rpm_raw": [
+      0.0,
+      0.0
+    ]
+  }
+}

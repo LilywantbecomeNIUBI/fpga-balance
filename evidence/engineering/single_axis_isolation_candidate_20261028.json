@@ -1,0 +1,27 @@
+{
+  "user_observation": "12V now disconnected, audible abnormal noise during low-gain pair and M1 visibly moved",
+  "source_finding": "Runtime MOTOR_MASK=3 enabled both current loops; test_axis only zeros the other Iq. This is not physical isolation.",
+  "motion_cause_proven": false,
+  "candidate_change": "balance_top masks unselected EN/PWM in current mode and ignores only disabled-axis nFAULT; independent commissioning and PD/speed retain original masks",
+  "deployed": true,
+  "bitstreams_changed": true,
+  "remaining_fault": "M2 positive feedback rail/clipping/overflow cause unresolved; encoded averages are not reliable physical currents",
+  "evidence": "evidence/engineering/m2_low_gain_pair_20261028_133132.json",
+  "offline_validation": {
+    "rtl_passed": 15,
+    "rtl_total": 15,
+    "host_exit": 0,
+    "physical_pin_mask_test": {
+      "test": "tb_top_shadow",
+      "passed": true,
+      "build_exit": 0,
+      "exit": 0,
+      "output": "PASS integrated PD publication, observe inhibit, physical single-axis EN/PWM, selected fault and independent commission\nE:\\Gowin_project\\fpga_project\\team_repos\\fpga-balance\\balance\\tests\\tb_top_shadow.sv:50: $finish called at 1968000 (1ps)\n"
+    }
+  },
+  "deployment_evidence": "evidence/engineering/axis_isolation_deployment_20261028.json",
+  "current_sram_sha256": "b6797f56a047f934431a26b86bf8bded413ffd5f6de347e509412e329b0e0974",
+  "physical_motor_isolation_tested": false,
+  "withdrawn": true,
+  "withdrawal_reason": "Gowin interpreted physical_motor_mask as implicit scalar before declaration; bit1 undriven. Prior simulation/STA did not catch synthesis semantic divergence."
+}

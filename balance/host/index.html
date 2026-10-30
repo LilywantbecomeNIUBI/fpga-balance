@@ -2,55 +2,53 @@
 <title>双轮平衡调试台</title>
 <style>
 :root{font-family:Inter,"Microsoft YaHei",sans-serif;color:#172339;background:#eff3f8;font-size:14px}*{box-sizing:border-box}body{margin:0}header{background:#12243b;color:white;padding:22px 28px;display:flex;align-items:center;justify-content:space-between;gap:18px}h1{font-size:23px;margin:0 0 7px;font-weight:650}header p{margin:0;color:#b5c9df;font-size:13px}.pill{border-radius:20px;padding:8px 14px;background:#2a415b;white-space:nowrap}main{max-width:1600px;margin:auto;padding:22px;display:grid;grid-template-columns:345px minmax(0,1fr);gap:18px}.card{background:white;border:1px solid #dae3ee;border-radius:12px;padding:18px;margin-bottom:16px}h2{font-size:16px;margin:0 0 15px}p{line-height:1.65}.hint{font-size:12px;color:#64748b;line-height:1.7}button,select,input{font:inherit;border:1px solid #cbd5e1;border-radius:6px;padding:8px;background:white;max-width:100%}button{cursor:pointer;background:#f4f7fb}button.primary{background:#1966d2;color:white;border-color:#1966d2}button.danger{background:#c8343a;color:white;border-color:#c8343a;font-weight:650}button:disabled{opacity:.42;cursor:not-allowed}.row{display:flex;gap:8px;align-items:center;margin:8px 0}.row>*{min-width:0}.row label{flex:1}.row input:not([type=checkbox]),.row select{width:126px}input[type=checkbox]{width:17px;height:17px;accent-color:#1966d2}label.check{display:flex;align-items:center;gap:9px;line-height:1.6;margin:9px 0}.actions{display:flex;gap:8px;flex-wrap:wrap}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:16px}.metric{background:white;border:1px solid #dae3ee;border-radius:10px;padding:16px}.metric span{display:block;color:#64748b;font-size:12px}.metric strong{display:block;font-size:28px;font-variant-numeric:tabular-nums;margin-top:7px}.metric small{font-size:12px;color:#64748b}#notice{padding:14px 18px;background:#e9f1fe;border:1px solid #bdd3f5;border-radius:8px;line-height:1.6;margin-bottom:16px;overflow-wrap:anywhere}#notice.error{background:#fff0f0;border-color:#efb6b6;color:#a12227}.gates{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.gate{background:#f4f6f9;padding:9px;border-radius:6px;font-size:12px;color:#64748b}.gate.ok{background:#e9f6ef;color:#187044}canvas{display:block;width:100%;height:180px}a{color:#1966d2}pre{white-space:pre-wrap;word-break:break-all;font-size:12px}details summary{cursor:pointer;color:#52647a}#stop{position:sticky;bottom:12px;width:100%;padding:15px;font-size:17px;box-shadow:0 5px 18px #c8343a33}.legend{font-size:12px;color:#64748b;margin-bottom:8px}.split{display:grid;grid-template-columns:1fr 1fr;gap:16px}#mode.demo{background:#9c601b}#mode.drive{background:#9f3038}#error{min-height:22px;color:#b4232b;font-size:12px;margin:9px 0}.statusline{display:flex;justify-content:space-between;gap:10px;color:#64748b;font-size:12px;margin-top:10px}@media(max-width:1100px){main{grid-template-columns:300px minmax(0,1fr)}.metrics{grid-template-columns:repeat(2,1fr)}.gates{grid-template-columns:repeat(2,1fr)}.split{grid-template-columns:1fr}}@media(max-width:760px){main{display:flex;flex-direction:column;padding:12px}header{padding:18px;align-items:flex-start}h1{font-size:20px}.pill{font-size:12px}aside{order:2}.metrics{gap:8px}.card{padding:14px}.gates{grid-template-columns:repeat(2,1fr)}}
+
+.tuning-toolbar{position:sticky;top:0;z-index:3;background:#eff3f8;padding:10px 0;border-bottom:1px solid #d7e0ec;margin-bottom:12px}.tuning-toolbar button{padding:8px 10px}.chart-tabs{margin-top:8px}.dq-workspace{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}.dq-card{min-width:0}.dq-card[hidden]{display:none}.gain-pair{display:flex;gap:12px;flex-wrap:wrap}.gain-pair .row{flex:1;min-width:170px}.gain-pair input{width:95px!important}.dq-card canvas{height:115px!important}.dq-card .hint{margin:8px 0}.dq-card h2{margin-bottom:8px}
+@media(min-width:761px){header{padding:14px 22px}main{height:calc(100dvh - 86px);padding:12px;overflow:hidden;grid-template-columns:290px minmax(0,1fr)}aside,article{min-height:0;overflow-y:auto;scrollbar-gutter:stable}aside{padding-right:6px}article{padding-right:6px}}
+@media(max-width:760px){main{display:flex;flex-direction:column}aside{order:0}article{order:1}.tuning-toolbar{top:0}.dq-workspace{display:block}}
+.tuning-toolbar #stop{bottom:auto;height:auto;position:absolute;right:0;top:8px;width:auto;padding:8px 12px;font-size:14px;box-shadow:none}.tuning-toolbar>.actions:first-child{padding-right:90px}
+[hidden]{display:none!important}
+
+.page-tabs{display:flex;gap:6px;flex-wrap:wrap;padding-right:90px;margin-bottom:10px}.page-tabs button{background:#fff;color:#52647a}.page-tabs button[aria-pressed="true"]{background:#1966d2;color:#fff;border-color:#1966d2}.page-context{font-size:11px;color:#64748b;margin-bottom:8px}.split{display:block}.view-panel[hidden]{display:none!important}
 </style>
 <header><div><h1>双轮平衡调试台</h1><p>1 kHz 姿态 · FPGA 平衡 PD · 双路 FOC 电流环</p></div><span class="pill" id="mode">未连接</span></header>
 <main><aside>
 <section class="card"><h2>连接与记录</h2><div class="row"><select id="ports" aria-label="串口" style="flex:1;width:auto"></select><button id="refresh">刷新</button></div><div class="actions"><button id="connect" class="primary">连接串口</button><button id="disconnect">断开</button><a href="/export.csv" download="balance.csv">导出 CSV</a></div><p class="hint">921600 baud · 先被动识别固件。旧 IMU / 电机固件不会收到控制命令。</p><div id="error" role="alert"></div></section>
-<section class="card"><h2>姿态与车轮方向</h2>
-<p class="hint">IMU 安装方向已固定：Y 轴俯仰、前倾为正、直立 Z 约 −1 g。</p>
-<label class="check"><input id="m1_reverse" type="checkbox">反转右轮 M1 转矩方向</label>
-<label class="check"><input id="m2_reverse" type="checkbox" checked>反转左轮 M2 转矩方向</label>
-<p class="hint">两轮转矩方向仍待短测确认。姿态校零时机身保持直立；每次应用参数后重新校零。</p>
-<label class="check"><input id="axis_confirmed" type="checkbox">已确认姿态与车轮前进轴向</label>
-<label class="check"><input id="m1_accepted" type="checkbox">M1 已完成独立电机验收</label>
-<label class="check"><input id="m2_accepted" type="checkbox">M2 已排障并完成独立电机验收</label>
-</section>
+
 <section class="card"><h2>调试模式与速度外环</h2>
-<div class="row"><label>模式</label><select id="mode_select"><option value="0">直立 PD</option><option value="1">电流短测</option><option value="2">直立 + 速度 PI</option></select></div>
+<div class="row"><label>模式</label><select id="mode_select"><option value="0">直立 PD</option><option value="1">电流调参</option><option value="2">直立 + 速度 PI</option></select></div>
 <div class="row"><label>电流测试轴</label><select id="test_axis"><option value="1">右轮 M1</option><option value="2">左轮 M2</option><option value="3">双路</option></select></div>
-<div class="row"><label>短测 Iq · mA</label><input id="current_target_ma" type="number" value="0" min="-1000" max="1000" step="1"></div>
-<div class="row"><label>速度目标 · rpm</label><input id="speed_target_rpm" type="number" value="0" min="-60" max="60" step="0.1"></div>
-<div class="row"><label>速度 Kp · °/rpm</label><input id="speed_kp" type="number" value="0" min="0" max="0.255" step="0.001"></div>
-<div class="row"><label>速度 Ki · °/(rpm·s)</label><input id="speed_ki" type="number" value="0" min="0" max="0.255" step="0.001"></div>
+<div class="row"><label>目标 Iq · mA</label><input id="current_target_ma" type="number" value="0" min="-1000" max="1000" step="1"></div>
+<div class="row"><label for="current_ma">转矩电流上限 · mA</label><input id="current_ma" type="number" value="300" min="1" max="1200" step="1"></div><div class="row" id="current_speed_row"><label for="current_speed_limit_rpm">电流模式限速 · rpm</label><input id="current_speed_limit_rpm" type="number" value="100" min="10" max="1000" step="1"></div>
+<div class="row"><label>速度目标 · rpm</label><input id="speed_target_rpm" type="number" value="0" min="-120" max="120" step="0.1"></div>
+<div class="row"><label>速度 Kp · °/rpm</label><input id="speed_kp" type="number" value="0" min="0" max="0.510" step="0.001"></div>
+<div class="row"><label>速度 Ki · °/(rpm·s)</label><input id="speed_ki" type="number" value="0" min="0" max="0.510" step="0.001"></div><p class="hint">速度PI输出目标角度修正限幅±6°。任一速度增益大于0.255时，两项按0.002步进量化；较小增益沿用0.001精度。新范围须配套新版位流，初值仍为0。</p>
 <p class="hint">前进轮速方向已固定：右轮 M1 原始角度取反，左轮 M2 保持原符号；两轮向前均为正。</p>
-<p class="hint">电流短测仍要求完成全部校零和标定门禁；限时结束，无自动重复。速度 PI 为 50 Hz，输出俯仰修正限 ±3°，不是直接给 Iq。先验证前进轮速符号与倾角修正方向，增益从零开始。</p>
+<p class="hint">电流、直立和速度模式均持续运行，需主动结束。速度 PI 为 50 Hz，输出俯仰修正限 ±6°，不是直接给 Iq。先验证前进轮速符号与倾角修正方向，增益从零开始。</p>
 <div class="actions"><button id="save_config">导出参数 JSON</button><label>导入参数<input type="file" id="load_config" accept=".json" style="width:160px"></label></div>
 </section><section class="card"><h2>平衡参数</h2>
-<div class="row"><label for="kp">Kp · A/°</label><input id="kp" type="number" value="0" min="0" max="0.5" step="0.001"></div>
-<div class="row"><label for="kd">Kd · A/(°/s)</label><input id="kd" type="number" value="0" min="0" max="0.1" step="0.0001"></div>
+<div class="row"><label for="kp">Kp · A/°</label><input id="kp" type="number" value="0" min="0" max="1.0" step="0.001"></div>
+<div class="row"><label for="kd">Kd · A/(°/s)</label><input id="kd" type="number" value="0" min="0" max="0.2" step="0.0001"></div>
 <div class="row"><label for="trim_deg">直立微调 · °</label><input id="trim_deg" type="number" value="0" min="-5" max="5" step="0.1"></div>
-<div class="row"><label for="current_ma">转矩电流上限 · mA</label><input id="current_ma" type="number" value="100" min="1" max="1000" step="1"></div>
-<div class="row"><label for="duration_ms">单次时长 · ms</label><input id="duration_ms" type="number" value="1000" min="100" max="5000" step="100"></div>
-<div class="row"><label for="start_deg">允许启动角 · °</label><input id="start_deg" type="number" value="3" min="0.01" max="5" step="0.1"></div>
-<div class="row"><label for="cutoff_deg">倾倒停机角 · °</label><input id="cutoff_deg" type="number" value="15" min="5" max="15" step="0.5"></div>
-<details><summary>滤波与 FOC 参数</summary><div class="row"><label for="filter_shift">互补滤波 shift</label><input id="filter_shift" type="number" value="8" min="4" max="10" step="1"></div><div class="row"><label for="foc_kp">FOC Kp · Q12</label><input id="foc_kp" type="number" value="16384" min="0" max="16384" step="1"></div><div class="row"><label for="foc_ki">FOC Ki · Q12</label><input id="foc_ki" type="number" value="256" min="0" max="256" step="1"></div><p class="hint">FOC 初值沿用已调参数；平衡增益从零开始，仍需实车调试。电流上限不代表已知足够支撑车身。</p></details>
-<button id="apply" class="primary" style="width:100%;margin-top:12px">应用参数并等待 FPGA 确认</button><p id="ack" class="hint">尚未应用参数</p></section>
-<button id="stop" class="danger">停止 / Esc</button>
-</aside><article>
+
+<p class="hint">所有模式均持续运行，需主动结束。</p><p class="hint">持续运行仍受 Stop / Esc、心跳失联和驱动 nFAULT 停机。正常结束请点“结束运行 / 保留校准”，再改参；应用参数保留已有校零与电角标定。手动校零/重标定、清故障和复位仍有各自的明确作用。</p>
+<details open><summary>双轮电流环参数与滤波</summary><div class="row"><label for="filter_shift">互补滤波 shift</label><input id="filter_shift" type="number" value="8" min="4" max="10" step="1"></div><p class="hint">FOC 初值沿用已调参数；平衡增益从零开始，仍需实车调试。电流上限不代表已知足够支撑车身。</p></details>
+<p id="ack" class="hint">尚未应用参数</p></section>
+
+</aside><article><div class="tuning-toolbar"><nav class="page-tabs" aria-label="调参页面"><button type="button" data-view-page="current" aria-pressed="false">电流环</button><button type="button" data-view-page="upright" aria-pressed="false">直立环</button><button type="button" data-view-page="speed" aria-pressed="false">速度环</button><button type="button" data-view-page="calibration" aria-pressed="false">校准</button><button type="button" data-view-page="tests" aria-pressed="false">测试记录</button><button type="button" data-view-page="diagnostics" aria-pressed="false">诊断</button></nav><div class="page-context" id="page_context"></div><div class="actions"><button id="apply" class="primary" >应用参数并等待 FPGA 确认</button><button data-action="pause" class="primary">结束运行 / 保留校准</button></div><button id="stop" class="danger">停止 / Esc</button><div class="actions chart-tabs"><button type="button" data-chart-view="1">看 M1</button><button type="button" data-chart-view="2">看 M2</button><button type="button" data-chart-view="both">双轮对照</button></div><span id="run_policy" class="hint"></span><div id="run_live" class="hint" role="status">等待状态</div></div><div class="dq-workspace view-panel" data-pages="current"><section class="card dq-card" data-axis="1"><h2>M1 电流环跟踪</h2><div class="gain-pair"><div class="row"><label for="foc_kp">M1 电流 Kp · Q12</label><input id="foc_kp" type="number" value="16384" min="0" max="16384" step="1"></div><div class="row"><label for="foc_ki">M1 电流 Ki · Q12</label><input id="foc_ki" type="number" value="256" min="0" max="256" step="1"></div></div><p id="dq_status_1" class="hint">等待新版双轮电流诊断固件</p><div class="legend">Iq：蓝色目标 / 橙色实际 · A</div><canvas id="iq1" style="height:160px"></canvas><div class="legend">Id：蓝色目标 / 橙色实际 · A（运行目标为0）</div><canvas id="id1" style="height:160px"></canvas><div class="legend">Uq · 归一化电压指令（橙）；灰线为 ±限幅</div><canvas id="uq1" aria-label="M1 Uq电压指令" style="height:130px"></canvas><div id="speed_limit_status_1" class="hint"></div><p class="hint">在图上方设置 M1 电流 Kp/Ki，停止后应用参数。电流模式选 M1 后仅驱动该轮；另一轮参数保留。实际反馈为串口抽样，不能用于判定20 kHz环路带宽。</p></section><section class="card dq-card" data-axis="2"><h2>M2 电流环跟踪</h2><div class="gain-pair"><div class="row"><label for="foc_kp_m2">M2 电流 Kp · Q12</label><input id="foc_kp_m2" type="number" value="300" min="0" max="16384" step="1"></div><div class="row"><label for="foc_ki_m2">M2 电流 Ki · Q12</label><input id="foc_ki_m2" type="number" value="16" min="0" max="256" step="1"></div></div><p id="dq_status_2" class="hint">等待新版双轮电流诊断固件</p><div class="legend">Iq：蓝色目标 / 橙色实际 · A</div><canvas id="iq2" style="height:160px"></canvas><div class="legend">Id：蓝色目标 / 橙色实际 · A（运行目标为0）</div><canvas id="id2" style="height:160px"></canvas><div class="legend">Uq · 归一化电压指令（橙）；灰线为 ±限幅</div><canvas id="uq2" aria-label="M2 Uq电压指令" style="height:130px"></canvas><div id="speed_limit_status_2" class="hint"></div><p class="hint">在图上方设置 M2 电流 Kp/Ki，停止后应用参数。电流模式选 M2 后仅驱动该轮；另一轮参数保留。实际反馈为串口抽样，不能用于判定20 kHz环路带宽。</p></section></div>
 <div id="notice" role="status">M1/M2已完成独立短测；集成 V2 尚待上板和整车验收。先使用观察版确认姿态与方向。</div>
-<div class="metrics"><div class="metric"><span>俯仰角</span><strong id="pitch">—</strong><small>° · 相对校零姿态</small></div><div class="metric"><span>俯仰角速度</span><strong id="rate">—</strong><small>°/s</small></div><div class="metric"><span>影子转矩电流</span><strong id="shadow">—</strong><small>A · 未启动时仅计算</small></div><div class="metric"><span>IMU 数据年龄</span><strong id="age">—</strong><small>μs · 超过 3000 停机</small></div></div>
-<section class="card"><h2>启动条件</h2><div id="gates" class="gates"></div><div class="statusline"><span id="faults">等待遥测</span><span id="state">DISCONNECTED</span></div></section>
-<section class="card"><h2>调试步骤</h2><div class="actions"><button data-action="clear">人工清故障</button><button data-action="attitude_zero">姿态 / 陀螺仪校零</button><button data-action="current_zero">电流校零</button><button data-action="commission_m1" class="power">标定右轮 M1</button><button data-action="commission_m2" class="power">标定左轮 M2</button></div><p class="hint">电机验收后：断电下载驱动版 → 使能关闭下通 12V → 电流校零 → 明确选择右轮 M1 或左轮 M2，可先标任一路。按钮仅启动指定电机；新版普通清故障保留成功的电角标定；点击已完成的一路会重新标定该路。复位/下载后仍需标定，失败不自动重试。</p><div class="actions"><button data-action="arm" class="power">解锁一次（1 秒有效）</button><button data-action="start" class="primary power">开始单次试运行</button></div><p class="hint">电流模式直接给限时 Iq；直立模式 PD 给 Iq；速度模式 PI 给俯仰修正，再经 PD 给 Iq。倾角越界、IMU 失效、心跳超时和驱动故障均停机；到时退出，重新点击才能运行。</p></section>
-<section class="card"><h2>姿态响应</h2><div class="legend">蓝：俯仰角 °　橙：角速度 °/s（各曲线共用数值刻度）</div><canvas id="attitude" aria-label="姿态曲线"></canvas></section>
-<div class="split"><section class="card"><h2>影子输出与轮速</h2><div class="legend">上图：影子 Iq · A　下图：M1 / M2 · rpm</div><canvas id="torque" aria-label="影子输出曲线" style="height:110px"></canvas><canvas id="speed" aria-label="双轮速度曲线" style="height:110px"></canvas></section><section class="card"><h2>六相电流</h2><div class="legend">M1 A/B/C · 蓝/青/紫　M2 A/B/C · 橙/红/灰（A）</div><canvas id="current" aria-label="相电流曲线" style="height:240px"></canvas></section></div>
-<section class="card"><details><summary>通信与原始诊断</summary><pre id="debug">等待数据</pre></details><p class="hint">曲线约 200 Hz；FPGA 姿态与 PD 按 IMU 实际提交间隔更新，FOC 为 20 kHz。CSV 是遥测抽样，原始串口和完整事件记录自动保存。</p><div id="log" class="hint"></div></section>
+<div class="metrics view-panel" data-pages="upright speed"><div class="metric"><span>俯仰角</span><strong id="pitch">—</strong><small>° · 相对校零姿态</small></div><div class="metric"><span>俯仰角速度</span><strong id="rate">—</strong><small>°/s</small></div><div class="metric"><span>影子转矩电流</span><strong id="shadow">—</strong><small>A · 未启动时仅计算</small></div><div class="metric"><span>IMU 数据年龄</span><strong id="age">—</strong><small>μs · 超过 3000 停机</small></div></div>
+<section class="card view-panel" data-pages="calibration"><details><summary>启动条件</summary><div id="gates" class="gates"></div><div class="statusline"><span id="faults">等待遥测</span><span id="state">DISCONNECTED</span></div></details></section>
+<section class="card"><h2>调试步骤</h2><div class="actions"><button data-action="clear">人工清故障</button><button data-action="attitude_zero">姿态 / 陀螺仪校零</button><button data-action="current_zero">电流校零</button><button data-action="commission_m1" class="power">标定右轮 M1</button><button data-action="commission_m2" class="power">标定左轮 M2</button></div><p class="hint">电机验收后：断电下载驱动版 → 使能关闭下通 12V → 电流校零 → 明确选择右轮 M1 或左轮 M2，可先标任一路。按钮仅启动指定电机；新版普通清故障保留成功的电角标定；点击已完成的一路会重新标定该路。复位/下载后仍需标定，失败不自动重试。</p><div class="actions"></div><p class="hint">电流模式直接给 Iq；直立模式 PD 给 Iq；速度模式 PI 给俯仰修正，再经 PD 给 Iq。倾角越界、IMU 失效、心跳超时和驱动故障均停机；所有模式均持续运行，需手动结束。</p></section>
+<section class="card view-panel" data-pages="upright"><h2>姿态响应</h2><div class="legend">蓝：俯仰角 °　橙：角速度 °/s（各曲线共用数值刻度）</div><canvas id="attitude" aria-label="姿态曲线"></canvas></section>
+<div class="split"><section class="card view-panel" data-pages="upright"><h2>直立环电流需求</h2><div class="legend">影子 Iq · A；这是PD计算需求，不是实际电流</div><canvas id="torque" aria-label="影子输出曲线" style="height:150px"></canvas></section><section class="card view-panel" data-pages="speed"><h2>双轮速度</h2><div class="legend">M1 蓝色 / M2 橙色 · rpm</div><canvas id="speed" aria-label="双轮速度曲线" style="height:220px"></canvas></section></div>
+<section class="card view-panel" data-pages="diagnostics"><details><summary>通信与原始诊断</summary><pre id="debug">等待数据</pre></details><p class="hint">曲线约 200 Hz；FPGA 姿态与 PD 按 IMU 实际提交间隔更新，FOC 为 20 kHz。CSV 是遥测抽样，原始串口和完整事件记录自动保存。</p><div id="log" class="hint"></div></section>
 </article></main>
 <script>
 const token='__TOKEN__',$=id=>document.getElementById(id);
-const boolKeys=['m1_reverse','m2_reverse','axis_confirmed','m1_accepted','m2_accepted'];
-const numKeys=['kp','kd','trim_deg','current_ma','duration_ms','start_deg','cutoff_deg','filter_shift','foc_kp','foc_ki','test_axis','current_target_ma','speed_target_rpm','speed_kp','speed_ki'];
+const numKeys=['kp','kd','trim_deg','current_ma','filter_shift','foc_kp','foc_ki','foc_kp_m2','foc_ki_m2','test_axis','current_target_ma','current_speed_limit_rpm','speed_target_rpm','speed_kp','speed_ki'];
 let dirty=true,lastState=null,noticeError=false;
-function config(){const c={mode:Number($('mode_select').value)};boolKeys.forEach(k=>c[k]=$(k).checked);numKeys.forEach(k=>c[k]=Number($(k).value));return c;}
+function config(){const c={mode:Number($('mode_select').value)};numKeys.forEach(k=>c[k]=Number($(k).value));return c;}
 document.querySelectorAll('input,select').forEach(e=>e.addEventListener('input',()=>{dirty=true;$('ack').textContent='参数已修改，尚未应用';updateButtons();}));
 async function post(path,body){try{const r=await fetch(path,{method:'POST',headers:{'Content-Type':'application/json','X-Balance-Token':token},body:JSON.stringify(body)});const j=await r.json();if(!r.ok)throw Error(j.error);$('error').textContent='';return true;}catch(e){$('error').textContent=e.message;return false;}}
 async function action(name){await post('/api/action',{name});await poll();}
@@ -63,10 +61,11 @@ document.querySelectorAll('[data-action]').forEach(b=>b.onclick=()=>action(b.dat
 function updateButtons(){const s=lastState,r=s?.record,live=s&&!s.demo&&s.connected&&s.fresh;
  $('connect').disabled=!!s?.demo;$('apply').disabled=!live||r?.active||r?.armed||r?.commissioning||r?.current_calibrating||r?.attitude_calibrating;
  document.querySelectorAll('[data-action]').forEach(b=>{const n=b.dataset.action;let ok=live;
+ if(n==='pause'){b.disabled=!live||(!r?.active&&!r?.armed);return;}
  if(n!=='clear')ok=ok&&s.config_ack&&!dirty&&!r?.estop&&(!r?.motor_faults||(n==='attitude_zero'&&!r?.drive));
- if(['commission_m1','commission_m2','arm','start'].includes(n))ok=ok&&r.drive&&((parseInt(r.config_hex.slice(6,8),16)&224)===224);
+ if(['commission_m1','commission_m2','arm','start'].includes(n))ok=ok&&r.drive;
  if(n==='commission_m1'||n==='commission_m2')ok=ok&&r.independent_commission&&(r.preserve_commission_on_clear||!(r.commissioned_mask&(n==='commission_m1'?1:2)));
- if(n==='arm'||n==='start')ok=ok&&((r.gates&4095)===4095);
+ if(n==='arm'||n==='start')ok=ok&&((r.gates&3615)===3615);
  if(n==='start')ok=ok&&r.armed;
  if(['current_zero','attitude_zero','commission_m1','commission_m2'].includes(n))ok=ok&&!r?.active&&!r?.armed&&!r?.commissioning&&!r?.current_calibrating&&!r?.attitude_calibrating;
  b.disabled=!ok;});}
@@ -74,20 +73,45 @@ function plot(id,rows,columns,colors,minRange){const el=$(id),dpr=window.deviceP
  rows.forEach(r=>columns.forEach(i=>{if(Number.isFinite(r[i]))bound=Math.max(bound,Math.abs(r[i]));}));bound*=1.15;
  c.strokeStyle='#e4eaf1';c.fillStyle='#7c8ba0';c.font='10px sans-serif';for(let i=0;i<5;i++){const y=12+(h-30)*i/4;c.beginPath();c.moveTo(42,y);c.lineTo(w-6,y);c.stroke();c.fillText((bound*(1-i/2)).toFixed(bound<1?3:1),2,y+3);}if(rows.length<2)return;
  const end=rows.at(-1)[0],start=Math.max(rows[0][0],end-5),span=Math.max(.1,end-start);
- columns.forEach((col,j)=>{c.strokeStyle=colors[j];c.lineWidth=1.5;c.beginPath();let begun=false;rows.forEach(r=>{if(r[0]<start||!Number.isFinite(r[col]))return;const x=42+(r[0]-start)/span*(w-48),y=12+(h-30)*(1-r[col]/bound)/2;if(!begun){c.moveTo(x,y);begun=true;}else c.lineTo(x,y);});c.stroke();});c.fillStyle='#7c8ba0';c.fillText('最近 5 秒',w-65,h-3);}
-async function poll(){try{const resp=await fetch('/api/state');if(!resp.ok)throw Error('服务不可用');const s=await resp.json();lastState=s;const r=s.record;
- $('mode').textContent=s.demo?'模拟演示 · 无硬件':!r?'未识别集成固件':r.drive?'驱动版 · 单次受控试运行':'观察版 · 电机输出固定关闭';$('mode').className='pill '+(s.demo?'demo':r?.drive?'drive':'');
+ columns.forEach((col,j)=>{c.strokeStyle=colors[j];c.lineWidth=1.5;c.beginPath();let begun=false;rows.forEach(r=>{if(r[0]<start||!Number.isFinite(r[col]))return;const x=42+(r[0]-start)/span*(w-48),y=12+(h-30)*(1-r[col]/bound)/2;if(!begun){c.moveTo(x,y);begun=true;}else c.lineTo(x,y);});c.stroke();});c.fillStyle='#7c8ba0';c.fillText('最近 '+span.toFixed(1)+' 秒',w-90,h-3);}
+async function poll(){try{const resp=await fetch('/api/state');if(!resp.ok)throw Error('服务不可用');const s=await resp.json();lastState=s;const r=s.record;$('run_live').textContent=!s.fresh?'遥测已过期':`状态：${r?.active?'运行中':'停止'} / 停机原因 0x${(r?.stop_reason??0).toString(16)} / 电机故障 0x${(r?.motor_faults??0).toString(16)}${r?.commission_failed?' / 电角标定失败':''}`;
+ $('mode').textContent=s.demo?'模拟演示 · 无硬件':!r?'未识别集成固件':r.drive?'驱动版 · 持续调参':'观察版 · 电机输出固定关闭';$('mode').className='pill '+(s.demo?'demo':r?.drive?'drive':'');
  $('notice').textContent=s.demo?'模拟演示：所有数据均为生成数据，控制按钮已禁用。集成 V2 尚未完成整车验收。':s.message;
  $('notice').className=(!s.demo&&r&&(!s.fresh||r.estop||r.motor_faults))?'error':'';
  const fixed=(v,d=2)=>Number.isFinite(v)?v.toFixed(d):'—';$('pitch').textContent=fixed(r?.pitch);$('rate').textContent=fixed(r?.rate);$('shadow').textContent=fixed(r?.shadow_a,3);$('age').textContent=r?.age_us??'—';
- $('gates').replaceChildren(...s.gates.map((g,i)=>{const d=document.createElement('div');const ok=!!(r&&(r.gates&(1<<i)));d.className='gate'+(ok?' ok':'');d.textContent=(ok?'✓ ':'○ ')+g;return d;}));
+ $('gates').replaceChildren(...s.gates.map((g,i)=>{const d=document.createElement('div');const ok=!!(r&&(r.gates&(1<<i)));d.className='gate'+(ok?' ok':'');d.textContent=(ok?'✓ ':'○ ')+g;return g ? d : null;}).filter(Boolean));
  $('state').textContent=!r?'DISCONNECTED':!s.fresh?'STALE':r.active?'平衡试运行':r.commissioning?'电角标定中':r.armed?'已解锁 · 请立即开始':r.attitude_calibrating?'姿态校零 '+r.zero_progress+'/1024':'停止';
  $('faults').textContent=r?'停机原因 0x'+r.stop_reason.toString(16)+' / 电机故障 0x'+r.motor_faults.toString(16)+' / 已标定：右轮 '+((r.commissioned_mask&1)?'是':'否')+'、左轮 '+((r.commissioned_mask&2)?'是':'否')+' / 本次标定 M'+r.commission_axis:'等待遥测';
  if(!dirty)$('ack').textContent=s.config_ack?'✓ FPGA 完整参数回显已确认':'参数未确认 / 已失效';
  $('log').textContent='静止预检：'+s.stationary_preflight+' · 自动记录：'+s.log_dir;$('debug').textContent=JSON.stringify({stats:s.stats,...r},null,2);
- const rows=s.history;plot('attitude',rows,[1,2],['#1966d2','#db861e'],2);plot('torque',rows,[3],['#1966d2'],.01);plot('speed',rows,[4,5],['#1966d2','#db861e'],5);plot('current',rows,[6,7,8,9,10,11],['#1966d2','#149ea5','#945fd4','#db861e','#d34048','#788394'],.01);updateButtons();
+ const rows=s.history;plot('attitude',rows,[1,2],['#1966d2','#db861e'],2);plot('torque',rows,[3],['#1966d2'],.01);plot('speed',rows,[4,5],['#1966d2','#db861e'],5);const dq=s.dq_history||[];
+ for(const axis of [1,2]){const offset=axis===1?1:5;plot('iq'+axis,dq,[offset,offset+1],['#1966d2','#db861e'],.05);plot('id'+axis,dq,[offset+2,offset+3],['#1966d2','#db861e'],.05);plot('uq'+axis,dq,axis===1?[9,11,12]:[10,13,14],['#db861e','#94a3b8','#94a3b8'],.25);
+ const d=r?.['m'+axis+'_diagnostic'];const voltageCap=d?.alignment ? .25 : .75;const hit=Number.isFinite(d?.uq)&&Math.abs(d.uq)>=voltageCap-.001;$('speed_limit_status_'+axis).textContent=`Uq 限幅 ±${voltageCap.toFixed(3)}${hit?' · 已到限幅':''}；`+((!r?.current_speed_limit_supported||!r?.current_continuous_supported)?'当前固件不支持持续电流及限速':r?.current_speed_limiting?.[axis-1]?'限速正在减小该轮 Iq':'限速未介入')+`；轮速 ${(r?.wheel_rpm?.[axis-1]??0).toFixed(1)} rpm`;$('dq_status_'+axis).textContent=!d?'该轴无实际反馈；请下载新版双轮电流诊断固件':!s.fresh?'遥测已过期':`目标 Iq ${fixed(d.iq_ref_a,3)} / 实际 ${fixed(d.iq_a,3)} A；实际 Id ${fixed(d.id_a,3)} A；Ud ${fixed(d.ud,3)} / Uq ${fixed(d.uq,3)}；Park ${d.park_valid?'有效':'无效'} / overrun ${d.overrun}`;}
+ updateButtons();
  }catch(e){$('notice').textContent='上位机连接中断；FPGA 心跳超时将停止驱动。请检查本地服务。';$('notice').className='error';lastState=null;updateButtons();}}
 $('save_config').onclick=()=>{const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify({schema:'balance-v2',config:config()},null,2)],{type:'application/json'}));a.download='balance-v2-parameters.json';a.click();URL.revokeObjectURL(a.href);};
-$('load_config').onchange=async e=>{try{const j=JSON.parse(await e.target.files[0].text());if(j.schema!=='balance-v2')throw Error('仅接受 balance-v2 参数');const c=j.config;if(['axis_y','pitch_reverse','upright_z_positive','encoder1_reverse','encoder2_reverse'].some(k=>k in c))throw Error('旧参数含可选方向；请使用本车固定方向的新参数');boolKeys.forEach(k=>{if(typeof c[k]!=='boolean')throw Error(k);});numKeys.forEach(k=>{if(!Number.isFinite(c[k]))throw Error(k);});boolKeys.forEach(k=>$(k).checked=c[k]);numKeys.forEach(k=>$(k).value=c[k]);['axis_confirmed','m1_accepted','m2_accepted'].forEach(k=>$(k).checked=false);$('mode_select').value=c.mode;dirty=true;updateButtons();$('ack').textContent='已导入到表单，尚未发送；请检查车轮方向确认位';}catch(x){$('error').textContent=x.message;}};
+$('load_config').onchange=async e=>{try{const j=JSON.parse(await e.target.files[0].text());if(j.schema!=='balance-v2')throw Error('仅接受 balance-v2 参数');const c=j.config;delete c.duration_ms;c.current_speed_limit_rpm??=100;delete c.m1_reverse;delete c.m2_reverse;c.foc_kp_m2??=c.foc_kp;c.foc_ki_m2??=c.foc_ki;if(['axis_y','pitch_reverse','upright_z_positive','encoder1_reverse','encoder2_reverse'].some(k=>k in c))throw Error('旧参数含可选方向；请使用本车固定方向的新参数');numKeys.forEach(k=>{if(!Number.isFinite(c[k]))throw Error(k);});numKeys.forEach(k=>$(k).value=c[k]);$('mode_select').value=c.mode;syncRunPolicy();dirty=true;updateButtons();$('ack').textContent='已导入到表单，尚未发送；请检查参数';}catch(x){$('error').textContent=x.message;}};
+
+function syncRunPolicy(){const current=Number($('mode_select').value)===1;
+ $('current_speed_row').hidden=!current;
+ const b=$('manual_start');if(b)b.textContent=current?'开始持续电流':'开始持续调参';
+ $('run_policy').textContent=current?`电流测试轴：M${$('test_axis').value==='3'?'1+M2':$('test_axis').value}；持续运行，需主动结束；限速 ${$('current_speed_limit_rpm').value} rpm，75%开始减小Iq。`:'直立/速度模式：持续运行，需主动结束。';}
+function showCurrentAxis(view){document.querySelectorAll('.dq-card').forEach(el=>el.hidden=view!=='both'&&el.dataset.axis!==view);document.querySelector('article').scrollTop=0;}
+document.querySelectorAll('[data-chart-view]').forEach(el=>el.onclick=()=>showCurrentAxis(el.dataset.chartView));
+$('mode_select').addEventListener('change',syncRunPolicy);$('current_speed_limit_rpm').addEventListener('input',syncRunPolicy);
+$('test_axis').addEventListener('change',()=>{showCurrentAxis($('test_axis').value==='3'?'both':$('test_axis').value);syncRunPolicy();});
+syncRunPolicy();showCurrentAxis('1');
+const pageNames={current:'电流环',upright:'直立环',speed:'速度环',calibration:'校准',tests:'测试记录',diagnostics:'诊断'};
+function showTuningPage(page){
+ document.querySelectorAll('.view-panel').forEach(el=>el.hidden=!el.dataset.pages.split(' ').includes(page));
+ document.querySelectorAll('[data-view-page]').forEach(el=>el.setAttribute('aria-pressed',String(el.dataset.viewPage===page)));
+ document.querySelector('.chart-tabs').hidden=page!=='current';
+ document.querySelectorAll('.view-panel:not([hidden]) > details').forEach(el=>el.open=true);
+ $('page_context').textContent=pageNames[page]+'页面 · 切换页面只改变显示，不切换运行模式、不下发命令';
+ document.querySelector('article').scrollTop=0;
+}
+document.querySelectorAll('[data-view-page]').forEach(el=>el.onclick=()=>showTuningPage(el.dataset.viewPage));
+showTuningPage('current');
+
 $('refresh').click();poll();setInterval(poll,200);
 </script></html>

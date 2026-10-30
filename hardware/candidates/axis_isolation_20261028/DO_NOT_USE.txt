@@ -1,0 +1,1 @@
+Withdrawn b6797f56 build: implicit physical_motor_mask scalar / bit1 undriven. Do not program the bitstream in this folder until replaced after a clean rebuild. See evidence/engineering/axis_isolation_implicit_net_fix_20261028.json.

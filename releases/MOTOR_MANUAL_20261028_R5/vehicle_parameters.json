@@ -1,0 +1,99 @@
+{
+  "updated_date": "2026-10-28",
+  "m1": {
+    "positive_iq_direction": "forward",
+    "forward_iq_sign": 1,
+    "forward_torque_reverse": false,
+    "evidence": "User observed M1 +0.15 A / 2 s test moving forward on 2026-10-28",
+    "tested_profiles": [
+      {
+        "iq_ma": 400,
+        "limit_ma": 500,
+        "duration_ms": 2000,
+        "active_encoder_deg": -5504.3701171875
+      },
+      {
+        "iq_ma": 150,
+        "limit_ma": 200,
+        "duration_ms": 2000,
+        "active_encoder_deg": -5243.40087890625
+      }
+    ]
+  },
+  "m2": {
+    "positive_iq_direction": "backward",
+    "forward_iq_sign": -1,
+    "forward_torque_reverse": true,
+    "evidence": "User observed M2 +0.4 A / 2 s test moving backward"
+  },
+  "raw_direction_test": {
+    "iq_ma": 400,
+    "limit_ma": 500,
+    "duration_ms": 2000,
+    "mode": 1,
+    "torque_reverse": false
+  },
+  "foc": {
+    "kp": 300,
+    "ki": 16,
+    "pole_pairs": [
+      11,
+      11
+    ],
+    "gain_q16": [
+      217082,
+      220767,
+      217082,
+      220767
+    ],
+    "current_reverse_mask": 7,
+    "current_cb_mask": 3,
+    "runtime_tuned": false
+  },
+  "pd": {
+    "torque_flags": {},
+    "direction_accepted": true,
+    "tuned": false,
+    "kp_shadow_only": 0.05,
+    "kd_shadow_only": 0.001
+  },
+  "calibration_persistence": {
+    "manual_clear_preserves_electrical": true,
+    "reset_or_reprogram_loses_electrical": true,
+    "current_and_attitude_zero_needed_after_clear": true
+  },
+  "full_balance_accepted": false,
+  "session_electrical_snapshot": {
+    "learned_zero": [
+      6914,
+      3690
+    ],
+    "learned_reverse": 3,
+    "valid_after_reset_or_reprogram": false
+  },
+  "last_direction_test_config": {
+    "axis_confirmed": true,
+    "m1_accepted": true,
+    "m2_accepted": true,
+    "kp": 0.0,
+    "kd": 0.0,
+    "foc_kp": 16384,
+    "foc_ki": 256,
+    "trim_deg": 0.0,
+    "current_ma": 200,
+    "cutoff_deg": 15.0,
+    "start_deg": 3.0,
+    "duration_ms": 2000,
+    "filter_shift": 8,
+    "mode": 1,
+    "test_axis": 1,
+    "current_target_ma": 150,
+    "speed_target_rpm": 0.0,
+    "speed_kp": 0.0,
+    "speed_ki": 0.0
+  },
+  "commissioning_id_target_a": 0.35009765625,
+  "M2_runtime_current_loop_accepted": false,
+  "commission_voltage_limit": 0.25,
+  "fixed_direction_note": "Current mode uses raw Iq; upright/speed M1 inverted, M2 normal; no direction selectors."
+}

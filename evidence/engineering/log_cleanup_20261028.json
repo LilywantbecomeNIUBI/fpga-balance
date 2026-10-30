@@ -1,0 +1,275 @@
+{
+  "removed_rebuildable": [
+    {
+      "path": "E:\\Gowin_project\\fpga_project\\team_repos\\fpga-balance\\dist\\remote-clone",
+      "bytes": 15035825,
+      "kind": "disposable verification copy"
+    },
+    {
+      "path": "E:\\Gowin_project\\fpga_project\\team_repos\\fpga-balance\\releases\\MOTOR_MANUAL_20261028_R5\\app\\host\\__pycache__",
+      "bytes": 58625,
+      "kind": "Python bytecode cache"
+    },
+    {
+      "path": "E:\\Gowin_project\\fpga_project\\team_repos\\fpga-balance\\releases\\MOTOR_MANUAL_20261028_R5\\app\\tests\\__pycache__",
+      "bytes": 55221,
+      "kind": "Python bytecode cache"
+    },
+    {
+      "path": "E:\\Gowin_project\\fpga_project\\team_repos\\fpga-balance\\releases\\MOTOR_MANUAL_20261028_R4\\app\\host\\__pycache__",
+      "bytes": 57934,
+      "kind": "Python bytecode cache"
+    },
+    {
+      "path": "E:\\Gowin_project\\fpga_project\\team_repos\\fpga-balance\\releases\\MOTOR_MANUAL_20261028_R4\\app\\tests\\__pycache__",
+      "bytes": 51156,
+      "kind": "Python bytecode cache"
+    },
+    {
+      "path": "E:\\Gowin_project\\fpga_project\\team_repos\\fpga-balance\\releases\\MOTOR_MANUAL_20261028_R3\\app\\host\\__pycache__",
+      "bytes": 47696,
+      "kind": "Python bytecode cache"
+    },
+    {
+      "path": "E:\\Gowin_project\\fpga_project\\team_repos\\fpga-balance\\releases\\MOTOR_MANUAL_20261028_R3\\app\\tests\\__pycache__",
+      "bytes": 42462,
+      "kind": "Python bytecode cache"
+    },
+    {
+      "path": "E:\\Gowin_project\\fpga_project\\team_repos\\fpga-balance\\releases\\MOTOR_MANUAL_20261027_R2\\app\\host\\__pycache__",
+      "bytes": 47696,
+      "kind": "Python bytecode cache"
+    },
+    {
+      "path": "E:\\Gowin_project\\fpga_project\\team_repos\\fpga-balance\\releases\\MOTOR_MANUAL_20261027_R2\\app\\tests\\__pycache__",
+      "bytes": 42462,
+      "kind": "Python bytecode cache"
+    },
+    {
+      "path": "E:\\Gowin_project\\fpga_project\\team_repos\\fpga-balance\\releases\\MOTOR_MANUAL_20261027_R1\\source\\simple\\motor_control\\tools\\__pycache__",
+      "bytes": 3418,
+      "kind": "Python bytecode cache"
+    },
+    {
+      "path": "E:\\Gowin_project\\fpga_project\\team_repos\\fpga-balance\\releases\\MOTOR_MANUAL_20261027_R1\\source\\simple\\balance\\tools\\__pycache__",
+      "bytes": 2163,
+      "kind": "Python bytecode cache"
+    },
+    {
+      "path": "E:\\Gowin_project\\fpga_project\\team_repos\\fpga-balance\\releases\\MOTOR_MANUAL_20261027_R1\\app\\host\\__pycache__",
+      "bytes": 46832,
+      "kind": "Python bytecode cache"
+    },
+    {
+      "path": "E:\\Gowin_project\\fpga_project\\team_repos\\fpga-balance\\releases\\MOTOR_MANUAL_20261027_R1\\app\\tests\\__pycache__",
+      "bytes": 38807,
+      "kind": "Python bytecode cache"
+    },
+    {
+      "path": "E:\\Gowin_project\\fpga_project\\team_repos\\fpga-balance\\motor_control\\tools\\__pycache__",
+      "bytes": 3370,
+      "kind": "Python bytecode cache"
+    },
+    {
+      "path": "E:\\Gowin_project\\fpga_project\\team_repos\\fpga-balance\\balance\\host\\__pycache__",
+      "bytes": 46207,
+      "kind": "Python bytecode cache"
+    },
+    {
+      "path": "E:\\Gowin_project\\fpga_project\\team_repos\\fpga-balance\\balance\\tests\\__pycache__",
+      "bytes": 41663,
+      "kind": "Python bytecode cache"
+    },
+    {
+      "path": "E:\\Gowin_project\\fpga_project\\team_repos\\fpga-balance\\balance\\tools\\__pycache__",
+      "bytes": 8661,
+      "kind": "Python bytecode cache"
+    },
+    {
+      "path": "E:\\Gowin_project\\fpga_project\\team_repos\\fpga-balance\\balance\\results\\tests\\tb_clear_compat.out",
+      "bytes": 50095,
+      "kind": "simulation executable"
+    },
+    {
+      "path": "E:\\Gowin_project\\fpga_project\\team_repos\\fpga-balance\\balance\\results\\tests\\tb_dual_iq.out",
+      "bytes": 320970,
+      "kind": "simulation executable"
+    },
+    {
+      "path": "E:\\Gowin_project\\fpga_project\\team_repos\\fpga-balance\\balance\\results\\tests\\tb_imu_400k.out",
+      "bytes": 124236,
+      "kind": "simulation executable"
+    },
+    {
+      "path": "E:\\Gowin_project\\fpga_project\\team_repos\\fpga-balance\\balance\\results\\tests\\tb_imu_reader.out",
+      "bytes": 124253,
+      "kind": "simulation executable"
+    },
+    {
+      "path": "E:\\Gowin_project\\fpga_project\\team_repos\\fpga-balance\\balance\\results\\tests\\tb_imu_startup.out",
+      "bytes": 604139,
+      "kind": "simulation executable"
+    },
+    {
+      "path": "E:\\Gowin_project\\fpga_project\\team_repos\\fpga-balance\\balance\\results\\tests\\tb_independent_commission.out",
+      "bytes": 335492,
+      "kind": "simulation executable"
+    },
+    {
+      "path": "E:\\Gowin_project\\fpga_project\\team_repos\\fpga-balance\\balance\\results\\tests\\tb_m2_trace.out",
+      "bytes": 217425,
+      "kind": "simulation executable"
+    },
+    {
+      "path": "E:\\Gowin_project\\fpga_project\\team_repos\\fpga-balance\\balance\\results\\tests\\tb_math.out",
+      "bytes": 66552,
+      "kind": "simulation executable"
+    },
+    {
+      "path": "E:\\Gowin_project\\fpga_project\\team_repos\\fpga-balance\\balance\\results\\tests\\tb_protocol.out",
+      "bytes": 167237,
+      "kind": "simulation executable"
+    },
+    {
+      "path": "E:\\Gowin_project\\fpga_project\\team_repos\\fpga-balance\\balance\\results\\tests\\tb_sdiv.out",
+      "bytes": 12762,
+      "kind": "simulation executable"
+    },
+    {
+      "path": "E:\\Gowin_project\\fpga_project\\team_repos\\fpga-balance\\balance\\results\\tests\\tb_simplified.out",
+      "bytes": 112888,
+      "kind": "simulation executable"
+    },
+    {
+      "path": "E:\\Gowin_project\\fpga_project\\team_repos\\fpga-balance\\balance\\results\\tests\\tb_speed.out",
+      "bytes": 28557,
+      "kind": "simulation executable"
+    },
+    {
+      "path": "E:\\Gowin_project\\fpga_project\\team_repos\\fpga-balance\\balance\\results\\tests\\tb_supervisor.out",
+      "bytes": 76474,
+      "kind": "simulation executable"
+    },
+    {
+      "path": "E:\\Gowin_project\\fpga_project\\team_repos\\fpga-balance\\balance\\results\\tests\\tb_telemetry.out",
+      "bytes": 34690,
+      "kind": "simulation executable"
+    },
+    {
+      "path": "E:\\Gowin_project\\fpga_project\\team_repos\\fpga-balance\\balance\\results\\tests\\tb_telemetry_m2.out",
+      "bytes": 35800,
+      "kind": "simulation executable"
+    },
+    {
+      "path": "E:\\Gowin_project\\fpga_project\\team_repos\\fpga-balance\\balance\\results\\tests\\tb_top_commission.out",
+      "bytes": 588542,
+      "kind": "simulation executable"
+    },
+    {
+      "path": "E:\\Gowin_project\\fpga_project\\team_repos\\fpga-balance\\balance\\results\\tests\\tb_top_reconfigure.out",
+      "bytes": 581516,
+      "kind": "simulation executable"
+    },
+    {
+      "path": "E:\\Gowin_project\\fpga_project\\team_repos\\fpga-balance\\balance\\results\\tests\\tb_top_shadow.out",
+      "bytes": 1160448,
+      "kind": "simulation executable"
+    }
+  ],
+  "archived_logs": [
+    {
+      "original": "E:\\Gowin_project\\fpga_project\\team_repos\\fpga-balance\\releases\\MOTOR_MANUAL_20261028_R5\\app\\results\\20261028_151840_f00bc5\\events.jsonl",
+      "archive": "D:\\活动\\比赛\\电赛\\FPGA\\日志归档\\fpga-balance_20261028\\releases\\MOTOR_MANUAL_20261028_R5\\app\\results\\20261028_151840_f00bc5\\events.jsonl.gz",
+      "original_bytes": 3056713726,
+      "compressed_bytes": 146537520,
+      "sha256": "9c3594d8d0b3055db3fe079426a3b4d945835399433273115599f520de72944d"
+    },
+    {
+      "original": "E:\\Gowin_project\\fpga_project\\team_repos\\fpga-balance\\releases\\MOTOR_MANUAL_20261028_R4\\app\\results\\20261028_131132_09a610\\events.jsonl",
+      "archive": "D:\\活动\\比赛\\电赛\\FPGA\\日志归档\\fpga-balance_20261028\\releases\\MOTOR_MANUAL_20261028_R4\\app\\results\\20261028_131132_09a610\\events.jsonl.gz",
+      "original_bytes": 1580129307,
+      "compressed_bytes": 97450162,
+      "sha256": "d40f2316606f6adbb442ef5569178f706ba8b8184bd86aa73de2cf664eaf5cd2"
+    },
+    {
+      "original": "E:\\Gowin_project\\fpga_project\\team_repos\\fpga-balance\\releases\\MOTOR_MANUAL_20261028_R4\\app\\results\\20261028_023441_fae7c9\\events.jsonl",
+      "archive": "D:\\活动\\比赛\\电赛\\FPGA\\日志归档\\fpga-balance_20261028\\releases\\MOTOR_MANUAL_20261028_R4\\app\\results\\20261028_023441_fae7c9\\events.jsonl.gz",
+      "original_bytes": 610424785,
+      "compressed_bytes": 39715712,
+      "sha256": "2b7e7d9ab294f6a7790971472eb5fe7e9618a473eb4668feacf8f03e3845a6bc"
+    },
+    {
+      "original": "E:\\Gowin_project\\fpga_project\\team_repos\\fpga-balance\\balance\\results\\20261027_164722_19786a\\events.jsonl",
+      "archive": "D:\\活动\\比赛\\电赛\\FPGA\\日志归档\\fpga-balance_20261028\\balance\\results\\20261027_164722_19786a\\events.jsonl.gz",
+      "original_bytes": 491811972,
+      "compressed_bytes": 36631204,
+      "sha256": "42376ca0c1b3d16a0a9d0ab7289caa1516c686a8a63b38f375d9b0eec2dd8059"
+    },
+    {
+      "original": "E:\\Gowin_project\\fpga_project\\team_repos\\fpga-balance\\balance\\results\\20261027_172003_26d69e\\events.jsonl",
+      "archive": "D:\\活动\\比赛\\电赛\\FPGA\\日志归档\\fpga-balance_20261028\\balance\\results\\20261027_172003_26d69e\\events.jsonl.gz",
+      "original_bytes": 352150319,
+      "compressed_bytes": 26409088,
+      "sha256": "465c94621a5becde1eef0a099dcffd0eaa279c7d4fd1a47e7d0e7d66a30abd37"
+    },
+    {
+      "original": "E:\\Gowin_project\\fpga_project\\team_repos\\fpga-balance\\balance\\results\\20261027_221113_a7a582\\events.jsonl",
+      "archive": "D:\\活动\\比赛\\电赛\\FPGA\\日志归档\\fpga-balance_20261028\\balance\\results\\20261027_221113_a7a582\\events.jsonl.gz",
+      "original_bytes": 345605796,
+      "compressed_bytes": 27217284,
+      "sha256": "e9e0d8576f561ea806e8dc3c54b983cb1eb4c2d7858e8c095298aa9765287987"
+    },
+    {
+      "original": "E:\\Gowin_project\\fpga_project\\team_repos\\fpga-balance\\releases\\MOTOR_MANUAL_20261028_R5\\app\\results\\20261028_151840_f00bc5\\rx.bin",
+      "archive": "D:\\活动\\比赛\\电赛\\FPGA\\日志归档\\fpga-balance_20261028\\releases\\MOTOR_MANUAL_20261028_R5\\app\\results\\20261028_151840_f00bc5\\rx.bin.gz",
+      "original_bytes": 312947498,
+      "compressed_bytes": 54290033,
+      "sha256": "fa255ecf8d7b4f5dd74503aa858cb38e5c537c5513e0f7a99fd0ab469ecbb978"
+    },
+    {
+      "original": "E:\\Gowin_project\\fpga_project\\team_repos\\fpga-balance\\balance\\results\\20261027_215227_3f0bdf\\events.jsonl",
+      "archive": "D:\\活动\\比赛\\电赛\\FPGA\\日志归档\\fpga-balance_20261028\\balance\\results\\20261027_215227_3f0bdf\\events.jsonl.gz",
+      "original_bytes": 292830626,
+      "compressed_bytes": 22580797,
+      "sha256": "cbefcb70e0e9f02308b61e524ab523ab52da52ec28722047df369d3e01e6ee03"
+    },
+    {
+      "original": "E:\\Gowin_project\\fpga_project\\team_repos\\fpga-balance\\balance\\results\\20261026_141050_1bfe05\\events.jsonl",
+      "archive": "D:\\活动\\比赛\\电赛\\FPGA\\日志归档\\fpga-balance_20261028\\balance\\results\\20261026_141050_1bfe05\\events.jsonl.gz",
+      "original_bytes": 224757914,
+      "compressed_bytes": 10115781,
+      "sha256": "30cb800489bee16a4f3b52bcd8656df36bd74a968e6201498acdf95d623e7931"
+    },
+    {
+      "original": "E:\\Gowin_project\\fpga_project\\team_repos\\fpga-balance\\balance\\results\\20261027_163444_b51735\\events.jsonl",
+      "archive": "D:\\活动\\比赛\\电赛\\FPGA\\日志归档\\fpga-balance_20261028\\balance\\results\\20261027_163444_b51735\\events.jsonl.gz",
+      "original_bytes": 167425116,
+      "compressed_bytes": 10886607,
+      "sha256": "c01b816b774ad200ae546d6bcbfce7f1a830d11f3ff6970a883dde55dfe84b76"
+    },
+    {
+      "original": "E:\\Gowin_project\\fpga_project\\team_repos\\fpga-balance\\releases\\MOTOR_MANUAL_20261028_R4\\app\\results\\20261028_131132_09a610\\rx.bin",
+      "archive": "D:\\活动\\比赛\\电赛\\FPGA\\日志归档\\fpga-balance_20261028\\releases\\MOTOR_MANUAL_20261028_R4\\app\\results\\20261028_131132_09a610\\rx.bin.gz",
+      "original_bytes": 151537797,
+      "compressed_bytes": 35320470,
+      "sha256": "a5fbfc4ab5c535e4d0b4651e0f6e785abcf5240f439247b9bfd5db4abb3f62d9"
+    },
+    {
+      "original": "E:\\Gowin_project\\fpga_project\\team_repos\\fpga-balance\\balance\\results\\20261027_175443_e5626d\\events.jsonl",
+      "archive": "D:\\活动\\比赛\\电赛\\FPGA\\日志归档\\fpga-balance_20261028\\balance\\results\\20261027_175443_e5626d\\events.jsonl.gz",
+      "original_bytes": 146031491,
+      "compressed_bytes": 9337854,
+      "sha256": "0109a9f791e42c7971c75163546732cdcf2cb22e86c2d28ae6eb347ce2459174"
+    },
+    {
+      "original": "E:\\Gowin_project\\fpga_project\\team_repos\\fpga-balance\\releases\\MOTOR_MANUAL_20261028_R4\\app\\results\\20261028_023441_fae7c9\\rx.bin",
+      "archive": "D:\\活动\\比赛\\电赛\\FPGA\\日志归档\\fpga-balance_20261028\\releases\\MOTOR_MANUAL_20261028_R4\\app\\results\\20261028_023441_fae7c9\\rx.bin.gz",
+      "original_bytes": 59558222,
+      "compressed_bytes": 14517877,
+      "sha256": "6aa3668cfe89387c360a4fa918349d03c77424b2ec515aaf62147dcc1349635f"
+    }
+  ],
+  "released_bytes_this_pass": 7812196843,
+  "e_free_bytes": 7852584960,
+  "firmware_sources_and_motor_test_records_removed": false
+}

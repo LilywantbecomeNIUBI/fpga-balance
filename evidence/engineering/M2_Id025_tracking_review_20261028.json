@@ -1,0 +1,51 @@
+{
+  "source": "D:\\活动\\比赛\\电赛\\FPGA\\日志归档\\fpga-balance_20261028\\releases\\MOTOR_MANUAL_20261028_R4\\app\\results\\20261028_131132_09a610\\events.jsonl.gz",
+  "scope": "M2 Id0.25A successful commissioning 2026-10-28 14:14:32; full-rate host telemetry, not sparse polling",
+  "summary": [
+    {
+      "state": 1,
+      "samples": 200,
+      "id_mean_a": 0.071468505859375,
+      "id_min_a": -0.04150390625,
+      "id_max_a": 0.333740234375,
+      "iq_mean_a": -0.0340771484375,
+      "ud_saturation_samples": 188,
+      "overruns": 0,
+      "within_25mA_samples": 3,
+      "tail_100ms_id_mean_a": 0.07718505859375,
+      "id_ref_set": [
+        0.25
+      ]
+    },
+    {
+      "state": 2,
+      "samples": 200,
+      "id_mean_a": 0.165828857421875,
+      "id_min_a": -0.103271484375,
+      "id_max_a": 0.501708984375,
+      "iq_mean_a": 0.0171875,
+      "ud_saturation_samples": 181,
+      "overruns": 0,
+      "within_25mA_samples": 36,
+      "tail_100ms_id_mean_a": 0.28817894345238093,
+      "id_ref_set": [
+        0.25
+      ]
+    },
+    {
+      "state": 3,
+      "samples": 60,
+      "id_mean_a": 0.10997314453125,
+      "id_min_a": 0.012451171875,
+      "id_max_a": 0.280029296875,
+      "iq_mean_a": -0.06339925130208333,
+      "ud_saturation_samples": 56,
+      "overruns": 0,
+      "within_25mA_samples": 0,
+      "tail_100ms_id_mean_a": 0.09786551339285714,
+      "id_ref_set": [
+        0.25
+      ]
+    }
+  ]
+}

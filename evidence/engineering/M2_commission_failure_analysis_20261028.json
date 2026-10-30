@@ -1,0 +1,917 @@
+{
+  "events": [
+    {
+      "event": "connect",
+      "time": "18:02:42.010"
+    },
+    {
+      "event": "identified_initial_stop",
+      "time": "18:02:42.022"
+    },
+    {
+      "event": "connect",
+      "time": "18:03:54.511"
+    },
+    {
+      "event": "identified_initial_stop",
+      "time": "18:03:54.522"
+    },
+    {
+      "event": "command_requested",
+      "command": "clear",
+      "time": "18:04:00.646"
+    },
+    {
+      "event": "config_requested",
+      "config": {
+        "m1_reverse": true,
+        "m2_reverse": false,
+        "axis_confirmed": false,
+        "m1_accepted": false,
+        "m2_accepted": false,
+        "kp": 0,
+        "kd": 0,
+        "foc_kp": 300,
+        "foc_ki": 16,
+        "trim_deg": 0,
+        "current_ma": 300,
+        "cutoff_deg": 15,
+        "start_deg": 3,
+        "duration_ms": 0,
+        "filter_shift": 8,
+        "mode": 0,
+        "test_axis": 1,
+        "current_target_ma": 0,
+        "speed_target_rpm": 0,
+        "speed_kp": 0,
+        "speed_ki": 0
+      },
+      "time": "18:04:05.581"
+    },
+    {
+      "event": "command_requested",
+      "command": "attitude_zero",
+      "time": "18:04:09.339"
+    },
+    {
+      "event": "command_requested",
+      "command": "current_zero",
+      "time": "18:04:11.906"
+    },
+    {
+      "event": "command_requested",
+      "command": "current_zero",
+      "time": "18:04:14.280"
+    },
+    {
+      "event": "command_requested",
+      "command": "current_zero",
+      "time": "18:04:14.448"
+    },
+    {
+      "event": "config_requested",
+      "config": {
+        "m1_reverse": true,
+        "m2_reverse": false,
+        "axis_confirmed": true,
+        "m1_accepted": true,
+        "m2_accepted": true,
+        "kp": 0,
+        "kd": 0,
+        "foc_kp": 300,
+        "foc_ki": 16,
+        "trim_deg": 0,
+        "current_ma": 300,
+        "cutoff_deg": 15,
+        "start_deg": 3,
+        "duration_ms": 0,
+        "filter_shift": 8,
+        "mode": 0,
+        "test_axis": 1,
+        "current_target_ma": 0,
+        "speed_target_rpm": 0,
+        "speed_kp": 0,
+        "speed_ki": 0
+      },
+      "time": "18:06:38.192"
+    },
+    {
+      "event": "command_requested",
+      "command": "attitude_zero",
+      "time": "18:06:40.631"
+    },
+    {
+      "event": "command_requested",
+      "command": "commission_m1",
+      "time": "18:06:44.343"
+    },
+    {
+      "event": "command_requested",
+      "command": "commission_m2",
+      "time": "18:06:48.638"
+    },
+    {
+      "event": "command_requested",
+      "command": "clear",
+      "time": "18:07:08.858"
+    },
+    {
+      "event": "config_requested",
+      "config": {
+        "m1_reverse": true,
+        "m2_reverse": false,
+        "axis_confirmed": true,
+        "m1_accepted": true,
+        "m2_accepted": true,
+        "kp": 0,
+        "kd": 0,
+        "foc_kp": 300,
+        "foc_ki": 16,
+        "trim_deg": 0,
+        "current_ma": 300,
+        "cutoff_deg": 15,
+        "start_deg": 3,
+        "duration_ms": 0,
+        "filter_shift": 8,
+        "mode": 0,
+        "test_axis": 1,
+        "current_target_ma": 0,
+        "speed_target_rpm": 0,
+        "speed_kp": 0,
+        "speed_ki": 0
+      },
+      "time": "18:07:13.992"
+    },
+    {
+      "event": "command_requested",
+      "command": "commission_m2",
+      "time": "18:07:18.225"
+    },
+    {
+      "event": "command_requested",
+      "command": "commission_m2",
+      "time": "18:07:21.630"
+    },
+    {
+      "event": "command_requested",
+      "command": "attitude_zero",
+      "time": "18:07:23.364"
+    },
+    {
+      "event": "command_requested",
+      "command": "current_zero",
+      "time": "18:07:30.178"
+    },
+    {
+      "event": "command_requested",
+      "command": "commission_m1",
+      "time": "18:07:32.539"
+    },
+    {
+      "event": "command_requested",
+      "command": "commission_m2",
+      "time": "18:07:37.231"
+    },
+    {
+      "event": "command_requested",
+      "command": "clear",
+      "time": "18:08:22.953"
+    },
+    {
+      "event": "config_requested",
+      "config": {
+        "m1_reverse": true,
+        "m2_reverse": false,
+        "axis_confirmed": true,
+        "m1_accepted": true,
+        "m2_accepted": true,
+        "kp": 0,
+        "kd": 0,
+        "foc_kp": 300,
+        "foc_ki": 16,
+        "trim_deg": 0,
+        "current_ma": 300,
+        "cutoff_deg": 15,
+        "start_deg": 3,
+        "duration_ms": 0,
+        "filter_shift": 8,
+        "mode": 0,
+        "test_axis": 1,
+        "current_target_ma": 0,
+        "speed_target_rpm": 0,
+        "speed_kp": 0,
+        "speed_ki": 0
+      },
+      "time": "18:08:24.768"
+    }
+  ],
+  "attempts": [
+    {
+      "axis": 1,
+      "time": "18:06:44.343",
+      "stages": {
+        "1": {
+          "n": 200,
+          "first": 5413,
+          "last": 5400,
+          "travel": -13,
+          "phase_peak": 0.4833984375
+        },
+        "2": {
+          "n": 200,
+          "first": 5400,
+          "last": 3921,
+          "travel": -1479,
+          "phase_peak": 0.46337890625
+        },
+        "3": {
+          "n": 60,
+          "first": 3915,
+          "last": 3903,
+          "travel": -12,
+          "phase_peak": 0.4169921875
+        },
+        "5": {
+          "n": 1,
+          "first": 3903,
+          "last": 3903,
+          "travel": 0,
+          "phase_peak": 0.0703125
+        }
+      },
+      "transitions": [
+        {
+          "time": "18:06:44.349",
+          "key": [
+            0,
+            0,
+            false,
+            false,
+            0,
+            0,
+            0
+          ],
+          "angles": [
+            5413,
+            2317
+          ],
+          "current_calibrated": true
+        },
+        {
+          "time": "18:06:44.361",
+          "key": [
+            1,
+            1,
+            true,
+            false,
+            0,
+            0,
+            0
+          ],
+          "angles": [
+            5413,
+            2317
+          ],
+          "current_calibrated": true
+        },
+        {
+          "time": "18:06:45.362",
+          "key": [
+            2,
+            1,
+            true,
+            false,
+            0,
+            0,
+            0
+          ],
+          "angles": [
+            5400,
+            2317
+          ],
+          "current_calibrated": true
+        },
+        {
+          "time": "18:06:46.366",
+          "key": [
+            3,
+            1,
+            true,
+            false,
+            0,
+            0,
+            0
+          ],
+          "angles": [
+            3915,
+            2317
+          ],
+          "current_calibrated": true
+        },
+        {
+          "time": "18:06:46.664",
+          "key": [
+            5,
+            1,
+            true,
+            false,
+            0,
+            0,
+            0
+          ],
+          "angles": [
+            3903,
+            2317
+          ],
+          "current_calibrated": true
+        },
+        {
+          "time": "18:06:46.670",
+          "key": [
+            6,
+            1,
+            false,
+            false,
+            0,
+            0,
+            1
+          ],
+          "angles": [
+            3904,
+            2317
+          ],
+          "current_calibrated": true
+        }
+      ]
+    },
+    {
+      "axis": 2,
+      "time": "18:06:48.638",
+      "stages": {
+        "1": {
+          "n": 200,
+          "first": 2317,
+          "last": 2254,
+          "travel": -63,
+          "phase_peak": 0.34716796875,
+          "dq_n": 200,
+          "ud_abs_max": 0.125,
+          "uq_abs_max": 0.125,
+          "id_ref_max": 0.35009765625,
+          "id_mean": 0.081131591796875,
+          "iq_mean": -0.033583984375
+        },
+        "2": {
+          "n": 200,
+          "first": 2254,
+          "last": 2276,
+          "travel": 22,
+          "phase_peak": 0.41943359375,
+          "dq_n": 200,
+          "ud_abs_max": 0.125,
+          "uq_abs_max": 0.125,
+          "id_ref_max": 0.35009765625,
+          "id_mean": 0.171783447265625,
+          "iq_mean": 0.014383544921875
+        },
+        "3": {
+          "n": 60,
+          "first": 2276,
+          "last": 2279,
+          "travel": 3,
+          "phase_peak": 0.2412109375,
+          "dq_n": 60,
+          "ud_abs_max": 0.125,
+          "uq_abs_max": 0.125,
+          "id_ref_max": 0.35009765625,
+          "id_mean": 0.09665120442708333,
+          "iq_mean": -0.05087890625
+        }
+      },
+      "transitions": [
+        {
+          "time": "18:06:48.638",
+          "key": [
+            6,
+            1,
+            false,
+            false,
+            0,
+            0,
+            1
+          ],
+          "angles": [
+            3911,
+            2317
+          ],
+          "current_calibrated": true
+        },
+        {
+          "time": "18:06:48.650",
+          "key": [
+            1,
+            2,
+            true,
+            false,
+            0,
+            0,
+            1
+          ],
+          "angles": [
+            3911,
+            2317
+          ],
+          "current_calibrated": true
+        },
+        {
+          "time": "18:06:49.654",
+          "key": [
+            2,
+            2,
+            true,
+            false,
+            0,
+            0,
+            1
+          ],
+          "angles": [
+            3911,
+            2254
+          ],
+          "current_calibrated": true
+        },
+        {
+          "time": "18:06:50.655",
+          "key": [
+            3,
+            2,
+            true,
+            false,
+            0,
+            0,
+            1
+          ],
+          "angles": [
+            3911,
+            2276
+          ],
+          "current_calibrated": true
+        },
+        {
+          "time": "18:06:50.952",
+          "key": [
+            7,
+            2,
+            false,
+            true,
+            0,
+            0,
+            1
+          ],
+          "angles": [
+            3911,
+            2279
+          ],
+          "current_calibrated": true
+        },
+        {
+          "time": "18:07:08.871",
+          "key": [
+            6,
+            0,
+            false,
+            false,
+            0,
+            0,
+            1
+          ],
+          "angles": [
+            3911,
+            2289
+          ],
+          "current_calibrated": false
+        }
+      ]
+    },
+    {
+      "axis": 2,
+      "time": "18:07:18.225",
+      "stages": {},
+      "transitions": [
+        {
+          "time": "18:07:18.232",
+          "key": [
+            6,
+            0,
+            false,
+            false,
+            0,
+            0,
+            1
+          ],
+          "angles": [
+            3911,
+            2289
+          ],
+          "current_calibrated": false
+        }
+      ]
+    },
+    {
+      "axis": 2,
+      "time": "18:07:21.630",
+      "stages": {},
+      "transitions": [
+        {
+          "time": "18:07:21.632",
+          "key": [
+            6,
+            0,
+            false,
+            false,
+            0,
+            0,
+            1
+          ],
+          "angles": [
+            3911,
+            2289
+          ],
+          "current_calibrated": false
+        }
+      ]
+    },
+    {
+      "axis": 1,
+      "time": "18:07:32.539",
+      "stages": {
+        "1": {
+          "n": 201,
+          "first": 3910,
+          "last": 3903,
+          "travel": -7,
+          "phase_peak": 0.4521484375
+        },
+        "2": {
+          "n": 200,
+          "first": 3903,
+          "last": 2415,
+          "travel": -1488,
+          "phase_peak": 0.421142578125
+        },
+        "3": {
+          "n": 60,
+          "first": 2410,
+          "last": 2407,
+          "travel": -3,
+          "phase_peak": 0.451416015625
+        }
+      },
+      "transitions": [
+        {
+          "time": "18:07:32.540",
+          "key": [
+            6,
+            0,
+            false,
+            false,
+            0,
+            0,
+            1
+          ],
+          "angles": [
+            3910,
+            2289
+          ],
+          "current_calibrated": true
+        },
+        {
+          "time": "18:07:32.551",
+          "key": [
+            1,
+            1,
+            true,
+            false,
+            0,
+            0,
+            0
+          ],
+          "angles": [
+            3910,
+            2289
+          ],
+          "current_calibrated": true
+        },
+        {
+          "time": "18:07:33.557",
+          "key": [
+            2,
+            1,
+            true,
+            false,
+            0,
+            0,
+            0
+          ],
+          "angles": [
+            3903,
+            2289
+          ],
+          "current_calibrated": true
+        },
+        {
+          "time": "18:07:34.560",
+          "key": [
+            3,
+            1,
+            true,
+            false,
+            0,
+            0,
+            0
+          ],
+          "angles": [
+            2410,
+            2289
+          ],
+          "current_calibrated": true
+        },
+        {
+          "time": "18:07:34.858",
+          "key": [
+            6,
+            1,
+            false,
+            false,
+            0,
+            0,
+            1
+          ],
+          "angles": [
+            2407,
+            2289
+          ],
+          "current_calibrated": true
+        }
+      ]
+    },
+    {
+      "axis": 2,
+      "time": "18:07:37.231",
+      "stages": {
+        "1": {
+          "n": 200,
+          "first": 2289,
+          "last": 2264,
+          "travel": -25,
+          "phase_peak": 0.343994140625,
+          "dq_n": 200,
+          "ud_abs_max": 0.125,
+          "uq_abs_max": 0.125,
+          "id_ref_max": 0.35009765625,
+          "id_mean": 0.05991943359375,
+          "iq_mean": -0.039658203125
+        },
+        "2": {
+          "n": 200,
+          "first": 2264,
+          "last": 2276,
+          "travel": 12,
+          "phase_peak": 0.448486328125,
+          "dq_n": 200,
+          "ud_abs_max": 0.125,
+          "uq_abs_max": 0.125,
+          "id_ref_max": 0.35009765625,
+          "id_mean": 0.16883544921875,
+          "iq_mean": 0.01318603515625
+        },
+        "3": {
+          "n": 60,
+          "first": 2276,
+          "last": 2279,
+          "travel": 3,
+          "phase_peak": 0.18994140625,
+          "dq_n": 60,
+          "ud_abs_max": 0.125,
+          "uq_abs_max": 0.125,
+          "id_ref_max": 0.35009765625,
+          "id_mean": 0.07504475911458333,
+          "iq_mean": -0.05652669270833333
+        }
+      },
+      "transitions": [
+        {
+          "time": "18:07:37.234",
+          "key": [
+            6,
+            1,
+            false,
+            false,
+            0,
+            0,
+            1
+          ],
+          "angles": [
+            2411,
+            2289
+          ],
+          "current_calibrated": true
+        },
+        {
+          "time": "18:07:37.248",
+          "key": [
+            1,
+            2,
+            true,
+            false,
+            0,
+            0,
+            1
+          ],
+          "angles": [
+            2411,
+            2289
+          ],
+          "current_calibrated": true
+        },
+        {
+          "time": "18:07:38.248",
+          "key": [
+            2,
+            2,
+            true,
+            false,
+            0,
+            0,
+            1
+          ],
+          "angles": [
+            2411,
+            2264
+          ],
+          "current_calibrated": true
+        },
+        {
+          "time": "18:07:39.250",
+          "key": [
+            3,
+            2,
+            true,
+            false,
+            0,
+            0,
+            1
+          ],
+          "angles": [
+            2411,
+            2276
+          ],
+          "current_calibrated": true
+        },
+        {
+          "time": "18:07:39.548",
+          "key": [
+            7,
+            2,
+            false,
+            true,
+            0,
+            0,
+            1
+          ],
+          "angles": [
+            2411,
+            2279
+          ],
+          "current_calibrated": true
+        },
+        {
+          "time": "18:08:22.971",
+          "key": [
+            6,
+            0,
+            false,
+            false,
+            0,
+            0,
+            1
+          ],
+          "angles": [
+            2411,
+            2289
+          ],
+          "current_calibrated": false
+        }
+      ]
+    }
+  ],
+  "m2_feedback_validation": [
+    {
+      "attempt": 1,
+      "stage": 1,
+      "n": 200,
+      "valid": 200,
+      "overrun": 0,
+      "d_sat": 192,
+      "q_sat": 100,
+      "id_lo": -0.05029296875,
+      "id_hi": 0.335693359375,
+      "iq_lo": -0.234375,
+      "iq_hi": 0.1123046875,
+      "theta_min": 0,
+      "theta_max": 16384,
+      "theta_previous": 0,
+      "theta_travel": -16384
+    },
+    {
+      "attempt": 1,
+      "stage": 2,
+      "n": 200,
+      "valid": 200,
+      "overrun": 0,
+      "d_sat": 200,
+      "q_sat": 25,
+      "id_lo": -0.09912109375,
+      "id_hi": 0.452392578125,
+      "iq_lo": -0.176513671875,
+      "iq_hi": 0.223876953125,
+      "theta_min": 75,
+      "theta_max": 65283,
+      "theta_previous": 65283,
+      "theta_travel": 65208
+    },
+    {
+      "attempt": 1,
+      "stage": 3,
+      "n": 60,
+      "valid": 60,
+      "overrun": 0,
+      "d_sat": 60,
+      "q_sat": 32,
+      "id_lo": -0.0634765625,
+      "id_hi": 0.2294921875,
+      "iq_lo": -0.145751953125,
+      "iq_hi": 0.013916015625,
+      "theta_min": 0,
+      "theta_max": 0,
+      "theta_previous": 0,
+      "theta_travel": 0
+    },
+    {
+      "attempt": 4,
+      "stage": 1,
+      "n": 200,
+      "valid": 200,
+      "overrun": 0,
+      "d_sat": 192,
+      "q_sat": 103,
+      "id_lo": -0.07275390625,
+      "id_hi": 0.339599609375,
+      "iq_lo": -0.20166015625,
+      "iq_hi": 0.163330078125,
+      "theta_min": 0,
+      "theta_max": 16384,
+      "theta_previous": 0,
+      "theta_travel": -16384
+    },
+    {
+      "attempt": 4,
+      "stage": 2,
+      "n": 200,
+      "valid": 200,
+      "overrun": 0,
+      "d_sat": 200,
+      "q_sat": 32,
+      "id_lo": -0.138671875,
+      "id_hi": 0.4755859375,
+      "iq_lo": -0.216064453125,
+      "iq_hi": 0.24072265625,
+      "theta_min": 0,
+      "theta_max": 65208,
+      "theta_previous": 65208,
+      "theta_travel": 65208
+    },
+    {
+      "attempt": 4,
+      "stage": 3,
+      "n": 60,
+      "valid": 60,
+      "overrun": 0,
+      "d_sat": 60,
+      "q_sat": 37,
+      "id_lo": -0.045654296875,
+      "id_hi": 0.189697265625,
+      "iq_lo": -0.102294921875,
+      "iq_hi": 0.024169921875,
+      "theta_min": 0,
+      "theta_max": 0,
+      "theta_previous": 0,
+      "theta_travel": 0
+    }
+  ],
+  "notes": [
+    "Diagnostic dq fields are M2 only, including during M1 calibration; M1 dq statistics above must not be used as M1 current feedback.",
+    "M2 phase peak is selected-axis measured phase current; Id reference is distinct from runtime Iq clamp.",
+    "Current deployed image is 1fd8cd05; removing manual confirmation candidate d08ef31e has not been downloaded."
+  ]
+}

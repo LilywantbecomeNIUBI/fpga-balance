@@ -1,0 +1,6429 @@
+{
+  "started_wall": 1793167858.0267658,
+  "initial": {
+    "time_us": 299995020,
+    "imu_seq": 300644,
+    "motor_seq": 1433882,
+    "drive": true,
+    "attitude_calibrated": true,
+    "attitude_calibrating": false,
+    "current_calibrated": true,
+    "current_calibrating": false,
+    "running": false,
+    "commissioning": false,
+    "commission_failed": false,
+    "active": false,
+    "armed": false,
+    "estop": true,
+    "attitude_bad": false,
+    "independent_commission": true,
+    "preserve_commission_on_clear": true,
+    "commission_axis": 1,
+    "imu_ok": true,
+    "configured": false,
+    "gates": 495,
+    "stop_reason": 1,
+    "motor_faults": 1,
+    "pitch": -0.0093841552734375,
+    "rate": 0.0,
+    "shadow_a": 0.0,
+    "iq1_a": 0.0,
+    "iq2_a": 0.0,
+    "interval_us": 1087,
+    "age_us": 723,
+    "accel": [
+      -0.00244140625,
+      -0.01611328125,
+      -0.993896484375
+    ],
+    "gyro": [
+      1.068115234375,
+      -0.3662109375,
+      -0.091552734375
+    ],
+    "temp_c": 21.52777777777778,
+    "currents_a": [
+      -0.009033203125,
+      -0.0048828125,
+      0.013916015625,
+      0.041748046875,
+      -0.037109375,
+      -0.004638671875
+    ],
+    "angles": [
+      6888,
+      2116
+    ],
+    "zero_progress": 1024,
+    "imu_errors": 0,
+    "imu_invalid": 0,
+    "rx_errors": 0,
+    "ack_seq": 97,
+    "result": 0,
+    "rejected": 0,
+    "commissioned_mask": 1,
+    "commission_state": 6,
+    "who_am_i": 71,
+    "imu_last_error": 0,
+    "config_hex": "024308e300000000000000002c01100000006400dc052c016400081500000000",
+    "wheel_rpm": [
+      0.1,
+      0.0
+    ],
+    "speed_trim_deg": 0.0,
+    "m2_diagnostic": {
+      "sequence": 148451,
+      "sample_time": 371126256,
+      "mechanical": 2116,
+      "theta": 27568,
+      "currents_a": [
+        0.026611328125,
+        0.003173828125,
+        -0.02978515625
+      ],
+      "id_ref_a": 0.0,
+      "iq_ref_a": 0.0,
+      "running": false,
+      "alignment": false,
+      "id_a": -0.0146484375,
+      "iq_a": -0.029296875,
+      "ud": 0.0001220703125,
+      "uq": 0.000244140625,
+      "park_valid": true,
+      "overrun": false,
+      "learned_zero": [
+        6908,
+        0
+      ],
+      "learned_reverse": 1,
+      "selected_motor": 2,
+      "simple_protection": true
+    },
+    "host_time": 1793167858.019043,
+    "demo": false,
+    "rpm": [
+      0.1,
+      0.0
+    ],
+    "rpm_raw": [
+      0.0,
+      0.0
+    ]
+  },
+  "commands": [
+    "clear",
+    "config",
+    "attitude_zero",
+    "current_zero",
+    "commission_m1"
+  ],
+  "scope": "user-authorized M1 same-parameter commissioning repeat, Id .25A",
+  "commission_wall": 1793167862.527156,
+  "outcome": "M1_complete",
+  "polled_samples": [
+    {
+      "time_us": 304565020,
+      "imu_seq": 305226,
+      "motor_seq": 90578,
+      "drive": true,
+      "attitude_calibrated": true,
+      "attitude_calibrating": false,
+      "current_calibrated": true,
+      "current_calibrating": false,
+      "running": true,
+      "commissioning": true,
+      "commission_failed": false,
+      "active": false,
+      "armed": false,
+      "estop": false,
+      "attitude_bad": false,
+      "independent_commission": true,
+      "preserve_commission_on_clear": true,
+      "commission_axis": 1,
+      "imu_ok": true,
+      "configured": true,
+      "gates": 4079,
+      "stop_reason": 0,
+      "motor_faults": 0,
+      "pitch": 0.0054168701171875,
+      "rate": 0.06103515625,
+      "shadow_a": 0.0,
+      "iq1_a": 0.0,
+      "iq2_a": 0.0,
+      "interval_us": 937,
+      "age_us": 298,
+      "accel": [
+        -0.006103515625,
+        -0.012451171875,
+        -0.9886474609375
+      ],
+      "gyro": [
+        1.3427734375,
+        -0.42724609375,
+        -0.274658203125
+      ],
+      "temp_c": 21.746678743961354,
+      "currents_a": [
+        -0.04443359375,
+        0.1357421875,
+        -0.09130859375,
+        -0.07421875,
+        0.031982421875,
+        0.042236328125
+      ],
+      "angles": [
+        6213,
+        2116
+      ],
+      "zero_progress": 1024,
+      "imu_errors": 0,
+      "imu_invalid": 0,
+      "rx_errors": 0,
+      "ack_seq": 8,
+      "result": 0,
+      "rejected": 0,
+      "commissioned_mask": 0,
+      "commission_state": 1,
+      "who_am_i": 71,
+      "imu_last_error": 0,
+      "config_hex": "026708e300000000000000002c01100000006400dc052c016400081500000000",
+      "wheel_rpm": [
+        -13.7,
+        0.0
+      ],
+      "speed_trim_deg": 0.0,
+      "m2_diagnostic": {
+        "sequence": 90577,
+        "sample_time": 226441256,
+        "mechanical": 2116,
+        "theta": 16384,
+        "currents_a": [
+          0.015625,
+          0.03369140625,
+          -0.04931640625
+        ],
+        "id_ref_a": 0.0,
+        "iq_ref_a": 0.0,
+        "running": true,
+        "alignment": true,
+        "id_a": 0.04736328125,
+        "iq_a": -0.015625,
+        "ud": 0.000701904296875,
+        "uq": -0.005126953125,
+        "park_valid": true,
+        "overrun": false,
+        "learned_zero": [
+          6908,
+          0
+        ],
+        "learned_reverse": 1,
+        "selected_motor": 2,
+        "simple_protection": true
+      },
+      "host_time": 1793167862.5896435,
+      "demo": false,
+      "rpm": [
+        -13.7,
+        0.0
+      ],
+      "rpm_raw": [
+        16.845703125,
+        0.0
+      ]
+    },
+    {
+      "time_us": 304610020,
+      "imu_seq": 305271,
+      "motor_seq": 91478,
+      "drive": true,
+      "attitude_calibrated": true,
+      "attitude_calibrating": false,
+      "current_calibrated": true,
+      "current_calibrating": false,
+      "running": true,
+      "commissioning": true,
+      "commission_failed": false,
+      "active": false,
+      "armed": false,
+      "estop": false,
+      "attitude_bad": false,
+      "independent_commission": true,
+      "preserve_commission_on_clear": true,
+      "commission_axis": 1,
+      "imu_ok": true,
+      "configured": true,
+      "gates": 4079,
+      "stop_reason": 0,
+      "motor_faults": 0,
+      "pitch": 0.012115478515625,
+      "rate": -0.396728515625,
+      "shadow_a": 0.0,
+      "iq1_a": 0.0,
+      "iq2_a": 0.0,
+      "interval_us": 937,
+      "age_us": 436,
+      "accel": [
+        -0.0087890625,
+        -0.0078125,
+        -0.9990234375
+      ],
+      "gyro": [
+        2.62451171875,
+        0.030517578125,
+        -0.335693359375
+      ],
+      "temp_c": 21.746678743961354,
+      "currents_a": [
+        -0.039794921875,
+        0.18115234375,
+        -0.141357421875,
+        -0.030029296875,
+        0.04931640625,
+        -0.019287109375
+      ],
+      "angles": [
+        6361,
+        2116
+      ],
+      "zero_progress": 1024,
+      "imu_errors": 0,
+      "imu_invalid": 0,
+      "rx_errors": 0,
+      "ack_seq": 9,
+      "result": 0,
+      "rejected": 0,
+      "commissioned_mask": 0,
+      "commission_state": 1,
+      "who_am_i": 71,
+      "imu_last_error": 0,
+      "config_hex": "026708e300000000000000002c01100000006400dc052c016400081500000000",
+      "wheel_rpm": [
+        -11.7,
+        0.0
+      ],
+      "speed_trim_deg": 0.0,
+      "m2_diagnostic": {
+        "sequence": 91477,
+        "sample_time": 228691256,
+        "mechanical": 2116,
+        "theta": 16384,
+        "currents_a": [
+          -0.025390625,
+          -0.035400390625,
+          0.060791015625
+        ],
+        "id_ref_a": 0.0,
+        "iq_ref_a": 0.0,
+        "running": true,
+        "alignment": true,
+        "id_a": -0.0556640625,
+        "iq_a": 0.025390625,
+        "ud": 0.001739501953125,
+        "uq": -0.008636474609375,
+        "park_valid": true,
+        "overrun": false,
+        "learned_zero": [
+          6908,
+          0
+        ],
+        "learned_reverse": 1,
+        "selected_motor": 2,
+        "simple_protection": true
+      },
+      "host_time": 1793167862.6338644,
+      "demo": false,
+      "rpm": [
+        -11.7,
+        0.0
+      ],
+      "rpm_raw": [
+        10.986328125,
+        0.0
+      ]
+    },
+    {
+      "time_us": 304640020,
+      "imu_seq": 305301,
+      "motor_seq": 92078,
+      "drive": true,
+      "attitude_calibrated": true,
+      "attitude_calibrating": false,
+      "current_calibrated": true,
+      "current_calibrating": false,
+      "running": true,
+      "commissioning": true,
+      "commission_failed": false,
+      "active": false,
+      "armed": false,
+      "estop": false,
+      "attitude_bad": false,
+      "independent_commission": true,
+      "preserve_commission_on_clear": true,
+      "commission_axis": 1,
+      "imu_ok": true,
+      "configured": true,
+      "gates": 4079,
+      "stop_reason": 0,
+      "motor_faults": 0,
+      "pitch": -0.0113372802734375,
+      "rate": -0.030517578125,
+      "shadow_a": 0.0,
+      "iq1_a": 0.0,
+      "iq2_a": 0.0,
+      "interval_us": 1087,
+      "age_us": 379,
+      "accel": [
+        -0.0059814453125,
+        -0.0279541015625,
+        -0.9962158203125
+      ],
+      "gyro": [
+        2.777099609375,
+        -0.335693359375,
+        0.3662109375
+      ],
+      "temp_c": 21.746678743961354,
+      "currents_a": [
+        0.048583984375,
+        0.224609375,
+        -0.273193359375,
+        0.0087890625,
+        0.047607421875,
+        -0.056396484375
+      ],
+      "angles": [
+        6405,
+        2116
+      ],
+      "zero_progress": 1024,
+      "imu_errors": 0,
+      "imu_invalid": 0,
+      "rx_errors": 0,
+      "ack_seq": 10,
+      "result": 0,
+      "rejected": 0,
+      "commissioned_mask": 0,
+      "commission_state": 1,
+      "who_am_i": 71,
+      "imu_last_error": 0,
+      "config_hex": "026708e300000000000000002c01100000006400dc052c016400081500000000",
+      "wheel_rpm": [
+        -3.2,
+        0.0
+      ],
+      "speed_trim_deg": 0.0,
+      "m2_diagnostic": {
+        "sequence": 92077,
+        "sample_time": 230191256,
+        "mechanical": 2116,
+        "theta": 16384,
+        "currents_a": [
+          -0.005615234375,
+          -0.002685546875,
+          0.00830078125
+        ],
+        "id_ref_a": 0.0,
+        "iq_ref_a": 0.0,
+        "running": true,
+        "alignment": true,
+        "id_a": -0.00634765625,
+        "iq_a": 0.005615234375,
+        "ud": 0.001129150390625,
+        "uq": -0.01025390625,
+        "park_valid": true,
+        "overrun": false,
+        "learned_zero": [
+          6908,
+          0
+        ],
+        "learned_reverse": 1,
+        "selected_motor": 2,
+        "simple_protection": true
+      },
+      "host_time": 1793167862.6642575,
+      "demo": false,
+      "rpm": [
+        -3.2,
+        0.0
+      ],
+      "rpm_raw": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "time_us": 304670020,
+      "imu_seq": 305331,
+      "motor_seq": 92678,
+      "drive": true,
+      "attitude_calibrated": true,
+      "attitude_calibrating": false,
+      "current_calibrated": true,
+      "current_calibrating": false,
+      "running": true,
+      "commissioning": true,
+      "commission_failed": false,
+      "active": false,
+      "armed": false,
+      "estop": false,
+      "attitude_bad": false,
+      "independent_commission": true,
+      "preserve_commission_on_clear": true,
+      "commission_axis": 1,
+      "imu_ok": true,
+      "configured": true,
+      "gates": 4079,
+      "stop_reason": 0,
+      "motor_faults": 0,
+      "pitch": -0.0206146240234375,
+      "rate": 0.579833984375,
+      "shadow_a": 0.0,
+      "iq1_a": 0.0,
+      "iq2_a": 0.0,
+      "interval_us": 1087,
+      "age_us": 469,
+      "accel": [
+        -0.0184326171875,
+        -0.03125,
+        -0.9942626953125
+      ],
+      "gyro": [
+        0.9765625,
+        -0.946044921875,
+        -0.48828125
+      ],
+      "temp_c": 21.77687198067633,
+      "currents_a": [
+        0.030029296875,
+        0.2294921875,
+        -0.259521484375,
+        0.06005859375,
+        -0.06103515625,
+        0.0009765625
+      ],
+      "angles": [
+        6401,
+        2116
+      ],
+      "zero_progress": 1024,
+      "imu_errors": 0,
+      "imu_invalid": 0,
+      "rx_errors": 0,
+      "ack_seq": 11,
+      "result": 0,
+      "rejected": 0,
+      "commissioned_mask": 0,
+      "commission_state": 1,
+      "who_am_i": 71,
+      "imu_last_error": 0,
+      "config_hex": "026708e300000000000000002c01100000006400dc052c016400081500000000",
+      "wheel_rpm": [
+        0.1,
+        0.0
+      ],
+      "speed_trim_deg": 0.0,
+      "m2_diagnostic": {
+        "sequence": 92677,
+        "sample_time": 231691256,
+        "mechanical": 2116,
+        "theta": 16384,
+        "currents_a": [
+          0.037353515625,
+          -0.012451171875,
+          -0.02490234375
+        ],
+        "id_ref_a": 0.0,
+        "iq_ref_a": 0.0,
+        "running": true,
+        "alignment": true,
+        "id_a": 0.006591796875,
+        "iq_a": -0.037353515625,
+        "ud": 0.000946044921875,
+        "uq": -0.010284423828125,
+        "park_valid": true,
+        "overrun": false,
+        "learned_zero": [
+          6908,
+          0
+        ],
+        "learned_reverse": 1,
+        "selected_motor": 2,
+        "simple_protection": true
+      },
+      "host_time": 1793167862.6919842,
+      "demo": false,
+      "rpm": [
+        0.1,
+        0.0
+      ],
+      "rpm_raw": [
+        -1.46484375,
+        0.0
+      ]
+    },
+    {
+      "time_us": 304720020,
+      "imu_seq": 305381,
+      "motor_seq": 93678,
+      "drive": true,
+      "attitude_calibrated": true,
+      "attitude_calibrating": false,
+      "current_calibrated": true,
+      "current_calibrating": false,
+      "running": true,
+      "commissioning": true,
+      "commission_failed": false,
+      "active": false,
+      "armed": false,
+      "estop": false,
+      "attitude_bad": false,
+      "independent_commission": true,
+      "preserve_commission_on_clear": true,
+      "commission_axis": 1,
+      "imu_ok": true,
+      "configured": true,
+      "gates": 4079,
+      "stop_reason": 0,
+      "motor_faults": 0,
+      "pitch": -0.0052947998046875,
+      "rate": 0.0,
+      "shadow_a": 0.0,
+      "iq1_a": 0.0,
+      "iq2_a": 0.0,
+      "interval_us": 1087,
+      "age_us": 623,
+      "accel": [
+        -0.001708984375,
+        -0.0379638671875,
+        -0.9959716796875
+      ],
+      "gyro": [
+        -0.946044921875,
+        -0.3662109375,
+        0.213623046875
+      ],
+      "temp_c": 21.77687198067633,
+      "currents_a": [
+        0.07080078125,
+        0.204833984375,
+        -0.275634765625,
+        -0.0244140625,
+        0.008056640625,
+        0.016357421875
+      ],
+      "angles": [
+        6378,
+        2116
+      ],
+      "zero_progress": 1024,
+      "imu_errors": 0,
+      "imu_invalid": 0,
+      "rx_errors": 0,
+      "ack_seq": 13,
+      "result": 0,
+      "rejected": 0,
+      "commissioned_mask": 0,
+      "commission_state": 1,
+      "who_am_i": 71,
+      "imu_last_error": 0,
+      "config_hex": "026708e300000000000000002c01100000006400dc052c016400081500000000",
+      "wheel_rpm": [
+        1.6,
+        0.0
+      ],
+      "speed_trim_deg": 0.0,
+      "m2_diagnostic": {
+        "sequence": 93677,
+        "sample_time": 234191256,
+        "mechanical": 2116,
+        "theta": 16384,
+        "currents_a": [
+          -0.005126953125,
+          0.009765625,
+          -0.004638671875
+        ],
+        "id_ref_a": 0.0,
+        "iq_ref_a": 0.0,
+        "running": true,
+        "alignment": true,
+        "id_a": 0.008056640625,
+        "iq_a": 0.0048828125,
+        "ud": 0.000732421875,
+        "uq": -0.012420654296875,
+        "park_valid": true,
+        "overrun": false,
+        "learned_zero": [
+          6908,
+          0
+        ],
+        "learned_reverse": 1,
+        "selected_motor": 2,
+        "simple_protection": true
+      },
+      "host_time": 1793167862.7423053,
+      "demo": false,
+      "rpm": [
+        1.6,
+        0.0
+      ],
+      "rpm_raw": [
+        -1.46484375,
+        0.0
+      ]
+    },
+    {
+      "time_us": 304760020,
+      "imu_seq": 305421,
+      "motor_seq": 94478,
+      "drive": true,
+      "attitude_calibrated": true,
+      "attitude_calibrating": false,
+      "current_calibrated": true,
+      "current_calibrating": false,
+      "running": true,
+      "commissioning": true,
+      "commission_failed": false,
+      "active": false,
+      "armed": false,
+      "estop": false,
+      "attitude_bad": false,
+      "independent_commission": true,
+      "preserve_commission_on_clear": true,
+      "commission_axis": 1,
+      "imu_ok": true,
+      "configured": true,
+      "gates": 4079,
+      "stop_reason": 0,
+      "motor_faults": 0,
+      "pitch": 9.1552734375e-05,
+      "rate": -0.06103515625,
+      "shadow_a": 0.0,
+      "iq1_a": 0.0,
+      "iq2_a": 0.0,
+      "interval_us": 936,
+      "age_us": 746,
+      "accel": [
+        -0.005859375,
+        -0.01513671875,
+        -0.9932861328125
+      ],
+      "gyro": [
+        -0.67138671875,
+        -0.30517578125,
+        0.274658203125
+      ],
+      "temp_c": 21.64855072463768,
+      "currents_a": [
+        0.025634765625,
+        0.194091796875,
+        -0.2197265625,
+        -0.007080078125,
+        0.031982421875,
+        -0.02490234375
+      ],
+      "angles": [
+        6371,
+        2116
+      ],
+      "zero_progress": 1024,
+      "imu_errors": 0,
+      "imu_invalid": 0,
+      "rx_errors": 0,
+      "ack_seq": 15,
+      "result": 0,
+      "rejected": 0,
+      "commissioned_mask": 0,
+      "commission_state": 1,
+      "who_am_i": 71,
+      "imu_last_error": 0,
+      "config_hex": "026708e300000000000000002c01100000006400dc052c016400081500000000",
+      "wheel_rpm": [
+        0.1,
+        0.0
+      ],
+      "speed_trim_deg": 0.0,
+      "m2_diagnostic": {
+        "sequence": 94477,
+        "sample_time": 236191256,
+        "mechanical": 2116,
+        "theta": 16384,
+        "currents_a": [
+          0.00830078125,
+          -0.019775390625,
+          0.011474609375
+        ],
+        "id_ref_a": 0.0,
+        "iq_ref_a": 0.0,
+        "running": true,
+        "alignment": true,
+        "id_a": -0.018310546875,
+        "iq_a": -0.008056640625,
+        "ud": 0.000213623046875,
+        "uq": -0.0137939453125,
+        "park_valid": true,
+        "overrun": false,
+        "learned_zero": [
+          6908,
+          0
+        ],
+        "learned_reverse": 1,
+        "selected_motor": 2,
+        "simple_protection": true
+      },
+      "host_time": 1793167862.7818356,
+      "demo": false,
+      "rpm": [
+        0.1,
+        0.0
+      ],
+      "rpm_raw": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "time_us": 304805020,
+      "imu_seq": 305466,
+      "motor_seq": 95378,
+      "drive": true,
+      "attitude_calibrated": true,
+      "attitude_calibrating": false,
+      "current_calibrated": true,
+      "current_calibrating": false,
+      "running": true,
+      "commissioning": true,
+      "commission_failed": false,
+      "active": false,
+      "armed": false,
+      "estop": false,
+      "attitude_bad": false,
+      "independent_commission": true,
+      "preserve_commission_on_clear": true,
+      "commission_axis": 1,
+      "imu_ok": true,
+      "configured": true,
+      "gates": 4079,
+      "stop_reason": 0,
+      "motor_faults": 0,
+      "pitch": 0.0019989013671875,
+      "rate": -0.1220703125,
+      "shadow_a": 0.0,
+      "iq1_a": 0.0,
+      "iq2_a": 0.0,
+      "interval_us": 937,
+      "age_us": 884,
+      "accel": [
+        -0.0009765625,
+        -0.017578125,
+        -0.9969482421875
+      ],
+      "gyro": [
+        1.0986328125,
+        -0.244140625,
+        0.1220703125
+      ],
+      "temp_c": 21.64855072463768,
+      "currents_a": [
+        -0.053955078125,
+        0.26171875,
+        -0.207763671875,
+        0.0107421875,
+        -0.064208984375,
+        0.053466796875
+      ],
+      "angles": [
+        6373,
+        2116
+      ],
+      "zero_progress": 1024,
+      "imu_errors": 0,
+      "imu_invalid": 0,
+      "rx_errors": 0,
+      "ack_seq": 16,
+      "result": 0,
+      "rejected": 0,
+      "commissioned_mask": 0,
+      "commission_state": 1,
+      "who_am_i": 71,
+      "imu_last_error": 0,
+      "config_hex": "026708e300000000000000002c01100000006400dc052c016400081500000000",
+      "wheel_rpm": [
+        -0.1,
+        0.0
+      ],
+      "speed_trim_deg": 0.0,
+      "m2_diagnostic": {
+        "sequence": 95377,
+        "sample_time": 238441256,
+        "mechanical": 2116,
+        "theta": 16384,
+        "currents_a": [
+          -0.0146484375,
+          0.00634765625,
+          0.00830078125
+        ],
+        "id_ref_a": 0.0,
+        "iq_ref_a": 0.0,
+        "running": true,
+        "alignment": true,
+        "id_a": -0.001220703125,
+        "iq_a": 0.0146484375,
+        "ud": 0.000274658203125,
+        "uq": -0.01544189453125,
+        "park_valid": true,
+        "overrun": false,
+        "learned_zero": [
+          6908,
+          0
+        ],
+        "learned_reverse": 1,
+        "selected_motor": 2,
+        "simple_protection": true
+      },
+      "host_time": 1793167862.829834,
+      "demo": false,
+      "rpm": [
+        -0.1,
+        0.0
+      ],
+      "rpm_raw": [
+        0.732421875,
+        0.0
+      ]
+    },
+    {
+      "time_us": 304840020,
+      "imu_seq": 305501,
+      "motor_seq": 96078,
+      "drive": true,
+      "attitude_calibrated": true,
+      "attitude_calibrating": false,
+      "current_calibrated": true,
+      "current_calibrating": false,
+      "running": true,
+      "commissioning": true,
+      "commission_failed": false,
+      "active": false,
+      "armed": false,
+      "estop": false,
+      "attitude_bad": false,
+      "independent_commission": true,
+      "preserve_commission_on_clear": true,
+      "commission_axis": 1,
+      "imu_ok": true,
+      "configured": true,
+      "gates": 4079,
+      "stop_reason": 0,
+      "motor_faults": 0,
+      "pitch": -0.0125274658203125,
+      "rate": 0.18310546875,
+      "shadow_a": 0.0,
+      "iq1_a": 0.0,
+      "iq2_a": 0.0,
+      "interval_us": 937,
+      "age_us": 991,
+      "accel": [
+        0.0120849609375,
+        -0.0439453125,
+        -1.0146484375
+      ],
+      "gyro": [
+        0.79345703125,
+        -0.54931640625,
+        -0.152587890625
+      ],
+      "temp_c": 21.64855072463768,
+      "currents_a": [
+        0.248779296875,
+        -0.151123046875,
+        -0.09765625,
+        0.010498046875,
+        0.008056640625,
+        -0.0185546875
+      ],
+      "angles": [
+        6418,
+        2116
+      ],
+      "zero_progress": 1024,
+      "imu_errors": 0,
+      "imu_invalid": 0,
+      "rx_errors": 0,
+      "ack_seq": 17,
+      "result": 0,
+      "rejected": 0,
+      "commissioned_mask": 0,
+      "commission_state": 1,
+      "who_am_i": 71,
+      "imu_last_error": 0,
+      "config_hex": "026708e300000000000000002c01100000006400dc052c016400081500000000",
+      "wheel_rpm": [
+        -8.2,
+        0.0
+      ],
+      "speed_trim_deg": 0.0,
+      "m2_diagnostic": {
+        "sequence": 96077,
+        "sample_time": 240191256,
+        "mechanical": 2116,
+        "theta": 0,
+        "currents_a": [
+          -0.028564453125,
+          0.01220703125,
+          0.016357421875
+        ],
+        "id_ref_a": 0.0,
+        "iq_ref_a": 0.0,
+        "running": true,
+        "alignment": true,
+        "id_a": -0.028564453125,
+        "iq_a": -0.00244140625,
+        "ud": 0.001861572265625,
+        "uq": -0.017425537109375,
+        "park_valid": true,
+        "overrun": false,
+        "learned_zero": [
+          6908,
+          0
+        ],
+        "learned_reverse": 1,
+        "selected_motor": 2,
+        "simple_protection": true
+      },
+      "host_time": 1793167862.865449,
+      "demo": false,
+      "rpm": [
+        -8.2,
+        0.0
+      ],
+      "rpm_raw": [
+        8.7890625,
+        0.0
+      ]
+    },
+    {
+      "time_us": 304885020,
+      "imu_seq": 305547,
+      "motor_seq": 96978,
+      "drive": true,
+      "attitude_calibrated": true,
+      "attitude_calibrating": false,
+      "current_calibrated": true,
+      "current_calibrating": false,
+      "running": true,
+      "commissioning": true,
+      "commission_failed": false,
+      "active": false,
+      "armed": false,
+      "estop": false,
+      "attitude_bad": false,
+      "independent_commission": true,
+      "preserve_commission_on_clear": true,
+      "commission_axis": 1,
+      "imu_ok": true,
+      "configured": true,
+      "gates": 4079,
+      "stop_reason": 0,
+      "motor_faults": 0,
+      "pitch": -0.0037841796875,
+      "rate": 0.1220703125,
+      "shadow_a": 0.0,
+      "iq1_a": 0.0,
+      "iq2_a": 0.0,
+      "interval_us": 1087,
+      "age_us": 43,
+      "accel": [
+        -0.0103759765625,
+        -0.0191650390625,
+        -0.999267578125
+      ],
+      "gyro": [
+        -0.518798828125,
+        -0.48828125,
+        0.0
+      ],
+      "temp_c": 21.64855072463768,
+      "currents_a": [
+        0.282958984375,
+        -0.15771484375,
+        -0.125244140625,
+        -0.072265625,
+        0.01953125,
+        0.052734375
+      ],
+      "angles": [
+        6541,
+        2116
+      ],
+      "zero_progress": 1024,
+      "imu_errors": 0,
+      "imu_invalid": 0,
+      "rx_errors": 0,
+      "ack_seq": 19,
+      "result": 0,
+      "rejected": 0,
+      "commissioned_mask": 0,
+      "commission_state": 1,
+      "who_am_i": 71,
+      "imu_last_error": 0,
+      "config_hex": "026708e300000000000000002c01100000006400dc052c016400081500000000",
+      "wheel_rpm": [
+        -10.6,
+        0.0
+      ],
+      "speed_trim_deg": 0.0,
+      "m2_diagnostic": {
+        "sequence": 96977,
+        "sample_time": 242441256,
+        "mechanical": 2116,
+        "theta": 0,
+        "currents_a": [
+          0.009033203125,
+          -0.059326171875,
+          0.05029296875
+        ],
+        "id_ref_a": 0.0,
+        "iq_ref_a": 0.0,
+        "running": true,
+        "alignment": true,
+        "id_a": 0.0087890625,
+        "iq_a": -0.063232421875,
+        "ud": 0.00640869140625,
+        "uq": -0.018463134765625,
+        "park_valid": true,
+        "overrun": false,
+        "learned_zero": [
+          6908,
+          0
+        ],
+        "learned_reverse": 1,
+        "selected_motor": 2,
+        "simple_protection": true
+      },
+      "host_time": 1793167862.9093204,
+      "demo": false,
+      "rpm": [
+        -10.6,
+        0.0
+      ],
+      "rpm_raw": [
+        10.25390625,
+        0.0
+      ]
+    },
+    {
+      "time_us": 304935020,
+      "imu_seq": 305597,
+      "motor_seq": 97978,
+      "drive": true,
+      "attitude_calibrated": true,
+      "attitude_calibrating": false,
+      "current_calibrated": true,
+      "current_calibrating": false,
+      "running": true,
+      "commissioning": true,
+      "commission_failed": false,
+      "active": false,
+      "armed": false,
+      "estop": false,
+      "attitude_bad": false,
+      "independent_commission": true,
+      "preserve_commission_on_clear": true,
+      "commission_axis": 1,
+      "imu_ok": true,
+      "configured": true,
+      "gates": 4079,
+      "stop_reason": 0,
+      "motor_faults": 0,
+      "pitch": -0.003326416015625,
+      "rate": -0.030517578125,
+      "shadow_a": 0.0,
+      "iq1_a": 0.0,
+      "iq2_a": 0.0,
+      "interval_us": 937,
+      "age_us": 196,
+      "accel": [
+        -0.00732421875,
+        -0.0059814453125,
+        -1.0006103515625
+      ],
+      "gyro": [
+        1.190185546875,
+        -0.335693359375,
+        0.18310546875
+      ],
+      "temp_c": 21.64855072463768,
+      "currents_a": [
+        0.3017578125,
+        -0.120849609375,
+        -0.180908203125,
+        -0.10009765625,
+        0.044189453125,
+        0.055908203125
+      ],
+      "angles": [
+        6618,
+        2116
+      ],
+      "zero_progress": 1024,
+      "imu_errors": 0,
+      "imu_invalid": 0,
+      "rx_errors": 0,
+      "ack_seq": 21,
+      "result": 0,
+      "rejected": 0,
+      "commissioned_mask": 0,
+      "commission_state": 1,
+      "who_am_i": 71,
+      "imu_last_error": 0,
+      "config_hex": "026708e300000000000000002c01100000006400dc052c016400081500000000",
+      "wheel_rpm": [
+        -5.4,
+        0.0
+      ],
+      "speed_trim_deg": 0.0,
+      "m2_diagnostic": {
+        "sequence": 97977,
+        "sample_time": 244941256,
+        "mechanical": 2116,
+        "theta": 0,
+        "currents_a": [
+          -0.045654296875,
+          0.015625,
+          0.030029296875
+        ],
+        "id_ref_a": 0.0,
+        "iq_ref_a": 0.0,
+        "running": true,
+        "alignment": true,
+        "id_a": -0.045654296875,
+        "iq_a": -0.008544921875,
+        "ud": 0.00994873046875,
+        "uq": -0.019683837890625,
+        "park_valid": true,
+        "overrun": false,
+        "learned_zero": [
+          6908,
+          0
+        ],
+        "learned_reverse": 1,
+        "selected_motor": 2,
+        "simple_protection": true
+      },
+      "host_time": 1793167862.9568768,
+      "demo": false,
+      "rpm": [
+        -5.4,
+        0.0
+      ],
+      "rpm_raw": [
+        2.197265625,
+        0.0
+      ]
+    },
+    {
+      "time_us": 304965020,
+      "imu_seq": 305627,
+      "motor_seq": 98578,
+      "drive": true,
+      "attitude_calibrated": true,
+      "attitude_calibrating": false,
+      "current_calibrated": true,
+      "current_calibrating": false,
+      "running": true,
+      "commissioning": true,
+      "commission_failed": false,
+      "active": false,
+      "armed": false,
+      "estop": false,
+      "attitude_bad": false,
+      "independent_commission": true,
+      "preserve_commission_on_clear": true,
+      "commission_axis": 1,
+      "imu_ok": true,
+      "configured": true,
+      "gates": 4079,
+      "stop_reason": 0,
+      "motor_faults": 0,
+      "pitch": -0.009185791015625,
+      "rate": -0.030517578125,
+      "shadow_a": 0.0,
+      "iq1_a": 0.0,
+      "iq2_a": 0.0,
+      "interval_us": 937,
+      "age_us": 265,
+      "accel": [
+        -0.0025634765625,
+        -0.02978515625,
+        -0.9974365234375
+      ],
+      "gyro": [
+        1.89208984375,
+        -0.335693359375,
+        -0.06103515625
+      ],
+      "temp_c": 21.5655193236715,
+      "currents_a": [
+        0.2841796875,
+        -0.1396484375,
+        -0.14453125,
+        -0.047119140625,
+        0.02197265625,
+        0.025146484375
+      ],
+      "angles": [
+        6621,
+        2116
+      ],
+      "zero_progress": 1024,
+      "imu_errors": 0,
+      "imu_invalid": 0,
+      "rx_errors": 0,
+      "ack_seq": 22,
+      "result": 0,
+      "rejected": 0,
+      "commissioned_mask": 0,
+      "commission_state": 1,
+      "who_am_i": 71,
+      "imu_last_error": 0,
+      "config_hex": "026708e300000000000000002c01100000006400dc052c016400081500000000",
+      "wheel_rpm": [
+        -0.1,
+        0.0
+      ],
+      "speed_trim_deg": 0.0,
+      "m2_diagnostic": {
+        "sequence": 98577,
+        "sample_time": 246441256,
+        "mechanical": 2116,
+        "theta": 0,
+        "currents_a": [
+          0.05908203125,
+          0.03125,
+          -0.09033203125
+        ],
+        "id_ref_a": 0.0,
+        "iq_ref_a": 0.0,
+        "running": true,
+        "alignment": true,
+        "id_a": 0.05859375,
+        "iq_a": 0.070068359375,
+        "ud": 0.010955810546875,
+        "uq": -0.022216796875,
+        "park_valid": true,
+        "overrun": false,
+        "learned_zero": [
+          6908,
+          0
+        ],
+        "learned_reverse": 1,
+        "selected_motor": 2,
+        "simple_protection": true
+      },
+      "host_time": 1793167862.9857621,
+      "demo": false,
+      "rpm": [
+        -0.1,
+        0.0
+      ],
+      "rpm_raw": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "time_us": 305000020,
+      "imu_seq": 305662,
+      "motor_seq": 99278,
+      "drive": true,
+      "attitude_calibrated": true,
+      "attitude_calibrating": false,
+      "current_calibrated": true,
+      "current_calibrating": false,
+      "running": true,
+      "commissioning": true,
+      "commission_failed": false,
+      "active": false,
+      "armed": false,
+      "estop": false,
+      "attitude_bad": false,
+      "independent_commission": true,
+      "preserve_commission_on_clear": true,
+      "commission_axis": 1,
+      "imu_ok": true,
+      "configured": true,
+      "gates": 4079,
+      "stop_reason": 0,
+      "motor_faults": 0,
+      "pitch": -0.027313232421875,
+      "rate": 0.213623046875,
+      "shadow_a": 0.0,
+      "iq1_a": 0.0,
+      "iq2_a": 0.0,
+      "interval_us": 936,
+      "age_us": 373,
+      "accel": [
+        -0.001220703125,
+        -0.085693359375,
+        -1.000732421875
+      ],
+      "gyro": [
+        -1.556396484375,
+        -0.579833984375,
+        -0.396728515625
+      ],
+      "temp_c": 21.5655193236715,
+      "currents_a": [
+        0.215087890625,
+        -0.070556640625,
+        -0.14453125,
+        -0.05419921875,
+        0.05078125,
+        0.00341796875
+      ],
+      "angles": [
+        6668,
+        2116
+      ],
+      "zero_progress": 1024,
+      "imu_errors": 0,
+      "imu_invalid": 0,
+      "rx_errors": 0,
+      "ack_seq": 23,
+      "result": 0,
+      "rejected": 0,
+      "commissioned_mask": 0,
+      "commission_state": 1,
+      "who_am_i": 71,
+      "imu_last_error": 0,
+      "config_hex": "026708e300000000000000002c01100000006400dc052c016400081500000000",
+      "wheel_rpm": [
+        -7.3,
+        0.0
+      ],
+      "speed_trim_deg": 0.0,
+      "m2_diagnostic": {
+        "sequence": 99277,
+        "sample_time": 248191256,
+        "mechanical": 2116,
+        "theta": 0,
+        "currents_a": [
+          -0.03955078125,
+          -0.001708984375,
+          0.041259765625
+        ],
+        "id_ref_a": 0.0,
+        "iq_ref_a": 0.0,
+        "running": true,
+        "alignment": true,
+        "id_a": -0.03955078125,
+        "iq_a": -0.02490234375,
+        "ud": 0.01470947265625,
+        "uq": -0.02197265625,
+        "park_valid": true,
+        "overrun": false,
+        "learned_zero": [
+          6908,
+          0
+        ],
+        "learned_reverse": 1,
+        "selected_motor": 2,
+        "simple_protection": true
+      },
+      "host_time": 1793167863.0249398,
+      "demo": false,
+      "rpm": [
+        -7.3,
+        0.0
+      ],
+      "rpm_raw": [
+        10.986328125,
+        0.0
+      ]
+    },
+    {
+      "time_us": 305035020,
+      "imu_seq": 305697,
+      "motor_seq": 99978,
+      "drive": true,
+      "attitude_calibrated": true,
+      "attitude_calibrating": false,
+      "current_calibrated": true,
+      "current_calibrating": false,
+      "running": true,
+      "commissioning": true,
+      "commission_failed": false,
+      "active": false,
+      "armed": false,
+      "estop": false,
+      "attitude_bad": false,
+      "independent_commission": true,
+      "preserve_commission_on_clear": true,
+      "commission_axis": 1,
+      "imu_ok": true,
+      "configured": true,
+      "gates": 4079,
+      "stop_reason": 0,
+      "motor_faults": 0,
+      "pitch": -0.0035247802734375,
+      "rate": -0.1220703125,
+      "shadow_a": 0.0,
+      "iq1_a": 0.0,
+      "iq2_a": 0.0,
+      "interval_us": 937,
+      "age_us": 480,
+      "accel": [
+        -0.0008544921875,
+        -0.0546875,
+        -1.016357421875
+      ],
+      "gyro": [
+        -6.8359375,
+        -0.244140625,
+        0.30517578125
+      ],
+      "temp_c": 21.5655193236715,
+      "currents_a": [
+        0.352783203125,
+        -0.123291015625,
+        -0.2294921875,
+        -0.059326171875,
+        0.065673828125,
+        -0.00634765625
+      ],
+      "angles": [
+        6855,
+        2116
+      ],
+      "zero_progress": 1024,
+      "imu_errors": 0,
+      "imu_invalid": 0,
+      "rx_errors": 0,
+      "ack_seq": 24,
+      "result": 0,
+      "rejected": 0,
+      "commissioned_mask": 0,
+      "commission_state": 1,
+      "who_am_i": 71,
+      "imu_last_error": 0,
+      "config_hex": "026708e300000000000000002c01100000006400dc052c016400081500000000",
+      "wheel_rpm": [
+        -17.0,
+        0.0
+      ],
+      "speed_trim_deg": 0.0,
+      "m2_diagnostic": {
+        "sequence": 99977,
+        "sample_time": 249941256,
+        "mechanical": 2116,
+        "theta": 0,
+        "currents_a": [
+          0.01513671875,
+          -0.036376953125,
+          0.021240234375
+        ],
+        "id_ref_a": 0.0,
+        "iq_ref_a": 0.0,
+        "running": true,
+        "alignment": true,
+        "id_a": 0.014892578125,
+        "iq_a": -0.033203125,
+        "ud": 0.016387939453125,
+        "uq": -0.02294921875,
+        "park_valid": true,
+        "overrun": false,
+        "learned_zero": [
+          6908,
+          0
+        ],
+        "learned_reverse": 1,
+        "selected_motor": 2,
+        "simple_protection": true
+      },
+      "host_time": 1793167863.0574403,
+      "demo": false,
+      "rpm": [
+        -17.0,
+        0.0
+      ],
+      "rpm_raw": [
+        20.5078125,
+        0.0
+      ]
+    },
+    {
+      "time_us": 305065020,
+      "imu_seq": 305727,
+      "motor_seq": 100578,
+      "drive": true,
+      "attitude_calibrated": true,
+      "attitude_calibrating": false,
+      "current_calibrated": true,
+      "current_calibrating": false,
+      "running": true,
+      "commissioning": true,
+      "commission_failed": false,
+      "active": false,
+      "armed": false,
+      "estop": false,
+      "attitude_bad": false,
+      "independent_commission": true,
+      "preserve_commission_on_clear": true,
+      "commission_axis": 1,
+      "imu_ok": true,
+      "configured": true,
+      "gates": 4079,
+      "stop_reason": 0,
+      "motor_faults": 0,
+      "pitch": -0.020416259765625,
+      "rate": 0.701904296875,
+      "shadow_a": 0.0,
+      "iq1_a": 0.0,
+      "iq2_a": 0.0,
+      "interval_us": 937,
+      "age_us": 572,
+      "accel": [
+        0.0035400390625,
+        0.011474609375,
+        -0.996826171875
+      ],
+      "gyro": [
+        -6.2255859375,
+        -1.068115234375,
+        0.152587890625
+      ],
+      "temp_c": 21.67874396135266,
+      "currents_a": [
+        0.213623046875,
+        -0.1240234375,
+        -0.089599609375,
+        -0.028564453125,
+        0.026123046875,
+        0.00244140625
+      ],
+      "angles": [
+        6899,
+        2116
+      ],
+      "zero_progress": 1024,
+      "imu_errors": 0,
+      "imu_invalid": 0,
+      "rx_errors": 0,
+      "ack_seq": 25,
+      "result": 0,
+      "rejected": 0,
+      "commissioned_mask": 0,
+      "commission_state": 1,
+      "who_am_i": 71,
+      "imu_last_error": 0,
+      "config_hex": "026708e300000000000000002c01100000006400dc052c016400081500000000",
+      "wheel_rpm": [
+        -3.8,
+        0.0
+      ],
+      "speed_trim_deg": 0.0,
+      "m2_diagnostic": {
+        "sequence": 100577,
+        "sample_time": 251441256,
+        "mechanical": 2116,
+        "theta": 0,
+        "currents_a": [
+          -0.030029296875,
+          0.0048828125,
+          0.025146484375
+        ],
+        "id_ref_a": 0.0,
+        "iq_ref_a": 0.0,
+        "running": true,
+        "alignment": true,
+        "id_a": -0.030029296875,
+        "iq_a": -0.01171875,
+        "ud": 0.01800537109375,
+        "uq": -0.02484130859375,
+        "park_valid": true,
+        "overrun": false,
+        "learned_zero": [
+          6908,
+          0
+        ],
+        "learned_reverse": 1,
+        "selected_motor": 2,
+        "simple_protection": true
+      },
+      "host_time": 1793167863.0857384,
+      "demo": false,
+      "rpm": [
+        -3.8,
+        0.0
+      ],
+      "rpm_raw": [
+        -0.732421875,
+        0.0
+      ]
+    },
+    {
+      "time_us": 305115020,
+      "imu_seq": 305777,
+      "motor_seq": 101578,
+      "drive": true,
+      "attitude_calibrated": true,
+      "attitude_calibrating": false,
+      "current_calibrated": true,
+      "current_calibrating": false,
+      "running": true,
+      "commissioning": true,
+      "commission_failed": false,
+      "active": false,
+      "armed": false,
+      "estop": false,
+      "attitude_bad": false,
+      "independent_commission": true,
+      "preserve_commission_on_clear": true,
+      "commission_axis": 1,
+      "imu_ok": true,
+      "configured": true,
+      "gates": 4079,
+      "stop_reason": 0,
+      "motor_faults": 0,
+      "pitch": 0.0414886474609375,
+      "rate": -0.823974609375,
+      "shadow_a": 0.0,
+      "iq1_a": 0.0,
+      "iq2_a": 0.0,
+      "interval_us": 1087,
+      "age_us": 576,
+      "accel": [
+        -0.0084228515625,
+        0.0303955078125,
+        -0.9912109375
+      ],
+      "gyro": [
+        3.814697265625,
+        0.457763671875,
+        -0.1220703125
+      ],
+      "temp_c": 21.67874396135266,
+      "currents_a": [
+        0.26220703125,
+        -0.12158203125,
+        -0.140625,
+        0.043212890625,
+        -0.025634765625,
+        -0.017578125
+      ],
+      "angles": [
+        6897,
+        2116
+      ],
+      "zero_progress": 1024,
+      "imu_errors": 0,
+      "imu_invalid": 0,
+      "rx_errors": 0,
+      "ack_seq": 27,
+      "result": 0,
+      "rejected": 0,
+      "commissioned_mask": 0,
+      "commission_state": 1,
+      "who_am_i": 71,
+      "imu_last_error": 0,
+      "config_hex": "026708e300000000000000002c01100000006400dc052c016400081500000000",
+      "wheel_rpm": [
+        0.1,
+        0.0
+      ],
+      "speed_trim_deg": 0.0,
+      "m2_diagnostic": {
+        "sequence": 101577,
+        "sample_time": 253941256,
+        "mechanical": 2116,
+        "theta": 0,
+        "currents_a": [
+          -0.02734375,
+          -0.005126953125,
+          0.032470703125
+        ],
+        "id_ref_a": 0.0,
+        "iq_ref_a": 0.0,
+        "running": true,
+        "alignment": true,
+        "id_a": -0.02734375,
+        "iq_a": -0.021728515625,
+        "ud": 0.020751953125,
+        "uq": -0.025421142578125,
+        "park_valid": true,
+        "overrun": false,
+        "learned_zero": [
+          6908,
+          0
+        ],
+        "learned_reverse": 1,
+        "selected_motor": 2,
+        "simple_protection": true
+      },
+      "host_time": 1793167863.1374004,
+      "demo": false,
+      "rpm": [
+        0.1,
+        0.0
+      ],
+      "rpm_raw": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "time_us": 305160020,
+      "imu_seq": 305822,
+      "motor_seq": 102478,
+      "drive": true,
+      "attitude_calibrated": true,
+      "attitude_calibrating": false,
+      "current_calibrated": true,
+      "current_calibrating": false,
+      "running": true,
+      "commissioning": true,
+      "commission_failed": false,
+      "active": false,
+      "armed": false,
+      "estop": false,
+      "attitude_bad": false,
+      "independent_commission": true,
+      "preserve_commission_on_clear": true,
+      "commission_axis": 1,
+      "imu_ok": true,
+      "configured": true,
+      "gates": 4079,
+      "stop_reason": 0,
+      "motor_faults": 0,
+      "pitch": -0.001251220703125,
+      "rate": 0.0,
+      "shadow_a": 0.0,
+      "iq1_a": 0.0,
+      "iq2_a": 0.0,
+      "interval_us": 1087,
+      "age_us": 714,
+      "accel": [
+        0.0013427734375,
+        -0.0751953125,
+        -1.00537109375
+      ],
+      "gyro": [
+        4.45556640625,
+        -0.3662109375,
+        0.0
+      ],
+      "temp_c": 21.61080917874396,
+      "currents_a": [
+        0.269287109375,
+        -0.15625,
+        -0.113037109375,
+        -0.035400390625,
+        0.044189453125,
+        -0.0087890625
+      ],
+      "angles": [
+        6896,
+        2116
+      ],
+      "zero_progress": 1024,
+      "imu_errors": 0,
+      "imu_invalid": 0,
+      "rx_errors": 0,
+      "ack_seq": 29,
+      "result": 0,
+      "rejected": 0,
+      "commissioned_mask": 0,
+      "commission_state": 1,
+      "who_am_i": 71,
+      "imu_last_error": 0,
+      "config_hex": "026708e300000000000000002c01100000006400dc052c016400081500000000",
+      "wheel_rpm": [
+        0.0,
+        0.0
+      ],
+      "speed_trim_deg": 0.0,
+      "m2_diagnostic": {
+        "sequence": 102477,
+        "sample_time": 256191256,
+        "mechanical": 2116,
+        "theta": 0,
+        "currents_a": [
+          0.102783203125,
+          -0.052001953125,
+          -0.05078125
+        ],
+        "id_ref_a": 0.0,
+        "iq_ref_a": 0.0,
+        "running": true,
+        "alignment": true,
+        "id_a": 0.1025390625,
+        "iq_a": -0.00048828125,
+        "ud": 0.020751953125,
+        "uq": -0.02642822265625,
+        "park_valid": true,
+        "overrun": false,
+        "learned_zero": [
+          6908,
+          0
+        ],
+        "learned_reverse": 1,
+        "selected_motor": 2,
+        "simple_protection": true
+      },
+      "host_time": 1793167863.18294,
+      "demo": false,
+      "rpm": [
+        0.0,
+        0.0
+      ],
+      "rpm_raw": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "time_us": 305205020,
+      "imu_seq": 305867,
+      "motor_seq": 103378,
+      "drive": true,
+      "attitude_calibrated": true,
+      "attitude_calibrating": false,
+      "current_calibrated": true,
+      "current_calibrating": false,
+      "running": true,
+      "commissioning": true,
+      "commission_failed": false,
+      "active": false,
+      "armed": false,
+      "estop": false,
+      "attitude_bad": false,
+      "independent_commission": true,
+      "preserve_commission_on_clear": true,
+      "commission_axis": 1,
+      "imu_ok": true,
+      "configured": true,
+      "gates": 4079,
+      "stop_reason": 0,
+      "motor_faults": 0,
+      "pitch": -0.00469970703125,
+      "rate": 0.0,
+      "shadow_a": 0.0,
+      "iq1_a": 0.0,
+      "iq2_a": 0.0,
+      "interval_us": 1087,
+      "age_us": 852,
+      "accel": [
+        -0.0050048828125,
+        -0.0640869140625,
+        -1.0107421875
+      ],
+      "gyro": [
+        -3.60107421875,
+        -0.3662109375,
+        0.152587890625
+      ],
+      "temp_c": 21.61080917874396,
+      "currents_a": [
+        0.299560546875,
+        -0.134765625,
+        -0.164794921875,
+        -0.08251953125,
+        0.052490234375,
+        0.030029296875
+      ],
+      "angles": [
+        6895,
+        2116
+      ],
+      "zero_progress": 1024,
+      "imu_errors": 0,
+      "imu_invalid": 0,
+      "rx_errors": 0,
+      "ack_seq": 30,
+      "result": 0,
+      "rejected": 0,
+      "commissioned_mask": 0,
+      "commission_state": 1,
+      "who_am_i": 71,
+      "imu_last_error": 0,
+      "config_hex": "026708e300000000000000002c01100000006400dc052c016400081500000000",
+      "wheel_rpm": [
+        0.1,
+        0.0
+      ],
+      "speed_trim_deg": 0.0,
+      "m2_diagnostic": {
+        "sequence": 103377,
+        "sample_time": 258441256,
+        "mechanical": 2116,
+        "theta": 0,
+        "currents_a": [
+          0.03955078125,
+          -0.04052734375,
+          0.0009765625
+        ],
+        "id_ref_a": 0.0,
+        "iq_ref_a": 0.0,
+        "running": true,
+        "alignment": true,
+        "id_a": 0.039306640625,
+        "iq_a": -0.02392578125,
+        "ud": 0.021514892578125,
+        "uq": -0.02691650390625,
+        "park_valid": true,
+        "overrun": false,
+        "learned_zero": [
+          6908,
+          0
+        ],
+        "learned_reverse": 1,
+        "selected_motor": 2,
+        "simple_protection": true
+      },
+      "host_time": 1793167863.228579,
+      "demo": false,
+      "rpm": [
+        0.1,
+        0.0
+      ],
+      "rpm_raw": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "time_us": 305260020,
+      "imu_seq": 305923,
+      "motor_seq": 104478,
+      "drive": true,
+      "attitude_calibrated": true,
+      "attitude_calibrating": false,
+      "current_calibrated": true,
+      "current_calibrating": false,
+      "running": true,
+      "commissioning": true,
+      "commission_failed": false,
+      "active": false,
+      "armed": false,
+      "estop": false,
+      "attitude_bad": false,
+      "independent_commission": true,
+      "preserve_commission_on_clear": true,
+      "commission_axis": 1,
+      "imu_ok": true,
+      "configured": true,
+      "gates": 4079,
+      "stop_reason": 0,
+      "motor_faults": 0,
+      "pitch": 0.018951416015625,
+      "rate": 0.152587890625,
+      "shadow_a": 0.0,
+      "iq1_a": 0.0,
+      "iq2_a": 0.0,
+      "interval_us": 937,
+      "age_us": 83,
+      "accel": [
+        -0.007568359375,
+        0.0390625,
+        -0.982177734375
+      ],
+      "gyro": [
+        -1.251220703125,
+        -0.518798828125,
+        -0.1220703125
+      ],
+      "temp_c": 21.4975845410628,
+      "currents_a": [
+        0.261474609375,
+        -0.12744140625,
+        -0.134033203125,
+        0.039306640625,
+        -0.030517578125,
+        -0.0087890625
+      ],
+      "angles": [
+        6895,
+        2116
+      ],
+      "zero_progress": 1024,
+      "imu_errors": 0,
+      "imu_invalid": 0,
+      "rx_errors": 0,
+      "ack_seq": 32,
+      "result": 0,
+      "rejected": 0,
+      "commissioned_mask": 0,
+      "commission_state": 1,
+      "who_am_i": 71,
+      "imu_last_error": 0,
+      "config_hex": "026708e300000000000000002c01100000006400dc052c016400081500000000",
+      "wheel_rpm": [
+        0.0,
+        0.0
+      ],
+      "speed_trim_deg": 0.0,
+      "m2_diagnostic": {
+        "sequence": 104477,
+        "sample_time": 261191256,
+        "mechanical": 2116,
+        "theta": 0,
+        "currents_a": [
+          -0.02587890625,
+          0.000732421875,
+          0.025146484375
+        ],
+        "id_ref_a": 0.0,
+        "iq_ref_a": 0.0,
+        "running": true,
+        "alignment": true,
+        "id_a": -0.02587890625,
+        "iq_a": -0.01416015625,
+        "ud": 0.025360107421875,
+        "uq": -0.028594970703125,
+        "park_valid": true,
+        "overrun": false,
+        "learned_zero": [
+          6908,
+          0
+        ],
+        "learned_reverse": 1,
+        "selected_motor": 2,
+        "simple_protection": true
+      },
+      "host_time": 1793167863.2811391,
+      "demo": false,
+      "rpm": [
+        0.0,
+        0.0
+      ],
+      "rpm_raw": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "time_us": 305285020,
+      "imu_seq": 305948,
+      "motor_seq": 104978,
+      "drive": true,
+      "attitude_calibrated": true,
+      "attitude_calibrating": false,
+      "current_calibrated": true,
+      "current_calibrating": false,
+      "running": true,
+      "commissioning": true,
+      "commission_failed": false,
+      "active": false,
+      "armed": false,
+      "estop": false,
+      "attitude_bad": false,
+      "independent_commission": true,
+      "preserve_commission_on_clear": true,
+      "commission_axis": 1,
+      "imu_ok": true,
+      "configured": true,
+      "gates": 4079,
+      "stop_reason": 0,
+      "motor_faults": 0,
+      "pitch": 0.0224456787109375,
+      "rate": -0.274658203125,
+      "shadow_a": 0.0,
+      "iq1_a": 0.0,
+      "iq2_a": 0.0,
+      "interval_us": 1087,
+      "age_us": 9,
+      "accel": [
+        -0.0028076171875,
+        0.0224609375,
+        -0.9945068359375
+      ],
+      "gyro": [
+        2.8076171875,
+        -0.091552734375,
+        -0.091552734375
+      ],
+      "temp_c": 21.4975845410628,
+      "currents_a": [
+        0.165771484375,
+        -0.06396484375,
+        -0.101806640625,
+        -0.042236328125,
+        0.0,
+        0.042236328125
+      ],
+      "angles": [
+        6894,
+        2116
+      ],
+      "zero_progress": 1024,
+      "imu_errors": 0,
+      "imu_invalid": 0,
+      "rx_errors": 0,
+      "ack_seq": 33,
+      "result": 0,
+      "rejected": 0,
+      "commissioned_mask": 0,
+      "commission_state": 1,
+      "who_am_i": 71,
+      "imu_last_error": 0,
+      "config_hex": "026708e300000000000000002c01100000006400dc052c016400081500000000",
+      "wheel_rpm": [
+        0.1,
+        0.0
+      ],
+      "speed_trim_deg": 0.0,
+      "m2_diagnostic": {
+        "sequence": 104977,
+        "sample_time": 262441256,
+        "mechanical": 2116,
+        "theta": 0,
+        "currents_a": [
+          -0.0791015625,
+          0.041015625,
+          0.0380859375
+        ],
+        "id_ref_a": 0.0,
+        "iq_ref_a": 0.0,
+        "running": true,
+        "alignment": true,
+        "id_a": -0.079345703125,
+        "iq_a": 0.001220703125,
+        "ud": 0.0257568359375,
+        "uq": -0.029571533203125,
+        "park_valid": true,
+        "overrun": false,
+        "learned_zero": [
+          6908,
+          0
+        ],
+        "learned_reverse": 1,
+        "selected_motor": 2,
+        "simple_protection": true
+      },
+      "host_time": 1793167863.3089318,
+      "demo": false,
+      "rpm": [
+        0.1,
+        0.0
+      ],
+      "rpm_raw": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "time_us": 305310020,
+      "imu_seq": 305973,
+      "motor_seq": 105478,
+      "drive": true,
+      "attitude_calibrated": true,
+      "attitude_calibrating": false,
+      "current_calibrated": true,
+      "current_calibrating": false,
+      "running": true,
+      "commissioning": true,
+      "commission_failed": false,
+      "active": false,
+      "armed": false,
+      "estop": false,
+      "attitude_bad": false,
+      "independent_commission": true,
+      "preserve_commission_on_clear": true,
+      "commission_axis": 1,
+      "imu_ok": true,
+      "configured": true,
+      "gates": 4079,
+      "stop_reason": 0,
+      "motor_faults": 0,
+      "pitch": 0.0147705078125,
+      "rate": 0.0,
+      "shadow_a": 0.0,
+      "iq1_a": 0.0,
+      "iq2_a": 0.0,
+      "interval_us": 1087,
+      "age_us": 86,
+      "accel": [
+        -0.001953125,
+        -0.024658203125,
+        -0.9991455078125
+      ],
+      "gyro": [
+        4.486083984375,
+        -0.3662109375,
+        0.030517578125
+      ],
+      "temp_c": 21.4975845410628,
+      "currents_a": [
+        0.262939453125,
+        -0.120849609375,
+        -0.14208984375,
+        -0.080078125,
+        0.05078125,
+        0.029296875
+      ],
+      "angles": [
+        6894,
+        2116
+      ],
+      "zero_progress": 1024,
+      "imu_errors": 0,
+      "imu_invalid": 0,
+      "rx_errors": 0,
+      "ack_seq": 34,
+      "result": 0,
+      "rejected": 0,
+      "commissioned_mask": 0,
+      "commission_state": 1,
+      "who_am_i": 71,
+      "imu_last_error": 0,
+      "config_hex": "026708e300000000000000002c01100000006400dc052c016400081500000000",
+      "wheel_rpm": [
+        0.0,
+        0.0
+      ],
+      "speed_trim_deg": 0.0,
+      "m2_diagnostic": {
+        "sequence": 105477,
+        "sample_time": 263691256,
+        "mechanical": 2116,
+        "theta": 0,
+        "currents_a": [
+          0.015625,
+          -0.0263671875,
+          0.0107421875
+        ],
+        "id_ref_a": 0.0,
+        "iq_ref_a": 0.0,
+        "running": true,
+        "alignment": true,
+        "id_a": 0.015380859375,
+        "iq_a": -0.021240234375,
+        "ud": 0.026153564453125,
+        "uq": -0.029296875,
+        "park_valid": true,
+        "overrun": false,
+        "learned_zero": [
+          6908,
+          0
+        ],
+        "learned_reverse": 1,
+        "selected_motor": 2,
+        "simple_protection": true
+      },
+      "host_time": 1793167863.3316524,
+      "demo": false,
+      "rpm": [
+        0.0,
+        0.0
+      ],
+      "rpm_raw": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "time_us": 305355020,
+      "imu_seq": 306018,
+      "motor_seq": 106378,
+      "drive": true,
+      "attitude_calibrated": true,
+      "attitude_calibrating": false,
+      "current_calibrated": true,
+      "current_calibrating": false,
+      "running": true,
+      "commissioning": true,
+      "commission_failed": false,
+      "active": false,
+      "armed": false,
+      "estop": false,
+      "attitude_bad": false,
+      "independent_commission": true,
+      "preserve_commission_on_clear": true,
+      "commission_axis": 1,
+      "imu_ok": true,
+      "configured": true,
+      "gates": 4079,
+      "stop_reason": 0,
+      "motor_faults": 0,
+      "pitch": -0.0088653564453125,
+      "rate": 0.091552734375,
+      "shadow_a": 0.0,
+      "iq1_a": 0.0,
+      "iq2_a": 0.0,
+      "interval_us": 1087,
+      "age_us": 224,
+      "accel": [
+        -0.002685546875,
+        -0.071533203125,
+        -1.002685546875
+      ],
+      "gyro": [
+        -0.213623046875,
+        -0.457763671875,
+        0.091552734375
+      ],
+      "temp_c": 21.618357487922705,
+      "currents_a": [
+        0.23828125,
+        -0.148681640625,
+        -0.089599609375,
+        -0.017578125,
+        -0.014892578125,
+        0.032470703125
+      ],
+      "angles": [
+        6894,
+        2116
+      ],
+      "zero_progress": 1024,
+      "imu_errors": 0,
+      "imu_invalid": 0,
+      "rx_errors": 0,
+      "ack_seq": 35,
+      "result": 0,
+      "rejected": 0,
+      "commissioned_mask": 0,
+      "commission_state": 1,
+      "who_am_i": 71,
+      "imu_last_error": 0,
+      "config_hex": "026708e300000000000000002c01100000006400dc052c016400081500000000",
+      "wheel_rpm": [
+        0.0,
+        0.0
+      ],
+      "speed_trim_deg": 0.0,
+      "m2_diagnostic": {
+        "sequence": 106377,
+        "sample_time": 265941256,
+        "mechanical": 2116,
+        "theta": 0,
+        "currents_a": [
+          0.02978515625,
+          0.009765625,
+          -0.03955078125
+        ],
+        "id_ref_a": 0.0,
+        "iq_ref_a": 0.0,
+        "running": true,
+        "alignment": true,
+        "id_a": 0.029296875,
+        "iq_a": 0.0283203125,
+        "ud": 0.028564453125,
+        "uq": -0.0299072265625,
+        "park_valid": true,
+        "overrun": false,
+        "learned_zero": [
+          6908,
+          0
+        ],
+        "learned_reverse": 1,
+        "selected_motor": 2,
+        "simple_protection": true
+      },
+      "host_time": 1793167863.3760822,
+      "demo": false,
+      "rpm": [
+        0.0,
+        0.0
+      ],
+      "rpm_raw": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "time_us": 305380020,
+      "imu_seq": 306043,
+      "motor_seq": 106878,
+      "drive": true,
+      "attitude_calibrated": true,
+      "attitude_calibrating": false,
+      "current_calibrated": true,
+      "current_calibrating": false,
+      "running": true,
+      "commissioning": true,
+      "commission_failed": false,
+      "active": false,
+      "armed": false,
+      "estop": false,
+      "attitude_bad": false,
+      "independent_commission": true,
+      "preserve_commission_on_clear": true,
+      "commission_axis": 1,
+      "imu_ok": true,
+      "configured": true,
+      "gates": 4079,
+      "stop_reason": 0,
+      "motor_faults": 0,
+      "pitch": -0.018524169921875,
+      "rate": 0.457763671875,
+      "shadow_a": 0.0,
+      "iq1_a": 0.0,
+      "iq2_a": 0.0,
+      "interval_us": 937,
+      "age_us": 301,
+      "accel": [
+        -0.003662109375,
+        -0.041015625,
+        -0.9959716796875
+      ],
+      "gyro": [
+        -3.23486328125,
+        -0.823974609375,
+        0.030517578125
+      ],
+      "temp_c": 21.618357487922705,
+      "currents_a": [
+        0.255615234375,
+        -0.15625,
+        -0.099365234375,
+        -0.023193359375,
+        0.024658203125,
+        -0.00146484375
+      ],
+      "angles": [
+        6894,
+        2116
+      ],
+      "zero_progress": 1024,
+      "imu_errors": 0,
+      "imu_invalid": 0,
+      "rx_errors": 0,
+      "ack_seq": 36,
+      "result": 0,
+      "rejected": 0,
+      "commissioned_mask": 0,
+      "commission_state": 1,
+      "who_am_i": 71,
+      "imu_last_error": 0,
+      "config_hex": "026708e300000000000000002c01100000006400dc052c016400081500000000",
+      "wheel_rpm": [
+        0.0,
+        0.0
+      ],
+      "speed_trim_deg": 0.0,
+      "m2_diagnostic": {
+        "sequence": 106877,
+        "sample_time": 267191256,
+        "mechanical": 2116,
+        "theta": 0,
+        "currents_a": [
+          -0.019775390625,
+          0.016357421875,
+          0.00341796875
+        ],
+        "id_ref_a": 0.0,
+        "iq_ref_a": 0.0,
+        "running": true,
+        "alignment": true,
+        "id_a": -0.02001953125,
+        "iq_a": 0.007080078125,
+        "ud": 0.030853271484375,
+        "uq": -0.030548095703125,
+        "park_valid": true,
+        "overrun": false,
+        "learned_zero": [
+          6908,
+          0
+        ],
+        "learned_reverse": 1,
+        "selected_motor": 2,
+        "simple_protection": true
+      },
+      "host_time": 1793167863.4040844,
+      "demo": false,
+      "rpm": [
+        0.0,
+        0.0
+      ],
+      "rpm_raw": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "time_us": 305425020,
+      "imu_seq": 306088,
+      "motor_seq": 107778,
+      "drive": true,
+      "attitude_calibrated": true,
+      "attitude_calibrating": false,
+      "current_calibrated": true,
+      "current_calibrating": false,
+      "running": true,
+      "commissioning": true,
+      "commission_failed": false,
+      "active": false,
+      "armed": false,
+      "estop": false,
+      "attitude_bad": false,
+      "independent_commission": true,
+      "preserve_commission_on_clear": true,
+      "commission_axis": 1,
+      "imu_ok": true,
+      "configured": true,
+      "gates": 4079,
+      "stop_reason": 0,
+      "motor_faults": 0,
+      "pitch": 0.0078887939453125,
+      "rate": 0.0,
+      "shadow_a": 0.0,
+      "iq1_a": 0.0,
+      "iq2_a": 0.0,
+      "interval_us": 937,
+      "age_us": 439,
+      "accel": [
+        -0.005859375,
+        0.021728515625,
+        -0.993896484375
+      ],
+      "gyro": [
+        -1.3427734375,
+        -0.3662109375,
+        0.030517578125
+      ],
+      "temp_c": 21.618357487922705,
+      "currents_a": [
+        0.253173828125,
+        -0.17578125,
+        -0.077392578125,
+        0.052001953125,
+        0.03271484375,
+        -0.084716796875
+      ],
+      "angles": [
+        6894,
+        2116
+      ],
+      "zero_progress": 1024,
+      "imu_errors": 0,
+      "imu_invalid": 0,
+      "rx_errors": 0,
+      "ack_seq": 38,
+      "result": 0,
+      "rejected": 0,
+      "commissioned_mask": 0,
+      "commission_state": 1,
+      "who_am_i": 71,
+      "imu_last_error": 0,
+      "config_hex": "026708e300000000000000002c01100000006400dc052c016400081500000000",
+      "wheel_rpm": [
+        0.0,
+        0.0
+      ],
+      "speed_trim_deg": 0.0,
+      "m2_diagnostic": {
+        "sequence": 107777,
+        "sample_time": 269441256,
+        "mechanical": 2116,
+        "theta": 0,
+        "currents_a": [
+          0.02392578125,
+          -0.023193359375,
+          -0.000732421875
+        ],
+        "id_ref_a": 0.0,
+        "iq_ref_a": 0.0,
+        "running": true,
+        "alignment": true,
+        "id_a": 0.023681640625,
+        "iq_a": -0.012939453125,
+        "ud": 0.03314208984375,
+        "uq": -0.032440185546875,
+        "park_valid": true,
+        "overrun": false,
+        "learned_zero": [
+          6908,
+          0
+        ],
+        "learned_reverse": 1,
+        "selected_motor": 2,
+        "simple_protection": true
+      },
+      "host_time": 1793167863.4487228,
+      "demo": false,
+      "rpm": [
+        0.0,
+        0.0
+      ],
+      "rpm_raw": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "time_us": 305470020,
+      "imu_seq": 306133,
+      "motor_seq": 108678,
+      "drive": true,
+      "attitude_calibrated": true,
+      "attitude_calibrating": false,
+      "current_calibrated": true,
+      "current_calibrating": false,
+      "running": true,
+      "commissioning": true,
+      "commission_failed": false,
+      "active": false,
+      "armed": false,
+      "estop": false,
+      "attitude_bad": false,
+      "independent_commission": true,
+      "preserve_commission_on_clear": true,
+      "commission_axis": 1,
+      "imu_ok": true,
+      "configured": true,
+      "gates": 4079,
+      "stop_reason": 0,
+      "motor_faults": 0,
+      "pitch": 0.0214080810546875,
+      "rate": -0.457763671875,
+      "shadow_a": 0.0,
+      "iq1_a": 0.0,
+      "iq2_a": 0.0,
+      "interval_us": 937,
+      "age_us": 578,
+      "accel": [
+        -0.0045166015625,
+        -0.01025390625,
+        -0.9957275390625
+      ],
+      "gyro": [
+        3.35693359375,
+        0.091552734375,
+        -0.152587890625
+      ],
+      "temp_c": 21.557971014492754,
+      "currents_a": [
+        0.31787109375,
+        -0.156982421875,
+        -0.160888671875,
+        -0.052001953125,
+        0.0048828125,
+        0.047119140625
+      ],
+      "angles": [
+        6894,
+        2116
+      ],
+      "zero_progress": 1024,
+      "imu_errors": 0,
+      "imu_invalid": 0,
+      "rx_errors": 0,
+      "ack_seq": 39,
+      "result": 0,
+      "rejected": 0,
+      "commissioned_mask": 0,
+      "commission_state": 1,
+      "who_am_i": 71,
+      "imu_last_error": 0,
+      "config_hex": "026708e300000000000000002c01100000006400dc052c016400081500000000",
+      "wheel_rpm": [
+        0.0,
+        0.0
+      ],
+      "speed_trim_deg": 0.0,
+      "m2_diagnostic": {
+        "sequence": 108677,
+        "sample_time": 271691256,
+        "mechanical": 2116,
+        "theta": 0,
+        "currents_a": [
+          -0.047119140625,
+          0.01953125,
+          0.027587890625
+        ],
+        "id_ref_a": 0.0,
+        "iq_ref_a": 0.0,
+        "running": true,
+        "alignment": true,
+        "id_a": -0.047119140625,
+        "iq_a": -0.0048828125,
+        "ud": 0.03692626953125,
+        "uq": -0.034332275390625,
+        "park_valid": true,
+        "overrun": false,
+        "learned_zero": [
+          6908,
+          0
+        ],
+        "learned_reverse": 1,
+        "selected_motor": 2,
+        "simple_protection": true
+      },
+      "host_time": 1793167863.4949949,
+      "demo": false,
+      "rpm": [
+        0.0,
+        0.0
+      ],
+      "rpm_raw": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "time_us": 305500020,
+      "imu_seq": 306163,
+      "motor_seq": 109278,
+      "drive": true,
+      "attitude_calibrated": true,
+      "attitude_calibrating": false,
+      "current_calibrated": true,
+      "current_calibrating": false,
+      "running": true,
+      "commissioning": true,
+      "commission_failed": false,
+      "active": false,
+      "armed": false,
+      "estop": false,
+      "attitude_bad": false,
+      "independent_commission": true,
+      "preserve_commission_on_clear": true,
+      "commission_axis": 1,
+      "imu_ok": true,
+      "configured": true,
+      "gates": 4079,
+      "stop_reason": 0,
+      "motor_faults": 0,
+      "pitch": 0.0018157958984375,
+      "rate": -0.18310546875,
+      "shadow_a": 0.0,
+      "iq1_a": 0.0,
+      "iq2_a": 0.0,
+      "interval_us": 937,
+      "age_us": 670,
+      "accel": [
+        -0.0042724609375,
+        -0.0457763671875,
+        -1.0023193359375
+      ],
+      "gyro": [
+        2.44140625,
+        -0.18310546875,
+        -0.18310546875
+      ],
+      "temp_c": 21.557971014492754,
+      "currents_a": [
+        0.209716796875,
+        -0.123291015625,
+        -0.08642578125,
+        -0.069091796875,
+        0.01806640625,
+        0.051025390625
+      ],
+      "angles": [
+        6894,
+        2116
+      ],
+      "zero_progress": 1024,
+      "imu_errors": 0,
+      "imu_invalid": 0,
+      "rx_errors": 0,
+      "ack_seq": 40,
+      "result": 0,
+      "rejected": 0,
+      "commissioned_mask": 0,
+      "commission_state": 1,
+      "who_am_i": 71,
+      "imu_last_error": 0,
+      "config_hex": "026708e300000000000000002c01100000006400dc052c016400081500000000",
+      "wheel_rpm": [
+        0.0,
+        0.0
+      ],
+      "speed_trim_deg": 0.0,
+      "m2_diagnostic": {
+        "sequence": 109277,
+        "sample_time": 273191256,
+        "mechanical": 2116,
+        "theta": 0,
+        "currents_a": [
+          0.06640625,
+          -0.052001953125,
+          -0.014404296875
+        ],
+        "id_ref_a": 0.0,
+        "iq_ref_a": 0.0,
+        "running": true,
+        "alignment": true,
+        "id_a": 0.066162109375,
+        "iq_a": -0.021484375,
+        "ud": 0.039581298828125,
+        "uq": -0.034637451171875,
+        "park_valid": true,
+        "overrun": false,
+        "learned_zero": [
+          6908,
+          0
+        ],
+        "learned_reverse": 1,
+        "selected_motor": 2,
+        "simple_protection": true
+      },
+      "host_time": 1793167863.5244257,
+      "demo": false,
+      "rpm": [
+        0.0,
+        0.0
+      ],
+      "rpm_raw": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "time_us": 305545020,
+      "imu_seq": 306208,
+      "motor_seq": 110178,
+      "drive": true,
+      "attitude_calibrated": true,
+      "attitude_calibrating": false,
+      "current_calibrated": true,
+      "current_calibrating": false,
+      "running": true,
+      "commissioning": true,
+      "commission_failed": false,
+      "active": false,
+      "armed": false,
+      "estop": false,
+      "attitude_bad": false,
+      "independent_commission": true,
+      "preserve_commission_on_clear": true,
+      "commission_axis": 1,
+      "imu_ok": true,
+      "configured": true,
+      "gates": 4079,
+      "stop_reason": 0,
+      "motor_faults": 0,
+      "pitch": -0.005279541015625,
+      "rate": 0.18310546875,
+      "shadow_a": 0.0,
+      "iq1_a": 0.0,
+      "iq2_a": 0.0,
+      "interval_us": 1087,
+      "age_us": 658,
+      "accel": [
+        -0.00732421875,
+        -0.0404052734375,
+        -1.0018310546875
+      ],
+      "gyro": [
+        -2.25830078125,
+        -0.54931640625,
+        0.06103515625
+      ],
+      "temp_c": 21.557971014492754,
+      "currents_a": [
+        0.238525390625,
+        -0.068115234375,
+        -0.17041015625,
+        0.05322265625,
+        -0.046142578125,
+        -0.007080078125
+      ],
+      "angles": [
+        6888,
+        2116
+      ],
+      "zero_progress": 1024,
+      "imu_errors": 0,
+      "imu_invalid": 0,
+      "rx_errors": 0,
+      "ack_seq": 42,
+      "result": 0,
+      "rejected": 0,
+      "commissioned_mask": 0,
+      "commission_state": 2,
+      "who_am_i": 71,
+      "imu_last_error": 0,
+      "config_hex": "026708e300000000000000002c01100000006400dc052c016400081500000000",
+      "wheel_rpm": [
+        0.5,
+        0.0
+      ],
+      "speed_trim_deg": 0.0,
+      "m2_diagnostic": {
+        "sequence": 110177,
+        "sample_time": 275441256,
+        "mechanical": 2116,
+        "theta": 1717,
+        "currents_a": [
+          0.010498046875,
+          -0.004150390625,
+          -0.00634765625
+        ],
+        "id_ref_a": 0.0,
+        "iq_ref_a": 0.0,
+        "running": true,
+        "alignment": true,
+        "id_a": 0.01025390625,
+        "iq_a": -0.000732421875,
+        "ud": 0.044830322265625,
+        "uq": -0.0350341796875,
+        "park_valid": true,
+        "overrun": false,
+        "learned_zero": [
+          6908,
+          0
+        ],
+        "learned_reverse": 1,
+        "selected_motor": 2,
+        "simple_protection": true
+      },
+      "host_time": 1793167863.5700107,
+      "demo": false,
+      "rpm": [
+        0.5,
+        0.0
+      ],
+      "rpm_raw": [
+        -2.197265625,
+        0.0
+      ]
+    },
+    {
+      "time_us": 305595020,
+      "imu_seq": 306258,
+      "motor_seq": 111178,
+      "drive": true,
+      "attitude_calibrated": true,
+      "attitude_calibrating": false,
+      "current_calibrated": true,
+      "current_calibrating": false,
+      "running": true,
+      "commissioning": true,
+      "commission_failed": false,
+      "active": false,
+      "armed": false,
+      "estop": false,
+      "attitude_bad": false,
+      "independent_commission": true,
+      "preserve_commission_on_clear": true,
+      "commission_axis": 1,
+      "imu_ok": true,
+      "configured": true,
+      "gates": 4079,
+      "stop_reason": 0,
+      "motor_faults": 0,
+      "pitch": 0.01141357421875,
+      "rate": 0.06103515625,
+      "shadow_a": 0.0,
+      "iq1_a": 0.0,
+      "iq2_a": 0.0,
+      "interval_us": 1087,
+      "age_us": 788,
+      "accel": [
+        -0.0068359375,
+        0.0140380859375,
+        -0.997802734375
+      ],
+      "gyro": [
+        -0.9765625,
+        -0.42724609375,
+        -0.06103515625
+      ],
+      "temp_c": 21.5655193236715,
+      "currents_a": [
+        0.2392578125,
+        -0.05419921875,
+        -0.18505859375,
+        -0.046630859375,
+        0.029541015625,
+        0.01708984375
+      ],
+      "angles": [
+        6863,
+        2116
+      ],
+      "zero_progress": 1024,
+      "imu_errors": 0,
+      "imu_invalid": 0,
+      "rx_errors": 0,
+      "ack_seq": 44,
+      "result": 0,
+      "rejected": 0,
+      "commissioned_mask": 0,
+      "commission_state": 2,
+      "who_am_i": 71,
+      "imu_last_error": 0,
+      "config_hex": "026708e300000000000000002c01100000006400dc052c016400081500000000",
+      "wheel_rpm": [
+        1.4,
+        0.0
+      ],
+      "speed_trim_deg": 0.0,
+      "m2_diagnostic": {
+        "sequence": 111177,
+        "sample_time": 277941256,
+        "mechanical": 2116,
+        "theta": 4993,
+        "currents_a": [
+          -0.0478515625,
+          0.0615234375,
+          -0.013671875
+        ],
+        "id_ref_a": 0.0,
+        "iq_ref_a": 0.0,
+        "running": true,
+        "alignment": true,
+        "id_a": -0.022705078125,
+        "iq_a": 0.060546875,
+        "ud": 0.050048828125,
+        "uq": -0.03826904296875,
+        "park_valid": true,
+        "overrun": false,
+        "learned_zero": [
+          6908,
+          0
+        ],
+        "learned_reverse": 1,
+        "selected_motor": 2,
+        "simple_protection": true
+      },
+      "host_time": 1793167863.6158853,
+      "demo": false,
+      "rpm": [
+        1.4,
+        0.0
+      ],
+      "rpm_raw": [
+        -2.197265625,
+        0.0
+      ]
+    },
+    {
+      "time_us": 305630020,
+      "imu_seq": 306293,
+      "motor_seq": 111878,
+      "drive": true,
+      "attitude_calibrated": true,
+      "attitude_calibrating": false,
+      "current_calibrated": true,
+      "current_calibrating": false,
+      "running": true,
+      "commissioning": true,
+      "commission_failed": false,
+      "active": false,
+      "armed": false,
+      "estop": false,
+      "attitude_bad": false,
+      "independent_commission": true,
+      "preserve_commission_on_clear": true,
+      "commission_axis": 1,
+      "imu_ok": true,
+      "configured": true,
+      "gates": 4079,
+      "stop_reason": 0,
+      "motor_faults": 0,
+      "pitch": 0.0198822021484375,
+      "rate": -0.244140625,
+      "shadow_a": 0.0,
+      "iq1_a": 0.0,
+      "iq2_a": 0.0,
+      "interval_us": 1087,
+      "age_us": 896,
+      "accel": [
+        -0.0072021484375,
+        -0.0013427734375,
+        -1.0006103515625
+      ],
+      "gyro": [
+        2.410888671875,
+        -0.1220703125,
+        -0.30517578125
+      ],
+      "temp_c": 21.5655193236715,
+      "currents_a": [
+        0.166259765625,
+        0.0478515625,
+        -0.214111328125,
+        -0.03173828125,
+        0.0048828125,
+        0.02685546875
+      ],
+      "angles": [
+        6833,
+        2116
+      ],
+      "zero_progress": 1024,
+      "imu_errors": 0,
+      "imu_invalid": 0,
+      "rx_errors": 0,
+      "ack_seq": 45,
+      "result": 0,
+      "rejected": 0,
+      "commissioned_mask": 0,
+      "commission_state": 2,
+      "who_am_i": 71,
+      "imu_last_error": 0,
+      "config_hex": "026708e300000000000000002c01100000006400dc052c016400081500000000",
+      "wheel_rpm": [
+        2.9,
+        0.0
+      ],
+      "speed_trim_deg": 0.0,
+      "m2_diagnostic": {
+        "sequence": 111877,
+        "sample_time": 279691256,
+        "mechanical": 2116,
+        "theta": 7287,
+        "currents_a": [
+          -0.019287109375,
+          -0.005859375,
+          0.025146484375
+        ],
+        "id_ref_a": 0.0,
+        "iq_ref_a": 0.0,
+        "running": true,
+        "alignment": true,
+        "id_a": -0.026611328125,
+        "iq_a": -0.00146484375,
+        "ud": 0.052215576171875,
+        "uq": -0.041046142578125,
+        "park_valid": true,
+        "overrun": false,
+        "learned_zero": [
+          6908,
+          0
+        ],
+        "learned_reverse": 1,
+        "selected_motor": 2,
+        "simple_protection": true
+      },
+      "host_time": 1793167863.6555192,
+      "demo": false,
+      "rpm": [
+        2.9,
+        0.0
+      ],
+      "rpm_raw": [
+        -3.662109375,
+        0.0
+      ]
+    },
+    {
+      "time_us": 305675020,
+      "imu_seq": 306339,
+      "motor_seq": 112778,
+      "drive": true,
+      "attitude_calibrated": true,
+      "attitude_calibrating": false,
+      "current_calibrated": true,
+      "current_calibrating": false,
+      "running": true,
+      "commissioning": true,
+      "commission_failed": false,
+      "active": false,
+      "armed": false,
+      "estop": false,
+      "attitude_bad": false,
+      "independent_commission": true,
+      "preserve_commission_on_clear": true,
+      "commission_axis": 1,
+      "imu_ok": true,
+      "configured": true,
+      "gates": 4079,
+      "stop_reason": 0,
+      "motor_faults": 0,
+      "pitch": 0.0053863525390625,
+      "rate": 0.0,
+      "shadow_a": 0.0,
+      "iq1_a": 0.0,
+      "iq2_a": 0.0,
+      "interval_us": 937,
+      "age_us": 97,
+      "accel": [
+        -0.005615234375,
+        -0.0484619140625,
+        -1.0013427734375
+      ],
+      "gyro": [
+        1.312255859375,
+        -0.3662109375,
+        -0.091552734375
+      ],
+      "temp_c": 21.73913043478261,
+      "currents_a": [
+        0.156494140625,
+        0.10205078125,
+        -0.258544921875,
+        0.0224609375,
+        0.0048828125,
+        -0.02734375
+      ],
+      "angles": [
+        6756,
+        2116
+      ],
+      "zero_progress": 1024,
+      "imu_errors": 0,
+      "imu_invalid": 0,
+      "rx_errors": 0,
+      "ack_seq": 47,
+      "result": 0,
+      "rejected": 0,
+      "commissioned_mask": 0,
+      "commission_state": 2,
+      "who_am_i": 71,
+      "imu_last_error": 0,
+      "config_hex": "026708e300000000000000002c01100000006400dc052c016400081500000000",
+      "wheel_rpm": [
+        6.4,
+        0.0
+      ],
+      "speed_trim_deg": 0.0,
+      "m2_diagnostic": {
+        "sequence": 112777,
+        "sample_time": 281941256,
+        "mechanical": 2116,
+        "theta": 10236,
+        "currents_a": [
+          0.006591796875,
+          0.00146484375,
+          -0.008056640625
+        ],
+        "id_ref_a": 0.0,
+        "iq_ref_a": 0.0,
+        "running": true,
+        "alignment": true,
+        "id_a": 0.008056640625,
+        "iq_a": -0.00244140625,
+        "ud": 0.053192138671875,
+        "uq": -0.043701171875,
+        "park_valid": true,
+        "overrun": false,
+        "learned_zero": [
+          6908,
+          0
+        ],
+        "learned_reverse": 1,
+        "selected_motor": 2,
+        "simple_protection": true
+      },
+      "host_time": 1793167863.6958323,
+      "demo": false,
+      "rpm": [
+        6.4,
+        0.0
+      ],
+      "rpm_raw": [
+        -7.32421875,
+        0.0
+      ]
+    },
+    {
+      "time_us": 305720020,
+      "imu_seq": 306384,
+      "motor_seq": 113678,
+      "drive": true,
+      "attitude_calibrated": true,
+      "attitude_calibrating": false,
+      "current_calibrated": true,
+      "current_calibrating": false,
+      "running": true,
+      "commissioning": true,
+      "commission_failed": false,
+      "active": false,
+      "armed": false,
+      "estop": false,
+      "attitude_bad": false,
+      "independent_commission": true,
+      "preserve_commission_on_clear": true,
+      "commission_axis": 1,
+      "imu_ok": true,
+      "configured": true,
+      "gates": 4079,
+      "stop_reason": 0,
+      "motor_faults": 0,
+      "pitch": -0.000885009765625,
+      "rate": 0.30517578125,
+      "shadow_a": 0.0,
+      "iq1_a": 0.0,
+      "iq2_a": 0.0,
+      "interval_us": 937,
+      "age_us": 235,
+      "accel": [
+        -0.0032958984375,
+        -0.0296630859375,
+        -1.000732421875
+      ],
+      "gyro": [
+        -2.044677734375,
+        -0.67138671875,
+        0.030517578125
+      ],
+      "temp_c": 21.73913043478261,
+      "currents_a": [
+        0.017333984375,
+        0.2041015625,
+        -0.221435546875,
+        -0.07568359375,
+        0.036865234375,
+        0.038818359375
+      ],
+      "angles": [
+        6617,
+        2116
+      ],
+      "zero_progress": 1024,
+      "imu_errors": 0,
+      "imu_invalid": 0,
+      "rx_errors": 0,
+      "ack_seq": 48,
+      "result": 0,
+      "rejected": 0,
+      "commissioned_mask": 0,
+      "commission_state": 2,
+      "who_am_i": 71,
+      "imu_last_error": 0,
+      "config_hex": "026708e300000000000000002c01100000006400dc052c016400081500000000",
+      "wheel_rpm": [
+        13.5,
+        0.0
+      ],
+      "speed_trim_deg": 0.0,
+      "m2_diagnostic": {
+        "sequence": 113677,
+        "sample_time": 284191256,
+        "mechanical": 2116,
+        "theta": 13185,
+        "currents_a": [
+          -0.054931640625,
+          0.00390625,
+          0.051025390625
+        ],
+        "id_ref_a": 0.0,
+        "iq_ref_a": 0.0,
+        "running": true,
+        "alignment": true,
+        "id_a": -0.042724609375,
+        "iq_a": 0.044189453125,
+        "ud": 0.053985595703125,
+        "uq": -0.047637939453125,
+        "park_valid": true,
+        "overrun": false,
+        "learned_zero": [
+          6908,
+          0
+        ],
+        "learned_reverse": 1,
+        "selected_motor": 2,
+        "simple_protection": true
+      },
+      "host_time": 1793167863.7421591,
+      "demo": false,
+      "rpm": [
+        13.5,
+        0.0
+      ],
+      "rpm_raw": [
+        -14.6484375,
+        0.0
+      ]
+    },
+    {
+      "time_us": 305765020,
+      "imu_seq": 306429,
+      "motor_seq": 114578,
+      "drive": true,
+      "attitude_calibrated": true,
+      "attitude_calibrating": false,
+      "current_calibrated": true,
+      "current_calibrating": false,
+      "running": true,
+      "commissioning": true,
+      "commission_failed": false,
+      "active": false,
+      "armed": false,
+      "estop": false,
+      "attitude_bad": false,
+      "independent_commission": true,
+      "preserve_commission_on_clear": true,
+      "commission_axis": 1,
+      "imu_ok": true,
+      "configured": true,
+      "gates": 4079,
+      "stop_reason": 0,
+      "motor_faults": 0,
+      "pitch": 0.0136871337890625,
+      "rate": 0.152587890625,
+      "shadow_a": 0.0,
+      "iq1_a": 0.0,
+      "iq2_a": 0.0,
+      "interval_us": 1087,
+      "age_us": 224,
+      "accel": [
+        -0.0078125,
+        0.00927734375,
+        -1.002685546875
+      ],
+      "gyro": [
+        -0.518798828125,
+        -0.518798828125,
+        -0.1220703125
+      ],
+      "temp_c": 21.520229468599034,
+      "currents_a": [
+        -0.04248046875,
+        0.25341796875,
+        -0.2109375,
+        0.007080078125,
+        0.00732421875,
+        -0.014404296875
+      ],
+      "angles": [
+        6504,
+        2116
+      ],
+      "zero_progress": 1024,
+      "imu_errors": 0,
+      "imu_invalid": 0,
+      "rx_errors": 0,
+      "ack_seq": 50,
+      "result": 0,
+      "rejected": 0,
+      "commissioned_mask": 0,
+      "commission_state": 2,
+      "who_am_i": 71,
+      "imu_last_error": 0,
+      "config_hex": "026708e300000000000000002c01100000006400dc052c016400081500000000",
+      "wheel_rpm": [
+        6.7,
+        0.0
+      ],
+      "speed_trim_deg": 0.0,
+      "m2_diagnostic": {
+        "sequence": 114577,
+        "sample_time": 286441256,
+        "mechanical": 2116,
+        "theta": 16134,
+        "currents_a": [
+          0.02685546875,
+          -0.01318359375,
+          -0.013671875
+        ],
+        "id_ref_a": 0.0,
+        "iq_ref_a": 0.0,
+        "running": true,
+        "alignment": true,
+        "id_a": 0.00048828125,
+        "iq_a": -0.026611328125,
+        "ud": 0.05340576171875,
+        "uq": -0.049560546875,
+        "park_valid": true,
+        "overrun": false,
+        "learned_zero": [
+          6908,
+          0
+        ],
+        "learned_reverse": 1,
+        "selected_motor": 2,
+        "simple_protection": true
+      },
+      "host_time": 1793167863.7892268,
+      "demo": false,
+      "rpm": [
+        6.7,
+        0.0
+      ],
+      "rpm_raw": [
+        -2.197265625,
+        0.0
+      ]
+    },
+    {
+      "time_us": 305815020,
+      "imu_seq": 306479,
+      "motor_seq": 115578,
+      "drive": true,
+      "attitude_calibrated": true,
+      "attitude_calibrating": false,
+      "current_calibrated": true,
+      "current_calibrating": false,
+      "running": true,
+      "commissioning": true,
+      "commission_failed": false,
+      "active": false,
+      "armed": false,
+      "estop": false,
+      "attitude_bad": false,
+      "independent_commission": true,
+      "preserve_commission_on_clear": true,
+      "commission_axis": 1,
+      "imu_ok": true,
+      "configured": true,
+      "gates": 4079,
+      "stop_reason": 0,
+      "motor_faults": 0,
+      "pitch": 0.0098114013671875,
+      "rate": -0.152587890625,
+      "shadow_a": 0.0,
+      "iq1_a": 0.0,
+      "iq2_a": 0.0,
+      "interval_us": 1087,
+      "age_us": 377,
+      "accel": [
+        -0.0037841796875,
+        -0.0244140625,
+        -0.997314453125
+      ],
+      "gyro": [
+        2.0751953125,
+        -0.213623046875,
+        -0.030517578125
+      ],
+      "temp_c": 21.520229468599034,
+      "currents_a": [
+        -0.03515625,
+        0.24609375,
+        -0.2109375,
+        -0.032958984375,
+        0.029541015625,
+        0.00341796875
+      ],
+      "angles": [
+        6453,
+        2116
+      ],
+      "zero_progress": 1024,
+      "imu_errors": 0,
+      "imu_invalid": 0,
+      "rx_errors": 0,
+      "ack_seq": 51,
+      "result": 0,
+      "rejected": 0,
+      "commissioned_mask": 0,
+      "commission_state": 2,
+      "who_am_i": 71,
+      "imu_last_error": 0,
+      "config_hex": "026708e300000000000000002c01100000006400dc052c016400081500000000",
+      "wheel_rpm": [
+        3.6,
+        0.0
+      ],
+      "speed_trim_deg": 0.0,
+      "m2_diagnostic": {
+        "sequence": 115577,
+        "sample_time": 288941256,
+        "mechanical": 2116,
+        "theta": 19411,
+        "currents_a": [
+          0.060546875,
+          -0.03955078125,
+          -0.02099609375
+        ],
+        "id_ref_a": 0.0,
+        "iq_ref_a": 0.0,
+        "running": true,
+        "alignment": true,
+        "id_a": -0.028076171875,
+        "iq_a": -0.054931640625,
+        "ud": 0.0531005859375,
+        "uq": -0.052703857421875,
+        "park_valid": true,
+        "overrun": false,
+        "learned_zero": [
+          6908,
+          0
+        ],
+        "learned_reverse": 1,
+        "selected_motor": 2,
+        "simple_protection": true
+      },
+      "host_time": 1793167863.8356326,
+      "demo": false,
+      "rpm": [
+        3.6,
+        0.0
+      ],
+      "rpm_raw": [
+        -4.39453125,
+        0.0
+      ]
+    },
+    {
+      "time_us": 305845020,
+      "imu_seq": 306509,
+      "motor_seq": 116178,
+      "drive": true,
+      "attitude_calibrated": true,
+      "attitude_calibrating": false,
+      "current_calibrated": true,
+      "current_calibrating": false,
+      "running": true,
+      "commissioning": true,
+      "commission_failed": false,
+      "active": false,
+      "armed": false,
+      "estop": false,
+      "attitude_bad": false,
+      "independent_commission": true,
+      "preserve_commission_on_clear": true,
+      "commission_axis": 1,
+      "imu_ok": true,
+      "configured": true,
+      "gates": 4079,
+      "stop_reason": 0,
+      "motor_faults": 0,
+      "pitch": 0.004638671875,
+      "rate": -0.152587890625,
+      "shadow_a": 0.0,
+      "iq1_a": 0.0,
+      "iq2_a": 0.0,
+      "interval_us": 937,
+      "age_us": 469,
+      "accel": [
+        -0.0042724609375,
+        -0.0421142578125,
+        -0.9998779296875
+      ],
+      "gyro": [
+        0.9765625,
+        -0.213623046875,
+        -0.1220703125
+      ],
+      "temp_c": 21.520229468599034,
+      "currents_a": [
+        -0.173828125,
+        0.271484375,
+        -0.09765625,
+        -0.004150390625,
+        0.094482421875,
+        -0.09033203125
+      ],
+      "angles": [
+        6406,
+        2116
+      ],
+      "zero_progress": 1024,
+      "imu_errors": 0,
+      "imu_invalid": 0,
+      "rx_errors": 0,
+      "ack_seq": 53,
+      "result": 0,
+      "rejected": 0,
+      "commissioned_mask": 0,
+      "commission_state": 2,
+      "who_am_i": 71,
+      "imu_last_error": 0,
+      "config_hex": "026708e300000000000000002c01100000006400dc052c016400081500000000",
+      "wheel_rpm": [
+        5.6,
+        0.0
+      ],
+      "speed_trim_deg": 0.0,
+      "m2_diagnostic": {
+        "sequence": 116177,
+        "sample_time": 290441256,
+        "mechanical": 2116,
+        "theta": 21377,
+        "currents_a": [
+          -0.0458984375,
+          0.04345703125,
+          0.00244140625
+        ],
+        "id_ref_a": 0.0,
+        "iq_ref_a": 0.0,
+        "running": true,
+        "alignment": true,
+        "id_a": 0.041748046875,
+        "iq_a": 0.02978515625,
+        "ud": 0.0504150390625,
+        "uq": -0.056854248046875,
+        "park_valid": true,
+        "overrun": false,
+        "learned_zero": [
+          6908,
+          0
+        ],
+        "learned_reverse": 1,
+        "selected_motor": 2,
+        "simple_protection": true
+      },
+      "host_time": 1793167863.866849,
+      "demo": false,
+      "rpm": [
+        5.6,
+        0.0
+      ],
+      "rpm_raw": [
+        -5.859375,
+        0.0
+      ]
+    },
+    {
+      "time_us": 305885020,
+      "imu_seq": 306549,
+      "motor_seq": 116978,
+      "drive": true,
+      "attitude_calibrated": true,
+      "attitude_calibrating": false,
+      "current_calibrated": true,
+      "current_calibrating": false,
+      "running": true,
+      "commissioning": true,
+      "commission_failed": false,
+      "active": false,
+      "armed": false,
+      "estop": false,
+      "attitude_bad": false,
+      "independent_commission": true,
+      "preserve_commission_on_clear": true,
+      "commission_axis": 1,
+      "imu_ok": true,
+      "configured": true,
+      "gates": 4079,
+      "stop_reason": 0,
+      "motor_faults": 0,
+      "pitch": 0.0001678466796875,
+      "rate": 0.18310546875,
+      "shadow_a": 0.0,
+      "iq1_a": 0.0,
+      "iq2_a": 0.0,
+      "interval_us": 937,
+      "age_us": 591,
+      "accel": [
+        -0.0042724609375,
+        -0.029052734375,
+        -1.0015869140625
+      ],
+      "gyro": [
+        -1.3427734375,
+        -0.54931640625,
+        -0.030517578125
+      ],
+      "temp_c": 21.58816425120773,
+      "currents_a": [
+        -0.171630859375,
+        0.22802734375,
+        -0.056396484375,
+        -0.06396484375,
+        0.046875,
+        0.01708984375
+      ],
+      "angles": [
+        6359,
+        2116
+      ],
+      "zero_progress": 1024,
+      "imu_errors": 0,
+      "imu_invalid": 0,
+      "rx_errors": 0,
+      "ack_seq": 54,
+      "result": 0,
+      "rejected": 0,
+      "commissioned_mask": 0,
+      "commission_state": 2,
+      "who_am_i": 71,
+      "imu_last_error": 0,
+      "config_hex": "026708e300000000000000002c01100000006400dc052c016400081500000000",
+      "wheel_rpm": [
+        4.0,
+        0.0
+      ],
+      "speed_trim_deg": 0.0,
+      "m2_diagnostic": {
+        "sequence": 116977,
+        "sample_time": 292441256,
+        "mechanical": 2116,
+        "theta": 23999,
+        "currents_a": [
+          -0.094970703125,
+          0.02197265625,
+          0.072998046875
+        ],
+        "id_ref_a": 0.0,
+        "iq_ref_a": 0.0,
+        "running": true,
+        "alignment": true,
+        "id_a": 0.041015625,
+        "iq_a": 0.09033203125,
+        "ud": 0.04620361328125,
+        "uq": -0.060699462890625,
+        "park_valid": true,
+        "overrun": false,
+        "learned_zero": [
+          6908,
+          0
+        ],
+        "learned_reverse": 1,
+        "selected_motor": 2,
+        "simple_protection": true
+      },
+      "host_time": 1793167863.906362,
+      "demo": false,
+      "rpm": [
+        4.0,
+        0.0
+      ],
+      "rpm_raw": [
+        -4.39453125,
+        0.0
+      ]
+    },
+    {
+      "time_us": 305930020,
+      "imu_seq": 306594,
+      "motor_seq": 117878,
+      "drive": true,
+      "attitude_calibrated": true,
+      "attitude_calibrating": false,
+      "current_calibrated": true,
+      "current_calibrating": false,
+      "running": true,
+      "commissioning": true,
+      "commission_failed": false,
+      "active": false,
+      "armed": false,
+      "estop": false,
+      "attitude_bad": false,
+      "independent_commission": true,
+      "preserve_commission_on_clear": true,
+      "commission_axis": 1,
+      "imu_ok": true,
+      "configured": true,
+      "gates": 4079,
+      "stop_reason": 0,
+      "motor_faults": 0,
+      "pitch": 0.0084991455078125,
+      "rate": 0.06103515625,
+      "shadow_a": 0.0,
+      "iq1_a": 0.0,
+      "iq2_a": 0.0,
+      "interval_us": 937,
+      "age_us": 729,
+      "accel": [
+        -0.0072021484375,
+        0.0025634765625,
+        -0.9974365234375
+      ],
+      "gyro": [
+        -0.48828125,
+        -0.42724609375,
+        0.091552734375
+      ],
+      "temp_c": 21.58816425120773,
+      "currents_a": [
+        -0.18017578125,
+        0.213134765625,
+        -0.032958984375,
+        -0.04296875,
+        0.0048828125,
+        0.0380859375
+      ],
+      "angles": [
+        6273,
+        2116
+      ],
+      "zero_progress": 1024,
+      "imu_errors": 0,
+      "imu_invalid": 0,
+      "rx_errors": 0,
+      "ack_seq": 55,
+      "result": 0,
+      "rejected": 0,
+      "commissioned_mask": 0,
+      "commission_state": 2,
+      "who_am_i": 71,
+      "imu_last_error": 0,
+      "config_hex": "026708e300000000000000002c01100000006400dc052c016400081500000000",
+      "wheel_rpm": [
+        7.6,
+        0.0
+      ],
+      "speed_trim_deg": 0.0,
+      "m2_diagnostic": {
+        "sequence": 117877,
+        "sample_time": 294691256,
+        "mechanical": 2116,
+        "theta": 26948,
+        "currents_a": [
+          -0.0234375,
+          0.042724609375,
+          -0.019287109375
+        ],
+        "id_ref_a": 0.0,
+        "iq_ref_a": 0.0,
+        "running": true,
+        "alignment": true,
+        "id_a": 0.03857421875,
+        "iq_a": -0.017822265625,
+        "ud": 0.04205322265625,
+        "uq": -0.06182861328125,
+        "park_valid": true,
+        "overrun": false,
+        "learned_zero": [
+          6908,
+          0
+        ],
+        "learned_reverse": 1,
+        "selected_motor": 2,
+        "simple_protection": true
+      },
+      "host_time": 1793167863.9531496,
+      "demo": false,
+      "rpm": [
+        7.6,
+        0.0
+      ],
+      "rpm_raw": [
+        -8.056640625,
+        0.0
+      ]
+    },
+    {
+      "time_us": 305985020,
+      "imu_seq": 306649,
+      "motor_seq": 118978,
+      "drive": true,
+      "attitude_calibrated": true,
+      "attitude_calibrating": false,
+      "current_calibrated": true,
+      "current_calibrating": false,
+      "running": true,
+      "commissioning": true,
+      "commission_failed": false,
+      "active": false,
+      "armed": false,
+      "estop": false,
+      "attitude_bad": false,
+      "independent_commission": true,
+      "preserve_commission_on_clear": true,
+      "commission_axis": 1,
+      "imu_ok": true,
+      "configured": true,
+      "gates": 4079,
+      "stop_reason": 0,
+      "motor_faults": 0,
+      "pitch": 0.0130615234375,
+      "rate": -0.213623046875,
+      "shadow_a": 0.0,
+      "iq1_a": 0.0,
+      "iq2_a": 0.0,
+      "interval_us": 937,
+      "age_us": 898,
+      "accel": [
+        -0.0050048828125,
+        -0.025390625,
+        -0.9967041015625
+      ],
+      "gyro": [
+        1.617431640625,
+        -0.152587890625,
+        0.030517578125
+      ],
+      "temp_c": 21.829710144927535,
+      "currents_a": [
+        -0.247314453125,
+        0.18017578125,
+        0.067138671875,
+        -0.06396484375,
+        0.012939453125,
+        0.051025390625
+      ],
+      "angles": [
+        6208,
+        2116
+      ],
+      "zero_progress": 1024,
+      "imu_errors": 0,
+      "imu_invalid": 0,
+      "rx_errors": 0,
+      "ack_seq": 57,
+      "result": 0,
+      "rejected": 0,
+      "commissioned_mask": 0,
+      "commission_state": 2,
+      "who_am_i": 71,
+      "imu_last_error": 0,
+      "config_hex": "026708e300000000000000002c01100000006400dc052c016400081500000000",
+      "wheel_rpm": [
+        3.4,
+        0.0
+      ],
+      "speed_trim_deg": 0.0,
+      "m2_diagnostic": {
+        "sequence": 118977,
+        "sample_time": 297441256,
+        "mechanical": 2116,
+        "theta": 30552,
+        "currents_a": [
+          -0.079345703125,
+          0.042724609375,
+          0.03662109375
+        ],
+        "id_ref_a": 0.0,
+        "iq_ref_a": 0.0,
+        "running": true,
+        "alignment": true,
+        "id_a": 0.077880859375,
+        "iq_a": 0.013427734375,
+        "ud": 0.035491943359375,
+        "uq": -0.0626220703125,
+        "park_valid": true,
+        "overrun": false,
+        "learned_zero": [
+          6908,
+          0
+        ],
+        "learned_reverse": 1,
+        "selected_motor": 2,
+        "simple_protection": true
+      },
+      "host_time": 1793167864.0068226,
+      "demo": false,
+      "rpm": [
+        3.4,
+        0.0
+      ],
+      "rpm_raw": [
+        -2.9296875,
+        0.0
+      ]
+    },
+    {
+      "time_us": 306020020,
+      "imu_seq": 306684,
+      "motor_seq": 119678,
+      "drive": true,
+      "attitude_calibrated": true,
+      "attitude_calibrating": false,
+      "current_calibrated": true,
+      "current_calibrating": false,
+      "running": true,
+      "commissioning": true,
+      "commission_failed": false,
+      "active": false,
+      "armed": false,
+      "estop": false,
+      "attitude_bad": false,
+      "independent_commission": true,
+      "preserve_commission_on_clear": true,
+      "commission_axis": 1,
+      "imu_ok": true,
+      "configured": true,
+      "gates": 4079,
+      "stop_reason": 0,
+      "motor_faults": 0,
+      "pitch": -0.00201416015625,
+      "rate": 0.030517578125,
+      "shadow_a": 0.0,
+      "iq1_a": 0.0,
+      "iq2_a": 0.0,
+      "interval_us": 1087,
+      "age_us": 855,
+      "accel": [
+        -0.0030517578125,
+        -0.0423583984375,
+        -1.003662109375
+      ],
+      "gyro": [
+        0.152587890625,
+        -0.396728515625,
+        0.030517578125
+      ],
+      "temp_c": 21.829710144927535,
+      "currents_a": [
+        -0.283203125,
+        0.135009765625,
+        0.148193359375,
+        0.0625,
+        -0.059326171875,
+        -0.003173828125
+      ],
+      "angles": [
+        6177,
+        2116
+      ],
+      "zero_progress": 1024,
+      "imu_errors": 0,
+      "imu_invalid": 0,
+      "rx_errors": 0,
+      "ack_seq": 59,
+      "result": 0,
+      "rejected": 0,
+      "commissioned_mask": 0,
+      "commission_state": 2,
+      "who_am_i": 71,
+      "imu_last_error": 0,
+      "config_hex": "026708e300000000000000002c01100000006400dc052c016400081500000000",
+      "wheel_rpm": [
+        3.1,
+        0.0
+      ],
+      "speed_trim_deg": 0.0,
+      "m2_diagnostic": {
+        "sequence": 119677,
+        "sample_time": 299191256,
+        "mechanical": 2116,
+        "theta": 32846,
+        "currents_a": [
+          0.005615234375,
+          0.0048828125,
+          -0.010498046875
+        ],
+        "id_ref_a": 0.0,
+        "iq_ref_a": 0.0,
+        "running": true,
+        "alignment": true,
+        "id_a": -0.005859375,
+        "iq_a": -0.008544921875,
+        "ud": 0.031097412109375,
+        "uq": -0.063385009765625,
+        "park_valid": true,
+        "overrun": false,
+        "learned_zero": [
+          6908,
+          0
+        ],
+        "learned_reverse": 1,
+        "selected_motor": 2,
+        "simple_protection": true
+      },
+      "host_time": 1793167864.0455196,
+      "demo": false,
+      "rpm": [
+        3.1,
+        0.0
+      ],
+      "rpm_raw": [
+        -2.9296875,
+        0.0
+      ]
+    },
+    {
+      "time_us": 306060020,
+      "imu_seq": 306725,
+      "motor_seq": 120478,
+      "drive": true,
+      "attitude_calibrated": true,
+      "attitude_calibrating": false,
+      "current_calibrated": true,
+      "current_calibrating": false,
+      "running": true,
+      "commissioning": true,
+      "commission_failed": false,
+      "active": false,
+      "armed": false,
+      "estop": false,
+      "attitude_bad": false,
+      "independent_commission": true,
+      "preserve_commission_on_clear": true,
+      "commission_axis": 1,
+      "imu_ok": true,
+      "configured": true,
+      "gates": 4079,
+      "stop_reason": 0,
+      "motor_faults": 0,
+      "pitch": 0.001708984375,
+      "rate": 0.030517578125,
+      "shadow_a": 0.0,
+      "iq1_a": 0.0,
+      "iq2_a": 0.0,
+      "interval_us": 937,
+      "age_us": 41,
+      "accel": [
+        -0.00439453125,
+        -0.0206298828125,
+        -0.99951171875
+      ],
+      "gyro": [
+        -1.15966796875,
+        -0.396728515625,
+        0.06103515625
+      ],
+      "temp_c": 21.595712560386474,
+      "currents_a": [
+        -0.29443359375,
+        0.0888671875,
+        0.20556640625,
+        -0.013427734375,
+        0.027099609375,
+        -0.013671875
+      ],
+      "angles": [
+        6139,
+        2116
+      ],
+      "zero_progress": 1024,
+      "imu_errors": 0,
+      "imu_invalid": 0,
+      "rx_errors": 0,
+      "ack_seq": 60,
+      "result": 0,
+      "rejected": 0,
+      "commissioned_mask": 0,
+      "commission_state": 2,
+      "who_am_i": 71,
+      "imu_last_error": 0,
+      "config_hex": "026708e300000000000000002c01100000006400dc052c016400081500000000",
+      "wheel_rpm": [
+        3.8,
+        0.0
+      ],
+      "speed_trim_deg": 0.0,
+      "m2_diagnostic": {
+        "sequence": 120477,
+        "sample_time": 301191256,
+        "mechanical": 2116,
+        "theta": 35468,
+        "currents_a": [
+          0.044677734375,
+          -0.019775390625,
+          -0.02490234375
+        ],
+        "id_ref_a": 0.0,
+        "iq_ref_a": 0.0,
+        "running": true,
+        "alignment": true,
+        "id_a": -0.044189453125,
+        "iq_a": 0.008544921875,
+        "ud": 0.029022216796875,
+        "uq": -0.0615234375,
+        "park_valid": true,
+        "overrun": false,
+        "learned_zero": [
+          6908,
+          0
+        ],
+        "learned_reverse": 1,
+        "selected_motor": 2,
+        "simple_protection": true
+      },
+      "host_time": 1793167864.0830982,
+      "demo": false,
+      "rpm": [
+        3.8,
+        0.0
+      ],
+      "rpm_raw": [
+        -3.662109375,
+        0.0
+      ]
+    },
+    {
+      "time_us": 306115020,
+      "imu_seq": 306780,
+      "motor_seq": 121578,
+      "drive": true,
+      "attitude_calibrated": true,
+      "attitude_calibrating": false,
+      "current_calibrated": true,
+      "current_calibrating": false,
+      "running": true,
+      "commissioning": true,
+      "commission_failed": false,
+      "active": false,
+      "armed": false,
+      "estop": false,
+      "attitude_bad": false,
+      "independent_commission": true,
+      "preserve_commission_on_clear": true,
+      "commission_axis": 1,
+      "imu_ok": true,
+      "configured": true,
+      "gates": 4079,
+      "stop_reason": 0,
+      "motor_faults": 0,
+      "pitch": 0.0136871337890625,
+      "rate": -0.091552734375,
+      "shadow_a": 0.0,
+      "iq1_a": 0.0,
+      "iq2_a": 0.0,
+      "interval_us": 937,
+      "age_us": 210,
+      "accel": [
+        -0.00634765625,
+        -0.0074462890625,
+        -0.9935302734375
+      ],
+      "gyro": [
+        0.762939453125,
+        -0.274658203125,
+        -0.091552734375
+      ],
+      "temp_c": 21.595712560386474,
+      "currents_a": [
+        -0.252197265625,
+        -0.013916015625,
+        0.26611328125,
+        0.028076171875,
+        0.0,
+        -0.028076171875
+      ],
+      "angles": [
+        6083,
+        2116
+      ],
+      "zero_progress": 1024,
+      "imu_errors": 0,
+      "imu_invalid": 0,
+      "rx_errors": 0,
+      "ack_seq": 62,
+      "result": 0,
+      "rejected": 0,
+      "commissioned_mask": 0,
+      "commission_state": 2,
+      "who_am_i": 71,
+      "imu_last_error": 0,
+      "config_hex": "026708e300000000000000002c01100000006400dc052c016400081500000000",
+      "wheel_rpm": [
+        3.8,
+        0.0
+      ],
+      "speed_trim_deg": 0.0,
+      "m2_diagnostic": {
+        "sequence": 121577,
+        "sample_time": 303941256,
+        "mechanical": 2116,
+        "theta": 39072,
+        "currents_a": [
+          0.01220703125,
+          -0.00341796875,
+          -0.0087890625
+        ],
+        "id_ref_a": 0.0,
+        "iq_ref_a": 0.0,
+        "running": true,
+        "alignment": true,
+        "id_a": -0.011962890625,
+        "iq_a": 0.004638671875,
+        "ud": 0.024749755859375,
+        "uq": -0.057220458984375,
+        "park_valid": true,
+        "overrun": false,
+        "learned_zero": [
+          6908,
+          0
+        ],
+        "learned_reverse": 1,
+        "selected_motor": 2,
+        "simple_protection": true
+      },
+      "host_time": 1793167864.1384842,
+      "demo": false,
+      "rpm": [
+        3.8,
+        0.0
+      ],
+      "rpm_raw": [
+        -2.197265625,
+        0.0
+      ]
+    },
+    {
+      "time_us": 306155020,
+      "imu_seq": 306820,
+      "motor_seq": 122378,
+      "drive": true,
+      "attitude_calibrated": true,
+      "attitude_calibrating": false,
+      "current_calibrated": true,
+      "current_calibrating": false,
+      "running": true,
+      "commissioning": true,
+      "commission_failed": false,
+      "active": false,
+      "armed": false,
+      "estop": false,
+      "attitude_bad": false,
+      "independent_commission": true,
+      "preserve_commission_on_clear": true,
+      "commission_axis": 1,
+      "imu_ok": true,
+      "configured": true,
+      "gates": 4079,
+      "stop_reason": 0,
+      "motor_faults": 0,
+      "pitch": 0.002593994140625,
+      "rate": -0.091552734375,
+      "shadow_a": 0.0,
+      "iq1_a": 0.0,
+      "iq2_a": 0.0,
+      "interval_us": 1087,
+      "age_us": 183,
+      "accel": [
+        -0.003662109375,
+        -0.02734375,
+        -0.9984130859375
+      ],
+      "gyro": [
+        1.190185546875,
+        -0.274658203125,
+        -0.213623046875
+      ],
+      "temp_c": 21.595712560386474,
+      "currents_a": [
+        -0.213623046875,
+        -0.054931640625,
+        0.2685546875,
+        -0.016845703125,
+        -0.0107421875,
+        0.027587890625
+      ],
+      "angles": [
+        6042,
+        2116
+      ],
+      "zero_progress": 1024,
+      "imu_errors": 0,
+      "imu_invalid": 0,
+      "rx_errors": 0,
+      "ack_seq": 63,
+      "result": 0,
+      "rejected": 0,
+      "commissioned_mask": 0,
+      "commission_state": 2,
+      "who_am_i": 71,
+      "imu_last_error": 0,
+      "config_hex": "026708e300000000000000002c01100000006400dc052c016400081500000000",
+      "wheel_rpm": [
+        3.4,
+        0.0
+      ],
+      "speed_trim_deg": 0.0,
+      "m2_diagnostic": {
+        "sequence": 122377,
+        "sample_time": 305941256,
+        "mechanical": 2116,
+        "theta": 41694,
+        "currents_a": [
+          0.0029296875,
+          0.013916015625,
+          -0.016845703125
+        ],
+        "id_ref_a": 0.0,
+        "iq_ref_a": 0.0,
+        "running": true,
+        "alignment": true,
+        "id_a": -0.015380859375,
+        "iq_a": -0.00927734375,
+        "ud": 0.02276611328125,
+        "uq": -0.05438232421875,
+        "park_valid": true,
+        "overrun": false,
+        "learned_zero": [
+          6908,
+          0
+        ],
+        "learned_reverse": 1,
+        "selected_motor": 2,
+        "simple_protection": true
+      },
+      "host_time": 1793167864.1789443,
+      "demo": false,
+      "rpm": [
+        3.4,
+        0.0
+      ],
+      "rpm_raw": [
+        -2.9296875,
+        0.0
+      ]
+    },
+    {
+      "time_us": 306200020,
+      "imu_seq": 306865,
+      "motor_seq": 123278,
+      "drive": true,
+      "attitude_calibrated": true,
+      "attitude_calibrating": false,
+      "current_calibrated": true,
+      "current_calibrating": false,
+      "running": true,
+      "commissioning": true,
+      "commission_failed": false,
+      "active": false,
+      "armed": false,
+      "estop": false,
+      "attitude_bad": false,
+      "independent_commission": true,
+      "preserve_commission_on_clear": true,
+      "commission_axis": 1,
+      "imu_ok": true,
+      "configured": true,
+      "gates": 4079,
+      "stop_reason": 0,
+      "motor_faults": 0,
+      "pitch": 0.0012969970703125,
+      "rate": -0.030517578125,
+      "shadow_a": 0.0,
+      "iq1_a": 0.0,
+      "iq2_a": 0.0,
+      "interval_us": 1087,
+      "age_us": 298,
+      "accel": [
+        -0.0064697265625,
+        -0.0325927734375,
+        -0.9984130859375
+      ],
+      "gyro": [
+        -0.396728515625,
+        -0.335693359375,
+        0.0
+      ],
+      "temp_c": 21.618357487922705,
+      "currents_a": [
+        -0.1435546875,
+        -0.128173828125,
+        0.271728515625,
+        0.03955078125,
+        0.00244140625,
+        -0.0419921875
+      ],
+      "angles": [
+        5973,
+        2116
+      ],
+      "zero_progress": 1024,
+      "imu_errors": 0,
+      "imu_invalid": 0,
+      "rx_errors": 0,
+      "ack_seq": 65,
+      "result": 0,
+      "rejected": 0,
+      "commissioned_mask": 0,
+      "commission_state": 2,
+      "who_am_i": 71,
+      "imu_last_error": 0,
+      "config_hex": "026708e300000000000000002c01100000006400dc052c016400081500000000",
+      "wheel_rpm": [
+        6.7,
+        0.0
+      ],
+      "speed_trim_deg": 0.0,
+      "m2_diagnostic": {
+        "sequence": 123277,
+        "sample_time": 308191256,
+        "mechanical": 2116,
+        "theta": 44643,
+        "currents_a": [
+          0.008544921875,
+          0.023681640625,
+          -0.0322265625
+        ],
+        "id_ref_a": 0.0,
+        "iq_ref_a": 0.0,
+        "running": true,
+        "alignment": true,
+        "id_a": -0.032958984375,
+        "iq_a": -0.005859375,
+        "ud": 0.021636962890625,
+        "uq": -0.051666259765625,
+        "park_valid": true,
+        "overrun": false,
+        "learned_zero": [
+          6908,
+          0
+        ],
+        "learned_reverse": 1,
+        "selected_motor": 2,
+        "simple_protection": true
+      },
+      "host_time": 1793167864.2221658,
+      "demo": false,
+      "rpm": [
+        6.7,
+        0.0
+      ],
+      "rpm_raw": [
+        -8.7890625,
+        0.0
+      ]
+    },
+    {
+      "time_us": 306245020,
+      "imu_seq": 306910,
+      "motor_seq": 124178,
+      "drive": true,
+      "attitude_calibrated": true,
+      "attitude_calibrating": false,
+      "current_calibrated": true,
+      "current_calibrating": false,
+      "running": true,
+      "commissioning": true,
+      "commission_failed": false,
+      "active": false,
+      "armed": false,
+      "estop": false,
+      "attitude_bad": false,
+      "independent_commission": true,
+      "preserve_commission_on_clear": true,
+      "commission_axis": 1,
+      "imu_ok": true,
+      "configured": true,
+      "gates": 4079,
+      "stop_reason": 0,
+      "motor_faults": 0,
+      "pitch": 0.0066375732421875,
+      "rate": 0.091552734375,
+      "shadow_a": 0.0,
+      "iq1_a": 0.0,
+      "iq2_a": 0.0,
+      "interval_us": 1087,
+      "age_us": 436,
+      "accel": [
+        -0.0074462890625,
+        -0.0067138671875,
+        -0.997802734375
+      ],
+      "gyro": [
+        -0.579833984375,
+        -0.457763671875,
+        -0.091552734375
+      ],
+      "temp_c": 21.618357487922705,
+      "currents_a": [
+        -0.00634765625,
+        -0.256591796875,
+        0.262939453125,
+        -0.12158203125,
+        0.06494140625,
+        0.056640625
+      ],
+      "angles": [
+        5835,
+        2116
+      ],
+      "zero_progress": 1024,
+      "imu_errors": 0,
+      "imu_invalid": 0,
+      "rx_errors": 0,
+      "ack_seq": 67,
+      "result": 0,
+      "rejected": 0,
+      "commissioned_mask": 0,
+      "commission_state": 2,
+      "who_am_i": 71,
+      "imu_last_error": 0,
+      "config_hex": "026708e300000000000000002c01100000006400dc052c016400081500000000",
+      "wheel_rpm": [
+        12.0,
+        0.0
+      ],
+      "speed_trim_deg": 0.0,
+      "m2_diagnostic": {
+        "sequence": 124177,
+        "sample_time": 310441256,
+        "mechanical": 2116,
+        "theta": 47592,
+        "currents_a": [
+          0.054931640625,
+          -0.001708984375,
+          -0.05322265625
+        ],
+        "id_ref_a": 0.0,
+        "iq_ref_a": 0.0,
+        "running": true,
+        "alignment": true,
+        "id_a": -0.03759765625,
+        "iq_a": 0.0498046875,
+        "ud": 0.021453857421875,
+        "uq": -0.048736572265625,
+        "park_valid": true,
+        "overrun": false,
+        "learned_zero": [
+          6908,
+          0
+        ],
+        "learned_reverse": 1,
+        "selected_motor": 2,
+        "simple_protection": true
+      },
+      "host_time": 1793167864.26795,
+      "demo": false,
+      "rpm": [
+        12.0,
+        0.0
+      ],
+      "rpm_raw": [
+        -11.71875,
+        0.0
+      ]
+    },
+    {
+      "time_us": 306285020,
+      "imu_seq": 306950,
+      "motor_seq": 124978,
+      "drive": true,
+      "attitude_calibrated": true,
+      "attitude_calibrating": false,
+      "current_calibrated": true,
+      "current_calibrating": false,
+      "running": true,
+      "commissioning": true,
+      "commission_failed": false,
+      "active": false,
+      "armed": false,
+      "estop": false,
+      "attitude_bad": false,
+      "independent_commission": true,
+      "preserve_commission_on_clear": true,
+      "commission_axis": 1,
+      "imu_ok": true,
+      "configured": true,
+      "gates": 4079,
+      "stop_reason": 0,
+      "motor_faults": 0,
+      "pitch": 0.0109100341796875,
+      "rate": -0.152587890625,
+      "shadow_a": 0.0,
+      "iq1_a": 0.0,
+      "iq2_a": 0.0,
+      "interval_us": 1087,
+      "age_us": 559,
+      "accel": [
+        -0.007080078125,
+        -0.0091552734375,
+        -1.0009765625
+      ],
+      "gyro": [
+        0.79345703125,
+        -0.213623046875,
+        -0.06103515625
+      ],
+      "temp_c": 21.58816425120773,
+      "currents_a": [
+        0.114501953125,
+        -0.279541015625,
+        0.1650390625,
+        -0.10009765625,
+        0.078857421875,
+        0.021240234375
+      ],
+      "angles": [
+        5787,
+        2116
+      ],
+      "zero_progress": 1024,
+      "imu_errors": 0,
+      "imu_invalid": 0,
+      "rx_errors": 0,
+      "ack_seq": 68,
+      "result": 0,
+      "rejected": 0,
+      "commissioned_mask": 0,
+      "commission_state": 2,
+      "who_am_i": 71,
+      "imu_last_error": 0,
+      "config_hex": "026708e300000000000000002c01100000006400dc052c016400081500000000",
+      "wheel_rpm": [
+        2.3,
+        0.0
+      ],
+      "speed_trim_deg": 0.0,
+      "m2_diagnostic": {
+        "sequence": 124977,
+        "sample_time": 312441256,
+        "mechanical": 2116,
+        "theta": 50213,
+        "currents_a": [
+          -0.0185546875,
+          -0.004150390625,
+          0.022705078125
+        ],
+        "id_ref_a": 0.0,
+        "iq_ref_a": 0.0,
+        "running": true,
+        "alignment": true,
+        "id_a": 0.013427734375,
+        "iq_a": -0.02001953125,
+        "ud": 0.022369384765625,
+        "uq": -0.04547119140625,
+        "park_valid": true,
+        "overrun": false,
+        "learned_zero": [
+          6908,
+          0
+        ],
+        "learned_reverse": 1,
+        "selected_motor": 2,
+        "simple_protection": true
+      },
+      "host_time": 1793167864.3066697,
+      "demo": false,
+      "rpm": [
+        2.3,
+        0.0
+      ],
+      "rpm_raw": [
+        -0.732421875,
+        0.0
+      ]
+    },
+    {
+      "time_us": 306330020,
+      "imu_seq": 306995,
+      "motor_seq": 125878,
+      "drive": true,
+      "attitude_calibrated": true,
+      "attitude_calibrating": false,
+      "current_calibrated": true,
+      "current_calibrating": false,
+      "running": true,
+      "commissioning": true,
+      "commission_failed": false,
+      "active": false,
+      "armed": false,
+      "estop": false,
+      "attitude_bad": false,
+      "independent_commission": true,
+      "preserve_commission_on_clear": true,
+      "commission_axis": 1,
+      "imu_ok": true,
+      "configured": true,
+      "gates": 4079,
+      "stop_reason": 0,
+      "motor_faults": 0,
+      "pitch": 0.0058441162109375,
+      "rate": -0.1220703125,
+      "shadow_a": 0.0,
+      "iq1_a": 0.0,
+      "iq2_a": 0.0,
+      "interval_us": 937,
+      "age_us": 697,
+      "accel": [
+        -0.0023193359375,
+        -0.0291748046875,
+        -0.9989013671875
+      ],
+      "gyro": [
+        0.640869140625,
+        -0.244140625,
+        0.091552734375
+      ],
+      "temp_c": 21.58816425120773,
+      "currents_a": [
+        0.121337890625,
+        -0.26220703125,
+        0.140869140625,
+        0.010009765625,
+        -0.017333984375,
+        0.00732421875
+      ],
+      "angles": [
+        5744,
+        2116
+      ],
+      "zero_progress": 1024,
+      "imu_errors": 0,
+      "imu_invalid": 0,
+      "rx_errors": 0,
+      "ack_seq": 70,
+      "result": 0,
+      "rejected": 0,
+      "commissioned_mask": 0,
+      "commission_state": 2,
+      "who_am_i": 71,
+      "imu_last_error": 0,
+      "config_hex": "026708e300000000000000002c01100000006400dc052c016400081500000000",
+      "wheel_rpm": [
+        3.6,
+        0.0
+      ],
+      "speed_trim_deg": 0.0,
+      "m2_diagnostic": {
+        "sequence": 125877,
+        "sample_time": 314691256,
+        "mechanical": 2116,
+        "theta": 53162,
+        "currents_a": [
+          0.01220703125,
+          -0.00830078125,
+          -0.00390625
+        ],
+        "id_ref_a": 0.0,
+        "iq_ref_a": 0.0,
+        "running": true,
+        "alignment": true,
+        "id_a": 0.0068359375,
+        "iq_a": 0.01025390625,
+        "ud": 0.023773193359375,
+        "uq": -0.044403076171875,
+        "park_valid": true,
+        "overrun": false,
+        "learned_zero": [
+          6908,
+          0
+        ],
+        "learned_reverse": 1,
+        "selected_motor": 2,
+        "simple_protection": true
+      },
+      "host_time": 1793167864.350895,
+      "demo": false,
+      "rpm": [
+        3.6,
+        0.0
+      ],
+      "rpm_raw": [
+        -5.126953125,
+        0.0
+      ]
+    },
+    {
+      "time_us": 306375020,
+      "imu_seq": 307040,
+      "motor_seq": 126778,
+      "drive": true,
+      "attitude_calibrated": true,
+      "attitude_calibrating": false,
+      "current_calibrated": true,
+      "current_calibrating": false,
+      "running": true,
+      "commissioning": true,
+      "commission_failed": false,
+      "active": false,
+      "armed": false,
+      "estop": false,
+      "attitude_bad": false,
+      "independent_commission": true,
+      "preserve_commission_on_clear": true,
+      "commission_axis": 1,
+      "imu_ok": true,
+      "configured": true,
+      "gates": 4079,
+      "stop_reason": 0,
+      "motor_faults": 0,
+      "pitch": 0.003692626953125,
+      "rate": 0.1220703125,
+      "shadow_a": 0.0,
+      "iq1_a": 0.0,
+      "iq2_a": 0.0,
+      "interval_us": 937,
+      "age_us": 836,
+      "accel": [
+        -0.0057373046875,
+        -0.022216796875,
+        -0.998046875
+      ],
+      "gyro": [
+        -0.732421875,
+        -0.48828125,
+        0.0
+      ],
+      "temp_c": 21.520229468599034,
+      "currents_a": [
+        0.161376953125,
+        -0.28271484375,
+        0.121337890625,
+        0.033447265625,
+        0.02783203125,
+        -0.061279296875
+      ],
+      "angles": [
+        5673,
+        2116
+      ],
+      "zero_progress": 1024,
+      "imu_errors": 0,
+      "imu_invalid": 0,
+      "rx_errors": 0,
+      "ack_seq": 71,
+      "result": 0,
+      "rejected": 0,
+      "commissioned_mask": 0,
+      "commission_state": 2,
+      "who_am_i": 71,
+      "imu_last_error": 0,
+      "config_hex": "026708e300000000000000002c01100000006400dc052c016400081500000000",
+      "wheel_rpm": [
+        5.4,
+        0.0
+      ],
+      "speed_trim_deg": 0.0,
+      "m2_diagnostic": {
+        "sequence": 126777,
+        "sample_time": 316941256,
+        "mechanical": 2116,
+        "theta": 56111,
+        "currents_a": [
+          -0.08935546875,
+          0.028564453125,
+          0.060791015625
+        ],
+        "id_ref_a": 0.0,
+        "iq_ref_a": 0.0,
+        "running": true,
+        "alignment": true,
+        "id_a": -0.040771484375,
+        "iq_a": -0.081787109375,
+        "ud": 0.0263671875,
+        "uq": -0.039947509765625,
+        "park_valid": true,
+        "overrun": false,
+        "learned_zero": [
+          6908,
+          0
+        ],
+        "learned_reverse": 1,
+        "selected_motor": 2,
+        "simple_protection": true
+      },
+      "host_time": 1793167864.4003584,
+      "demo": false,
+      "rpm": [
+        5.4,
+        0.0
+      ],
+      "rpm_raw": [
+        -5.859375,
+        0.0
+      ]
+    },
+    {
+      "time_us": 306410020,
+      "imu_seq": 307075,
+      "motor_seq": 127478,
+      "drive": true,
+      "attitude_calibrated": true,
+      "attitude_calibrating": false,
+      "current_calibrated": true,
+      "current_calibrating": false,
+      "running": true,
+      "commissioning": true,
+      "commission_failed": false,
+      "active": false,
+      "armed": false,
+      "estop": false,
+      "attitude_bad": false,
+      "independent_commission": true,
+      "preserve_commission_on_clear": true,
+      "commission_axis": 1,
+      "imu_ok": true,
+      "configured": true,
+      "gates": 4079,
+      "stop_reason": 0,
+      "motor_faults": 0,
+      "pitch": 0.003631591796875,
+      "rate": 0.06103515625,
+      "shadow_a": 0.0,
+      "iq1_a": 0.0,
+      "iq2_a": 0.0,
+      "interval_us": 937,
+      "age_us": 943,
+      "accel": [
+        -0.0045166015625,
+        -0.01123046875,
+        -0.9962158203125
+      ],
+      "gyro": [
+        -0.30517578125,
+        -0.42724609375,
+        -0.06103515625
+      ],
+      "temp_c": 21.520229468599034,
+      "currents_a": [
+        0.203125,
+        -0.209716796875,
+        0.006591796875,
+        -0.05908203125,
+        0.087158203125,
+        -0.028076171875
+      ],
+      "angles": [
+        5621,
+        2116
+      ],
+      "zero_progress": 1024,
+      "imu_errors": 0,
+      "imu_invalid": 0,
+      "rx_errors": 0,
+      "ack_seq": 73,
+      "result": 0,
+      "rejected": 0,
+      "commissioned_mask": 0,
+      "commission_state": 2,
+      "who_am_i": 71,
+      "imu_last_error": 0,
+      "config_hex": "026708e300000000000000002c01100000006400dc052c016400081500000000",
+      "wheel_rpm": [
+        5.3,
+        0.0
+      ],
+      "speed_trim_deg": 0.0,
+      "m2_diagnostic": {
+        "sequence": 127477,
+        "sample_time": 318691256,
+        "mechanical": 2116,
+        "theta": 58405,
+        "currents_a": [
+          0.018310546875,
+          0.0146484375,
+          -0.032958984375
+        ],
+        "id_ref_a": 0.0,
+        "iq_ref_a": 0.0,
+        "running": true,
+        "alignment": true,
+        "id_a": -0.003173828125,
+        "iq_a": 0.03271484375,
+        "ud": 0.02752685546875,
+        "uq": -0.039886474609375,
+        "park_valid": true,
+        "overrun": false,
+        "learned_zero": [
+          6908,
+          0
+        ],
+        "learned_reverse": 1,
+        "selected_motor": 2,
+        "simple_protection": true
+      },
+      "host_time": 1793167864.4340265,
+      "demo": false,
+      "rpm": [
+        5.3,
+        0.0
+      ],
+      "rpm_raw": [
+        -5.859375,
+        0.0
+      ]
+    },
+    {
+      "time_us": 306460020,
+      "imu_seq": 307126,
+      "motor_seq": 128478,
+      "drive": true,
+      "attitude_calibrated": true,
+      "attitude_calibrating": false,
+      "current_calibrated": true,
+      "current_calibrating": false,
+      "running": true,
+      "commissioning": true,
+      "commission_failed": false,
+      "active": false,
+      "armed": false,
+      "estop": false,
+      "attitude_bad": false,
+      "independent_commission": true,
+      "preserve_commission_on_clear": true,
+      "commission_axis": 1,
+      "imu_ok": true,
+      "configured": true,
+      "gates": 4079,
+      "stop_reason": 0,
+      "motor_faults": 0,
+      "pitch": 0.004425048828125,
+      "rate": -0.06103515625,
+      "shadow_a": 0.0,
+      "iq1_a": 0.0,
+      "iq2_a": 0.0,
+      "interval_us": 937,
+      "age_us": 8,
+      "accel": [
+        -0.00732421875,
+        -0.0172119140625,
+        -0.998291015625
+      ],
+      "gyro": [
+        0.6103515625,
+        -0.30517578125,
+        -0.06103515625
+      ],
+      "temp_c": 21.61080917874396,
+      "currents_a": [
+        0.22412109375,
+        -0.209716796875,
+        -0.014404296875,
+        0.059326171875,
+        -0.017333984375,
+        -0.0419921875
+      ],
+      "angles": [
+        5518,
+        2116
+      ],
+      "zero_progress": 1024,
+      "imu_errors": 0,
+      "imu_invalid": 0,
+      "rx_errors": 0,
+      "ack_seq": 75,
+      "result": 0,
+      "rejected": 0,
+      "commissioned_mask": 0,
+      "commission_state": 2,
+      "who_am_i": 71,
+      "imu_last_error": 0,
+      "config_hex": "026708e300000000000000002c01100000006400dc052c016400081500000000",
+      "wheel_rpm": [
+        7.8,
+        0.0
+      ],
+      "speed_trim_deg": 0.0,
+      "m2_diagnostic": {
+        "sequence": 128477,
+        "sample_time": 321191256,
+        "mechanical": 2116,
+        "theta": 61682,
+        "currents_a": [
+          -0.0166015625,
+          0.027099609375,
+          -0.010498046875
+        ],
+        "id_ref_a": 0.0,
+        "iq_ref_a": 0.0,
+        "running": true,
+        "alignment": true,
+        "id_a": -0.0234375,
+        "iq_a": 0.01416015625,
+        "ud": 0.033477783203125,
+        "uq": -0.0384521484375,
+        "park_valid": true,
+        "overrun": false,
+        "learned_zero": [
+          6908,
+          0
+        ],
+        "learned_reverse": 1,
+        "selected_motor": 2,
+        "simple_protection": true
+      },
+      "host_time": 1793167864.481625,
+      "demo": false,
+      "rpm": [
+        7.8,
+        0.0
+      ],
+      "rpm_raw": [
+        -6.591796875,
+        0.0
+      ]
+    },
+    {
+      "time_us": 306505020,
+      "imu_seq": 307171,
+      "motor_seq": 129378,
+      "drive": true,
+      "attitude_calibrated": true,
+      "attitude_calibrating": false,
+      "current_calibrated": true,
+      "current_calibrating": false,
+      "running": true,
+      "commissioning": true,
+      "commission_failed": false,
+      "active": false,
+      "armed": false,
+      "estop": false,
+      "attitude_bad": false,
+      "independent_commission": true,
+      "preserve_commission_on_clear": true,
+      "commission_axis": 1,
+      "imu_ok": true,
+      "configured": true,
+      "gates": 4079,
+      "stop_reason": 0,
+      "motor_faults": 0,
+      "pitch": 0.0024261474609375,
+      "rate": -0.091552734375,
+      "shadow_a": 0.0,
+      "iq1_a": 0.0,
+      "iq2_a": 0.0,
+      "interval_us": 937,
+      "age_us": 146,
+      "accel": [
+        -0.005126953125,
+        -0.02783203125,
+        -1.00244140625
+      ],
+      "gyro": [
+        0.18310546875,
+        -0.274658203125,
+        -0.18310546875
+      ],
+      "temp_c": 21.61080917874396,
+      "currents_a": [
+        0.287841796875,
+        -0.156982421875,
+        -0.130859375,
+        -0.082275390625,
+        0.076416015625,
+        0.005859375
+      ],
+      "angles": [
+        5455,
+        2116
+      ],
+      "zero_progress": 1024,
+      "imu_errors": 0,
+      "imu_invalid": 0,
+      "rx_errors": 0,
+      "ack_seq": 76,
+      "result": 0,
+      "rejected": 0,
+      "commissioned_mask": 0,
+      "commission_state": 2,
+      "who_am_i": 71,
+      "imu_last_error": 0,
+      "config_hex": "026708e300000000000000002c01100000006400dc052c016400081500000000",
+      "wheel_rpm": [
+        5.3,
+        0.0
+      ],
+      "speed_trim_deg": 0.0,
+      "m2_diagnostic": {
+        "sequence": 129377,
+        "sample_time": 323441256,
+        "mechanical": 2116,
+        "theta": 64631,
+        "currents_a": [
+          0.01220703125,
+          0.041748046875,
+          -0.053955078125
+        ],
+        "id_ref_a": 0.0,
+        "iq_ref_a": 0.0,
+        "running": true,
+        "alignment": true,
+        "id_a": 0.007080078125,
+        "iq_a": 0.05615234375,
+        "ud": 0.03564453125,
+        "uq": -0.03936767578125,
+        "park_valid": true,
+        "overrun": false,
+        "learned_zero": [
+          6908,
+          0
+        ],
+        "learned_reverse": 1,
+        "selected_motor": 2,
+        "simple_protection": true
+      },
+      "host_time": 1793167864.5269604,
+      "demo": false,
+      "rpm": [
+        5.3,
+        0.0
+      ],
+      "rpm_raw": [
+        -5.859375,
+        0.0
+      ]
+    },
+    {
+      "time_us": 306550020,
+      "imu_seq": 307216,
+      "motor_seq": 130278,
+      "drive": true,
+      "attitude_calibrated": true,
+      "attitude_calibrating": false,
+      "current_calibrated": true,
+      "current_calibrating": false,
+      "running": true,
+      "commissioning": true,
+      "commission_failed": false,
+      "active": false,
+      "armed": false,
+      "estop": false,
+      "attitude_bad": false,
+      "independent_commission": true,
+      "preserve_commission_on_clear": true,
+      "commission_axis": 1,
+      "imu_ok": true,
+      "configured": true,
+      "gates": 4079,
+      "stop_reason": 0,
+      "motor_faults": 0,
+      "pitch": 0.0032806396484375,
+      "rate": 0.0,
+      "shadow_a": 0.0,
+      "iq1_a": 0.0,
+      "iq2_a": 0.0,
+      "interval_us": 937,
+      "age_us": 285,
+      "accel": [
+        -0.008544921875,
+        -0.017578125,
+        -1.00244140625
+      ],
+      "gyro": [
+        -0.42724609375,
+        -0.3662109375,
+        -0.06103515625
+      ],
+      "temp_c": 21.61080917874396,
+      "currents_a": [
+        0.213623046875,
+        -0.122314453125,
+        -0.09130859375,
+        -0.028076171875,
+        0.029541015625,
+        -0.00146484375
+      ],
+      "angles": [
+        5405,
+        2116
+      ],
+      "zero_progress": 1024,
+      "imu_errors": 0,
+      "imu_invalid": 0,
+      "rx_errors": 0,
+      "ack_seq": 78,
+      "result": 0,
+      "rejected": 0,
+      "commissioned_mask": 0,
+      "commission_state": 3,
+      "who_am_i": 71,
+      "imu_last_error": 0,
+      "config_hex": "026708e300000000000000002c01100000006400dc052c016400081500000000",
+      "wheel_rpm": [
+        3.6,
+        0.0
+      ],
+      "speed_trim_deg": 0.0,
+      "m2_diagnostic": {
+        "sequence": 130277,
+        "sample_time": 325691256,
+        "mechanical": 2116,
+        "theta": 0,
+        "currents_a": [
+          0.00341796875,
+          0.03857421875,
+          -0.0419921875
+        ],
+        "id_ref_a": 0.0,
+        "iq_ref_a": 0.0,
+        "running": true,
+        "alignment": true,
+        "id_a": 0.0029296875,
+        "iq_a": 0.04638671875,
+        "ud": 0.0379638671875,
+        "uq": -0.04034423828125,
+        "park_valid": true,
+        "overrun": false,
+        "learned_zero": [
+          6908,
+          0
+        ],
+        "learned_reverse": 1,
+        "selected_motor": 2,
+        "simple_protection": true
+      },
+      "host_time": 1793167864.5726085,
+      "demo": false,
+      "rpm": [
+        3.6,
+        0.0
+      ],
+      "rpm_raw": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "time_us": 306580020,
+      "imu_seq": 307246,
+      "motor_seq": 130878,
+      "drive": true,
+      "attitude_calibrated": true,
+      "attitude_calibrating": false,
+      "current_calibrated": true,
+      "current_calibrating": false,
+      "running": true,
+      "commissioning": true,
+      "commission_failed": false,
+      "active": false,
+      "armed": false,
+      "estop": false,
+      "attitude_bad": false,
+      "independent_commission": true,
+      "preserve_commission_on_clear": true,
+      "commission_axis": 1,
+      "imu_ok": true,
+      "configured": true,
+      "gates": 4079,
+      "stop_reason": 0,
+      "motor_faults": 0,
+      "pitch": 0.0015869140625,
+      "rate": 0.06103515625,
+      "shadow_a": 0.0,
+      "iq1_a": 0.0,
+      "iq2_a": 0.0,
+      "interval_us": 937,
+      "age_us": 377,
+      "accel": [
+        0.000732421875,
+        -0.0142822265625,
+        -0.9991455078125
+      ],
+      "gyro": [
+        -0.030517578125,
+        -0.42724609375,
+        0.0
+      ],
+      "temp_c": 21.671195652173914,
+      "currents_a": [
+        0.222900390625,
+        -0.136474609375,
+        -0.08642578125,
+        0.0126953125,
+        -0.032958984375,
+        0.020263671875
+      ],
+      "angles": [
+        5405,
+        2116
+      ],
+      "zero_progress": 1024,
+      "imu_errors": 0,
+      "imu_invalid": 0,
+      "rx_errors": 0,
+      "ack_seq": 79,
+      "result": 0,
+      "rejected": 0,
+      "commissioned_mask": 0,
+      "commission_state": 3,
+      "who_am_i": 71,
+      "imu_last_error": 0,
+      "config_hex": "026708e300000000000000002c01100000006400dc052c016400081500000000",
+      "wheel_rpm": [
+        0.0,
+        0.0
+      ],
+      "speed_trim_deg": 0.0,
+      "m2_diagnostic": {
+        "sequence": 130877,
+        "sample_time": 327191256,
+        "mechanical": 2116,
+        "theta": 0,
+        "currents_a": [
+          -0.056640625,
+          0.04833984375,
+          0.00830078125
+        ],
+        "id_ref_a": 0.0,
+        "iq_ref_a": 0.0,
+        "running": true,
+        "alignment": true,
+        "id_a": -0.056884765625,
+        "iq_a": 0.022705078125,
+        "ud": 0.0391845703125,
+        "uq": -0.04119873046875,
+        "park_valid": true,
+        "overrun": false,
+        "learned_zero": [
+          6908,
+          0
+        ],
+        "learned_reverse": 1,
+        "selected_motor": 2,
+        "simple_protection": true
+      },
+      "host_time": 1793167864.6033497,
+      "demo": false,
+      "rpm": [
+        0.0,
+        0.0
+      ],
+      "rpm_raw": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "time_us": 306620020,
+      "imu_seq": 307286,
+      "motor_seq": 131678,
+      "drive": true,
+      "attitude_calibrated": true,
+      "attitude_calibrating": false,
+      "current_calibrated": true,
+      "current_calibrating": false,
+      "running": true,
+      "commissioning": true,
+      "commission_failed": false,
+      "active": false,
+      "armed": false,
+      "estop": false,
+      "attitude_bad": false,
+      "independent_commission": true,
+      "preserve_commission_on_clear": true,
+      "commission_axis": 1,
+      "imu_ok": true,
+      "configured": true,
+      "gates": 4079,
+      "stop_reason": 0,
+      "motor_faults": 0,
+      "pitch": 0.007415771484375,
+      "rate": -0.1220703125,
+      "shadow_a": 0.0,
+      "iq1_a": 0.0,
+      "iq2_a": 0.0,
+      "interval_us": 1087,
+      "age_us": 350,
+      "accel": [
+        -0.008544921875,
+        -0.0186767578125,
+        -0.9998779296875
+      ],
+      "gyro": [
+        0.79345703125,
+        -0.244140625,
+        -0.244140625
+      ],
+      "temp_c": 21.671195652173914,
+      "currents_a": [
+        0.259521484375,
+        -0.10107421875,
+        -0.158447265625,
+        -0.033447265625,
+        0.009765625,
+        0.023681640625
+      ],
+      "angles": [
+        5406,
+        2116
+      ],
+      "zero_progress": 1024,
+      "imu_errors": 0,
+      "imu_invalid": 0,
+      "rx_errors": 0,
+      "ack_seq": 80,
+      "result": 0,
+      "rejected": 0,
+      "commissioned_mask": 0,
+      "commission_state": 3,
+      "who_am_i": 71,
+      "imu_last_error": 0,
+      "config_hex": "026708e300000000000000002c01100000006400dc052c016400081500000000",
+      "wheel_rpm": [
+        0.0,
+        0.0
+      ],
+      "speed_trim_deg": 0.0,
+      "m2_diagnostic": {
+        "sequence": 131677,
+        "sample_time": 329191256,
+        "mechanical": 2116,
+        "theta": 0,
+        "currents_a": [
+          0.060546875,
+          0.00390625,
+          -0.064453125
+        ],
+        "id_ref_a": 0.0,
+        "iq_ref_a": 0.0,
+        "running": true,
+        "alignment": true,
+        "id_a": 0.06005859375,
+        "iq_a": 0.039306640625,
+        "ud": 0.03955078125,
+        "uq": -0.042816162109375,
+        "park_valid": true,
+        "overrun": false,
+        "learned_zero": [
+          6908,
+          0
+        ],
+        "learned_reverse": 1,
+        "selected_motor": 2,
+        "simple_protection": true
+      },
+      "host_time": 1793167864.643118,
+      "demo": false,
+      "rpm": [
+        0.0,
+        0.0
+      ],
+      "rpm_raw": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "time_us": 306660020,
+      "imu_seq": 307326,
+      "motor_seq": 132478,
+      "drive": true,
+      "attitude_calibrated": true,
+      "attitude_calibrating": false,
+      "current_calibrated": true,
+      "current_calibrating": false,
+      "running": true,
+      "commissioning": true,
+      "commission_failed": false,
+      "active": false,
+      "armed": false,
+      "estop": false,
+      "attitude_bad": false,
+      "independent_commission": true,
+      "preserve_commission_on_clear": true,
+      "commission_axis": 1,
+      "imu_ok": true,
+      "configured": true,
+      "gates": 4079,
+      "stop_reason": 0,
+      "motor_faults": 0,
+      "pitch": 0.0008697509765625,
+      "rate": 0.244140625,
+      "shadow_a": 0.0,
+      "iq1_a": 0.0,
+      "iq2_a": 0.0,
+      "interval_us": 1087,
+      "age_us": 472,
+      "accel": [
+        -0.004150390625,
+        -0.0233154296875,
+        -0.9962158203125
+      ],
+      "gyro": [
+        0.213623046875,
+        -0.6103515625,
+        -0.1220703125
+      ],
+      "temp_c": 21.731582125603865,
+      "currents_a": [
+        0.2900390625,
+        -0.14453125,
+        -0.1455078125,
+        -0.04638671875,
+        0.06396484375,
+        -0.017578125
+      ],
+      "angles": [
+        5407,
+        2116
+      ],
+      "zero_progress": 1024,
+      "imu_errors": 0,
+      "imu_invalid": 0,
+      "rx_errors": 0,
+      "ack_seq": 81,
+      "result": 0,
+      "rejected": 0,
+      "commissioned_mask": 0,
+      "commission_state": 3,
+      "who_am_i": 71,
+      "imu_last_error": 0,
+      "config_hex": "026708e300000000000000002c01100000006400dc052c016400081500000000",
+      "wheel_rpm": [
+        0.0,
+        0.0
+      ],
+      "speed_trim_deg": 0.0,
+      "m2_diagnostic": {
+        "sequence": 132477,
+        "sample_time": 331191256,
+        "mechanical": 2116,
+        "theta": 0,
+        "currents_a": [
+          0.076171875,
+          -0.022216796875,
+          -0.053955078125
+        ],
+        "id_ref_a": 0.0,
+        "iq_ref_a": 0.0,
+        "running": true,
+        "alignment": true,
+        "id_a": 0.07568359375,
+        "iq_a": 0.018310546875,
+        "ud": 0.04217529296875,
+        "uq": -0.043731689453125,
+        "park_valid": true,
+        "overrun": false,
+        "learned_zero": [
+          6908,
+          0
+        ],
+        "learned_reverse": 1,
+        "selected_motor": 2,
+        "simple_protection": true
+      },
+      "host_time": 1793167864.683685,
+      "demo": false,
+      "rpm": [
+        0.0,
+        0.0
+      ],
+      "rpm_raw": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "time_us": 306690020,
+      "imu_seq": 307356,
+      "motor_seq": 133078,
+      "drive": true,
+      "attitude_calibrated": true,
+      "attitude_calibrating": false,
+      "current_calibrated": true,
+      "current_calibrating": false,
+      "running": true,
+      "commissioning": true,
+      "commission_failed": false,
+      "active": false,
+      "armed": false,
+      "estop": false,
+      "attitude_bad": false,
+      "independent_commission": true,
+      "preserve_commission_on_clear": true,
+      "commission_axis": 1,
+      "imu_ok": true,
+      "configured": true,
+      "gates": 4079,
+      "stop_reason": 0,
+      "motor_faults": 0,
+      "pitch": 0.0045166015625,
+      "rate": 0.091552734375,
+      "shadow_a": 0.0,
+      "iq1_a": 0.0,
+      "iq2_a": 0.0,
+      "interval_us": 1087,
+      "age_us": 565,
+      "accel": [
+        -0.0048828125,
+        -0.0206298828125,
+        -0.9986572265625
+      ],
+      "gyro": [
+        -0.152587890625,
+        -0.457763671875,
+        -0.06103515625
+      ],
+      "temp_c": 21.731582125603865,
+      "currents_a": [
+        0.314697265625,
+        -0.15869140625,
+        -0.156005859375,
+        -0.044921875,
+        0.027099609375,
+        0.017822265625
+      ],
+      "angles": [
+        5407,
+        2116
+      ],
+      "zero_progress": 1024,
+      "imu_errors": 0,
+      "imu_invalid": 0,
+      "rx_errors": 0,
+      "ack_seq": 82,
+      "result": 0,
+      "rejected": 0,
+      "commissioned_mask": 0,
+      "commission_state": 3,
+      "who_am_i": 71,
+      "imu_last_error": 0,
+      "config_hex": "026708e300000000000000002c01100000006400dc052c016400081500000000",
+      "wheel_rpm": [
+        0.0,
+        0.0
+      ],
+      "speed_trim_deg": 0.0,
+      "m2_diagnostic": {
+        "sequence": 133077,
+        "sample_time": 332691256,
+        "mechanical": 2116,
+        "theta": 0,
+        "currents_a": [
+          -0.035400390625,
+          0.041748046875,
+          -0.00634765625
+        ],
+        "id_ref_a": 0.0,
+        "iq_ref_a": 0.0,
+        "running": true,
+        "alignment": true,
+        "id_a": -0.03564453125,
+        "iq_a": 0.02734375,
+        "ud": 0.04547119140625,
+        "uq": -0.045440673828125,
+        "park_valid": true,
+        "overrun": false,
+        "learned_zero": [
+          6908,
+          0
+        ],
+        "learned_reverse": 1,
+        "selected_motor": 2,
+        "simple_protection": true
+      },
+      "host_time": 1793167864.7131848,
+      "demo": false,
+      "rpm": [
+        0.0,
+        0.0
+      ],
+      "rpm_raw": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "time_us": 306740020,
+      "imu_seq": 307406,
+      "motor_seq": 134078,
+      "drive": true,
+      "attitude_calibrated": true,
+      "attitude_calibrating": false,
+      "current_calibrated": true,
+      "current_calibrating": false,
+      "running": true,
+      "commissioning": true,
+      "commission_failed": false,
+      "active": false,
+      "armed": false,
+      "estop": false,
+      "attitude_bad": false,
+      "independent_commission": true,
+      "preserve_commission_on_clear": true,
+      "commission_axis": 1,
+      "imu_ok": true,
+      "configured": true,
+      "gates": 4079,
+      "stop_reason": 0,
+      "motor_faults": 0,
+      "pitch": -0.0006103515625,
+      "rate": 0.06103515625,
+      "shadow_a": 0.0,
+      "iq1_a": 0.0,
+      "iq2_a": 0.0,
+      "interval_us": 937,
+      "age_us": 718,
+      "accel": [
+        -0.006103515625,
+        -0.0130615234375,
+        -1.0010986328125
+      ],
+      "gyro": [
+        0.1220703125,
+        -0.42724609375,
+        -0.06103515625
+      ],
+      "temp_c": 21.731582125603865,
+      "currents_a": [
+        0.21826171875,
+        -0.103515625,
+        -0.11474609375,
+        0.06787109375,
+        -0.052734375,
+        -0.01513671875
+      ],
+      "angles": [
+        5407,
+        2116
+      ],
+      "zero_progress": 1024,
+      "imu_errors": 0,
+      "imu_invalid": 0,
+      "rx_errors": 0,
+      "ack_seq": 84,
+      "result": 0,
+      "rejected": 0,
+      "commissioned_mask": 0,
+      "commission_state": 3,
+      "who_am_i": 71,
+      "imu_last_error": 0,
+      "config_hex": "026708e300000000000000002c01100000006400dc052c016400081500000000",
+      "wheel_rpm": [
+        0.0,
+        0.0
+      ],
+      "speed_trim_deg": 0.0,
+      "m2_diagnostic": {
+        "sequence": 134077,
+        "sample_time": 335191256,
+        "mechanical": 2116,
+        "theta": 0,
+        "currents_a": [
+          -0.0419921875,
+          -0.002685546875,
+          0.044677734375
+        ],
+        "id_ref_a": 0.0,
+        "iq_ref_a": 0.0,
+        "running": true,
+        "alignment": true,
+        "id_a": -0.0419921875,
+        "iq_a": -0.027587890625,
+        "ud": 0.050872802734375,
+        "uq": -0.04620361328125,
+        "park_valid": true,
+        "overrun": false,
+        "learned_zero": [
+          6908,
+          0
+        ],
+        "learned_reverse": 1,
+        "selected_motor": 2,
+        "simple_protection": true
+      },
+      "host_time": 1793167864.764358,
+      "demo": false,
+      "rpm": [
+        0.0,
+        0.0
+      ],
+      "rpm_raw": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "time_us": 306785020,
+      "imu_seq": 307451,
+      "motor_seq": 134978,
+      "drive": true,
+      "attitude_calibrated": true,
+      "attitude_calibrating": false,
+      "current_calibrated": true,
+      "current_calibrating": false,
+      "running": true,
+      "commissioning": true,
+      "commission_failed": false,
+      "active": false,
+      "armed": false,
+      "estop": false,
+      "attitude_bad": false,
+      "independent_commission": true,
+      "preserve_commission_on_clear": true,
+      "commission_axis": 1,
+      "imu_ok": true,
+      "configured": true,
+      "gates": 4079,
+      "stop_reason": 0,
+      "motor_faults": 0,
+      "pitch": 0.0056610107421875,
+      "rate": -0.152587890625,
+      "shadow_a": 0.0,
+      "iq1_a": 0.0,
+      "iq2_a": 0.0,
+      "interval_us": 937,
+      "age_us": 833,
+      "accel": [
+        -0.00341796875,
+        -0.0213623046875,
+        -0.9991455078125
+      ],
+      "gyro": [
+        0.640869140625,
+        -0.213623046875,
+        -0.06103515625
+      ],
+      "temp_c": 21.557971014492754,
+      "currents_a": [
+        0.2802734375,
+        -0.1298828125,
+        -0.150390625,
+        -0.037353515625,
+        0.005615234375,
+        0.03173828125
+      ],
+      "angles": [
+        5407,
+        2116
+      ],
+      "zero_progress": 1024,
+      "imu_errors": 0,
+      "imu_invalid": 0,
+      "rx_errors": 0,
+      "ack_seq": 86,
+      "result": 0,
+      "rejected": 0,
+      "commissioned_mask": 0,
+      "commission_state": 3,
+      "who_am_i": 71,
+      "imu_last_error": 0,
+      "config_hex": "026708e300000000000000002c01100000006400dc052c016400081500000000",
+      "wheel_rpm": [
+        0.0,
+        0.0
+      ],
+      "speed_trim_deg": 0.0,
+      "m2_diagnostic": {
+        "sequence": 134977,
+        "sample_time": 337441256,
+        "mechanical": 2116,
+        "theta": 0,
+        "currents_a": [
+          -0.038818359375,
+          0.05078125,
+          -0.011962890625
+        ],
+        "id_ref_a": 0.0,
+        "iq_ref_a": 0.0,
+        "running": true,
+        "alignment": true,
+        "id_a": -0.0390625,
+        "iq_a": 0.035888671875,
+        "ud": 0.056365966796875,
+        "uq": -0.047454833984375,
+        "park_valid": true,
+        "overrun": false,
+        "learned_zero": [
+          6908,
+          0
+        ],
+        "learned_reverse": 1,
+        "selected_motor": 2,
+        "simple_protection": true
+      },
+      "host_time": 1793167864.8058794,
+      "demo": false,
+      "rpm": [
+        0.0,
+        0.0
+      ],
+      "rpm_raw": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "time_us": 306820020,
+      "imu_seq": 307486,
+      "motor_seq": 135678,
+      "drive": true,
+      "attitude_calibrated": true,
+      "attitude_calibrating": false,
+      "current_calibrated": true,
+      "current_calibrating": false,
+      "running": false,
+      "commissioning": false,
+      "commission_failed": false,
+      "active": false,
+      "armed": false,
+      "estop": false,
+      "attitude_bad": false,
+      "independent_commission": true,
+      "preserve_commission_on_clear": true,
+      "commission_axis": 1,
+      "imu_ok": true,
+      "configured": true,
+      "gates": 4079,
+      "stop_reason": 0,
+      "motor_faults": 0,
+      "pitch": 0.0001068115234375,
+      "rate": -0.1220703125,
+      "shadow_a": 0.0,
+      "iq1_a": 0.0,
+      "iq2_a": 0.0,
+      "interval_us": 937,
+      "age_us": 941,
+      "accel": [
+        -0.0054931640625,
+        -0.023681640625,
+        -0.997314453125
+      ],
+      "gyro": [
+        0.152587890625,
+        -0.244140625,
+        0.06103515625
+      ],
+      "temp_c": 21.557971014492754,
+      "currents_a": [
+        0.035400390625,
+        -0.0517578125,
+        0.016357421875,
+        0.04541015625,
+        -0.019775390625,
+        -0.025634765625
+      ],
+      "angles": [
+        5408,
+        2116
+      ],
+      "zero_progress": 1024,
+      "imu_errors": 0,
+      "imu_invalid": 0,
+      "rx_errors": 0,
+      "ack_seq": 87,
+      "result": 0,
+      "rejected": 0,
+      "commissioned_mask": 1,
+      "commission_state": 6,
+      "who_am_i": 71,
+      "imu_last_error": 0,
+      "config_hex": "026708e300000000000000002c01100000006400dc052c016400081500000000",
+      "wheel_rpm": [
+        -0.1,
+        0.0
+      ],
+      "speed_trim_deg": 0.0,
+      "m2_diagnostic": {
+        "sequence": 135677,
+        "sample_time": 339191256,
+        "mechanical": 2116,
+        "theta": 27568,
+        "currents_a": [
+          0.042724609375,
+          -0.031494140625,
+          -0.01123046875
+        ],
+        "id_ref_a": 0.0,
+        "iq_ref_a": 0.0,
+        "running": false,
+        "alignment": false,
+        "id_a": -0.043212890625,
+        "iq_a": -0.010009765625,
+        "ud": 0.0003662109375,
+        "uq": 9.1552734375e-05,
+        "park_valid": true,
+        "overrun": false,
+        "learned_zero": [
+          5408,
+          0
+        ],
+        "learned_reverse": 1,
+        "selected_motor": 2,
+        "simple_protection": true
+      },
+      "host_time": 1793167864.8414142,
+      "demo": false,
+      "rpm": [
+        -0.1,
+        0.0
+      ],
+      "rpm_raw": [
+        0.732421875,
+        0.0
+      ]
+    }
+  ],
+  "last": {
+    "time_us": 306840020,
+    "imu_seq": 307506,
+    "motor_seq": 136078,
+    "drive": true,
+    "attitude_calibrated": true,
+    "attitude_calibrating": false,
+    "current_calibrated": true,
+    "current_calibrating": false,
+    "running": false,
+    "commissioning": false,
+    "commission_failed": false,
+    "active": false,
+    "armed": false,
+    "estop": false,
+    "attitude_bad": false,
+    "independent_commission": true,
+    "preserve_commission_on_clear": true,
+    "commission_axis": 1,
+    "imu_ok": true,
+    "configured": true,
+    "gates": 4079,
+    "stop_reason": 0,
+    "motor_faults": 0,
+    "pitch": -0.000274658203125,
+    "rate": 0.06103515625,
+    "shadow_a": 0.0,
+    "iq1_a": 0.0,
+    "iq2_a": 0.0,
+    "interval_us": 937,
+    "age_us": 1002,
+    "accel": [
+      -0.00146484375,
+      -0.0262451171875,
+      -1.0
+    ],
+    "gyro": [
+      -0.091552734375,
+      -0.42724609375,
+      0.0
+    ],
+    "temp_c": 21.557971014492754,
+    "currents_a": [
+      -0.000732421875,
+      0.037109375,
+      -0.036376953125,
+      -0.0947265625,
+      0.057373046875,
+      0.037353515625
+    ],
+    "angles": [
+      5411,
+      2116
+    ],
+    "zero_progress": 1024,
+    "imu_errors": 0,
+    "imu_invalid": 0,
+    "rx_errors": 0,
+    "ack_seq": 88,
+    "result": 0,
+    "rejected": 0,
+    "commissioned_mask": 1,
+    "commission_state": 6,
+    "who_am_i": 71,
+    "imu_last_error": 0,
+    "config_hex": "026708e300000000000000002c01100000006400dc052c016400081500000000",
+    "wheel_rpm": [
+      -0.5,
+      0.0
+    ],
+    "speed_trim_deg": 0.0,
+    "m2_diagnostic": {
+      "sequence": 136077,
+      "sample_time": 340191256,
+      "mechanical": 2116,
+      "theta": 27568,
+      "currents_a": [
+        0.026123046875,
+        -0.052001953125,
+        0.02587890625
+      ],
+      "id_ref_a": 0.0,
+      "iq_ref_a": 0.0,
+      "running": false,
+      "alignment": false,
+      "id_a": -0.044677734375,
+      "iq_a": 0.027099609375,
+      "ud": 0.000396728515625,
+      "uq": -0.000274658203125,
+      "park_valid": true,
+      "overrun": false,
+      "learned_zero": [
+        5408,
+        0
+      ],
+      "learned_reverse": 1,
+      "selected_motor": 2,
+      "simple_protection": true
+    },
+    "host_time": 1793167864.8618495,
+    "demo": false,
+    "rpm": [
+      -0.5,
+      0.0
+    ],
+    "rpm_raw": [
+      0.0,
+      0.0
+    ]
+  },
+  "log_dir": "E:\\Gowin_project\\fpga_project\\team_repos\\fpga-balance\\releases\\MOTOR_MANUAL_20261028_R4\\app\\results\\20261028_131132_09a610",
+  "phase_summary": [
+    {
+      "state": 1,
+      "samples": 25,
+      "encoder_net_ticks": [
+        681,
+        0
+      ]
+    },
+    {
+      "state": 2,
+      "samples": 23,
+      "encoder_net_ticks": [
+        -1433,
+        0
+      ]
+    },
+    {
+      "state": 3,
+      "samples": 7,
+      "encoder_net_ticks": [
+        2,
+        0
+      ]
+    }
+  ],
+  "user_observation": {
+    "M1": "right wheel swept",
+    "M2": "left wheel stationary",
+    "abnormal_noise": false,
+    "confirmed_by_user": true
+  },
+  "acceptance_scope": "M1 commissioning at Id target .25 A with M2 stationary, after implicit-net synthesis correction; not M2 current-loop or full balance acceptance"
+}

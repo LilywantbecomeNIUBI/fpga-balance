@@ -1,0 +1,253 @@
+{
+  "actual_installed_bitstream_sha256": "10c44789d37fa8073710f7768b6ec24cd943ccb8c7e2f20a17069a904e15cabd",
+  "commissioning_attempts": [
+    {
+      "axis": 1,
+      "wall_time": 1793185833.6462553,
+      "stages": {
+        "1": {
+          "samples": 200,
+          "first": 940,
+          "last": 934,
+          "travel_ticks": -6
+        },
+        "2": {
+          "samples": 200,
+          "first": 934,
+          "last": 15844,
+          "travel_ticks": -1474
+        },
+        "3": {
+          "samples": 60,
+          "first": 15838,
+          "last": 15831,
+          "travel_ticks": -7
+        }
+      }
+    },
+    {
+      "axis": 2,
+      "wall_time": 1793185837.372462,
+      "stages": {
+        "1": {
+          "samples": 200,
+          "first": 2265,
+          "last": 2962,
+          "travel_ticks": 697
+        },
+        "2": {
+          "samples": 200,
+          "first": 2962,
+          "last": 2250,
+          "travel_ticks": -712
+        },
+        "3": {
+          "samples": 60,
+          "first": 2251,
+          "last": 2252,
+          "travel_ticks": 1
+        }
+      }
+    },
+    {
+      "axis": 2,
+      "wall_time": 1793186743.599328,
+      "stages": {}
+    },
+    {
+      "axis": 1,
+      "wall_time": 1793186779.1359837,
+      "stages": {
+        "1": {
+          "samples": 201,
+          "first": 1641,
+          "last": 2403,
+          "travel_ticks": 762
+        },
+        "2": {
+          "samples": 200,
+          "first": 2403,
+          "last": 941,
+          "travel_ticks": -1462
+        },
+        "3": {
+          "samples": 60,
+          "first": 936,
+          "last": 932,
+          "travel_ticks": -4
+        }
+      }
+    },
+    {
+      "axis": 2,
+      "wall_time": 1793186783.5426338,
+      "stages": {
+        "1": {
+          "samples": 200,
+          "first": 8867,
+          "last": 8249,
+          "travel_ticks": -618
+        },
+        "2": {
+          "samples": 200,
+          "first": 8249,
+          "last": 6759,
+          "travel_ticks": -1490
+        },
+        "3": {
+          "samples": 60,
+          "first": 6756,
+          "last": 6753,
+          "travel_ticks": -3
+        }
+      }
+    }
+  ],
+  "direction_chain": {
+    "commission_field": "Both axes use identical increasing electrical sweep, ignoring vehicle torque reversal flags.",
+    "encoder_electrical_mapping": "Latest learned_reverse=3: both use zero minus raw encoder angle.",
+    "historically_confirmed_vehicle_forward_raw_encoder": {
+      "M1": "decreasing",
+      "M2": "increasing"
+    },
+    "historically_confirmed_positive_raw_Iq": {
+      "M1": "vehicle forward",
+      "M2": "vehicle backward"
+    },
+    "PD_front_tilt": "common Iq negative; M1 torque flag reverses to positive, M2 remains negative; expected both forward."
+  },
+  "code_current_sensor_polarity": {
+    "physical_C1": -1,
+    "physical_B1": -1,
+    "physical_C2": -1,
+    "physical_B2": 1
+  },
+  "current_observation": {
+    "top_level_stopped": true,
+    "iq_commands_a": [
+      0,
+      0
+    ],
+    "M2_phase_B_read_range_A": [
+      7.70361328125,
+      7.7099609375
+    ],
+    "actual_phase_current_or_physical_EN_PWM_not_measured": true
+  },
+  "physical_phase_wire_correspondence_and_encoder_mounting_reverified": false,
+  "motor_commands_sent": false,
+  "last_runtime_intervals": [
+    {
+      "first_time": 1793186050.3473265,
+      "mode": 0,
+      "torque_reverse_bits": 1,
+      "n": 3589,
+      "first_angles": [
+        8030,
+        10470
+      ],
+      "last_angles": [
+        4617,
+        5003
+      ],
+      "encoder_ticks": [
+        12971,
+        92837
+      ],
+      "pitch_min": -6.4152069091796875,
+      "pitch_max": 15.1123046875,
+      "m2_phase_peak_a": 0.66748046875,
+      "feedback_n": 3589,
+      "last_time": 1793186068.2839956,
+      "mean_iq_commands_a": [
+        0.01918997011267066,
+        -0.01918997011267066
+      ],
+      "mean_m2_iq_feedback_a": -0.037664116375557256
+    },
+    {
+      "first_time": 1793186789.8254988,
+      "mode": 1,
+      "torque_reverse_bits": 0,
+      "n": 400,
+      "first_angles": [
+        942,
+        6702
+      ],
+      "last_angles": [
+        942,
+        5359
+      ],
+      "encoder_ticks": [
+        0,
+        -1343
+      ],
+      "pitch_min": -0.0590362548828125,
+      "pitch_max": 0.0574951171875,
+      "m2_phase_peak_a": 0.121337890625,
+      "feedback_n": 400,
+      "last_time": 1793186791.8173397,
+      "mean_iq_commands_a": [
+        0.0,
+        0.39990234375
+      ],
+      "mean_m2_iq_feedback_a": 0.004720458984375
+    },
+    {
+      "first_time": 1793186797.2524943,
+      "mode": 1,
+      "torque_reverse_bits": 0,
+      "n": 400,
+      "first_angles": [
+        942,
+        5105
+      ],
+      "last_angles": [
+        941,
+        3872
+      ],
+      "encoder_ticks": [
+        -1,
+        -1233
+      ],
+      "pitch_min": -0.0673370361328125,
+      "pitch_max": 0.057769775390625,
+      "m2_phase_peak_a": 0.2314453125,
+      "feedback_n": 400,
+      "last_time": 1793186799.24975,
+      "mean_iq_commands_a": [
+        0.0,
+        0.39990234375
+      ],
+      "mean_m2_iq_feedback_a": 0.002174072265625
+    },
+    {
+      "first_time": 1793186824.009492,
+      "mode": 0,
+      "torque_reverse_bits": 1,
+      "n": 5321,
+      "first_angles": [
+        941,
+        3868
+      ],
+      "last_angles": [
+        3112,
+        11381
+      ],
+      "encoder_ticks": [
+        1493115,
+        -41639
+      ],
+      "pitch_min": -3.7589111328125,
+      "pitch_max": 3.2167205810546875,
+      "m2_phase_peak_a": 8.0,
+      "feedback_n": 5321,
+      "last_time": 1793186850.6088378,
+      "mean_iq_commands_a": [
+        -0.07402287773386111,
+        0.07402287773386111
+      ],
+      "mean_m2_iq_feedback_a": -0.8493071930499436
+    }
+  ]
+}

@@ -22,3 +22,9 @@ dist/
 !/releases/MOTOR_MANUAL_20261028_R4/firmware/*.fs
 /docs/debug.log
 /evidence/engineering/pd_observation_poll.stop
+
+!/releases/MOTOR_MANUAL_20261028_R5/
+!/releases/MOTOR_MANUAL_20261028_R5/firmware/*.fs
+
+# Local rollback bitstreams are not release deliverables.
+/releases/MOTOR_MANUAL_20261028_R5/firmware/previous_*.fs

@@ -15,22 +15,21 @@ motor_commission #(.RELAXED_ACCEPTANCE(1),.PRESERVE_CAL_ON_CLEAR(1),.SETTLE_FRAM
 .ia(-16'sd3000),.ib(16'sd2500),.faults(12'd0),.done(done),.zero(zero),.state(state));
 always @(negedge clk)begin if(state==2)ca=commission.frames*600/16;if(state==3)ca=600;end
 reg req=0,cmd=0;wire signed [15:0] iq;
-motor_command_guard #(.IQ_LIMIT(4096),.SLEW_PER_FRAME(4096),.CMD_TIMEOUT(1000),.MAX_RUN_CYCLES(0)) command_guard(
+motor_command_guard #(.IQ_LIMIT(4915),.SLEW_PER_FRAME(4915),.CMD_TIMEOUT(1000),.MAX_RUN_CYCLES(0)) command_guard(
 .clk(clk),.rst_n(rst),.request_arm(req),.clear_fault(1'b0),.command_valid(cmd),.frame_valid(1'b1),
 .iq_request_1(16'sd7000),.iq_request_2(-16'sd7000),.iq_1(iq));
-reg sup_done=0,scv=0,imu=1,attbad=0;reg [7:0] scmd=0;reg signed [31:0] pitch=0;
+reg sup_done=0,scv=0,imu=1,attbad=0;reg [7:0] scmd=0;
 wire sa,sarm;wire [15:0] reason;
 balance_supervisor #(.SIMPLE_PROTECTION(1),.ALLOW_DRIVE(1),.CLK_HZ(10000)) supervisor(
-.clk(clk),.rst_n(rst),.command_valid(scv),.configured(1'b1),.config_changed(1'b0),.command(scmd),.flags(8'he0),
-.imu_ok(imu),.attitude_calibrated(1'b1),.attitude_calibrating(1'b0),.attitude_bad(attbad),.pitch(pitch),
-.cutoff_cdeg(16'd1500),.start_cdeg(16'd300),.duration_ms(16'd1000),.current_calibrated(1'b1),.current_calibrating(1'b0),
+.clk(clk),.rst_n(rst),.command_valid(scv),.configured(1'b1),.config_changed(1'b0),.command(scmd),
+.imu_ok(imu),.attitude_calibrated(1'b1),.attitude_calibrating(1'b0),.attitude_bad(attbad),
+.current_calibrated(1'b1),.current_calibrating(1'b0),
 .commissioned(1'b1),.commissioning(1'b0),.motor_faults(12'd0),.active(sa),.armed(sarm),.stop_reason(reason));
 task send(input [7:0] c);begin @(negedge clk);scmd=c;scv=1;@(negedge clk);scv=0;end endtask
 initial begin
 wait(rst);repeat(4)@(negedge clk);send(0);send(6);send(7);#1;if(!sa)$fatal(1,"minimal supervisor start");
 imu=0;attbad=1;repeat(10)@(negedge clk);#1;if(!sa || reason!=0)$fatal(1,"removed IMU runtime fault still trips");
-pitch=20*65536;repeat(3)@(negedge clk);#1;if(sa || reason!=16'h10)$fatal(1,"tilt missing");
-pitch=0;imu=1;attbad=0;send(2);send(0);send(6);send(7);repeat(1010)@(negedge clk);
+imu=1;attbad=0;send(2);send(0);send(6);send(7);repeat(1010)@(negedge clk);
 #1;if(sa || reason!=2)$fatal(1,"heartbeat timeout missing");
 sup_done=1;
 end
@@ -38,7 +37,7 @@ initial begin
 repeat(3)@(negedge clk);rst=1;repeat(4)@(negedge clk);arm=1;cs=1;cmd=1;
 @(negedge clk);cs=0;cmd=0;req=1;
 repeat(8)@(negedge clk);#1;if(!run || faults!=0)$fatal(1,"software faults still stop");
-if(iq!=4096)$fatal(1,"Iq hard limit is not 1A");
+if(iq!=4915)$fatal(1,"Iq hard limit is not 1.2A");
 valid=1;@(negedge clk);valid=0;wait(av);@(negedge clk);
 angle=1000;ct=999999;et=9999;valid=1;@(negedge clk);valid=0;wait(av);#1;
 if(sf || tf)$fatal(1,"speed/timestamp check still trips");
@@ -53,7 +52,7 @@ if(faults!=4)$fatal(1,"M2 fault identity %h",faults);
 arm=0;nf=3;repeat(4)@(negedge clk);clear=1;repeat(2)@(negedge clk);clear=0;arm=1;
 repeat(8)@(negedge clk);stop=1;#1;if(run)$fatal(1,"Stop did not kill");
 repeat(2)@(negedge clk);if(faults!=1)$fatal(1,"Stop code");
-wait(sup_done);$display("PASS simplified supervisor tilt/heartbeat, faults, hardware M1/M2, Stop, disabled speed/timing, 1A clamp, relaxed commissioning and clear preservation");$finish;
+wait(sup_done);$display("PASS simplified supervisor heartbeat, faults, hardware M1/M2, Stop, disabled speed/timing, 1.2A clamp, relaxed commissioning and clear preservation");$finish;
 end
 initial begin #100000;$fatal(1,"timeout");end
 endmodule

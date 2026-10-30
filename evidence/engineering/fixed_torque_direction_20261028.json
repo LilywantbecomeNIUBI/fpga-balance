@@ -1,0 +1,18 @@
+{
+  "direction_selectors_removed": true,
+  "runtime_current_mapping": "raw Iq on each selected axis",
+  "upright_and_speed_mapping": {
+    "M1": "-common Iq",
+    "M2": "+common Iq"
+  },
+  "electrical_angle_learning_unchanged": true,
+  "rtl_tests": 19,
+  "root_host_tests": 25,
+  "release_host_tests": 29,
+  "setup_violations": 0,
+  "hold_violations": 0,
+  "critical_warnings": [],
+  "bitstream_sha256": "1047403fa92b1e427068a533c9663435a40ef67b519d6663a550fb80ea285712",
+  "downloaded": false,
+  "formal_service_restarted": false
+}

@@ -24,17 +24,15 @@ module balance_protocol(input wire clk,rst_n,byte_valid,input wire [7:0] byte_va
     wire [4:0] nibble=hex(byte_value);
     wire [7:0] opcode=body[23:16];
     // Orientation is fixed for this vehicle; reject old/incompatible profiles.
-    wire valid_config=body[7:0]==2 && body[26:24]==3'b011 && body[63:32]<=32'd8388608 && body[95:64]<=32'd1677722 &&
+    wire valid_config=body[7:0]==2 && body[31:24]==8'd3 && body[63:32]<=32'd16777216 && body[95:64]<=32'd3355443 &&
         body[111:96]<=16384 && body[127:112]<=256 &&
         $signed(body[143:128])>=-500 && $signed(body[143:128])<=500 &&
-        body[159:144]>0 && body[159:144]<=1000 &&
-        body[175:160]>=500 && body[175:160]<=1500 &&
-        body[191:176]>0 && body[191:176]<=500 && body[191:176]<body[175:160] &&
-        body[207:192]>=100 && body[207:192]<=5000 &&
-        body[215:208]>=4 && body[215:208]<=10 && body[217:216]<=2 && body[219:218]==2'b01 && body[223:222]==0 &&
-        (body[217:216]!=1 || (body[221:220]!=0 && $signed(body[239:224])<= $signed({1'b0,body[159:144]}) &&
+        body[159:144]>0 && body[159:144]<=1200 &&
+        body[207:192]==0 &&
+        body[215:208]>=4 && body[215:208]<=10 && body[217:216]<=2 && body[219:218]==2'b01 && (!body[223] || (body[175:160]<=16384 && body[191:176]<=256)) &&
+        (body[217:216]!=1 || (body[255:240]>=100 && body[255:240]<=10000 && body[221:220]!=0 && $signed(body[239:224])<= $signed({1'b0,body[159:144]}) &&
           $signed(body[239:224])>= -$signed({1'b0,body[159:144]}))) &&
-        (body[217:216]!=2 || ($signed(body[239:224])>=-600 && $signed(body[239:224])<=600));
+        (body[217:216]!=2 || ($signed(body[239:224])>=-1200 && $signed(body[239:224])<=1200));
     always @(posedge clk or negedge rst_n)
     if(!rst_n) begin pos<=0;body<=0;crc<=16'hffff;received_crc<=0;high_nibble<=0;
         command_valid<=0;command<=0;configured<=0;config_changed<=0;config_body<=0;ack_seq<=0;result<=0;rx_errors<=0;idle_count<=0;end
@@ -60,7 +58,7 @@ module balance_protocol(input wire clk,rst_n,byte_valid,input wire [7:0] byte_va
                 if(opcode==8) begin
                     if(can_configure && valid_config) begin config_body<=body;configured<=1;config_changed<=1;end
                     else result<=can_configure ? 2 : 3;
-                end else if(((opcode<=7 && opcode!=5) || opcode==9 || opcode==10) && body[255:24]==0) begin command<=opcode;command_valid<=1;end
+                end else if(((opcode<=7 && opcode!=5) || opcode==9 || opcode==10 || opcode==11) && body[255:24]==0) begin command<=opcode;command_valid<=1;end
                 else result<=2;
             end else begin
                 if(pos!=0) rx_errors<=rx_errors+1'b1;

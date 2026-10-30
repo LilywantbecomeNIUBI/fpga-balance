@@ -31,5 +31,10 @@
   "motor_12v_disconnected_user_confirmed": true,
   "unpowered_manual_resistance": "User confirms M2 remains significantly stiffer than M1 after motor 12V disconnected",
   "motor_phase_disconnected_resistance": "User reports M2 remains similarly stiff with all three phases disconnected",
-  "user_suspects_manufacturing_issue": true
+  "user_suspects_manufacturing_issue": true,
+  "latest_user_observation": {
+    "motor_12v_disconnected": true,
+    "abnormal_noise_during_low_gain_pair": true,
+    "M1_motion_visually_confirmed": true
+  }
 }

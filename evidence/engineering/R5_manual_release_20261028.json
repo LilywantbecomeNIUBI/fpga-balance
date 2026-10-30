@@ -1,0 +1,57 @@
+{
+  "release": "MOTOR_MANUAL_20261028_R5",
+  "firmware_sha256": "10c44789d37fa8073710f7768b6ec24cd943ccb8c7e2f20a17069a904e15cabd",
+  "features": {
+    "commission_id_target_a": 0.35009765625,
+    "continuous_duration_ms": 0,
+    "normal_end_command": 11,
+    "apply_preserves_attitude_current_and_electrical_calibration": true,
+    "Stop_Esc_still_latching_estop": true,
+    "download_reset_still_invalidates_session_calibration": true,
+    "manual_pd_limits": {
+      "kp_max": 1.0,
+      "kd_max": 0.2,
+      "current_ma_max": 1200,
+      "ui_initial_current_ma": 300,
+      "runtime_iq_limit_q12": 4915,
+      "runtime_iq_limit_a": 1.199951171875,
+      "physically_validated": false
+    },
+    "manual_speed_limits": {
+      "kp_max": 0.51,
+      "ki_max": 0.51,
+      "target_rpm_max": 120,
+      "trim_limit_deg": 6,
+      "extended_gain_step": 0.002,
+      "physically_validated": false
+    },
+    "manual_acceptance_gates_removed": true,
+    "commission_voltage_limit": 0.25,
+    "runtime_d_voltage_limit": 0.125,
+    "runtime_q_voltage_limit": 0.75,
+    "normal_tuning_continuous_only": true,
+    "finite_deadline_scope": "dedicated current tests only",
+    "angle_start_gate_removed": true,
+    "angle_stop_protection_removed": true
+  },
+  "validation": {
+    "rtl_tests_passed": 17,
+    "root_host_tests_passed": 23,
+    "R5_host_tests_passed": 27,
+    "javascript_flow_tests": "passed",
+    "firmware_hardware_tested": false,
+    "setup_violations": 0,
+    "hold_violations": 0,
+    "critical_warnings": [],
+    "ui_verified": "continuous toggle/finite input lock, mode-dependent directions, new start/normal-end controls, preserved R4 history; screenshot evidence/engineering/manual_tuning_R5_20261028.jpg",
+    "range_ui_verified": "HTML numeric bounds checked; requires host restart and matching new SRAM bitstream"
+  },
+  "hardware_deployed": true,
+  "awaiting_user_12v_off_confirmation": false,
+  "manual": "docs/R5_MANUAL_TUNING_20261028.md",
+  "host_restart_required": false,
+  "deployment_evidence": "evidence/engineering/R5_no_angle_limits_deployment_20261028.json",
+  "continuous_tuning_ui_live": true,
+  "deployment_note": "Matching new host restarted; SRAM download confirmed and stopped state verified; no physical run or calibration performed.",
+  "angle_limits_ui_live": true
+}

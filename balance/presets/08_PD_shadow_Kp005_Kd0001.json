@@ -1,0 +1,19 @@
+{
+  "schema": "balance-v2",
+  "config": {
+    "kp": 0.05,
+    "kd": 0.001,
+    "foc_kp": 300,
+    "foc_ki": 16,
+    "trim_deg": 0,
+    "current_ma": 100,
+    "filter_shift": 8,
+    "mode": 0,
+    "test_axis": 3,
+    "current_target_ma": 0,
+    "speed_target_rpm": 0,
+    "speed_kp": 0,
+    "speed_ki": 0
+  },
+  "purpose": "shadow output preparation only; not physically tuned or accepted"
+}

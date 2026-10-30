@@ -1,0 +1,20 @@
+{
+  "withdrawn_bitstream_sha256": "b6797f56a047f934431a26b86bf8bded413ffd5f6de347e509412e329b0e0974",
+  "reason": "Gowin interpreted physical_motor_mask as implicit scalar before declaration; bit1 undriven. Prior simulation/STA did not catch synthesis semantic divergence.",
+  "warning_lines": [
+    "Undeclared symbol 'physical_motor_mask', assumed default net type 'wire'(\"E:\\Gowin_project\\fpga_project\\team_repos\\fpga-balance\\balance\\build\\drive\\balance_top.v\":99)",
+    "WARN  (EX3638) : 'physical_motor_mask' is already implicitly declared on line 99(\"E:\\Gowin_project\\fpga_project\\team_repos\\fpga-balance\\balance\\build\\drive\\balance_top.v\":108)",
+    "WARN  (EX1998) : Net 'physical_motor_mask[1]' does not have a driver(\"E:\\Gowin_project\\fpga_project\\team_repos\\fpga-balance\\balance\\build\\drive\\balance_top.v\":99)"
+  ],
+  "fix": "Move explicit 2-bit declaration before first use, default_nettype none at top, tie unused static route inputs, block critical synthesis warnings.",
+  "hardware_cause_confirmed": false,
+  "hardware_retest_required": true,
+  "corrected_bitstream_sha256": "c64f154e5eac39e5d7bca257f8666bd23511c7fc2d23e163b53c0f812a6ba11e",
+  "corrected_build_critical_warnings": [],
+  "setup_violations": 0,
+  "hold_violations": 0,
+  "sram_replaced": true,
+  "deployment_evidence": "evidence/engineering/axis_isolation_deployment_20261028_v2.json",
+  "runtime_tested": false,
+  "real_fsm_integration_test": "tb_top_commission passed; actual FSM transitions, both masks and physical EN/PWM tested using controlled core/plant stimuli"
+}

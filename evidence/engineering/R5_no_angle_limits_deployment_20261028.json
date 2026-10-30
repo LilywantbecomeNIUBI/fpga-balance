@@ -1,0 +1,130 @@
+{
+  "bitstream_sha256": "10c44789d37fa8073710f7768b6ec24cd943ccb8c7e2f20a17069a904e15cabd",
+  "file": "releases/MOTOR_MANUAL_20261028_R5/firmware/02_M2_diagnostic.fs",
+  "sram_only": true,
+  "flash_changed": false,
+  "motor_12v_last_user_confirmed": "OFF",
+  "runtime_tested": false,
+  "latest_commissioned_mask": 0,
+  "learned_parameters_valid_after_reset": false,
+  "host_release": "MOTOR_MANUAL_20261028_R5",
+  "host_connected_port": "COM20",
+  "commission_voltage_limit": 0.25,
+  "commission_id_target_a": 0.35009765625,
+  "manual_acceptance_gates_removed": true,
+  "angle_start_gate_removed": true,
+  "angle_stop_protection_removed": true,
+  "normal_tuning_continuous_only": true,
+  "post_download_state": {
+    "time_us": 101470020,
+    "imu_seq": 101622,
+    "motor_seq": 2027316,
+    "drive": true,
+    "attitude_calibrated": false,
+    "attitude_calibrating": false,
+    "current_calibrated": false,
+    "current_calibrating": false,
+    "running": false,
+    "commissioning": false,
+    "commission_failed": false,
+    "active": false,
+    "armed": false,
+    "estop": true,
+    "attitude_bad": false,
+    "independent_commission": true,
+    "preserve_commission_on_clear": true,
+    "commission_axis": 0,
+    "imu_ok": true,
+    "configured": false,
+    "gates": 515,
+    "stop_reason": 1,
+    "motor_faults": 1,
+    "pitch": 0.0,
+    "rate": 0.0,
+    "shadow_a": 0.0,
+    "iq1_a": 0.0,
+    "iq2_a": 0.0,
+    "interval_us": 936,
+    "age_us": 108,
+    "accel": [
+      0.0015869140625,
+      -0.019287109375,
+      -0.9991455078125
+    ],
+    "gyro": [
+      0.244140625,
+      -0.3662109375,
+      -0.06103515625
+    ],
+    "temp_c": 21.331521739130434,
+    "currents_a": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "angles": [
+      940,
+      2266
+    ],
+    "zero_progress": 0,
+    "imu_errors": 0,
+    "imu_invalid": 0,
+    "rx_errors": 0,
+    "ack_seq": 162,
+    "result": 0,
+    "rejected": 0,
+    "commissioned_mask": 0,
+    "commission_state": 0,
+    "who_am_i": 71,
+    "imu_last_error": 0,
+    "config_hex": "0000000000000000000000000000000000000000000000000000000000000000",
+    "wheel_rpm": [
+      0.0,
+      0.0
+    ],
+    "speed_trim_deg": 0.0,
+    "m2_diagnostic": {
+      "sequence": 0,
+      "sample_time": 0,
+      "mechanical": 0,
+      "theta": 0,
+      "currents_a": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "id_ref_a": 0.0,
+      "iq_ref_a": 0.0,
+      "running": false,
+      "alignment": false,
+      "id_a": 0.0,
+      "iq_a": 0.0,
+      "ud": 0.0,
+      "uq": 0.0,
+      "park_valid": false,
+      "overrun": false,
+      "learned_zero": [
+        0,
+        0
+      ],
+      "learned_reverse": 0,
+      "selected_motor": 2,
+      "simple_protection": true
+    },
+    "host_time": 1793185660.1968105,
+    "demo": false,
+    "rpm": [
+      0.0,
+      0.0
+    ],
+    "rpm_raw": [
+      0.0,
+      0.0
+    ]
+  },
+  "programmer_log": "evidence/engineering/R5_no_angle_limits_programmer_20261028.log",
+  "note": "User confirmed motor 12V off. Verified programmer Finished and stopped telemetry. Host connect sends Stop; 0x1 is manual stop latch. No clear/config/zero/commission/arm/start sent."
+}

@@ -1,0 +1,23 @@
+{
+  "bitstream_sha256": "f5ad46b56ecc8f51fcf871662b3bd06ab10a36ec1aaeaab46b3e2d6dccaa1e65",
+  "downloaded": false,
+  "runtime_tested": false,
+  "current_speed_limit_rpm_range": [
+    10,
+    1000
+  ],
+  "default_rpm": 100,
+  "linear_derate_from_fraction": 0.75,
+  "speed_measurement_hz": 50,
+  "braking": false,
+  "current_mode_only": true,
+  "Uq_normalized_runtime_limit": 0.75,
+  "Uq_normalized_commission_limit": 0.25,
+  "setup_violations": 0,
+  "hold_violations": 0,
+  "critical_warnings": [],
+  "rtl_tests": 21,
+  "root_host_tests": 26,
+  "release_host_tests": 30,
+  "command_timeout_clock_equivalence_verified": true
+}

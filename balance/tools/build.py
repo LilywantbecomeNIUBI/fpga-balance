@@ -6,6 +6,7 @@ BASE=ROOT/'balance'
 sys.path.insert(0,str(ROOT/'motor_control/tools'))
 from prepare_ip import main as prepare_ip, IDE
 from timing import read_timing_reports
+from build_warnings import critical_warnings
 
 def main():
     p=argparse.ArgumentParser(description=__doc__)
@@ -50,9 +51,11 @@ def main():
         done=subprocess.run([str(IDE/'bin/gw_sh.exe'),str(tcl)],cwd=ROOT/'motor_control',stdout=log,stderr=subprocess.STDOUT,stdin=subprocess.DEVNULL,timeout=900)
     content=(target/'build.log').read_text(encoding='utf-8',errors='replace')
     report=dict(success=False,profile=a.profile,gowin_exit=done.returncode,programmed=False,physical_balance_tested=False,
-                motor_outputs_permanently_disabled=a.profile=='observe',m2_individual_bench_accepted=True,current_reverse_mask=7,protocol_version=2,
-                imu_orientation_bits=3,front_pitch_positive=True,independent_commission=True,preserve_commission_on_clear=True,simple_protection=True,runtime_iq_limit_a=1.0,
-                errors=re.findall(r'^ERROR.*',content,re.M),source_sha256=hashes,
+                motor_outputs_permanently_disabled=a.profile=='observe',m2_individual_bench_accepted=False,current_reverse_mask=7,protocol_version=2,
+                imu_orientation_bits=3,front_pitch_positive=True,independent_commission=True,preserve_commission_on_clear=True,simple_protection=True,runtime_iq_limit_a=int(re.search(r'\.IQ_LIMIT\((\d+)\)',top).group(1))/4096,
+                commissioning_voltage_limit=int(re.search(r'\.COMM_VOLTAGE_LIMIT\((\d+)\)',top).group(1))/32768,
+                commissioning_id_target_a=int(re.search(r'\.COMM_ID_Q15\((\d+)\)',top).group(1))/4096,
+                errors=re.findall(r'^ERROR.*',content,re.M),critical_warnings=critical_warnings(content),source_sha256=hashes,
                 sources_unchanged=all(hashlib.sha256((ROOT/f).read_bytes()).hexdigest()==h for f,h in hashes.items()))
     try: report.update(read_timing_reports(target/'impl/pnr'))
     except ValueError as exc: report['timing_error']=str(exc)
@@ -66,7 +69,7 @@ def main():
         report['netlist_motor_pins_grounded']=grounded
         report['netlist_sha256']=hashlib.sha256(netlist.read_bytes()).hexdigest()
     if bit.exists(): report['bitstream_sha256']=hashlib.sha256(bit.read_bytes()).hexdigest()
-    report['success']=done.returncode==0 and not report['errors'] and bit.exists() and report['sources_unchanged'] and report.get('setup_violations')==report.get('hold_violations')==0
+    report['success']=done.returncode==0 and not report['errors'] and not report['critical_warnings'] and bit.exists() and report['sources_unchanged'] and report.get('setup_violations')==report.get('hold_violations')==0
     if a.profile=='observe':report['success']=report['success'] and all(report.get('netlist_motor_pins_grounded',{}).values()) and len(report.get('netlist_motor_pins_grounded',{}))==16
     report['download_allowed']=report['success']
     report_path.write_text(json.dumps(report,indent=2),encoding='utf-8')

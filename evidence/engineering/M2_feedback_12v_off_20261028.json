@@ -1,0 +1,73 @@
+{
+  "user_confirmed_motor_12v": "OFF",
+  "logic_telemetry_fresh": true,
+  "samples": 60,
+  "current_calibrated": true,
+  "commissioned_mask": 3,
+  "motor_faults": 0,
+  "stop_reason": 0,
+  "phase_mean_a": [
+    0.13350016276041668,
+    -0.07720133463541666,
+    -0.056298828125,
+    -8.0,
+    7.999755859375,
+    0.021895345052083334
+  ],
+  "phase_minmax_a": [
+    [
+      -0.048095703125,
+      0.303466796875
+    ],
+    [
+      -0.15771484375,
+      0.00927734375
+    ],
+    [
+      -0.197265625,
+      0.08740234375
+    ],
+    [
+      -8.0,
+      -8.0
+    ],
+    [
+      7.999755859375,
+      7.999755859375
+    ],
+    [
+      -0.033935546875,
+      0.114990234375
+    ]
+  ],
+  "m2_id_mean_a": -4.678466796875,
+  "m2_iq_mean_a": 7.965087890625,
+  "angles_first": [
+    3147,
+    11099
+  ],
+  "angles_last": [
+    3147,
+    11099
+  ],
+  "time_us_first": 2216140020,
+  "time_us_last": 2218745020,
+  "diagnostic_sequence_first": 20084237,
+  "diagnostic_sequence_last": 20136337,
+  "log_dir": "E:\\Gowin_project\\fpga_project\\team_repos\\fpga-balance\\releases\\MOTOR_MANUAL_20261028_R5\\app\\results\\20261028_190620_be2ef5",
+  "commands_sent": [],
+  "multimeter_v": {
+    "M1_B_VCC_to_HallGND": 4.86,
+    "M1_B_OUT_to_HallGND": 2.43,
+    "M2_B_VCC_to_HallGND": 4.88,
+    "M2_B_OUT_to_HallGND": 2.45
+  },
+  "after_multimeter_phase_mean_a": [
+    0.031884765625,
+    -0.096728515625,
+    0.06484375,
+    -8.0,
+    7.999755859375,
+    -0.67451171875
+  ]
+}

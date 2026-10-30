@@ -11,7 +11,7 @@ module motor_command_guard #(
     output reg [1:0] faults
 );
     reg [31:0] command_age,run_age;
-    reg seen_command;
+    reg seen_command,command_fresh;
     // A separately built supervised profile may set zero to disable only the
     // total run deadline. Command freshness, faults, clamp and slew still apply.
     wire run_expired=(MAX_RUN_CYCLES!=0) && run_age>=MAX_RUN_CYCLES;
@@ -34,22 +34,28 @@ module motor_command_guard #(
             else slew=target;
         end
     endfunction
-    // Also remove arm combinationally at a deadline, before the fault FF updates.
-    assign arm=rst_n && request_arm && seen_command && command_age<CMD_TIMEOUT &&
+    // The registered freshness bit drops on the exact original deadline edge,
+    // before the fault FF updates; physical estop/nFAULT gating is unchanged.
+    assign arm=rst_n && request_arm && seen_command && command_fresh &&
                !run_expired && faults==0;
     always @(posedge clk or negedge rst_n) begin
         if(!rst_n) begin
-            command_age<=CMD_TIMEOUT;run_age<=0;seen_command<=0;
+            command_age<=CMD_TIMEOUT;run_age<=0;seen_command<=0;command_fresh<=0;
             iq_1<=0;iq_2<=0;faults<=0;target_1<=0;target_2<=0;
         end else if(clear_fault && !request_arm) begin
-            command_age<=CMD_TIMEOUT;run_age<=0;seen_command<=0;
+            command_age<=CMD_TIMEOUT;run_age<=0;seen_command<=0;command_fresh<=0;
             iq_1<=0;iq_2<=0;faults<=0;target_1<=0;target_2<=0;
         end else begin
             if(command_valid) begin
-                command_age<=0;seen_command<=1;
+                command_age<=0;seen_command<=1;command_fresh<=1;
                 target_1<=clipped(iq_request_1);target_2<=clipped(iq_request_2);
             end
-            else if(command_age<CMD_TIMEOUT) command_age<=command_age+1;
+            else begin
+                if(command_age<CMD_TIMEOUT) command_age<=command_age+1;
+                // Predict the very same expiry edge one clock in advance.
+                // Keep the wide counter comparator out of the PWM pin cone.
+                if(command_age>=CMD_TIMEOUT-1) command_fresh<=0;
+            end
             if(!request_arm) begin run_age<=0;iq_1<=0;iq_2<=0;end
             else begin
                 if(command_age>=CMD_TIMEOUT || !seen_command) faults[0]<=1;

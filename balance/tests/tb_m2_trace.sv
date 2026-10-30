@@ -1,10 +1,10 @@
 `timescale 1ns/1ps
 module tb_m2_trace;
-reg clk=0;always #10 clk=~clk;reg rst=0;wire [255:0] sample;
+reg clk=0;always #10 clk=~clk;reg rst=0;wire [255:0] sample,axis1;
 motor_adapter_core #(.TRACE_MOTOR2(1),.MOTOR_MASK(3)) dut(
 .clk(clk),.rst_n(rst),.arm(1'b0),.clear_fault(1'b0),.calibrate(1'b0),.estop(1'b0),
 .id_ref_1(16'sd11),.iq_ref_1(16'sd22),.id_ref_2(-16'sd111),.iq_ref_2(16'sd222),
-.current_trip_q15(16'd4096),.diagnostic_m1_sample(sample));
+.current_trip_q15(16'd4096),.diagnostic_m1_sample(sample),.diagnostic_axis1_sample(axis1));
 initial begin
 force dut.feedback_valid=0;force dut.running=1;
 force dut.feedback_currents={16'h3333,16'h2222,16'h1111,16'haaaa,16'hbbbb,16'hcccc};
@@ -21,6 +21,8 @@ if(sample[79:64]!=200 || sample[95:80]!=16'h5678 || sample[143:96]!={16'h3333,16
 if($signed(sample[159:144])!=-111 || sample[175:160]!=222)$fatal(1,"wrong reference trace");
 if($signed(sample[199:184])!=-101 || sample[215:200]!=202 || $signed(sample[231:216])!=-303 || sample[247:232]!=404)$fatal(1,"wrong IP feedback trace");
 if(!sample[248])$fatal(1,"missing coherent Park data");
+if(axis1[79:64]!=100 || axis1[95:80]!=16'h1234 || axis1[143:96]!={16'haaaa,16'hbbbb,16'hcccc})$fatal(1,"M1 trace input crossed axes");
+if(axis1[159:144]!=11 || axis1[175:160]!=22 || axis1[199:184]!=1 || axis1[215:200]!=2 || axis1[231:216]!=3 || axis1[247:232]!=4 || !axis1[248])$fatal(1,"M1 real IP feedback crossed axes");
 $display("PASS dual-motor diagnostic selects coherent M2 angle, currents, refs and real-IP Park/PI ports");$finish;
 end
 endmodule

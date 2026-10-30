@@ -1,0 +1,8 @@
+{
+  "source": "fpga-sensor/imu_1khz/src; same verified 1MHz I2C core used on board 2026-10-23",
+  "sha256": {
+    "icm42688_fast_reader.v": "e4d651fcfbb950e65c0404e18282f35288c79f56cc5abeebb1ae399cfb7e0340",
+    "imu_1khz_core.v": "b423c14c5ba2e9d690722b5afd50eb25c000090785b0d1d585d73bc1fe664452",
+    "imu_fast_i2c_master.v": "06365187f02ac81bf336bae6fc54c1795e9f70dcad8078d292202f165afa3368"
+  }
+}

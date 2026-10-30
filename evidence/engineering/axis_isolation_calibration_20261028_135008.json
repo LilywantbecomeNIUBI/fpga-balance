@@ -1,0 +1,442 @@
+{
+  "started_wall": 1793166601.9198608,
+  "initial": {
+    "time_us": 354655020,
+    "imu_seq": 355444,
+    "motor_seq": 7091016,
+    "drive": true,
+    "attitude_calibrated": false,
+    "attitude_calibrating": false,
+    "current_calibrated": false,
+    "current_calibrating": false,
+    "running": false,
+    "commissioning": false,
+    "commission_failed": false,
+    "active": false,
+    "armed": false,
+    "estop": true,
+    "attitude_bad": false,
+    "independent_commission": true,
+    "preserve_commission_on_clear": true,
+    "commission_axis": 0,
+    "imu_ok": true,
+    "configured": false,
+    "gates": 3,
+    "stop_reason": 1,
+    "motor_faults": 1,
+    "pitch": 0.0,
+    "rate": 0.0,
+    "shadow_a": 0.0,
+    "iq1_a": 0.0,
+    "iq2_a": 0.0,
+    "interval_us": 1087,
+    "age_us": 382,
+    "accel": [
+      -0.0072021484375,
+      -0.019775390625,
+      -0.998046875
+    ],
+    "gyro": [
+      0.213623046875,
+      -0.3662109375,
+      -0.091552734375
+    ],
+    "temp_c": 21.346618357487923,
+    "currents_a": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "angles": [
+      7716,
+      2116
+    ],
+    "zero_progress": 0,
+    "imu_errors": 0,
+    "imu_invalid": 0,
+    "rx_errors": 0,
+    "ack_seq": 100,
+    "result": 0,
+    "rejected": 0,
+    "commissioned_mask": 0,
+    "commission_state": 0,
+    "who_am_i": 71,
+    "imu_last_error": 0,
+    "config_hex": "0000000000000000000000000000000000000000000000000000000000000000",
+    "wheel_rpm": [
+      0.0,
+      0.0
+    ],
+    "speed_trim_deg": 0.0,
+    "m2_diagnostic": {
+      "sequence": 0,
+      "sample_time": 0,
+      "mechanical": 0,
+      "theta": 0,
+      "currents_a": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "id_ref_a": 0.0,
+      "iq_ref_a": 0.0,
+      "running": false,
+      "alignment": false,
+      "id_a": 0.0,
+      "iq_a": 0.0,
+      "ud": 0.0,
+      "uq": 0.0,
+      "park_valid": false,
+      "overrun": false,
+      "learned_zero": [
+        0,
+        0
+      ],
+      "learned_reverse": 0,
+      "selected_motor": 2,
+      "simple_protection": true
+    },
+    "host_time": 1793166601.9144468,
+    "demo": false,
+    "rpm": [
+      0.0,
+      0.0
+    ],
+    "rpm_raw": [
+      0.0,
+      0.0
+    ]
+  },
+  "commands": [
+    "clear",
+    "config",
+    "attitude_zero",
+    "current_zero",
+    "commission_m1",
+    "stop"
+  ],
+  "outcome": "stopped_on_error",
+  "error": "FPGA fault",
+  "last": {
+    "time_us": 361515020,
+    "imu_seq": 362321,
+    "motor_seq": 136523,
+    "drive": true,
+    "attitude_calibrated": true,
+    "attitude_calibrating": false,
+    "current_calibrated": true,
+    "current_calibrating": false,
+    "running": false,
+    "commissioning": false,
+    "commission_failed": true,
+    "active": false,
+    "armed": false,
+    "estop": true,
+    "attitude_bad": false,
+    "independent_commission": true,
+    "preserve_commission_on_clear": true,
+    "commission_axis": 1,
+    "imu_ok": true,
+    "configured": false,
+    "gates": 1007,
+    "stop_reason": 1,
+    "motor_faults": 1,
+    "pitch": 0.0043792724609375,
+    "rate": -0.06103515625,
+    "shadow_a": 0.0,
+    "iq1_a": 0.0,
+    "iq2_a": 0.0,
+    "interval_us": 937,
+    "age_us": 707,
+    "accel": [
+      -0.00341796875,
+      -0.0198974609375,
+      -0.9951171875
+    ],
+    "gyro": [
+      0.1220703125,
+      -0.274658203125,
+      -0.091552734375
+    ],
+    "temp_c": 21.316425120772948,
+    "currents_a": [
+      -0.15380859375,
+      0.09130859375,
+      0.0625,
+      -0.01904296875,
+      -0.0263671875,
+      0.04541015625
+    ],
+    "angles": [
+      7716,
+      2116
+    ],
+    "zero_progress": 1024,
+    "imu_errors": 0,
+    "imu_invalid": 0,
+    "rx_errors": 0,
+    "ack_seq": 90,
+    "result": 0,
+    "rejected": 0,
+    "commissioned_mask": 0,
+    "commission_state": 7,
+    "who_am_i": 71,
+    "imu_last_error": 0,
+    "config_hex": "026808e300000000000000002c01100000006400dc052c016400082500000000",
+    "wheel_rpm": [
+      0.0,
+      0.0
+    ],
+    "speed_trim_deg": 0.0,
+    "m2_diagnostic": {
+      "sequence": 136455,
+      "sample_time": 341136256,
+      "mechanical": 2116,
+      "theta": 27568,
+      "currents_a": [
+        0.04638671875,
+        -0.066650390625,
+        0.020263671875
+      ],
+      "id_ref_a": 0.0,
+      "iq_ref_a": 0.0,
+      "running": false,
+      "alignment": false,
+      "id_a": -0.06494140625,
+      "iq_a": 0.02197265625,
+      "ud": 0.000579833984375,
+      "uq": -0.000213623046875,
+      "park_valid": true,
+      "overrun": false,
+      "learned_zero": [
+        0,
+        0
+      ],
+      "learned_reverse": 0,
+      "selected_motor": 2,
+      "simple_protection": true
+    },
+    "host_time": 1793166608.7730553,
+    "demo": false,
+    "rpm": [
+      0.0,
+      0.0
+    ],
+    "rpm_raw": [
+      0.0,
+      0.0
+    ]
+  },
+  "log_dir": "E:\\Gowin_project\\fpga_project\\team_repos\\fpga-balance\\releases\\MOTOR_MANUAL_20261028_R4\\app\\results\\20261028_131132_09a610",
+  "fault_sequence": [
+    {
+      "host_time": 1793166601.7214973,
+      "time_us": 354460020,
+      "motor_faults": 1,
+      "stop_reason": 1,
+      "commissioning": false,
+      "commission_failed": false,
+      "commissioned_mask": 0,
+      "commission_state": 0,
+      "running": false,
+      "gates": 3
+    },
+    {
+      "host_time": 1793166601.9482815,
+      "time_us": 354690020,
+      "motor_faults": 0,
+      "stop_reason": 0,
+      "commissioning": false,
+      "commission_failed": false,
+      "commissioned_mask": 0,
+      "commission_state": 0,
+      "running": false,
+      "gates": 3587
+    },
+    {
+      "host_time": 1793166606.4071648,
+      "time_us": 359145020,
+      "motor_faults": 0,
+      "stop_reason": 0,
+      "commissioning": true,
+      "commission_failed": false,
+      "commissioned_mask": 0,
+      "commission_state": 1,
+      "running": true,
+      "gates": 4079
+    },
+    {
+      "host_time": 1793166607.4058163,
+      "time_us": 360145020,
+      "motor_faults": 0,
+      "stop_reason": 0,
+      "commissioning": true,
+      "commission_failed": false,
+      "commissioned_mask": 0,
+      "commission_state": 2,
+      "running": true,
+      "gates": 4079
+    },
+    {
+      "host_time": 1793166608.4050353,
+      "time_us": 361145020,
+      "motor_faults": 0,
+      "stop_reason": 0,
+      "commissioning": true,
+      "commission_failed": false,
+      "commissioned_mask": 0,
+      "commission_state": 3,
+      "running": true,
+      "gates": 4079
+    },
+    {
+      "host_time": 1793166608.7048347,
+      "time_us": 361445020,
+      "motor_faults": 0,
+      "stop_reason": 0,
+      "commissioning": false,
+      "commission_failed": true,
+      "commissioned_mask": 0,
+      "commission_state": 7,
+      "running": false,
+      "gates": 4079
+    },
+    {
+      "host_time": 1793166608.7730553,
+      "time_us": 361515020,
+      "motor_faults": 1,
+      "stop_reason": 1,
+      "commissioning": false,
+      "commission_failed": true,
+      "commissioned_mask": 0,
+      "commission_state": 7,
+      "running": false,
+      "gates": 1007
+    }
+  ],
+  "events": [
+    {
+      "wall_time": 1793166601.9358373,
+      "event": "command_requested",
+      "command": "clear"
+    },
+    {
+      "wall_time": 1793166601.9673257,
+      "event": "config_requested"
+    },
+    {
+      "wall_time": 1793166601.982903,
+      "event": "config_ack"
+    },
+    {
+      "wall_time": 1793166602.0391843,
+      "event": "command_requested",
+      "command": "attitude_zero"
+    },
+    {
+      "wall_time": 1793166603.1278467,
+      "event": "command_requested",
+      "command": "current_zero"
+    },
+    {
+      "wall_time": 1793166606.3843436,
+      "event": "warning",
+      "message": "Warning: 相电流1静止偏置/峰值超限"
+    },
+    {
+      "wall_time": 1793166606.3844028,
+      "event": "command_requested",
+      "command": "commission_m1"
+    },
+    {
+      "wall_time": 1793166608.7602472,
+      "event": "stop",
+      "sent": true
+    },
+    {
+      "wall_time": 1793166609.37953,
+      "event": "timeout_stop",
+      "browser_ok": false
+    }
+  ],
+  "commission_phase_summary": [
+    {
+      "state": 1,
+      "n": 200,
+      "first_angles": [
+        7716,
+        2116
+      ],
+      "last_angles": [
+        7716,
+        2116
+      ],
+      "net_ticks": [
+        0,
+        0
+      ],
+      "phase_peak": [
+        0.242431640625,
+        0.147216796875,
+        0.14013671875,
+        0.1279296875,
+        0.179443359375,
+        0.1376953125
+      ]
+    },
+    {
+      "state": 2,
+      "n": 200,
+      "first_angles": [
+        7716,
+        2116
+      ],
+      "last_angles": [
+        7716,
+        2116
+      ],
+      "net_ticks": [
+        0,
+        0
+      ],
+      "phase_peak": [
+        0.234375,
+        0.15380859375,
+        0.13671875,
+        0.123046875,
+        0.125244140625,
+        0.1416015625
+      ]
+    },
+    {
+      "state": 3,
+      "n": 60,
+      "first_angles": [
+        7716,
+        2116
+      ],
+      "last_angles": [
+        7716,
+        2116
+      ],
+      "net_ticks": [
+        0,
+        0
+      ],
+      "phase_peak": [
+        0.24072265625,
+        0.1201171875,
+        0.144775390625,
+        0.101318359375,
+        0.137451171875,
+        0.13037109375
+      ]
+    }
+  ],
+  "corrected_failure_classification": "Commissioning acceptance failed before host Stop; no hardware nFAULT code observed. First FAIL state motor_faults=0/stop_reason=0; subsequent fault1/Stop1 caused by host stop.",
+  "user_observation": "M1 right wheel completely stationary during commissioning; 12V indicator illuminated",
+  "retry_issued": false
+}

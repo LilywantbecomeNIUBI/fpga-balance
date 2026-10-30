@@ -110,5 +110,79 @@
       }
     ],
     "conclusion": "Both directions cannot be accepted. Positive rotated, negative stalled despite mean Iq near target. D-axis saturation in both; substantial undesired Id, phase-current excursions. Same current-zero retained; learned parameters unchanged. No root cause yet isolated. Normal duration termination followed by explicit host Stop (fault/stop 1 expected)."
+  },
+  "latest_low_gain_current_pair": {
+    "evidence": "evidence/engineering/m2_low_gain_pair_20261028_133132.json",
+    "accepted": false,
+    "config_gains": {
+      "kp": 4096,
+      "ki": 32
+    },
+    "runs": [
+      {
+        "target_ma": 100,
+        "active_samples": 100,
+        "valid_dq_samples": 100,
+        "trace_unique_sequences": 100,
+        "overrun_samples": 0,
+        "active_span_ms": 495.0,
+        "encoder_net_deg": [
+          23.62060546875,
+          -74.970703125
+        ],
+        "tail_samples": 100,
+        "tail_mean": {
+          "id_ref_a": 0.0,
+          "iq_ref_a": 0.099853515625,
+          "id_a": -0.55975830078125,
+          "iq_a": 0.77268310546875,
+          "ud": 0.0101312255859375,
+          "uq": 0.00217620849609375
+        },
+        "tail_uq_saturated_fraction": 0.32,
+        "tail_ud_saturated_fraction": 0.63,
+        "phase_abs_peak_a": 8.0,
+        "id_abs_peak_a": 7.93115234375,
+        "iq_abs_peak_a": 7.9560546875,
+        "park_recompute_max_error_a": 16.001767117449383,
+        "m1_iq_command_range": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "target_ma": -100,
+        "active_samples": 100,
+        "valid_dq_samples": 99,
+        "trace_unique_sequences": 99,
+        "overrun_samples": 0,
+        "active_span_ms": 495.0,
+        "encoder_net_deg": [
+          -7.470703125,
+          3.97705078125
+        ],
+        "tail_samples": 99,
+        "tail_mean": {
+          "id_ref_a": 0.0,
+          "iq_ref_a": -0.099853515625,
+          "id_a": -0.026229087752525252,
+          "iq_a": -0.09126420454545454,
+          "ud": 0.08732003876657198,
+          "uq": -0.08748958086726641
+        },
+        "tail_uq_saturated_fraction": 0,
+        "tail_ud_saturated_fraction": 0.43434343434343436,
+        "phase_abs_peak_a": 0.20703125,
+        "id_abs_peak_a": 0.111572265625,
+        "iq_abs_peak_a": 0.212890625,
+        "park_recompute_max_error_a": 0.000456543534347641,
+        "m1_iq_command_range": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "positive_physical_current_amplitude_trusted": false,
+    "interpretation": "Positive capture reaches +/-8A encoded rail and Park recomputation differs by up to 16A, consistent with clipping/overflow or feedback abnormality; encoded mean Iq .7727A and Id -.5598A must NOT be interpreted as trustworthy physical currents. Negative capture remains within range but little motion. Both runs ended; host Stop issued. No further motor trial until feedback integrity is assessed."
   }
 }

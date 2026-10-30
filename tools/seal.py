@@ -8,7 +8,7 @@ def files():
   r=p.relative_to(ROOT)
   if any(n in {'.git','.venv','__pycache__','build','results','dist'} for n in r.parts):continue
   if 'motor_control/ip/' in r.as_posix():continue
-  if r.parts[0]=='releases' and r.parts[1]!='MOTOR_MANUAL_20261028_R4':continue
+  if r.parts[0]=='releases' and r.parts[1] not in {'MOTOR_MANUAL_20261028_R4','MOTOR_MANUAL_20261028_R5'}:continue
   if r.as_posix() in {'docs/debug.log','evidence/engineering/pd_observation_poll.stop'}:continue
   if p.name=='SOURCE_MANIFEST.json' or p.suffix in {'.pyc','.out','.fs','.bin','.zip'}:continue
   yield p

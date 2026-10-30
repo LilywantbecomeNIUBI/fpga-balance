@@ -1,0 +1,937 @@
+{
+  "user_report": "12V connected and current zero performed by user",
+  "read_only": true,
+  "samples": [
+    {
+      "fresh": true,
+      "config_ack": true,
+      "time_us": 1335992724,
+      "host_time": 1793191189.64111,
+      "active": false,
+      "armed": false,
+      "running": false,
+      "commissioning": false,
+      "current_calibrating": false,
+      "current_calibrated": true,
+      "attitude_calibrated": false,
+      "commissioned_mask": 3,
+      "motor_faults": 0,
+      "stop_reason": 0,
+      "currents_a": [
+        -0.013427734375,
+        -0.0302734375,
+        0.043701171875,
+        -0.03125,
+        0.03515625,
+        -0.00390625
+      ],
+      "angles": [
+        3147,
+        11099
+      ],
+      "zero_progress": 1024
+    },
+    {
+      "fresh": true,
+      "config_ack": true,
+      "time_us": 1336212724,
+      "host_time": 1793191189.861891,
+      "active": false,
+      "armed": false,
+      "running": false,
+      "commissioning": false,
+      "current_calibrating": false,
+      "current_calibrated": true,
+      "attitude_calibrated": false,
+      "commissioned_mask": 3,
+      "motor_faults": 0,
+      "stop_reason": 0,
+      "currents_a": [
+        -0.07177734375,
+        0.02880859375,
+        0.04296875,
+        0.013916015625,
+        -0.05517578125,
+        0.041259765625
+      ],
+      "angles": [
+        3147,
+        11099
+      ],
+      "zero_progress": 1024
+    },
+    {
+      "fresh": true,
+      "config_ack": true,
+      "time_us": 1336447724,
+      "host_time": 1793191190.0936482,
+      "active": false,
+      "armed": false,
+      "running": false,
+      "commissioning": false,
+      "current_calibrating": false,
+      "current_calibrated": true,
+      "attitude_calibrated": false,
+      "commissioned_mask": 3,
+      "motor_faults": 0,
+      "stop_reason": 0,
+      "currents_a": [
+        -0.03173828125,
+        0.00341796875,
+        0.0283203125,
+        -0.11279296875,
+        0.025390625,
+        0.08740234375
+      ],
+      "angles": [
+        3147,
+        11099
+      ],
+      "zero_progress": 1024
+    },
+    {
+      "fresh": true,
+      "config_ack": true,
+      "time_us": 1336667724,
+      "host_time": 1793191190.315323,
+      "active": false,
+      "armed": false,
+      "running": false,
+      "commissioning": false,
+      "current_calibrating": false,
+      "current_calibrated": true,
+      "attitude_calibrated": false,
+      "commissioned_mask": 3,
+      "motor_faults": 0,
+      "stop_reason": 0,
+      "currents_a": [
+        -0.0400390625,
+        0.0107421875,
+        0.029296875,
+        -0.02783203125,
+        -0.02392578125,
+        0.0517578125
+      ],
+      "angles": [
+        3147,
+        11099
+      ],
+      "zero_progress": 1024
+    },
+    {
+      "fresh": true,
+      "config_ack": true,
+      "time_us": 1336892724,
+      "host_time": 1793191190.540812,
+      "active": false,
+      "armed": false,
+      "running": false,
+      "commissioning": false,
+      "current_calibrating": false,
+      "current_calibrated": true,
+      "attitude_calibrated": false,
+      "commissioned_mask": 3,
+      "motor_faults": 0,
+      "stop_reason": 0,
+      "currents_a": [
+        -0.04541015625,
+        -0.00732421875,
+        0.052734375,
+        0.05126953125,
+        -0.02880859375,
+        -0.0224609375
+      ],
+      "angles": [
+        3147,
+        11099
+      ],
+      "zero_progress": 1024
+    },
+    {
+      "fresh": true,
+      "config_ack": true,
+      "time_us": 1337112724,
+      "host_time": 1793191190.7572596,
+      "active": false,
+      "armed": false,
+      "running": false,
+      "commissioning": false,
+      "current_calibrating": false,
+      "current_calibrated": true,
+      "attitude_calibrated": false,
+      "commissioned_mask": 3,
+      "motor_faults": 0,
+      "stop_reason": 0,
+      "currents_a": [
+        -0.053955078125,
+        0.0166015625,
+        0.037353515625,
+        0.03955078125,
+        -0.08740234375,
+        0.0478515625
+      ],
+      "angles": [
+        3147,
+        11099
+      ],
+      "zero_progress": 1024
+    },
+    {
+      "fresh": true,
+      "config_ack": true,
+      "time_us": 1337317724,
+      "host_time": 1793191190.9645069,
+      "active": false,
+      "armed": false,
+      "running": false,
+      "commissioning": false,
+      "current_calibrating": false,
+      "current_calibrated": true,
+      "attitude_calibrated": false,
+      "commissioned_mask": 3,
+      "motor_faults": 0,
+      "stop_reason": 0,
+      "currents_a": [
+        -0.093017578125,
+        0.0322265625,
+        0.060791015625,
+        -0.052978515625,
+        -0.021484375,
+        0.074462890625
+      ],
+      "angles": [
+        3147,
+        11099
+      ],
+      "zero_progress": 1024
+    },
+    {
+      "fresh": true,
+      "config_ack": true,
+      "time_us": 1337542724,
+      "host_time": 1793191191.191883,
+      "active": false,
+      "armed": false,
+      "running": false,
+      "commissioning": false,
+      "current_calibrating": false,
+      "current_calibrated": true,
+      "attitude_calibrated": false,
+      "commissioned_mask": 3,
+      "motor_faults": 0,
+      "stop_reason": 0,
+      "currents_a": [
+        -0.105224609375,
+        0.083251953125,
+        0.02197265625,
+        0.007568359375,
+        -0.017333984375,
+        0.009765625
+      ],
+      "angles": [
+        3147,
+        11099
+      ],
+      "zero_progress": 1024
+    },
+    {
+      "fresh": true,
+      "config_ack": true,
+      "time_us": 1337772724,
+      "host_time": 1793191191.420882,
+      "active": false,
+      "armed": false,
+      "running": false,
+      "commissioning": false,
+      "current_calibrating": false,
+      "current_calibrated": true,
+      "attitude_calibrated": false,
+      "commissioned_mask": 3,
+      "motor_faults": 0,
+      "stop_reason": 0,
+      "currents_a": [
+        -0.12890625,
+        0.061767578125,
+        0.067138671875,
+        -0.008544921875,
+        -0.025634765625,
+        0.0341796875
+      ],
+      "angles": [
+        3147,
+        11099
+      ],
+      "zero_progress": 1024
+    },
+    {
+      "fresh": true,
+      "config_ack": true,
+      "time_us": 1337997724,
+      "host_time": 1793191191.6435637,
+      "active": false,
+      "armed": false,
+      "running": false,
+      "commissioning": false,
+      "current_calibrating": false,
+      "current_calibrated": true,
+      "attitude_calibrated": false,
+      "commissioned_mask": 3,
+      "motor_faults": 0,
+      "stop_reason": 0,
+      "currents_a": [
+        -0.044921875,
+        0.0107421875,
+        0.0341796875,
+        -0.08837890625,
+        0.02197265625,
+        0.06640625
+      ],
+      "angles": [
+        3147,
+        11099
+      ],
+      "zero_progress": 1024
+    },
+    {
+      "fresh": true,
+      "config_ack": true,
+      "time_us": 1338207724,
+      "host_time": 1793191191.8536985,
+      "active": false,
+      "armed": false,
+      "running": false,
+      "commissioning": false,
+      "current_calibrating": false,
+      "current_calibrated": true,
+      "attitude_calibrated": false,
+      "commissioned_mask": 3,
+      "motor_faults": 0,
+      "stop_reason": 0,
+      "currents_a": [
+        -0.11328125,
+        0.080810546875,
+        0.032470703125,
+        0.0146484375,
+        -0.05517578125,
+        0.04052734375
+      ],
+      "angles": [
+        3147,
+        11099
+      ],
+      "zero_progress": 1024
+    },
+    {
+      "fresh": true,
+      "config_ack": true,
+      "time_us": 1338432724,
+      "host_time": 1793191192.0776238,
+      "active": false,
+      "armed": false,
+      "running": false,
+      "commissioning": false,
+      "current_calibrating": false,
+      "current_calibrated": true,
+      "attitude_calibrated": false,
+      "commissioned_mask": 3,
+      "motor_faults": 0,
+      "stop_reason": 0,
+      "currents_a": [
+        -0.068359375,
+        0.06591796875,
+        0.00244140625,
+        0.0283203125,
+        -0.04296875,
+        0.0146484375
+      ],
+      "angles": [
+        3147,
+        11099
+      ],
+      "zero_progress": 1024
+    },
+    {
+      "fresh": true,
+      "config_ack": true,
+      "time_us": 1338642724,
+      "host_time": 1793191192.2876182,
+      "active": false,
+      "armed": false,
+      "running": false,
+      "commissioning": false,
+      "current_calibrating": false,
+      "current_calibrated": true,
+      "attitude_calibrated": false,
+      "commissioned_mask": 3,
+      "motor_faults": 0,
+      "stop_reason": 0,
+      "currents_a": [
+        -0.016845703125,
+        0.025634765625,
+        -0.0087890625,
+        0.041259765625,
+        -0.04052734375,
+        -0.000732421875
+      ],
+      "angles": [
+        3147,
+        11099
+      ],
+      "zero_progress": 1024
+    },
+    {
+      "fresh": true,
+      "config_ack": true,
+      "time_us": 1338862724,
+      "host_time": 1793191192.5098689,
+      "active": false,
+      "armed": false,
+      "running": false,
+      "commissioning": false,
+      "current_calibrating": false,
+      "current_calibrated": true,
+      "attitude_calibrated": false,
+      "commissioned_mask": 3,
+      "motor_faults": 0,
+      "stop_reason": 0,
+      "currents_a": [
+        -0.0849609375,
+        0.04443359375,
+        0.04052734375,
+        0.038818359375,
+        -0.100341796875,
+        0.0615234375
+      ],
+      "angles": [
+        3147,
+        11099
+      ],
+      "zero_progress": 1024
+    },
+    {
+      "fresh": true,
+      "config_ack": true,
+      "time_us": 1339102724,
+      "host_time": 1793191192.7476923,
+      "active": false,
+      "armed": false,
+      "running": false,
+      "commissioning": false,
+      "current_calibrating": false,
+      "current_calibrated": true,
+      "attitude_calibrated": false,
+      "commissioned_mask": 3,
+      "motor_faults": 0,
+      "stop_reason": 0,
+      "currents_a": [
+        -0.068115234375,
+        0.04443359375,
+        0.023681640625,
+        0.01806640625,
+        -0.0634765625,
+        0.04541015625
+      ],
+      "angles": [
+        3147,
+        11099
+      ],
+      "zero_progress": 1024
+    },
+    {
+      "fresh": true,
+      "config_ack": true,
+      "time_us": 1339332724,
+      "host_time": 1793191192.9785392,
+      "active": false,
+      "armed": false,
+      "running": false,
+      "commissioning": false,
+      "current_calibrating": false,
+      "current_calibrated": true,
+      "attitude_calibrated": false,
+      "commissioned_mask": 3,
+      "motor_faults": 0,
+      "stop_reason": 0,
+      "currents_a": [
+        -0.00927734375,
+        0.00341796875,
+        0.005859375,
+        0.0068359375,
+        -0.01904296875,
+        0.01220703125
+      ],
+      "angles": [
+        3147,
+        11099
+      ],
+      "zero_progress": 1024
+    },
+    {
+      "fresh": true,
+      "config_ack": true,
+      "time_us": 1339557724,
+      "host_time": 1793191193.2031682,
+      "active": false,
+      "armed": false,
+      "running": false,
+      "commissioning": false,
+      "current_calibrating": false,
+      "current_calibrated": true,
+      "attitude_calibrated": false,
+      "commissioned_mask": 3,
+      "motor_faults": 0,
+      "stop_reason": 0,
+      "currents_a": [
+        -0.06640625,
+        0.053466796875,
+        0.012939453125,
+        0.004150390625,
+        -0.005126953125,
+        0.0009765625
+      ],
+      "angles": [
+        3147,
+        11099
+      ],
+      "zero_progress": 1024
+    },
+    {
+      "fresh": true,
+      "config_ack": true,
+      "time_us": 1339777724,
+      "host_time": 1793191193.4250724,
+      "active": false,
+      "armed": false,
+      "running": false,
+      "commissioning": false,
+      "current_calibrating": false,
+      "current_calibrated": true,
+      "attitude_calibrated": false,
+      "commissioned_mask": 3,
+      "motor_faults": 0,
+      "stop_reason": 0,
+      "currents_a": [
+        -0.028076171875,
+        0.015869140625,
+        0.01220703125,
+        0.046630859375,
+        -0.04443359375,
+        -0.002197265625
+      ],
+      "angles": [
+        3147,
+        11099
+      ],
+      "zero_progress": 1024
+    },
+    {
+      "fresh": true,
+      "config_ack": true,
+      "time_us": 1340012724,
+      "host_time": 1793191193.6577408,
+      "active": false,
+      "armed": false,
+      "running": false,
+      "commissioning": false,
+      "current_calibrating": false,
+      "current_calibrated": true,
+      "attitude_calibrated": false,
+      "commissioned_mask": 3,
+      "motor_faults": 0,
+      "stop_reason": 0,
+      "currents_a": [
+        -0.038818359375,
+        0.037109375,
+        0.001708984375,
+        -0.050537109375,
+        -0.0166015625,
+        0.067138671875
+      ],
+      "angles": [
+        3147,
+        11099
+      ],
+      "zero_progress": 1024
+    },
+    {
+      "fresh": true,
+      "config_ack": true,
+      "time_us": 1340242724,
+      "host_time": 1793191193.8887508,
+      "active": false,
+      "armed": false,
+      "running": false,
+      "commissioning": false,
+      "current_calibrating": false,
+      "current_calibrated": true,
+      "attitude_calibrated": false,
+      "commissioned_mask": 3,
+      "motor_faults": 0,
+      "stop_reason": 0,
+      "currents_a": [
+        -0.092041015625,
+        0.068359375,
+        0.023681640625,
+        0.038818359375,
+        -0.08740234375,
+        0.048583984375
+      ],
+      "angles": [
+        3147,
+        11099
+      ],
+      "zero_progress": 1024
+    },
+    {
+      "fresh": true,
+      "config_ack": true,
+      "time_us": 1340467724,
+      "host_time": 1793191194.1131842,
+      "active": false,
+      "armed": false,
+      "running": false,
+      "commissioning": false,
+      "current_calibrating": false,
+      "current_calibrated": true,
+      "attitude_calibrated": false,
+      "commissioned_mask": 3,
+      "motor_faults": 0,
+      "stop_reason": 0,
+      "currents_a": [
+        0.024658203125,
+        -0.03125,
+        0.006591796875,
+        -0.02099609375,
+        -0.001708984375,
+        0.022705078125
+      ],
+      "angles": [
+        3147,
+        11099
+      ],
+      "zero_progress": 1024
+    },
+    {
+      "fresh": true,
+      "config_ack": true,
+      "time_us": 1340682724,
+      "host_time": 1793191194.331117,
+      "active": false,
+      "armed": false,
+      "running": false,
+      "commissioning": false,
+      "current_calibrating": false,
+      "current_calibrated": true,
+      "attitude_calibrated": false,
+      "commissioned_mask": 3,
+      "motor_faults": 0,
+      "stop_reason": 0,
+      "currents_a": [
+        -0.02734375,
+        -0.0205078125,
+        0.0478515625,
+        0.09326171875,
+        -0.069091796875,
+        -0.024169921875
+      ],
+      "angles": [
+        3147,
+        11099
+      ],
+      "zero_progress": 1024
+    },
+    {
+      "fresh": true,
+      "config_ack": true,
+      "time_us": 1340902724,
+      "host_time": 1793191194.550429,
+      "active": false,
+      "armed": false,
+      "running": false,
+      "commissioning": false,
+      "current_calibrating": false,
+      "current_calibrated": true,
+      "attitude_calibrated": false,
+      "commissioned_mask": 3,
+      "motor_faults": 0,
+      "stop_reason": 0,
+      "currents_a": [
+        -0.03759765625,
+        0.005859375,
+        0.03173828125,
+        -0.026611328125,
+        -0.010009765625,
+        0.03662109375
+      ],
+      "angles": [
+        3147,
+        11099
+      ],
+      "zero_progress": 1024
+    },
+    {
+      "fresh": true,
+      "config_ack": true,
+      "time_us": 1341117724,
+      "host_time": 1793191194.7646356,
+      "active": false,
+      "armed": false,
+      "running": false,
+      "commissioning": false,
+      "current_calibrating": false,
+      "current_calibrated": true,
+      "attitude_calibrated": false,
+      "commissioned_mask": 3,
+      "motor_faults": 0,
+      "stop_reason": 0,
+      "currents_a": [
+        -0.089111328125,
+        0.085693359375,
+        0.00341796875,
+        -0.020263671875,
+        0.010498046875,
+        0.009765625
+      ],
+      "angles": [
+        3147,
+        11099
+      ],
+      "zero_progress": 1024
+    },
+    {
+      "fresh": true,
+      "config_ack": true,
+      "time_us": 1341342724,
+      "host_time": 1793191194.9917243,
+      "active": false,
+      "armed": false,
+      "running": false,
+      "commissioning": false,
+      "current_calibrating": false,
+      "current_calibrated": true,
+      "attitude_calibrated": false,
+      "commissioned_mask": 3,
+      "motor_faults": 0,
+      "stop_reason": 0,
+      "currents_a": [
+        -0.036865234375,
+        0.056884765625,
+        -0.02001953125,
+        -0.064453125,
+        -0.01904296875,
+        0.08349609375
+      ],
+      "angles": [
+        3147,
+        11099
+      ],
+      "zero_progress": 1024
+    },
+    {
+      "fresh": true,
+      "config_ack": true,
+      "time_us": 1341552724,
+      "host_time": 1793191195.1986318,
+      "active": false,
+      "armed": false,
+      "running": false,
+      "commissioning": false,
+      "current_calibrating": false,
+      "current_calibrated": true,
+      "attitude_calibrated": false,
+      "commissioned_mask": 3,
+      "motor_faults": 0,
+      "stop_reason": 0,
+      "currents_a": [
+        -0.037841796875,
+        0.02490234375,
+        0.012939453125,
+        -0.101318359375,
+        0.01708984375,
+        0.084228515625
+      ],
+      "angles": [
+        3147,
+        11099
+      ],
+      "zero_progress": 1024
+    },
+    {
+      "fresh": true,
+      "config_ack": true,
+      "time_us": 1341772724,
+      "host_time": 1793191195.420747,
+      "active": false,
+      "armed": false,
+      "running": false,
+      "commissioning": false,
+      "current_calibrating": false,
+      "current_calibrated": true,
+      "attitude_calibrated": false,
+      "commissioned_mask": 3,
+      "motor_faults": 0,
+      "stop_reason": 0,
+      "currents_a": [
+        -0.042724609375,
+        0.030517578125,
+        0.01220703125,
+        -0.01708984375,
+        -0.04052734375,
+        0.0576171875
+      ],
+      "angles": [
+        3147,
+        11099
+      ],
+      "zero_progress": 1024
+    },
+    {
+      "fresh": true,
+      "config_ack": true,
+      "time_us": 1341997724,
+      "host_time": 1793191195.6458576,
+      "active": false,
+      "armed": false,
+      "running": false,
+      "commissioning": false,
+      "current_calibrating": false,
+      "current_calibrated": true,
+      "attitude_calibrated": false,
+      "commissioned_mask": 3,
+      "motor_faults": 0,
+      "stop_reason": 0,
+      "currents_a": [
+        -0.003173828125,
+        -0.009765625,
+        0.012939453125,
+        -0.0322265625,
+        -0.01318359375,
+        0.04541015625
+      ],
+      "angles": [
+        3147,
+        11099
+      ],
+      "zero_progress": 1024
+    },
+    {
+      "fresh": true,
+      "config_ack": true,
+      "time_us": 1342202724,
+      "host_time": 1793191195.8500419,
+      "active": false,
+      "armed": false,
+      "running": false,
+      "commissioning": false,
+      "current_calibrating": false,
+      "current_calibrated": true,
+      "attitude_calibrated": false,
+      "commissioned_mask": 3,
+      "motor_faults": 0,
+      "stop_reason": 0,
+      "currents_a": [
+        0.01171875,
+        0.00927734375,
+        -0.02099609375,
+        0.0205078125,
+        -0.070068359375,
+        0.049560546875
+      ],
+      "angles": [
+        3147,
+        11099
+      ],
+      "zero_progress": 1024
+    },
+    {
+      "fresh": true,
+      "config_ack": true,
+      "time_us": 1342427724,
+      "host_time": 1793191196.0754623,
+      "active": false,
+      "armed": false,
+      "running": false,
+      "commissioning": false,
+      "current_calibrating": false,
+      "current_calibrated": true,
+      "attitude_calibrated": false,
+      "commissioned_mask": 3,
+      "motor_faults": 0,
+      "stop_reason": 0,
+      "currents_a": [
+        0.0078125,
+        -0.03369140625,
+        0.02587890625,
+        -0.074951171875,
+        0.03369140625,
+        0.041259765625
+      ],
+      "angles": [
+        3147,
+        11099
+      ],
+      "zero_progress": 1024
+    },
+    {
+      "fresh": true,
+      "config_ack": true,
+      "time_us": 1342637724,
+      "host_time": 1793191196.2835066,
+      "active": false,
+      "armed": false,
+      "running": false,
+      "commissioning": false,
+      "current_calibrating": false,
+      "current_calibrated": true,
+      "attitude_calibrated": false,
+      "commissioned_mask": 3,
+      "motor_faults": 0,
+      "stop_reason": 0,
+      "currents_a": [
+        -0.026123046875,
+        0.047119140625,
+        -0.02099609375,
+        -0.01416015625,
+        -0.02392578125,
+        0.0380859375
+      ],
+      "angles": [
+        3147,
+        11099
+      ],
+      "zero_progress": 1024
+    }
+  ],
+  "summary_ABC1_ABC2": [
+    {
+      "mean": -0.047457787298387094,
+      "min": -0.12890625,
+      "max": 0.024658203125
+    },
+    {
+      "mean": 0.026272681451612902,
+      "min": -0.03369140625,
+      "max": 0.085693359375
+    },
+    {
+      "mean": 0.021185105846774195,
+      "min": -0.02099609375,
+      "max": 0.067138671875
+    },
+    {
+      "mean": -0.009056829637096774,
+      "min": -0.11279296875,
+      "max": 0.09326171875
+    },
+    {
+      "mean": -0.027052356350806453,
+      "min": -0.100341796875,
+      "max": 0.03515625
+    },
+    {
+      "mean": 0.036109185987903226,
+      "min": -0.024169921875,
+      "max": 0.08740234375
+    }
+  ]
+}

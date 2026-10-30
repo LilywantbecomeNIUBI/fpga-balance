@@ -2,7 +2,7 @@
 // This is NOT a board top: host controls must never be auto-assigned to pins.
 // IP configuration and this module assume a 50 MHz system clock, 20 kHz PWM.
 module motor_adapter_core #(
-    parameter TRACE_MOTOR2=0,SIMPLE_PROTECTION=0, CAL_LOG2=10, ADC_HALF_CYCLES=5, ENC_HALF_CYCLES=25,
+    parameter INDEPENDENT_TUNING=0,TRACE_MOTOR2=0,SIMPLE_PROTECTION=0, CAL_LOG2=10, ADC_HALF_CYCLES=5, ENC_HALF_CYCLES=25,
               WAKE_CYCLES=50000, FRAME_TIMEOUT=2200, STALE_CYCLES=5000,
               MOTOR_MASK=2'b11, CURRENT_CB_MASK=2'b00, MEASUREMENT_COMP=0, CURRENT_LAG=0, ENCODER_LAG=0,
               SPEED_GUARD=0, MAX_WINDOW_TICKS=32, ALLOW_ALIGNMENT=0,SEPARATE_Q_LIMIT=0,
@@ -17,6 +17,7 @@ module motor_adapter_core #(
     input wire [95:0] current_gain_q16,
     input wire [15:0] current_trip_q15, voltage_limit,
     input wire [15:0] kp, ki, kaw,
+    input wire [15:0] kp_m2,ki_m2,
     input wire signed [15:0] id_ref_1, iq_ref_1, id_ref_2, iq_ref_2,
     input wire alignment_mode,
     input wire [15:0] alignment_theta,
@@ -38,6 +39,7 @@ module motor_adapter_core #(
     output wire [27:0] mechanical_angles,
     output wire [1:0] measurement_faults,
     output wire [255:0] diagnostic_m1_sample,
+    output wire [255:0] diagnostic_axis1_sample,
     input wire [15:0] q_voltage_limit,
     input wire [2:0] m2_pwm_order,
     input wire m2_current_swap
@@ -213,6 +215,12 @@ module motor_adapter_core #(
         .theta(trace_m2 ? foc_theta_2 : foc_theta_1),.current_limit(current_trip_q15),.currents(trace_m2 ? feedback_currents[95:48] : feedback_currents[47:0]),
         .id_ref(trace_m2 ? id_ref_2 : id_ref_1),.iq_ref(trace_m2 ? iq_ref_2 : iq_ref_1),.park_valid(trace_m2 ? park_valid_2 : park_valid_1),.pi_valid(trace_m2 ? pi_valid_2 : pi_valid_1),
         .park_id(trace_m2 ? park_id_2 : park_id_1),.park_iq(trace_m2 ? park_iq_2 : park_iq_1),.pi_ud(trace_m2 ? pi_ud_2 : pi_ud_1),.pi_uq(trace_m2 ? pi_uq_2 : pi_uq_1),.sample(diagnostic_m1_sample));
+    motor_foc_trace trace_axis1(.clk(clk),.rst_n(data_rst_n),.valid(feedback_valid),
+        .running(running),.alignment(ALLOW_ALIGNMENT && alignment_mode),
+        .sequence_number(frame_sequence),.sample_time(feedback_time),.mechanical(captured_angle1),
+        .theta(foc_theta_1),.current_limit(current_trip_q15),.currents(feedback_currents[47:0]),
+        .id_ref(id_ref_1),.iq_ref(iq_ref_1),.park_valid(park_valid_1),.pi_valid(pi_valid_1),
+        .park_id(park_id_1),.park_iq(park_iq_1),.pi_ud(pi_ud_1),.pi_uq(pi_uq_1),.sample(diagnostic_axis1_sample));
     motor_foc_bridge #(.SEPARATE_Q_LIMIT(SEPARATE_Q_LIMIT)) foc1(.clk(clk),.rst_n(data_rst_n),.feedback_valid(feedback_valid),
         .enable(running),.theta(foc_theta_1),.ia(feedback_currents[15:0]),.ib(feedback_currents[31:16]),
         .q_voltage_limit(effective_q_limit),.id_ref(id_ref_1),.iq_ref(iq_ref_1),.kp(kp),.ki(ki),.kaw(kaw),.voltage_limit(voltage_limit),.current_limit(current_trip_q15),
@@ -220,7 +228,7 @@ module motor_adapter_core #(
         .park_valid(park_valid_1),.pi_valid(pi_valid_1),.park_id(park_id_1),.park_iq(park_iq_1),.pi_ud(pi_ud_1),.pi_uq(pi_uq_1));
     motor_foc_bridge #(.SEPARATE_Q_LIMIT(SEPARATE_Q_LIMIT)) foc2(.clk(clk),.rst_n(data_rst_n),.feedback_valid(feedback_valid),
         .enable(running),.theta(foc_theta_2),.ia(feedback_currents[63:48]),.ib(feedback_currents[79:64]),
-        .q_voltage_limit(effective_q_limit),.id_ref(id_ref_2),.iq_ref(iq_ref_2),.kp(kp),.ki(ki),.kaw(kaw),.voltage_limit(voltage_limit),.current_limit(current_trip_q15),
+        .q_voltage_limit(effective_q_limit),.id_ref(id_ref_2),.iq_ref(iq_ref_2),.kp(INDEPENDENT_TUNING ? kp_m2 : kp),.ki(INDEPENDENT_TUNING ? ki_m2 : ki),.kaw(kaw),.voltage_limit(voltage_limit),.current_limit(current_trip_q15),
         .head_sync(head2),.peak_sync(peak2),.pwm(m2_ip_pwm),
         .park_valid(park_valid_2),.pi_valid(pi_valid_2),.park_id(park_id_2),.park_iq(park_iq_2),.pi_ud(pi_ud_2),.pi_uq(pi_uq_2));
     motor_drv_guard #(.SIMPLE_PROTECTION(SIMPLE_PROTECTION),.WAKE_CYCLES(WAKE_CYCLES),.MOTOR_MASK(MOTOR_MASK)) guard(

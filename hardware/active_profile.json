@@ -17,9 +17,9 @@
     11
   ],
   "phase_trip_a_nominal": 1.0,
-  "runtime_iq_limit_a_nominal": 1.0,
-  "commission_id_a_nominal": 0.25,
-  "commission_voltage_limit": 0.125,
+  "runtime_iq_limit_a_nominal": 1.2,
+  "commission_id_a_nominal": 0.35,
+  "commission_voltage_limit": 0.25,
   "current_lag_clocks": 1000,
   "encoder_lag_clocks": 250,
   "command_slew": 64,
@@ -90,5 +90,33 @@
   },
   "simple_protection": true,
   "software_overcurrent_stop": false,
-  "encoder_speed_timing_stop": false
+  "encoder_speed_timing_stop": false,
+  "commission_id_q15": 1434,
+  "continuous_run_duration_ms": 0,
+  "parameter_apply_preserves_calibration": true,
+  "manual_pd_limits": {
+    "kp_max": 1.0,
+    "kd_max": 0.2,
+    "current_ma_max": 1200,
+    "ui_initial_current_ma": 300,
+    "runtime_iq_limit_q12": 4915,
+    "runtime_iq_limit_a": 1.199951171875,
+    "physically_validated": false
+  },
+  "manual_speed_limits": {
+    "kp_max": 0.51,
+    "ki_max": 0.51,
+    "target_rpm_max": 120,
+    "trim_limit_deg": 6,
+    "extended_gain_step": 0.002,
+    "physically_validated": false
+  },
+  "manual_acceptance_gates_removed": true,
+  "runtime_d_voltage_limit": 0.125,
+  "runtime_q_voltage_limit": 0.75,
+  "commission_voltage_hardware_validated": false,
+  "normal_tuning_continuous_only": true,
+  "finite_deadline_scope": "dedicated current tests only",
+  "angle_start_gate_removed": true,
+  "angle_stop_protection_removed": true
 }

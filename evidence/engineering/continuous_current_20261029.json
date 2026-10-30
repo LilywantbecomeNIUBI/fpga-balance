@@ -1,0 +1,13 @@
+{
+  "change": "continuous current mode with adjustable soft speed limit",
+  "programmed": false,
+  "physical_motor_tested": false,
+  "bitstream_sha256": "57b4799331989e48d97224efb58452501fa81799f1758617c6089c204f7b1758",
+  "setup_violations": 0,
+  "hold_violations": 0,
+  "rtl_tests_passed": 21,
+  "root_host_tests_passed": 26,
+  "release_host_tests_passed": 30,
+  "duration_field_removed": true,
+  "old_timed_controls_removed": true
+}
