@@ -1,0 +1,47 @@
+{
+  "rtl/reused/at8236_pwm.sv": {
+    "source": "E:\\Gowin_project\\fpga_project\\team_repos\\fpga-system-integration\\fpga\\motor\\at8236_pwm.sv",
+    "sha256": "74958eda563a9ff376fc5c7a8d674398476f436e466cca03a33c3772a9d0d561",
+    "modified": false
+  },
+  "rtl/reused/wheel_control.sv": {
+    "source": "E:\\Gowin_project\\fpga_project\\team_repos\\fpga-system-integration\\fpga\\motor\\wheel_control.sv",
+    "sha256": "5840112b8eb8a2060af6f53663cc514718fc0d66639bfee5d8b6598033c4730d",
+    "modified": false
+  },
+  "rtl/reused/uart_byte.sv": {
+    "source": "E:\\Gowin_project\\fpga_project\\team_repos\\fpga-system-integration\\fpga\\motor\\uart_byte.sv",
+    "sha256": "d88aa96614eac7f51ab4d37d547e4fd3560c7ea4bb7ec25e97ff686e7a7d8ac0",
+    "modified": false
+  },
+  "rtl/reused/frame_transport.sv": {
+    "source": "E:\\Gowin_project\\fpga_project\\team_repos\\fpga-system-integration\\fpga\\motor\\frame_transport.sv",
+    "sha256": "ddc3a24db2eb3818e08b022a4423dc22b9a698d14924c9cf62f8e3d5e7556bab",
+    "modified": false
+  },
+  "rtl/reused/imu_1khz_core.v": {
+    "source": "E:\\Gowin_project\\fpga_project\\team_repos\\fpga-system-integration\\fpga\\imu\\imu_1khz_core.v",
+    "sha256": "b423c14c5ba2e9d690722b5afd50eb25c000090785b0d1d585d73bc1fe664452",
+    "modified": false
+  },
+  "rtl/reused/icm42688_fast_reader.v": {
+    "source": "E:\\Gowin_project\\fpga_project\\team_repos\\fpga-system-integration\\fpga\\imu\\icm42688_fast_reader.v",
+    "sha256": "e4d651fcfbb950e65c0404e18282f35288c79f56cc5abeebb1ae399cfb7e0340",
+    "modified": false
+  },
+  "rtl/reused/imu_fast_i2c_master.v": {
+    "source": "E:\\Gowin_project\\fpga_project\\team_repos\\fpga-system-integration\\fpga\\imu\\imu_fast_i2c_master.v",
+    "sha256": "06365187f02ac81bf336bae6fc54c1795e9f70dcad8078d292202f165afa3368",
+    "modified": false
+  },
+  "rtl/reused/balance_attitude.v": {
+    "source": "E:\\Gowin_project\\fpga_project\\team_repos\\fpga-balance\\balance\\src\\balance_attitude.v",
+    "sha256": "73d2d642fbeb9980895f7b365c13c9f32f1f0bee2f32691b44113af624594416",
+    "modified": false
+  },
+  "rtl/reused/balance_atan.v": {
+    "source": "E:\\Gowin_project\\fpga_project\\team_repos\\fpga-balance\\balance\\src\\balance_atan.v",
+    "sha256": "e4a4f5532fe972ca151017998ced65be1978b21803899b55251d7bac95a7162b",
+    "modified": false
+  }
+}

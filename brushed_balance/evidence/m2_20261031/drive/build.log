@@ -1,0 +1,105 @@
+*** GOWIN Tcl Command Line Console  *** 
+Open project E:/Gowin_project/fpga_project/brushed_balance/build/drive_p30_gmr_m2/balance.gprj finished
+GowinSynthesis start
+Running parser ...
+Analyzing Verilog file 'E:\Gowin_project\fpga_project\brushed_balance\rtl\bb_core.sv'
+Analyzing Verilog file 'E:\Gowin_project\fpga_project\brushed_balance\rtl\bb_encoder.sv'
+Analyzing Verilog file 'E:\Gowin_project\fpga_project\brushed_balance\rtl\bb_imu_diagnostics.sv'
+Analyzing Verilog file 'E:\Gowin_project\fpga_project\brushed_balance\rtl\bb_pd.sv'
+Analyzing Verilog file 'E:\Gowin_project\fpga_project\brushed_balance\rtl\bb_protocol.sv'
+Analyzing Verilog file 'E:\Gowin_project\fpga_project\brushed_balance\rtl\bb_speed.sv'
+Analyzing Verilog file 'E:\Gowin_project\fpga_project\brushed_balance\rtl\bb_telemetry.sv'
+Analyzing Verilog file 'E:\Gowin_project\fpga_project\brushed_balance\rtl\bb_wheel_pi.sv'
+Analyzing Verilog file 'E:\Gowin_project\fpga_project\brushed_balance\rtl\reused\at8236_pwm.sv'
+Analyzing Verilog file 'E:\Gowin_project\fpga_project\brushed_balance\rtl\reused\balance_atan.v'
+Analyzing Verilog file 'E:\Gowin_project\fpga_project\brushed_balance\rtl\reused\balance_attitude.v'
+Analyzing Verilog file 'E:\Gowin_project\fpga_project\brushed_balance\rtl\reused\frame_transport.sv'
+Analyzing Verilog file 'E:\Gowin_project\fpga_project\brushed_balance\rtl\reused\icm42688_fast_reader.v'
+Analyzing Verilog file 'E:\Gowin_project\fpga_project\brushed_balance\rtl\reused\imu_1khz_core.v'
+Analyzing Verilog file 'E:\Gowin_project\fpga_project\brushed_balance\rtl\reused\imu_fast_i2c_master.v'
+Analyzing Verilog file 'E:\Gowin_project\fpga_project\brushed_balance\rtl\reused\uart_byte.sv'
+Analyzing Verilog file 'E:\Gowin_project\fpga_project\brushed_balance\rtl\reused\wheel_control.sv'
+Analyzing Verilog file 'E:\Gowin_project\fpga_project\brushed_balance\build\drive_p30_gmr_m2\brushed_balance_top.sv'
+Compiling module 'brushed_balance_top'("E:\Gowin_project\fpga_project\brushed_balance\build\drive_p30_gmr_m2\brushed_balance_top.sv":1)
+Compiling module 'uart_rx_byte'("E:\Gowin_project\fpga_project\brushed_balance\rtl\reused\uart_byte.sv":1)
+Compiling module 'bb_protocol'("E:\Gowin_project\fpga_project\brushed_balance\rtl\bb_protocol.sv":3)
+Compiling module 'imu_1khz_core'("E:\Gowin_project\fpga_project\brushed_balance\rtl\reused\imu_1khz_core.v":5)
+Compiling module 'icm42688_fast_reader'("E:\Gowin_project\fpga_project\brushed_balance\rtl\reused\icm42688_fast_reader.v":6)
+Compiling module 'imu_fast_i2c_master(I2C_HZ=1000000,TIMEOUT_US=2000)'("E:\Gowin_project\fpga_project\brushed_balance\rtl\reused\imu_fast_i2c_master.v":7)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 16("E:\Gowin_project\fpga_project\brushed_balance\rtl\reused\icm42688_fast_reader.v":190)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 16("E:\Gowin_project\fpga_project\brushed_balance\rtl\reused\icm42688_fast_reader.v":191)
+Compiling module 'bb_imu_diagnostics'("E:\Gowin_project\fpga_project\brushed_balance\rtl\bb_imu_diagnostics.sv":4)
+Compiling module 'frame_crc'("E:\Gowin_project\fpga_project\brushed_balance\rtl\reused\frame_transport.sv":2)
+Compiling module 'balance_attitude'("E:\Gowin_project\fpga_project\brushed_balance\rtl\reused\balance_attitude.v":2)
+Compiling module 'balance_atan'("E:\Gowin_project\fpga_project\brushed_balance\rtl\reused\balance_atan.v":2)
+WARN  (EX3791) : Expression size 33 truncated to fit in target size 32("E:\Gowin_project\fpga_project\brushed_balance\rtl\reused\balance_attitude.v":31)
+WARN  (EX3791) : Expression size 33 truncated to fit in target size 32("E:\Gowin_project\fpga_project\brushed_balance\rtl\reused\balance_attitude.v":32)
+WARN  (EX3791) : Expression size 33 truncated to fit in target size 32("E:\Gowin_project\fpga_project\brushed_balance\rtl\reused\balance_attitude.v":33)
+WARN  (EX3791) : Expression size 64 truncated to fit in target size 32("E:\Gowin_project\fpga_project\brushed_balance\rtl\reused\balance_attitude.v":48)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 16("E:\Gowin_project\fpga_project\brushed_balance\rtl\reused\balance_attitude.v":59)
+WARN  (EX3791) : Expression size 38 truncated to fit in target size 32("E:\Gowin_project\fpga_project\brushed_balance\rtl\reused\balance_attitude.v":72)
+WARN  (EX3791) : Expression size 38 truncated to fit in target size 32("E:\Gowin_project\fpga_project\brushed_balance\rtl\reused\balance_attitude.v":73)
+Compiling module 'bb_core(DRIVE_ENABLE=1)'("E:\Gowin_project\fpga_project\brushed_balance\rtl\bb_core.sv":4)
+Compiling module 'bb_encoder'("E:\Gowin_project\fpga_project\brushed_balance\rtl\bb_encoder.sv":3)
+Compiling module 'bb_wheel_pi'("E:\Gowin_project\fpga_project\brushed_balance\rtl\bb_wheel_pi.sv":3)
+Compiling module 'bb_speed'("E:\Gowin_project\fpga_project\brushed_balance\rtl\bb_speed.sv":4)
+WARN  (EX3791) : Expression size 56 truncated to fit in target size 32("E:\Gowin_project\fpga_project\brushed_balance\rtl\bb_speed.sv":33)
+WARN  (EX3791) : Expression size 56 truncated to fit in target size 32("E:\Gowin_project\fpga_project\brushed_balance\rtl\bb_speed.sv":33)
+WARN  (EX3791) : Expression size 56 truncated to fit in target size 32("E:\Gowin_project\fpga_project\brushed_balance\rtl\bb_speed.sv":36)
+Compiling module 'bb_pd'("E:\Gowin_project\fpga_project\brushed_balance\rtl\bb_pd.sv":4)
+WARN  (EX3791) : Expression size 64 truncated to fit in target size 32("E:\Gowin_project\fpga_project\brushed_balance\rtl\bb_pd.sv":19)
+Compiling module 'at8236_pwm'("E:\Gowin_project\fpga_project\brushed_balance\rtl\reused\at8236_pwm.sv":1)
+WARN  (EX3791) : Expression size 8 truncated to fit in target size 4("E:\Gowin_project\fpga_project\brushed_balance\rtl\bb_core.sv":146)
+Compiling module 'bb_telemetry(DRIVE_ENABLE=1,M2_HEADER=1)'("E:\Gowin_project\fpga_project\brushed_balance\rtl\bb_telemetry.sv":3)
+Compiling module 'frame_uart_mux'("E:\Gowin_project\fpga_project\brushed_balance\rtl\reused\frame_transport.sv":32)
+Compiling module 'uart_tx_byte'("E:\Gowin_project\fpga_project\brushed_balance\rtl\reused\uart_byte.sv":38)
+NOTE  (EX0101) : Current top module is "brushed_balance_top"
+[5%] Running netlist conversion ...
+Running device independent optimization ...
+[10%] Optimizing Phase 0 completed
+[15%] Optimizing Phase 1 completed
+[25%] Optimizing Phase 2 completed
+Running inference ...
+[30%] Inferring Phase 0 completed
+[40%] Inferring Phase 1 completed
+[50%] Inferring Phase 2 completed
+[55%] Inferring Phase 3 completed
+Running technical mapping ...
+[60%] Tech-Mapping Phase 0 completed
+[65%] Tech-Mapping Phase 1 completed
+[75%] Tech-Mapping Phase 2 completed
+[80%] Tech-Mapping Phase 3 completed
+[90%] Tech-Mapping Phase 4 completed
+[95%] Generate netlist file "E:\Gowin_project\fpga_project\brushed_balance\build\drive_p30_gmr_m2\impl\gwsynthesis\balance.vg" completed
+[100%] Generate report file "E:\Gowin_project\fpga_project\brushed_balance\build\drive_p30_gmr_m2\impl\gwsynthesis\balance_syn.rpt.html" completed
+GowinSynthesis finish
+Reading netlist file: "E:\Gowin_project\fpga_project\brushed_balance\build\drive_p30_gmr_m2\impl\gwsynthesis\balance.vg"
+Parsing netlist file "E:\Gowin_project\fpga_project\brushed_balance\build\drive_p30_gmr_m2\impl\gwsynthesis\balance.vg" completed
+Processing netlist completed
+Reading constraint file: "E:\Gowin_project\fpga_project\brushed_balance\build\drive_p30_gmr_m2\balance.cst"
+Physical Constraint parsed completed
+Running placement......
+[10%] Placement Phase 0 completed
+[20%] Placement Phase 1 completed
+[30%] Placement Phase 2 completed
+[50%] Placement Phase 3 completed
+Running routing......
+[60%] Routing Phase 0 completed
+[70%] Routing Phase 1 completed
+[80%] Routing Phase 2 completed
+[90%] Routing Phase 3 completed
+Running timing analysis......
+[95%] Timing analysis completed
+Placement and routing completed
+Bitstream generation in progress......
+Bitstream generation completed
+Running power analysis......
+[100%] Power analysis completed
+Generate file "E:\Gowin_project\fpga_project\brushed_balance\build\drive_p30_gmr_m2\impl\pnr\balance.power.html" completed
+Generate file "E:\Gowin_project\fpga_project\brushed_balance\build\drive_p30_gmr_m2\impl\pnr\balance.pin.html" completed
+Generate file "E:\Gowin_project\fpga_project\brushed_balance\build\drive_p30_gmr_m2\impl\pnr\balance.rpt.html" completed
+Generate file "E:\Gowin_project\fpga_project\brushed_balance\build\drive_p30_gmr_m2\impl\pnr\balance.rpt.txt" completed
+Generate file "E:\Gowin_project\fpga_project\brushed_balance\build\drive_p30_gmr_m2\impl\pnr\balance.tr.html" completed
+Generate file "E:\Gowin_project\fpga_project\brushed_balance\build\drive_p30_gmr_m2\impl\pnr\balance.tr" completed
+Sat Oct 31 15:16:49 2026
+

@@ -1,0 +1,40 @@
+{
+  "utc": "2026-10-31T07:27:28.704533+00:00",
+  "rtl_cases": [
+    "tb_attitude",
+    "tb_control",
+    "tb_core",
+    "tb_encoder",
+    "tb_imu_diagnostics",
+    "tb_protocol",
+    "tb_pwm",
+    "tb_telemetry",
+    "tb_top_m2",
+    "tb_wheel"
+  ],
+  "passed": true,
+  "hardware_tested": false,
+  "source_sha256": {
+    "rtl/bb_core.sv": "9beecfa37b893b56b654830c0f789175fa9bc1d708c5d8ea8e1fca85ff834a47",
+    "rtl/bb_encoder.sv": "36cb2e4d7971212108d991b14e2fa45a4e768a890db7890c8a738bbb1661a1f7",
+    "rtl/bb_imu_diagnostics.sv": "9540b82c9eb68914b610ee77eaa73742bcf69206af956cfe545a70136de2429f",
+    "rtl/bb_pd.sv": "d7ef580e40c7204fe4837ab223b05a5fc12145d89fc9766bab01c374d5e8a120",
+    "rtl/bb_protocol.sv": "b12457933def598182f8cd754f1123050b3720cf9e654336e2390d7671855c9d",
+    "rtl/bb_speed.sv": "edcc6e1a199c435b6a7b54622d34147f5f130ab4d62417fdcc34a66762df7d9b",
+    "rtl/bb_telemetry.sv": "149bef9c90a4c6df516ec71250a844a72f4dbda31f986c0372a9a30aa840de92",
+    "rtl/bb_wheel_pi.sv": "d211bac0a36795b1af40697f07e0237587f6fd8727f5cde5eae9888649f62516",
+    "rtl/brushed_balance_top.sv": "9028fad2be46276327ea8bb4de3a698652419ef614890237b337adfb35843234",
+    "rtl/reused/at8236_pwm.sv": "74958eda563a9ff376fc5c7a8d674398476f436e466cca03a33c3772a9d0d561",
+    "rtl/reused/balance_atan.v": "e4a4f5532fe972ca151017998ced65be1978b21803899b55251d7bac95a7162b",
+    "rtl/reused/balance_attitude.v": "73d2d642fbeb9980895f7b365c13c9f32f1f0bee2f32691b44113af624594416",
+    "rtl/reused/frame_transport.sv": "ddc3a24db2eb3818e08b022a4423dc22b9a698d14924c9cf62f8e3d5e7556bab",
+    "rtl/reused/icm42688_fast_reader.v": "e4d651fcfbb950e65c0404e18282f35288c79f56cc5abeebb1ae399cfb7e0340",
+    "rtl/reused/imu_1khz_core.v": "b423c14c5ba2e9d690722b5afd50eb25c000090785b0d1d585d73bc1fe664452",
+    "rtl/reused/imu_fast_i2c_master.v": "06365187f02ac81bf336bae6fc54c1795e9f70dcad8078d292202f165afa3368",
+    "rtl/reused/uart_byte.sv": "d88aa96614eac7f51ab4d37d547e4fd3560c7ea4bb7ec25e97ff686e7a7d8ac0",
+    "rtl/reused/wheel_control.sv": "5840112b8eb8a2060af6f53663cc514718fc0d66639bfee5d8b6598033c4730d",
+    "host/index.html": "a13f6dd6322718e7d30b23c6505e5e10f91d0520e48ae3b94abacefd01516bf5",
+    "host/protocol.py": "2027936035ef6c2a512a724b2817137de607ccef0a57280e8994686834e4e92a",
+    "host/server.py": "6d311a3e3c6c389686aa7e07d69ea0d5471d8ca5780c74e6adab31498ed73215"
+  }
+}

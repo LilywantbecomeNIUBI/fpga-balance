@@ -1,0 +1,8 @@
+{
+  "mode": 0, "flags": 0, "axis": 0, "filter_shift": 6,
+  "pwm_limit": 100, "angle_kp": 0, "angle_kd": 0,
+  "wheel_kp_q8": 256, "wheel_ki_q8": 0,
+  "speed_kp": 0, "speed_ki": 0, "trim_deg": 0,
+  "start_deg": 5, "fall_deg": 35, "speed_trim_deg": 3,
+  "duration_ms": 0
+}

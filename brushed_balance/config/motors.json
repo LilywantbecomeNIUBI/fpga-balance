@@ -1,0 +1,27 @@
+{
+  "default": "p30_gmr",
+  "profiles": {
+    "p30_gmr": {
+      "motor": "WHEELTEC MG513P30",
+      "encoder": "GMR AB 500 ppr",
+      "gear_ratio_nominal": 30,
+      "quadrature": 4,
+      "left_cpr": 60000,
+      "right_cpr": 60000,
+      "measured": false,
+      "voltage_variants_v": [8, 12],
+      "note": "CPR is nominal 30*500*4 per OUTPUT shaft revolution. Confirm the actual encoder and measure each wheel before tuning the outer speed loop."
+    },
+    "p30_hall": {
+      "motor": "WHEELTEC MG513P30",
+      "encoder": "Hall AB 13 ppr",
+      "gear_ratio_nominal": 30,
+      "quadrature": 4,
+      "left_cpr": 1560,
+      "right_cpr": 1560,
+      "measured": false,
+      "voltage_variants_v": [8, 12],
+      "note": "CPR is nominal 30*13*4. This is a different encoder variant, not the old measured approximately 1500-count calibration."
+    }
+  }
+}

@@ -1,0 +1,9 @@
+# Preserve exact bytes used by the source and firmware manifests.
+* -text
+*.fs binary
+*.png binary
+*.whl binary
+# Original reused HDL and vendor reports retain their source whitespace.
+rtl/reused/** -whitespace
+evidence/** -whitespace
+evidence/**/timing.html -diff

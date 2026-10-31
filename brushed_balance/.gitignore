@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.pyc
+build/
+results/
+tmp/
+.playwright-cli/
+.playwright/
+
+output/
+# Publish the two verified M2 firmware candidates.
+!/firmware/*.fs

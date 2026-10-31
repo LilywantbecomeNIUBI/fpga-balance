@@ -1,0 +1,50 @@
+test_diagnostics_are_separate_from_control_status (test_host.CodecTests.test_diagnostics_are_separate_from_control_status) ... ok
+test_integral_time_quantization_exposed (test_host.CodecTests.test_integral_time_quantization_exposed) ... ok
+test_mode_axis_and_duration_policies (test_host.CodecTests.test_mode_axis_and_duration_policies) ... ok
+test_motor_profiles_do_not_reuse_old_cpr (test_host.CodecTests.test_motor_profiles_do_not_reuse_old_cpr) ... ok
+test_nonfinite_and_out_of_range_config (test_host.CodecTests.test_nonfinite_and_out_of_range_config) ... ok
+test_one_wheel_target_and_gmr_rpm_conversion (test_host.CodecTests.test_one_wheel_target_and_gmr_rpm_conversion) ... ok
+test_outer_target_units_and_limits (test_host.CodecTests.test_outer_target_units_and_limits) ... ok
+test_separate_protocol_crc_and_length (test_host.CodecTests.test_separate_protocol_crc_and_length) ... ok
+test_status_signed_units_and_identity (test_host.CodecTests.test_status_signed_units_and_identity) ... ok
+test_stream_fragmentation_corruption_and_other_firmware (test_host.CodecTests.test_stream_fragmentation_corruption_and_other_firmware) ... ok
+test_arm_rejects_old_distributed_pin_firmware (test_host.SessionTests.test_arm_rejects_old_distributed_pin_firmware) ... ok
+test_arm_rejects_unapplied_form_edits (test_host.SessionTests.test_arm_rejects_unapplied_form_edits) ... ok
+test_arm_requires_config_ack_and_matching_cpr (test_host.SessionTests.test_arm_requires_config_ack_and_matching_cpr) ... ok
+test_browser_timeout_sends_stop_and_never_restarts (test_host.SessionTests.test_browser_timeout_sends_stop_and_never_restarts) ... ok
+test_demo_never_connects_or_arms (test_host.SessionTests.test_demo_never_connects_or_arms) ... ok
+test_running_config_rejected_before_write (test_host.SessionTests.test_running_config_rejected_before_write) ... ok
+test_stale_telemetry_stops_even_when_browser_alive (test_host.SessionTests.test_stale_telemetry_stops_even_when_browser_alive) ... ok
+test_unknown_fields_and_nan_rejected_before_write (test_host.SessionTests.test_unknown_fields_and_nan_rejected_before_write) ... ok
+test_contiguous_header_matches_carrier_reference (test_pins.PinTests.test_contiguous_header_matches_carrier_reference) ... ok
+test_duplicate_ball_and_wrong_carrier_mapping_are_rejected (test_pins.PinTests.test_duplicate_ball_and_wrong_carrier_mapping_are_rejected) ... ok
+test_encoder_output_alias_and_reversed_direction_are_rejected (test_pins.PinTests.test_encoder_output_alias_and_reversed_direction_are_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 21 tests in 0.017s
+
+OK
+PASS console JavaScript syntax
+PASS reused IMU estimator: stationary zero, front-positive angle/rate, sample interval rejection and recalibration
+E:\Gowin_project\fpga_project\team_repos\fpga-balance\brushed_balance\tests\tb_attitude.sv:29: $finish called at 41490000 (1ps)
+PASS PD and outer PI: physical units/signs, trim, polarity, saturation, anti-windup, integral time and reset
+E:\Gowin_project\fpga_project\team_repos\fpga-balance\brushed_balance\tests\tb_control.sv:34: $finish called at 4170000 (1ps)
+PASS lifecycle: locked startup, one-wheel isolation, command validation, replay watchdog, deadline, calibrated/start gates, direct PD polarity, fall/stale/STOP and no restart
+E:\Gowin_project\fpga_project\team_repos\fpga-balance\brushed_balance\tests\tb_core.sv:59: $finish called at 1379820000 (1ps)
+PASS standard AB x4: 1000 edges, both directions, polarity, glitch rejection, ambiguous diagonal accounting
+E:\Gowin_project\fpga_project\team_repos\fpga-balance\brushed_balance\tests\tb_encoder.sv:21: $finish called at 314480000 (1ps)
+PASS read-only IMU diagnostics: line stuck/recovery counters and status+diagnostic UART arbitration
+E:\Gowin_project\fpga_project\team_repos\fpga-balance\brushed_balance\tests\tb_imu_diagnostics.sv:34: $finish called at 4400050000 (1ps)
+PASS Python-to-RTL command CRC/fields, header resync, corruption, partial timeout and framing error
+E:\Gowin_project\fpga_project\team_repos\fpga-balance\brushed_balance\tests\tb_protocol.sv:25: $finish called at 207470000 (1ps)
+PASS PWM: slow decay signed drive duty, 11 wake/brake, zero coast, disable and reset
+E:\Gowin_project\fpga_project\team_repos\fpga-balance\brushed_balance\tests\tb_pwm.sv:32: $finish called at 40091000 (1ps)
+PASS coherent 48-byte UART telemetry captured for independent Python decoder
+E:\Gowin_project\fpga_project\team_repos\fpga-balance\brushed_balance\tests\tb_telemetry.sv:19: $finish called at 249950000 (1ps)
+PASS M2 board top: all four encoder inputs reach counters, independent directions, profile identity, disabled observation/M1 outputs
+E:\Gowin_project\fpga_project\team_repos\fpga-balance\brushed_balance\tests\tb_top_m2.sv:26: $finish called at 17900000 (1ps)
+PASS bench PI: configured cap/anti-windup, zero target, signed reversal, immediate disable
+E:\Gowin_project\fpga_project\team_repos\fpga-balance\brushed_balance\tests\tb_wheel.sv:22: $finish called at 2590000 (1ps)
+PASS RTL UART -> independent Python status CRC and all signed fields
+PASS independent IMU/status multiplex CRC, identity, signed axes, stuck-line and recovery decoding
+PASS independent project regression; no serial opened, no FPGA programmed, no physical validation claimed.

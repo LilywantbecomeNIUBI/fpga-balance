@@ -1,0 +1,47 @@
+{
+  "profile": "drive",
+  "encoder": "p30_gmr",
+  "motor": {
+    "motor": "WHEELTEC MG513P30",
+    "encoder": "GMR AB 500 ppr",
+    "gear_ratio_nominal": 30,
+    "quadrature": 4,
+    "left_cpr": 60000,
+    "right_cpr": 60000,
+    "measured": false,
+    "voltage_variants_v": [
+      8,
+      12
+    ],
+    "note": "CPR is nominal 30*500*4 per OUTPUT shaft revolution. Confirm the actual encoder and measure each wheel before tuning the outer speed loop."
+  },
+  "hardware_tested": false,
+  "pin_profile": "carrier_m2_23_30",
+  "source_sha256": {
+    "rtl/bb_core.sv": "9beecfa37b893b56b654830c0f789175fa9bc1d708c5d8ea8e1fca85ff834a47",
+    "rtl/bb_encoder.sv": "36cb2e4d7971212108d991b14e2fa45a4e768a890db7890c8a738bbb1661a1f7",
+    "rtl/bb_imu_diagnostics.sv": "9540b82c9eb68914b610ee77eaa73742bcf69206af956cfe545a70136de2429f",
+    "rtl/bb_pd.sv": "d7ef580e40c7204fe4837ab223b05a5fc12145d89fc9766bab01c374d5e8a120",
+    "rtl/bb_protocol.sv": "b12457933def598182f8cd754f1123050b3720cf9e654336e2390d7671855c9d",
+    "rtl/bb_speed.sv": "edcc6e1a199c435b6a7b54622d34147f5f130ab4d62417fdcc34a66762df7d9b",
+    "rtl/bb_telemetry.sv": "149bef9c90a4c6df516ec71250a844a72f4dbda31f986c0372a9a30aa840de92",
+    "rtl/bb_wheel_pi.sv": "d211bac0a36795b1af40697f07e0237587f6fd8727f5cde5eae9888649f62516",
+    "rtl/reused/at8236_pwm.sv": "74958eda563a9ff376fc5c7a8d674398476f436e466cca03a33c3772a9d0d561",
+    "rtl/reused/balance_atan.v": "e4a4f5532fe972ca151017998ced65be1978b21803899b55251d7bac95a7162b",
+    "rtl/reused/balance_attitude.v": "73d2d642fbeb9980895f7b365c13c9f32f1f0bee2f32691b44113af624594416",
+    "rtl/reused/frame_transport.sv": "ddc3a24db2eb3818e08b022a4423dc22b9a698d14924c9cf62f8e3d5e7556bab",
+    "rtl/reused/icm42688_fast_reader.v": "e4d651fcfbb950e65c0404e18282f35288c79f56cc5abeebb1ae399cfb7e0340",
+    "rtl/reused/imu_1khz_core.v": "b423c14c5ba2e9d690722b5afd50eb25c000090785b0d1d585d73bc1fe664452",
+    "rtl/reused/imu_fast_i2c_master.v": "06365187f02ac81bf336bae6fc54c1795e9f70dcad8078d292202f165afa3368",
+    "rtl/reused/uart_byte.sv": "d88aa96614eac7f51ab4d37d547e4fd3560c7ea4bb7ec25e97ff686e7a7d8ac0",
+    "rtl/reused/wheel_control.sv": "5840112b8eb8a2060af6f53663cc514718fc0d66639bfee5d8b6598033c4730d",
+    "build/drive_p30_gmr_m2/brushed_balance_top.sv": "49715055d45850eeb6faa8b385d3c612aa561fe3f9b195bbd045c56aa35d3424",
+    "build/drive_p30_gmr_m2/balance.cst": "1c7c39325d0199ac2a117fc44bb614b929ebe43e8d6026322610f0963fcbed3b",
+    "build/drive_p30_gmr_m2/balance.sdc": "d0b57a64a5639d0502a216ad9862e3823eb7bf0769dc10412a2fbe4340c4c0f0"
+  },
+  "template_sha256": "9028fad2be46276327ea8bb4de3a698652419ef614890237b337adfb35843234",
+  "config_sha256": "e5d7dd3946b7af44c2e781152525269aaa5a6d01b21d63a0d872163f3e879e6b",
+  "pins_sha256": "b294781af5b89f312c1678ed84997da5dc33ecd6e0f0e8e3e9cddfe01f9a0dd3",
+  "pin_reference_sha256": "daacdef6b39b455d8773d4a0e5aa50ba5ac3b1d51b83a89b2bf92c7c960d4d83",
+  "pin_profile_sha256": "06c766b91349fbd67b79ef9924fe7f44c2ca9b3c86ac0cf9b1d5383188e9a0b5"
+}

@@ -1,0 +1,23 @@
+{
+  "id": "carrier_m2_23_30",
+  "carrier": "Carrier_Hall_RevB",
+  "connector": "J_DRV2",
+  "signal_pins": [
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30
+  ],
+  "ground_pins": [
+    21,
+    22
+  ],
+  "status_flag_bit": 7,
+  "source": "D:\\活动\\比赛\\电赛\\FPGA\\Carrier_Hall_RevB\\GPIO_40Pin_映射.csv",
+  "source_sha256": "1df90aba8e002d321d0fad9f0ab11a86aca103ed69b8b0ceb2a8348a2eae6941",
+  "hardware_tested": false
+}

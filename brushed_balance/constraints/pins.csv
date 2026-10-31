@@ -1,0 +1,31 @@
+group,signal,ball,direction,p7,endpoint,status
+legacy_disabled,legacy_m1_pwm_disabled[5],A13,OUT,1,Old DRV8323 PWM fixed low; not D157B,fixed_low
+legacy_disabled,legacy_m1_pwm_disabled[4],A14,OUT,2,Old DRV8323 PWM fixed low; not D157B,fixed_low
+legacy_disabled,legacy_m1_pwm_disabled[3],A15,OUT,3,Old DRV8323 PWM fixed low; not D157B,fixed_low
+legacy_disabled,legacy_m1_pwm_disabled[2],A16,OUT,4,Old DRV8323 PWM fixed low; not D157B,fixed_low
+board,reset_n,F15,IN,,,reserved
+board,clk50m,Y18,IN,,,reserved
+board,led[0],M22,OUT,,,reserved
+board,led[1],N22,OUT,,,reserved
+board,led[2],L21,OUT,,,reserved
+board,led[3],K21,OUT,,,reserved
+board,led[4],K22,OUT,,,reserved
+board,led[5],J22,OUT,,,reserved
+board,led[6],H22,OUT,,,reserved
+board,led[7],M21,OUT,,,reserved
+board,uart_tx,M15,OUT,,,reserved
+board,uart_rx,J21,IN,,,reserved
+reserved_p7,imu_i2c_scl,F19,INOUT,39,,reserved
+reserved_p7,imu_i2c_sda,F20,INOUT,40,,reserved
+chassis,right_enc_b,B15,IN,19,J_DRV2-24; E2B / D157B J5-4,carrier_m2_23_30
+reserved_p7,legacy_m1_disable,F13,OUT,7,,reserved
+legacy_disabled,legacy_m1_pwm_disabled[1],A18,OUT,5,Old DRV8323 PWM fixed low; not D157B,fixed_low
+legacy_disabled,legacy_m1_pwm_disabled[0],A19,OUT,6,Old DRV8323 PWM fixed low; not D157B,fixed_low
+legacy_disabled,legacy_m1_cal_disabled,F14,OUT,8,Old DRV8323 CAL fixed low,fixed_low
+chassis,left_in1,E14,OUT,10,J_DRV2-25; AIN1 / D157B J4-4,carrier_m2_23_30
+chassis,left_in2,C13,OUT,13,J_DRV2-26; AIN2 / D157B J4-3,carrier_m2_23_30
+chassis,right_in1,B13,OUT,14,J_DRV2-27; BIN1 / D157B J4-2,carrier_m2_23_30
+chassis,right_in2,D14,OUT,15,J_DRV2-28; BIN2 / D157B J4-1,carrier_m2_23_30
+chassis,left_enc_a,D15,IN,16,J_DRV2-29; E1A / D157B J5-1,carrier_m2_23_30
+chassis,left_enc_b,C14,IN,17,J_DRV2-30; E1B / D157B J5-2,carrier_m2_23_30
+chassis,right_enc_a,C15,IN,18,J_DRV2-23; E2A / D157B J5-3,carrier_m2_23_30

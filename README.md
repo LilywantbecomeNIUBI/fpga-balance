@@ -1,4 +1,18 @@
-## 最新交付（2026-10-30）
+# 当前分支：P30有刷平衡车，M2集中接线（2026-10-31）
+
+本分支当前入口是根目录 **`启动有刷平衡车.cmd`**，独立工程位于 [`brushed_balance`](brushed_balance/README.md)。包含双轮有刷RTL、串口上位机、参数预设、M2引脚约束、测试/构建工具、离线pySerial依赖，以及已验证的观察版和驱动版位流。
+
+- [启动与功能说明](brushed_balance/README.md)
+- [M2集中接线表](brushed_balance/docs/M2_WIRING.md)：M2-21/22共地、23～30为四路控制及四路编码器，连续2×5区域。
+- [克隆、运行和交接](brushed_balance/docs/GIT_HANDOFF.md)
+- [固件与SHA256](brushed_balance/firmware/README.md)
+- [验证状态](brushed_balance/docs/validation.md)：10组RTL、21项Python测试通过，两版Setup/Hold违例0/0；M2版尚未下载或完成实车验收。
+
+下方保留之前无刷R5的交付记录。`启动电机调试.cmd`仍属于该旧版本；本次有刷调试使用上面的新入口。
+
+---
+
+## 之前的无刷交付（2026-10-30）
 
 R5支持双轮独立电流PI、实际Id/Iq与Uq曲线、电流模式10～1000rpm可调软限速。所有调参模式持续运行，已删除时长输入和FPGA到期停机逻辑；正常结束保留校准。Stop、通信超时、驱动nFAULT仍停机，倾角启动/停机限制已删除。固定方向无选择项：电流模式原始正Iq为M1向前、M2向后，直立/速度模式M1取反、M2不反。
 
